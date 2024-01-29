@@ -146,17 +146,7 @@
         },
         {
           "Category": "Behavior",
-          "PropertyName": "OnNew",
-          "RuleProviderType": "Unknown"
-        },
-        {
-          "Category": "Behavior",
-          "PropertyName": "OnEdit",
-          "RuleProviderType": "Unknown"
-        },
-        {
-          "Category": "Behavior",
-          "PropertyName": "OnView",
+          "PropertyName": "OnCancel",
           "RuleProviderType": "Unknown"
         },
         {
@@ -166,7 +156,17 @@
         },
         {
           "Category": "Behavior",
-          "PropertyName": "OnCancel",
+          "PropertyName": "OnView",
+          "RuleProviderType": "Unknown"
+        },
+        {
+          "Category": "Behavior",
+          "PropertyName": "OnEdit",
+          "RuleProviderType": "Unknown"
+        },
+        {
+          "Category": "Behavior",
+          "PropertyName": "OnNew",
           "RuleProviderType": "Unknown"
         }
       ],

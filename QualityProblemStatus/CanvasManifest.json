@@ -96,7 +96,7 @@
       "usenonblockingonstartrule": true,
       "userdefinedfunctions": false,
       "webbarcodescanner": false,
-      "zeroalltabindexes": true
+      "zeroalltabindexes": false
     },
     "Author": "",
     "BindingErrorCount": 0,
@@ -115,7 +115,7 @@
     "Id": "8321ec5c-1af2-4e21-919b-ffae5fa39561",
     "InstrumentationKey": "",
     "LocalDatabaseReferences": "{}",
-    "ManualOfflineProfileId": null,
+    "ManualOfflineProfileId": "",
     "Name": "[C]予算管理システム情報共有DB​​ フォームの Quality Problem Status",
     "OriginatingVersion": "1.336",
     "ParserErrorCount": 0,
@@ -133,6 +133,6 @@
     "UserLocale": "ja-JP"
   },
   "ScreenOrder": [
-    "FormScreen1"
+    "scrQPS"
   ]
 }

@@ -11,10 +11,10 @@ App As appinfo:
 
     SharePointIntegration As hostControl.SharePointHostControlVariant:
         DataSource: =[@'Quality Problem Status']
-        OnCancel: =ResetForm(SharePointForm1)
-        OnEdit: =EditForm(SharePointForm1)
-        OnNew: =NewForm(SharePointForm1)
-        OnSave: =SubmitForm(SharePointForm1)
-        OnView: =ViewForm(SharePointForm1)
+        OnCancel: =ResetForm(frmQPS)
+        OnEdit: =EditForm(frmQPS)
+        OnNew: =NewForm(frmQPS)
+        OnSave: =SubmitForm(frmQPS)
+        OnView: =ViewForm(frmQPS)
         SelectedHidden: =LookUp([@'Quality Problem Status'], ID = Self.SelectedListItemID)
 
