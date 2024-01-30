@@ -57,10 +57,10 @@
       "exportimportcomponents2": true,
       "externalmessage": false,
       "fluentv9controls": false,
-      "fluentv9controlspreview": false,
+      "fluentv9controlspreview": true,
       "formuladataprefetch": true,
       "formularepair": false,
-      "generatedebugpublishedapp": false,
+      "generatedebugpublishedapp": true,
       "herocontrols": false,
       "improvedmediacapture": true,
       "improvedtabstopbehavior": false,
@@ -96,10 +96,10 @@
       "usenonblockingonstartrule": true,
       "userdefinedfunctions": false,
       "webbarcodescanner": false,
-      "zeroalltabindexes": false
+      "zeroalltabindexes": true
     },
     "Author": "",
-    "BindingErrorCount": 0,
+    "BindingErrorCount": 1,
     "ContainsThirdPartyPcfControls": false,
     "DefaultConnectedDataSourceMaxGetRowsCount": 500,
     "DocumentAppType": "Web",
@@ -118,7 +118,7 @@
     "ManualOfflineProfileId": "",
     "Name": "[C]予算管理システム情報共有DB​​ フォームの Quality Problem Status",
     "OriginatingVersion": "1.336",
-    "ParserErrorCount": 0,
+    "ParserErrorCount": 1,
     "ShowStatusBar": false
   },
   "PublishInfo": {
