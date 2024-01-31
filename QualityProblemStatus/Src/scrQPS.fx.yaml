@@ -843,7 +843,7 @@
                 ChevronHoverBackground: =RGBA(212, 212, 212, 1)
                 ChevronHoverFill: =RGBA(33, 33, 33, 1)
                 Color: =RGBA(0, 84, 148, 1)
-                Default: =ThisItem.Customer
+                Default: =ThisItem.'Substrate Supplier'
                 DisabledBorderColor: =RGBA(0, 0, 0, 0)
                 DisabledColor: =RGBA(166, 166, 166, 1)
                 DisabledFill: =RGBA(244, 244, 244, 1)
@@ -880,7 +880,7 @@
                 ChevronHoverFill: =RGBA(33, 33, 33, 1)
                 Color: =RGBA(51, 51, 51, 1)
                 DefaultSelectedItems: |-
-                    ={Value:ThisItem.'Media Program'}
+                    ={Value:ThisItem.'Substrate Program'}
                 DisabledBorderColor: =RGBA(0, 0, 0, 0)
                 DisabledColor: =RGBA(166, 166, 166, 1)
                 DisabledFill: =RGBA(244, 244, 244, 1)
