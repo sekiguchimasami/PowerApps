@@ -917,7 +917,7 @@
             Required: =false
             Update: |-
                 =//  DataCardValue12.Text
-                ddlSubstrateSupplier
+                ddlSubstrateSupplier.Selected.Value
             Width: =592
             X: =0
             Y: =7
