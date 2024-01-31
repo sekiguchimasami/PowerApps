@@ -774,7 +774,6 @@
                 SearchItems: =Search(Split(LookUp('Program Master', 区分.Value="Media" && Customer=ddlCustomer.Selected.Customer).Program, Char(10)),cmbMediaProgram.SearchText,"Value")
                 SelectionFill: =RGBA(0, 120, 212, 1)
                 SelectMultiple: =false
-                Size: =10.5
                 Width: =Parent.Width * 0.5
                 X: =DataCardKey11_1.X + DataCardKey11_1.Width
                 Y: =DataCardKey10_1.Y
@@ -785,7 +784,7 @@
             BorderStyle: =BorderStyle.Solid
             DisplayMode: =DisplayMode.Edit
             Fill: =RGBA(0, 0, 0, 0)
-            Height: =40
+            Height: =52
             Width: =Parent.Width
             X: =0
             Y: =5
@@ -900,7 +899,6 @@
                 SearchItems: =Search(Split(LookUp('Program Master', 区分.Value="Substrate" && Customer=ddlSubstrateSupplier.Selected.Customer).Program, Char(10)),cmbSubstrateProgram.SearchText,"Value")
                 SelectionFill: =RGBA(0, 120, 212, 1)
                 SelectMultiple: =false
-                Size: =10.5
                 Width: =Parent.Width * 0.5
                 X: =DataCardKey13_1.X + DataCardKey13_1.Width
                 Y: =DataCardKey12_1.Y
@@ -917,7 +915,9 @@
             Height: =50
             MaxLength: =DataSourceInfo([@'Quality Problem Status'], DataSourceInfo.MaxLength, "zzSubstrateSupplier")
             Required: =false
-            Update: =DataCardValue12.Text
+            Update: |-
+                =//  DataCardValue12.Text
+                ddlSubstrateSupplier
             Width: =592
             X: =0
             Y: =7
