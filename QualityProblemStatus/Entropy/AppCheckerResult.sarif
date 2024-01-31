@@ -2023,6 +2023,35 @@
             {
               "logicalLocations": [
                 {
+                  "fullyQualifiedName": "scrQPS"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "scrQPS",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "module": "scrQPS",
+                "type": "scrQPS"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-ScreenHasManyControls",
+          "ruleIndex": 3
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
                   "fullyQualifiedName": "scrQPS.Process1Tab"
                 }
               ],
@@ -2046,7 +2075,7 @@
             "level": "Medium"
           },
           "ruleId": "app-UnusedVariables",
-          "ruleIndex": 3
+          "ruleIndex": 4
         },
         {
           "locations": [
@@ -2076,7 +2105,7 @@
             "level": "Medium"
           },
           "ruleId": "app-UnusedVariables",
-          "ruleIndex": 3
+          "ruleIndex": 4
         },
         {
           "locations": [
@@ -2106,7 +2135,7 @@
             "level": "Medium"
           },
           "ruleId": "app-UnusedVariables",
-          "ruleIndex": 3
+          "ruleIndex": 4
         }
       ],
       "tool": {
@@ -2163,6 +2192,27 @@
                 "level": "Low",
                 "primaryCategory": "accessibility",
                 "whyFix": "People who are blind, have low vision, or a reading disability rely on screen titles to navigate using the screen reader. "
+              }
+            },
+            {
+              "id": "app-ScreenHasManyControls",
+              "messageStrings": {
+                "issue": {
+                  "text": "画面上のコントロールが多すぎます"
+                }
+              },
+              "properties": {
+                "componentType": "app",
+                "howToFix": [
+                  "画面上のコントロールの数を減らします。",
+                  "アプリを複数の画面に分割して、画面ごとの複雑さを緩和してください。",
+                  "コンポーネントを使用して、複数の画面で同一のグループ化されたコントロールを統合し、重複を減らします。",
+                  "繰り返し使用する類似した一連のコントロールを、ギャラリーを使用して表現します。",
+                  "アプリを複数のアプリに分割して、各アプリのサイズを小さくし、パフォーマンスが高くなるようにします。"
+                ],
+                "level": "Medium",
+                "primaryCategory": "performance",
+                "whyFix": "各コントロールはリソースを消費するため、画面のコントロールが多すぎると、アプリが低速になったり応答性が悪くなったりする可能性があります。\"scrQPS\" の推定複雑度は 302 です。これは、推奨される最大しきい値 (300) を超えています。"
               }
             },
             {

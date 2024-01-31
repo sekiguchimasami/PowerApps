@@ -531,6 +531,35 @@
                 Y: =DataCardKey9.Y
                 ZIndex: =4
 
+            ErrorMessage9_1 As label:
+                AutoHeight: =true
+                BorderColor: =RGBA(0, 0, 0, 0)
+                BorderStyle: =BorderStyle.None
+                BorderThickness: =1
+                Color: =RGBA(54, 176, 75, 1)
+                DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                DisabledColor: |-
+                    =//RGBA(168, 0, 0, 1)
+                    Self.Color
+                FocusedBorderThickness: =1
+                Font: =Font.'Segoe UI'
+                FontWeight: =FontWeight.Semibold
+                Height: =10
+                Live: =Live.Assertive
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Size: =11
+                Text: ="Please input 100 characters or less "
+                Visible: =Parent.DisplayMode<>DisplayMode.View
+                Width: |-
+                    =//  Parent.Width - 60
+                    DataCardValue9.Width
+                X: =DataCardValue9.X
+                Y: =DataCardValue9.Y + DataCardValue9.Height
+                ZIndex: =5
+
         Status_DataCard1 As typedDataCard.comboBoxEditCard:
             BorderColor: =RGBA(166, 166, 166, 1)
             BorderStyle: =BorderStyle.Solid
@@ -904,6 +933,58 @@
                 X: =DataCardKey13_1.X + DataCardKey13_1.Width
                 Y: =DataCardKey12_1.Y
                 ZIndex: =4
+
+        DataCard4 As typedDataCard.blankCard:
+            BorderColor: =RGBA(9, 33, 98, 1)
+            BorderStyle: =BorderStyle.Solid
+            BorderThickness: =1
+            DisplayMode: =DisplayMode.Edit
+            Fill: =RGBA(204, 231, 246, 1)
+            Height: =227
+            Width: =1184
+            WidthFit: =false
+            X: =0
+            Y: =7
+            ZIndex: =1
+
+            DataCardKey14_1 As label:
+                AutoHeight: =true
+                BorderColor: =RGBA(0, 0, 0, 0)
+                BorderStyle: =BorderStyle.None
+                BorderThickness: =1
+                Color: =RGBA(51, 51, 51, 1)
+                DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                DisabledColor: =RGBA(166, 166, 166, 1)
+                FocusedBorderThickness: =1
+                Font: =Font.'Segoe UI'
+                FontWeight: =FontWeight.Semibold
+                Height: =34
+                PaddingLeft: =0
+                Size: =10.5
+                Text: =Parent.DisplayName
+                Width: =(Parent.Width - 60) * 0.4
+                Wrap: =false
+                X: =40
+                Y: =10 + (DataCardValue14.Height / 2) - (Self.Height / 2)
+                ZIndex: =1
+
+            lblProcess1 As label:
+                BorderColor: =RGBA(0, 0, 0, 0)
+                BorderStyle: =BorderStyle.None
+                BorderThickness: =1
+                Color: =RGBA(51, 51, 51, 1)
+                DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                DisabledColor: =RGBA(166, 166, 166, 1)
+                FocusedBorderThickness: =1
+                Font: =Font.'Segoe UI'
+                Height: =31
+                PaddingLeft: =0
+                Size: =10.5
+                Text: ="Process"
+                Width: =Parent.Width * 0.1
+                X: =25
+                Y: =10
+                ZIndex: =2
 
         "'Process1 RC Process_DataCard1' As typedDataCard.textualEditCard":
             BorderColor: =RGBA(166, 166, 166, 1)
@@ -6121,8 +6202,8 @@
                 =//  DataCardValue12.Text
                 ddlSubstrateSupplier.Selected.Customer
             Width: =592
-            X: =0
-            Y: =107
+            X: =1
+            Y: =31
             ZIndex: =1
 
             DataCardKey12 As label:
@@ -6239,8 +6320,8 @@
                 =//  DataCardValue13.Text
                 cmbSubstrateProgram.Selected.Value
             Width: =592
-            X: =1
-            Y: =107
+            X: =0
+            Y: =32
             ZIndex: =1
 
             DataCardKey13 As label:
