@@ -934,6 +934,672 @@
                 Y: =DataCardKey12_1.Y
                 ZIndex: =4
 
+        Process2_DataCard As typedDataCard.blankCard:
+            BorderColor: =RGBA(166, 166, 166, 1)
+            BorderStyle: =BorderStyle.Solid
+            DisplayMode: =DisplayMode.Edit
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =100
+            Width: =1184
+            X: =0
+            Y: =8
+            ZIndex: =1
+
+            lblP2RCProcess As label:
+                Align: =Align.Center
+                BorderColor: =RGBA(0, 0, 0, 0)
+                BorderStyle: =BorderStyle.None
+                BorderThickness: =1
+                Color: =RGBA(51, 51, 51, 1)
+                DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                DisabledColor: =RGBA(166, 166, 166, 1)
+                FocusedBorderThickness: =1
+                Font: =Font.'Segoe UI'
+                Height: =32
+                PaddingLeft: =0
+                Size: =10.5
+                Text: ="Process"
+                Width: =Parent.Width * 0.1
+                X: =lblP2Rootcause.X + lblP2Rootcause.Width
+                Y: =10
+                ZIndex: =2
+
+            lblP2Rootcause As label:
+                Align: =Align.Center
+                BorderColor: =RGBA(246, 88, 16, 1)
+                BorderThickness: =1
+                Color: =RGBA(51, 51, 51, 1)
+                DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                DisabledColor: =RGBA(166, 166, 166, 1)
+                Fill: =RGBA(253, 222, 207, 1)
+                FocusedBorderThickness: =1
+                Font: =Font.'Segoe UI'
+                Height: =lblP2RCProcess.Height + rtxP1RCComment.Height + 20
+                PaddingLeft: =0
+                Size: =10.5
+                Text: |-
+                    ="Root
+                    Cause"
+                Width: =50
+                ZIndex: =3
+
+            ddlP2RCProcess As dropdown:
+                BorderColor: =RGBA(166, 166, 166, 1)
+                BorderThickness: =1
+                ChevronBackground: =RGBA(255, 255, 255, 1)
+                ChevronDisabledBackground: =RGBA(244, 244, 244, 1)
+                ChevronDisabledFill: =RGBA(166, 166, 166, 1)
+                ChevronFill: =RGBA(33, 33, 33, 1)
+                ChevronHoverBackground: =RGBA(212, 212, 212, 1)
+                ChevronHoverFill: =RGBA(33, 33, 33, 1)
+                Color: =RGBA(0, 84, 148, 1)
+                Default: =ThisItem.Customer
+                DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                DisabledColor: =RGBA(166, 166, 166, 1)
+                DisabledFill: =RGBA(244, 244, 244, 1)
+                FocusedBorderThickness: =1
+                Font: =Font.'Segoe UI'
+                FontWeight: =FontWeight.Semibold
+                Height: =32
+                HoverBorderColor: =ColorFade(RGBA(0, 120, 212, 1), -30%)
+                HoverColor: =RGBA(51, 51, 51, 1)
+                HoverFill: =RGBA(212, 212, 212, 1)
+                Items: =Filter('Actual Cause Master', 区分.Value=rdbClaimDescriptionType.Selected.Value).Title
+                PaddingBottom: =5
+                PaddingLeft: =12
+                PaddingRight: =5
+                PaddingTop: =5
+                PressedBorderColor: =ColorFade(RGBA(0, 120, 212, 1), -30%)
+                PressedColor: =RGBA(255, 255, 255, 1)
+                PressedFill: =RGBA(0, 120, 212, 1)
+                SelectionFill: =RGBA(0, 120, 212, 1)
+                Size: =12
+                Width: =180
+                X: =DataCardKey10_1.X + DataCardKey10_1.Width
+                Y: =lblP2RCProcess.Y
+                ZIndex: =4
+
+            lblP2RCActualCause As label:
+                Align: =Align.Center
+                BorderColor: =RGBA(0, 0, 0, 0)
+                BorderStyle: =BorderStyle.None
+                BorderThickness: =1
+                Color: =RGBA(51, 51, 51, 1)
+                DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                DisabledColor: =RGBA(166, 166, 166, 1)
+                FocusedBorderThickness: =1
+                Font: =Font.'Segoe UI'
+                Height: =31
+                PaddingLeft: =0
+                Size: =10.5
+                Text: ="Actual cause"
+                Width: =Parent.Width * 0.1
+                X: =ddlP2RCProcess.X + ddlP2RCProcess.Width
+                Y: =lblP2RCProcess.Y
+                ZIndex: =5
+
+            cmbP2RCActualCause As combobox:
+                BorderColor: =RGBA(166, 166, 166, 1)
+                BorderThickness: =1
+                ChevronBackground: =RGBA(255, 255, 255, 1)
+                ChevronDisabledBackground: =RGBA(244, 244, 244, 1)
+                ChevronDisabledFill: =RGBA(166, 166, 166, 1)
+                ChevronFill: =RGBA(33, 33, 33, 1)
+                ChevronHoverBackground: =RGBA(212, 212, 212, 1)
+                ChevronHoverFill: =RGBA(33, 33, 33, 1)
+                Color: =RGBA(51, 51, 51, 1)
+                DefaultSelectedItems: |-
+                    ={Value:ThisItem.'Media Program'}
+                DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                DisabledColor: =RGBA(166, 166, 166, 1)
+                DisabledFill: =RGBA(244, 244, 244, 1)
+                DisplayFields: =["Value"]
+                FocusedBorderThickness: =1
+                Font: =Font.'Segoe UI'
+                Height: =32
+                HoverBorderColor: =ColorFade(RGBA(0, 120, 212, 1), -30%)
+                HoverColor: =RGBA(51, 51, 51, 1)
+                HoverFill: =RGBA(212, 212, 212, 1)
+                InputTextPlaceholder: =
+                Items: =Split(LookUp('Actual Cause Master', 区分.Value=rdbClaimDescriptionType.Selected.Value && Process=ddlP2RCProcess.Selected.Process).'Actual Cause', Char(10))
+                PressedBorderColor: =ColorFade(RGBA(0, 120, 212, 1), -30%)
+                PressedColor: =RGBA(255, 255, 255, 1)
+                PressedFill: =RGBA(0, 120, 212, 1)
+                SearchFields: =["Value"]
+                SearchItems: =Search(Split(LookUp('Actual Cause Master', 区分.Value=rdbClaimDescriptionType.Selected.Value && Process=ddlP2RCProcess.Selected.Process).'Actual Cause', Char(10)),cmbP2RCActualCause.SearchText,"Value")
+                SelectionFill: =RGBA(0, 120, 212, 1)
+                Width: =Parent.Width * 0.59
+                X: =lblP2RCActualCause.X + lblP2RCActualCause.Width
+                Y: =lblP2RCProcess.Y
+                ZIndex: =6
+
+            lblP2CAInternal As label:
+                Align: =Align.Center
+                BorderColor: =RGBA(246, 88, 16, 1)
+                BorderThickness: =1
+                Color: =RGBA(51, 51, 51, 1)
+                DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                DisabledColor: =RGBA(166, 166, 166, 1)
+                Fill: =RGBA(253, 222, 207, 1)
+                FocusedBorderThickness: =1
+                Font: =Font.'Segoe UI'
+                Height: =(lblP2RCProcess.Height) * 3 + rtxP1RCComment.Height + 50 + 36
+                PaddingLeft: =0
+                Size: =10.5
+                Text: |-
+                    ="CA
+                    (inter
+                    nal)"
+                Width: =50
+                X: =lblP2Rootcause.X
+                Y: =lblP2Rootcause.Y + lblP2Rootcause.Height
+                ZIndex: =7
+
+            lblP2CAIControlItem As label:
+                Align: =Align.Center
+                BorderColor: =RGBA(0, 0, 0, 0)
+                BorderStyle: =BorderStyle.None
+                BorderThickness: =1
+                Color: =RGBA(51, 51, 51, 1)
+                DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                DisabledColor: =RGBA(166, 166, 166, 1)
+                FocusedBorderThickness: =1
+                Font: =Font.'Segoe UI'
+                Height: =32
+                PaddingLeft: =0
+                Size: =11
+                Text: ="Control item"
+                Width: =Parent.Width * 0.1
+                X: =lblP2CAInternal.X + lblP2CAInternal.Width
+                Y: =lblP2CAInternal.Y + 10
+                ZIndex: =8
+
+            txtP2CAIControlItem As text:
+                BorderColor: =RGBA(166, 166, 166, 1)
+                Color: =RGBA(51, 51, 51, 1)
+                Default: =ThisItem.'Process1 CA Internal Control Item'
+                DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                DisabledColor: =RGBA(166, 166, 166, 1)
+                DisabledFill: =RGBA(244, 244, 244, 1)
+                FocusedBorderThickness: =1
+                Font: =Font.'Segoe UI'
+                Height: =32
+                HoverBorderColor: =ColorFade(RGBA(0, 120, 212, 1), -30%)
+                HoverColor: =RGBA(51, 51, 51, 1)
+                HoverFill: =RGBA(255, 255, 255, 1)
+                PressedBorderColor: =RGBA(0, 120, 212, 1)
+                PressedColor: =RGBA(51, 51, 51, 1)
+                PressedFill: =RGBA(255, 255, 255, 1)
+                RadiusBottomLeft: =0
+                RadiusBottomRight: =0
+                RadiusTopLeft: =0
+                RadiusTopRight: =0
+                Size: =11
+                Tooltip: ="※ Please input 50 characters or less "
+                Width: =Parent.Width * 0.84
+                X: =lblP2CAIControlItem.X + lblP2CAIControlItem.Width
+                Y: =lblP2CAIControlItem.Y
+                ZIndex: =9
+
+            lblP2CAISpec As label:
+                Align: =Align.Center
+                BorderColor: =RGBA(0, 0, 0, 0)
+                BorderStyle: =BorderStyle.None
+                BorderThickness: =1
+                Color: =RGBA(51, 51, 51, 1)
+                DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                DisabledColor: =RGBA(166, 166, 166, 1)
+                FocusedBorderThickness: =1
+                Font: =Font.'Segoe UI'
+                Height: =32
+                PaddingLeft: =0
+                Size: =11
+                Text: ="Spec/Control"
+                Width: =Parent.Width * 0.1
+                X: =lblP2CAIControlItem.X
+                Y: =lblP2CAIControlItem.Y + lblP2CAIControlItem.Height + WarningMessageP22.Height + 10
+                ZIndex: =10
+
+            txtP2CAISpec As text:
+                BorderColor: =RGBA(166, 166, 166, 1)
+                Color: =RGBA(51, 51, 51, 1)
+                Default: =ThisItem.'Process1 CA Internal Spec/Control'
+                DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                DisabledColor: =RGBA(166, 166, 166, 1)
+                DisabledFill: =RGBA(244, 244, 244, 1)
+                FocusedBorderThickness: =1
+                Font: =Font.'Segoe UI'
+                Height: =32
+                HoverBorderColor: =ColorFade(RGBA(0, 120, 212, 1), -30%)
+                HoverColor: =RGBA(51, 51, 51, 1)
+                HoverFill: =RGBA(255, 255, 255, 1)
+                PressedBorderColor: =RGBA(0, 120, 212, 1)
+                PressedColor: =RGBA(51, 51, 51, 1)
+                PressedFill: =RGBA(255, 255, 255, 1)
+                RadiusBottomLeft: =0
+                RadiusBottomRight: =0
+                RadiusTopLeft: =0
+                RadiusTopRight: =0
+                Size: =11
+                Tooltip: ="※ Please input 50 characters or less "
+                Width: =Parent.Width * 0.84
+                X: =lblP2CAISpec.X + lblP2CAISpec.Width
+                Y: =lblP2CAISpec.Y
+                ZIndex: =11
+
+            lblP2CAIEquipmentImprovement As label:
+                Align: =Align.Center
+                BorderColor: =RGBA(0, 0, 0, 0)
+                BorderStyle: =BorderStyle.None
+                BorderThickness: =1
+                Color: =RGBA(51, 51, 51, 1)
+                DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                DisabledColor: =RGBA(166, 166, 166, 1)
+                FocusedBorderThickness: =1
+                Font: =Font.'Segoe UI'
+                Height: =32
+                PaddingLeft: =0
+                Size: =11
+                Text: ="Equipment improvement"
+                Width: =Parent.Width * 0.2
+                X: =lblP2CAIControlItem.X
+                Y: =rtxP1CAIComment.Y + rtxP1CAIComment.Height + 10
+                ZIndex: =12
+
+            lblP2CAIImplementationDate As label:
+                Align: =Align.Center
+                BorderColor: =RGBA(0, 0, 0, 0)
+                BorderStyle: =BorderStyle.None
+                BorderThickness: =1
+                Color: =RGBA(51, 51, 51, 1)
+                DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                DisabledColor: =RGBA(166, 166, 166, 1)
+                FocusedBorderThickness: =1
+                Font: =Font.'Segoe UI'
+                Height: =32
+                PaddingLeft: =0
+                Size: =11
+                Text: ="Implementation Date"
+                Width: =Parent.Width * 0.15
+                X: =rdbP2CAIEquipmentImprovement.X + rdbP2CAIEquipmentImprovement.Width
+                Y: =lblP2CAIEquipmentImprovement.Y
+                ZIndex: =13
+
+            rdbP2CAIEquipmentImprovement As radio:
+                BorderColor: =RGBA(51, 51, 51, 1)
+                BorderStyle: =BorderStyle.None
+                BorderThickness: =1
+                Color: =RGBA(0, 84, 148, 1)
+                Default: =ThisItem.'Process1 CA Internal Equipment Improvement'
+                DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                DisabledColor: =RGBA(166, 166, 166, 1)
+                FocusedBorderThickness: =1
+                Font: =Font.'Segoe UI'
+                FontWeight: =FontWeight.Semibold
+                Height: =ddlSite.Height
+                HoverColor: =RGBA(51, 51, 51, 1)
+                HoverFill: =RGBA(0, 0, 0, 0)
+                Items: =Split(LookUp(選択肢マスター, 項目="Equipment improvement").選択肢, Char(10))
+                Layout: =Layout.Horizontal
+                PaddingBottom: =5
+                PaddingTop: =5
+                PressedColor: =RGBA(51, 51, 51, 1)
+                PressedFill: =RGBA(0, 0, 0, 0)
+                RadioBorderColor: =RGBA(51, 51, 51, 1)
+                RadioSelectionFill: =RGBA(0, 120, 212, 1)
+                RadioSize: =18
+                Size: =11
+                Width: =Parent.Width * 0.2
+                X: =lblP2CAIEquipmentImprovement.X + lblP2CAIEquipmentImprovement.Width
+                Y: =lblP2CAIEquipmentImprovement.Y
+                ZIndex: =14
+
+            datP2CAIImplementationDate As datepicker:
+                BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                BorderThickness: =1
+                CalendarHeaderFill: =ColorFade(RGBA(0, 120, 212, 1), -30%)
+                Color: =RGBA(51, 51, 51, 1)
+                DefaultDate: =ThisItem.'Process1 CA Internal Implementation Date'
+                DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                DisabledColor: =RGBA(166, 166, 166, 1)
+                DisabledFill: =RGBA(244, 244, 244, 1)
+                DisplayMode: =Parent.DisplayMode
+                EndYear: =Year(Today())+100
+                FocusedBorderThickness: =1
+                Font: =Font.'Segoe UI'
+                Height: =32
+                HoverDateFill: =RGBA(200, 200, 200, 1)
+                IconBackground: =RGBA(0, 120, 212, 1)
+                IsEditable: =true
+                PaddingBottom: =0
+                PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
+                SelectedDateFill: =RGBA(0, 120, 212, 1)
+                Size: =11
+                StartYear: =1899
+                Tooltip: =Parent.DisplayName
+                Width: =(Parent.Width - 60) * 0.2
+                X: =lblP2CAIImplementationDate.X + lblP2CAIImplementationDate.Width
+                Y: =lblP2CAIEquipmentImprovement.Y
+                ZIndex: =15
+
+            WarningMessageP22 As label:
+                AutoHeight: =true
+                BorderColor: =RGBA(0, 0, 0, 0)
+                BorderStyle: =BorderStyle.None
+                BorderThickness: =1
+                Color: =RGBA(54, 176, 75, 1)
+                DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                DisabledColor: |-
+                    =//RGBA(168, 0, 0, 1)
+                    Self.Color
+                FocusedBorderThickness: =1
+                Font: =Font.'Segoe UI'
+                FontWeight: =FontWeight.Semibold
+                Height: =10
+                Live: =Live.Assertive
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Size: =11
+                Text: ="　※ Please input 50 characters or less "
+                Visible: =Parent.DisplayMode<>DisplayMode.View
+                Width: |-
+                    =//  Parent.Width - 60
+                    txtP2CAIControlItem.Width
+                X: =txtP2CAIControlItem.X
+                Y: =txtP2CAIControlItem.Y + txtP2CAIControlItem.Height
+                ZIndex: =16
+
+            WarningMessageP23 As label:
+                AutoHeight: =true
+                BorderColor: =RGBA(0, 0, 0, 0)
+                BorderStyle: =BorderStyle.None
+                BorderThickness: =1
+                Color: =RGBA(54, 176, 75, 1)
+                DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                DisabledColor: |-
+                    =//RGBA(168, 0, 0, 1)
+                    Self.Color
+                FocusedBorderThickness: =1
+                Font: =Font.'Segoe UI'
+                FontWeight: =FontWeight.Semibold
+                Height: =10
+                Live: =Live.Assertive
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Size: =11
+                Text: ="　※ Please input 50 characters or less "
+                Visible: =Parent.DisplayMode<>DisplayMode.View
+                Width: |-
+                    =//  Parent.Width - 60
+                    txtP2CAIControlItem.Width
+                X: =txtP2CAISpec.X
+                Y: =txtP2CAISpec.Y + txtP2CAISpec.Height
+                ZIndex: =17
+
+            lblP2CACustomer As label:
+                Align: =Align.Center
+                BorderColor: =RGBA(246, 88, 16, 1)
+                BorderThickness: =1
+                Color: =RGBA(51, 51, 51, 1)
+                DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                DisabledColor: =RGBA(166, 166, 166, 1)
+                Fill: =RGBA(253, 222, 207, 1)
+                FocusedBorderThickness: =1
+                Font: =Font.'Segoe UI'
+                Height: =(lblP2RCProcess.Height) * 3 + rtxP1RCComment.Height + 30 + 36
+                PaddingLeft: =0
+                Size: =10.5
+                Text: |-
+                    ="CA
+                    (Customer)"
+                Width: =50
+                Y: =lblP2CAInternal.Y + lblP2CAInternal.Height
+                ZIndex: =18
+
+            lblP2CACControlItem As label:
+                Align: =Align.Center
+                BorderColor: =RGBA(0, 0, 0, 0)
+                BorderStyle: =BorderStyle.None
+                BorderThickness: =1
+                Color: =RGBA(51, 51, 51, 1)
+                DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                DisabledColor: =RGBA(166, 166, 166, 1)
+                FocusedBorderThickness: =1
+                Font: =Font.'Segoe UI'
+                Height: =32
+                PaddingLeft: =0
+                Size: =11
+                Text: ="Control item"
+                Width: =Parent.Width * 0.1
+                X: =lblP2CACustomer.Width
+                Y: =lblP2CACustomer.Y + 10
+                ZIndex: =19
+
+            txtP2CACControlItem As text:
+                BorderColor: =RGBA(166, 166, 166, 1)
+                Color: =RGBA(51, 51, 51, 1)
+                Default: =ThisItem.'Process1 CA Internal Control Item'
+                DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                DisabledColor: =RGBA(166, 166, 166, 1)
+                DisabledFill: =RGBA(244, 244, 244, 1)
+                FocusedBorderThickness: =1
+                Font: =Font.'Segoe UI'
+                Height: =32
+                HoverBorderColor: =ColorFade(RGBA(0, 120, 212, 1), -30%)
+                HoverColor: =RGBA(51, 51, 51, 1)
+                HoverFill: =RGBA(255, 255, 255, 1)
+                PressedBorderColor: =RGBA(0, 120, 212, 1)
+                PressedColor: =RGBA(51, 51, 51, 1)
+                PressedFill: =RGBA(255, 255, 255, 1)
+                RadiusBottomLeft: =0
+                RadiusBottomRight: =0
+                RadiusTopLeft: =0
+                RadiusTopRight: =0
+                Size: =11
+                Tooltip: ="※ Please input 50 characters or less "
+                Width: =Parent.Width * 0.84
+                X: =lblP2CACControlItem.X + lblP2CACControlItem.Width
+                Y: =lblP2CACControlItem.Y
+                ZIndex: =20
+
+            lblP2CACSpec As label:
+                Align: =Align.Center
+                BorderColor: =RGBA(0, 0, 0, 0)
+                BorderStyle: =BorderStyle.None
+                BorderThickness: =1
+                Color: =RGBA(51, 51, 51, 1)
+                DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                DisabledColor: =RGBA(166, 166, 166, 1)
+                FocusedBorderThickness: =1
+                Font: =Font.'Segoe UI'
+                Height: =32
+                PaddingLeft: =0
+                Size: =11
+                Text: ="Spec/Control"
+                Width: =Parent.Width * 0.1
+                X: =lblP2CACControlItem.X
+                Y: =lblP2CACControlItem.Y + lblP2CACControlItem.Height + WarningMessageP24.Height
+                ZIndex: =21
+
+            txtP2CACSpec As text:
+                BorderColor: =RGBA(166, 166, 166, 1)
+                Color: =RGBA(51, 51, 51, 1)
+                Default: =ThisItem.'Process1 CA Internal Spec/Control'
+                DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                DisabledColor: =RGBA(166, 166, 166, 1)
+                DisabledFill: =RGBA(244, 244, 244, 1)
+                FocusedBorderThickness: =1
+                Font: =Font.'Segoe UI'
+                Height: =32
+                HoverBorderColor: =ColorFade(RGBA(0, 120, 212, 1), -30%)
+                HoverColor: =RGBA(51, 51, 51, 1)
+                HoverFill: =RGBA(255, 255, 255, 1)
+                PressedBorderColor: =RGBA(0, 120, 212, 1)
+                PressedColor: =RGBA(51, 51, 51, 1)
+                PressedFill: =RGBA(255, 255, 255, 1)
+                RadiusBottomLeft: =0
+                RadiusBottomRight: =0
+                RadiusTopLeft: =0
+                RadiusTopRight: =0
+                Size: =11
+                Tooltip: ="※ Please input 50 characters or less "
+                Width: =Parent.Width * 0.84
+                X: =lblP2CACSpec.X + lblP2CACSpec.Width
+                Y: =lblP2CACSpec.Y
+                ZIndex: =22
+
+            lblP2CACImplementationDate As label:
+                Align: =Align.Center
+                BorderColor: =RGBA(0, 0, 0, 0)
+                BorderStyle: =BorderStyle.None
+                BorderThickness: =1
+                Color: =RGBA(51, 51, 51, 1)
+                DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                DisabledColor: =RGBA(166, 166, 166, 1)
+                FocusedBorderThickness: =1
+                Font: =Font.'Segoe UI'
+                Height: =32
+                PaddingLeft: =0
+                Size: =11
+                Text: ="Implementation Date"
+                Width: =Parent.Width * 0.15
+                X: =lblP2CACControlItem.X
+                Y: =rtxP1CACComment.Y + rtxP1CACComment.Height + 10
+                ZIndex: =23
+
+            datP2CACImplementationDate As datepicker:
+                BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                BorderThickness: =1
+                CalendarHeaderFill: =ColorFade(RGBA(0, 120, 212, 1), -30%)
+                Color: =RGBA(51, 51, 51, 1)
+                DefaultDate: =ThisItem.'Process1 CA Internal Implementation Date'
+                DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                DisabledColor: =RGBA(166, 166, 166, 1)
+                DisabledFill: =RGBA(244, 244, 244, 1)
+                DisplayMode: =Parent.DisplayMode
+                EndYear: =Year(Today())+100
+                FocusedBorderThickness: =1
+                Font: =Font.'Segoe UI'
+                Height: =32
+                HoverDateFill: =RGBA(200, 200, 200, 1)
+                IconBackground: =RGBA(0, 120, 212, 1)
+                IsEditable: =true
+                PaddingBottom: =0
+                PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
+                SelectedDateFill: =RGBA(0, 120, 212, 1)
+                Size: =11
+                StartYear: =1899
+                Tooltip: =Parent.DisplayName
+                Width: =(Parent.Width - 60) * 0.2
+                X: =lblP2CACImplementationDate.X + lblP2CACImplementationDate.Width
+                Y: =lblP2CACImplementationDate.Y
+                ZIndex: =24
+
+            WarningMessageP24 As label:
+                AutoHeight: =true
+                BorderColor: =RGBA(0, 0, 0, 0)
+                BorderStyle: =BorderStyle.None
+                BorderThickness: =1
+                Color: =RGBA(54, 176, 75, 1)
+                DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                DisabledColor: |-
+                    =//RGBA(168, 0, 0, 1)
+                    Self.Color
+                FocusedBorderThickness: =1
+                Font: =Font.'Segoe UI'
+                FontWeight: =FontWeight.Semibold
+                Height: =10
+                Live: =Live.Assertive
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Size: =11
+                Text: ="　※ Please input 50 characters or less "
+                Visible: =Parent.DisplayMode<>DisplayMode.View
+                Width: |-
+                    =//  Parent.Width - 60
+                    txtP2CACControlItem.Width
+                X: =169
+                Y: =txtP2CACControlItem.Y + txtP2CACControlItem.Height
+                ZIndex: =25
+
+            WarningMessageP25 As label:
+                AutoHeight: =true
+                BorderColor: =RGBA(0, 0, 0, 0)
+                BorderStyle: =BorderStyle.None
+                BorderThickness: =1
+                Color: =RGBA(54, 176, 75, 1)
+                DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                DisabledColor: |-
+                    =//RGBA(168, 0, 0, 1)
+                    Self.Color
+                FocusedBorderThickness: =1
+                Font: =Font.'Segoe UI'
+                FontWeight: =FontWeight.Semibold
+                Height: =10
+                Live: =Live.Assertive
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Size: =11
+                Text: ="　※ Please input 50 characters or less "
+                Visible: =Parent.DisplayMode<>DisplayMode.View
+                Width: |-
+                    =//  Parent.Width - 60
+                    txtP2CACControlItem.Width
+                X: =169
+                Y: =txtP2CACSpec.Y + txtP2CACSpec.Height
+                ZIndex: =26
+
+            P2Rectangle2 As rectangle:
+                BorderColor: =RGBA(246, 88, 16, 1)
+                BorderThickness: =1
+                DisabledFill: =RGBA(0, 0, 0, 0)
+                Fill: =RGBA(0, 0, 0, 0)
+                FocusedBorderThickness: =1
+                Height: =1
+                HoverFill: =RGBA(0, 0, 0, 0)
+                PressedFill: =RGBA(0, 0, 0, 0)
+                Width: =P2Rectangle1.Width
+                X: =lblP2CAInternal.X
+                Y: =lblP2CAInternal.Y
+                ZIndex: =27
+
+            P2Rectangle3 As rectangle:
+                BorderColor: =RGBA(246, 88, 16, 1)
+                BorderThickness: =1
+                DisabledFill: =RGBA(166, 166, 166, 1)
+                Fill: =RGBA(0, 0, 0, 0)
+                FocusedBorderThickness: =1
+                Height: =1
+                HoverFill: =RGBA(0, 120, 212, 1)
+                PressedFill: =RGBA(0, 120, 212, 1)
+                Width: =P2Rectangle1.Width
+                X: =lblP2CACustomer.X
+                Y: =lblP2CACustomer.Y
+                ZIndex: =28
+
+            P2Rectangle1 As rectangle:
+                BorderColor: =RGBA(246, 88, 16, 1)
+                BorderThickness: =1
+                DisabledFill: =RGBA(0, 0, 0, 0)
+                DisplayMode: =DisplayMode.View
+                Fill: =RGBA(0, 0, 0, 0)
+                FocusedBorderThickness: =1
+                Height: =1
+                HoverFill: =RGBA(0, 0, 0, 0)
+                PressedFill: =RGBA(0, 0, 0, 0)
+                Width: =Parent.Width
+                X: =lblP2Rootcause.X
+                Y: =lblP2Rootcause.Y
+                ZIndex: =29
+
         Process1_DataCard As typedDataCard.blankCard:
             BorderColor: =RGBA(246, 88, 16, 1)
             BorderStyle: =BorderStyle.Solid
@@ -1171,7 +1837,7 @@
                 Text: ="Spec/Control"
                 Width: =Parent.Width * 0.1
                 X: =lblP1CAIControlItem.X
-                Y: =lblP1CAIControlItem.Y + lblP1CAIControlItem.Height + WarningMessage2.Height + 10
+                Y: =lblP1CAIControlItem.Y + lblP1CAIControlItem.Height + WarningMessageP12.Height + 10
                 ZIndex: =11
 
             txtP1CAISpec As text:
@@ -1207,7 +1873,7 @@
                 Height: =rtxP1RCComment.Height
                 Width: =rtxP1RCComment.Width
                 X: =lblP1CAIControlItem.X
-                Y: =lblP1CAISpec.Y + lblP1CAISpec.Height + WarningMessage3.Height + 10
+                Y: =lblP1CAISpec.Y + lblP1CAISpec.Height + WarningMessageP13.Height + 10
                 ZIndex: =13
 
             lblP1CAIEquipmentImprovement As label:
@@ -1305,7 +1971,7 @@
                 Y: =lblP1CAIEquipmentImprovement.Y
                 ZIndex: =17
 
-            WarningMessage2 As label:
+            WarningMessageP12 As label:
                 AutoHeight: =true
                 BorderColor: =RGBA(0, 0, 0, 0)
                 BorderStyle: =BorderStyle.None
@@ -1334,7 +2000,7 @@
                 Y: =txtP1CAIControlItem.Y + txtP1CAIControlItem.Height
                 ZIndex: =18
 
-            WarningMessage3 As label:
+            WarningMessageP13 As label:
                 AutoHeight: =true
                 BorderColor: =RGBA(0, 0, 0, 0)
                 BorderStyle: =BorderStyle.None
@@ -1445,7 +2111,7 @@
                 Text: ="Spec/Control"
                 Width: =Parent.Width * 0.1
                 X: =lblP1CACControlItem.X
-                Y: =lblP1CACControlItem.Y + lblP1CACControlItem.Height + WarningMessage4.Height
+                Y: =lblP1CACControlItem.Y + lblP1CACControlItem.Height + WarningMessageP14.Height
                 ZIndex: =23
 
             txtP1CACSpec As text:
@@ -1522,7 +2188,7 @@
                 Y: =lblP1CACImplementationDate.Y
                 ZIndex: =26
 
-            WarningMessage4 As label:
+            WarningMessageP14 As label:
                 AutoHeight: =true
                 BorderColor: =RGBA(0, 0, 0, 0)
                 BorderStyle: =BorderStyle.None
@@ -1551,7 +2217,7 @@
                 Y: =txtP1CACControlItem.Y + txtP1CACControlItem.Height
                 ZIndex: =27
 
-            WarningMessage5 As label:
+            WarningMessageP15 As label:
                 AutoHeight: =true
                 BorderColor: =RGBA(0, 0, 0, 0)
                 BorderStyle: =BorderStyle.None
@@ -1586,7 +2252,7 @@
                 Height: =rtxP1RCComment.Height
                 Width: =rtxP1RCComment.Width
                 X: =lblP1CACControlItem.X
-                Y: =lblP1CACSpec.Y + lblP1CACSpec.Height + WarningMessage5.Height
+                Y: =lblP1CACSpec.Y + lblP1CACSpec.Height + WarningMessageP15.Height
                 ZIndex: =29
 
             P1Rectangle2 As rectangle:
@@ -1632,672 +2298,6 @@
                 Y: =lblP1Rootcause.Y
                 ZIndex: =32
 
-        Process2_DataCard As typedDataCard.blankCard:
-            BorderColor: =RGBA(166, 166, 166, 1)
-            BorderStyle: =BorderStyle.Solid
-            DisplayMode: =DisplayMode.Edit
-            Fill: =RGBA(0, 0, 0, 0)
-            Height: =100
-            Width: =1184
-            X: =0
-            Y: =8
-            ZIndex: =1
-
-            lblP2RCProcess As label:
-                Align: =Align.Center
-                BorderColor: =RGBA(0, 0, 0, 0)
-                BorderStyle: =BorderStyle.None
-                BorderThickness: =1
-                Color: =RGBA(51, 51, 51, 1)
-                DisabledBorderColor: =RGBA(0, 0, 0, 0)
-                DisabledColor: =RGBA(166, 166, 166, 1)
-                FocusedBorderThickness: =1
-                Font: =Font.'Segoe UI'
-                Height: =32
-                PaddingLeft: =0
-                Size: =10.5
-                Text: ="Process"
-                Width: =Parent.Width * 0.1
-                X: =lblP2Rootcause.X + lblP2Rootcause.Width
-                Y: =10
-                ZIndex: =2
-
-            lblP2Rootcause As label:
-                Align: =Align.Center
-                BorderColor: =RGBA(246, 88, 16, 1)
-                BorderThickness: =1
-                Color: =RGBA(51, 51, 51, 1)
-                DisabledBorderColor: =RGBA(0, 0, 0, 0)
-                DisabledColor: =RGBA(166, 166, 166, 1)
-                Fill: =RGBA(253, 222, 207, 1)
-                FocusedBorderThickness: =1
-                Font: =Font.'Segoe UI'
-                Height: =lblP2RCProcess.Height + rtxP1RCComment.Height + 20
-                PaddingLeft: =0
-                Size: =10.5
-                Text: |-
-                    ="Root
-                    Cause"
-                Width: =50
-                ZIndex: =3
-
-            ddlP2RCProcess As dropdown:
-                BorderColor: =RGBA(166, 166, 166, 1)
-                BorderThickness: =1
-                ChevronBackground: =RGBA(255, 255, 255, 1)
-                ChevronDisabledBackground: =RGBA(244, 244, 244, 1)
-                ChevronDisabledFill: =RGBA(166, 166, 166, 1)
-                ChevronFill: =RGBA(33, 33, 33, 1)
-                ChevronHoverBackground: =RGBA(212, 212, 212, 1)
-                ChevronHoverFill: =RGBA(33, 33, 33, 1)
-                Color: =RGBA(0, 84, 148, 1)
-                Default: =ThisItem.Customer
-                DisabledBorderColor: =RGBA(0, 0, 0, 0)
-                DisabledColor: =RGBA(166, 166, 166, 1)
-                DisabledFill: =RGBA(244, 244, 244, 1)
-                FocusedBorderThickness: =1
-                Font: =Font.'Segoe UI'
-                FontWeight: =FontWeight.Semibold
-                Height: =32
-                HoverBorderColor: =ColorFade(RGBA(0, 120, 212, 1), -30%)
-                HoverColor: =RGBA(51, 51, 51, 1)
-                HoverFill: =RGBA(212, 212, 212, 1)
-                Items: =Filter('Actual Cause Master', 区分.Value=rdbClaimDescriptionType.Selected.Value).Title
-                PaddingBottom: =5
-                PaddingLeft: =12
-                PaddingRight: =5
-                PaddingTop: =5
-                PressedBorderColor: =ColorFade(RGBA(0, 120, 212, 1), -30%)
-                PressedColor: =RGBA(255, 255, 255, 1)
-                PressedFill: =RGBA(0, 120, 212, 1)
-                SelectionFill: =RGBA(0, 120, 212, 1)
-                Size: =12
-                Width: =180
-                X: =DataCardKey10_1.X + DataCardKey10_1.Width
-                Y: =lblP2RCProcess.Y
-                ZIndex: =4
-
-            lblP2RCActualCause As label:
-                Align: =Align.Center
-                BorderColor: =RGBA(0, 0, 0, 0)
-                BorderStyle: =BorderStyle.None
-                BorderThickness: =1
-                Color: =RGBA(51, 51, 51, 1)
-                DisabledBorderColor: =RGBA(0, 0, 0, 0)
-                DisabledColor: =RGBA(166, 166, 166, 1)
-                FocusedBorderThickness: =1
-                Font: =Font.'Segoe UI'
-                Height: =31
-                PaddingLeft: =0
-                Size: =10.5
-                Text: ="Actual cause"
-                Width: =Parent.Width * 0.1
-                X: =ddlP2RCProcess.X + ddlP2RCProcess.Width
-                Y: =lblP2RCProcess.Y
-                ZIndex: =5
-
-            cmbP2RCActualCause As combobox:
-                BorderColor: =RGBA(166, 166, 166, 1)
-                BorderThickness: =1
-                ChevronBackground: =RGBA(255, 255, 255, 1)
-                ChevronDisabledBackground: =RGBA(244, 244, 244, 1)
-                ChevronDisabledFill: =RGBA(166, 166, 166, 1)
-                ChevronFill: =RGBA(33, 33, 33, 1)
-                ChevronHoverBackground: =RGBA(212, 212, 212, 1)
-                ChevronHoverFill: =RGBA(33, 33, 33, 1)
-                Color: =RGBA(51, 51, 51, 1)
-                DefaultSelectedItems: |-
-                    ={Value:ThisItem.'Media Program'}
-                DisabledBorderColor: =RGBA(0, 0, 0, 0)
-                DisabledColor: =RGBA(166, 166, 166, 1)
-                DisabledFill: =RGBA(244, 244, 244, 1)
-                DisplayFields: =["Value"]
-                FocusedBorderThickness: =1
-                Font: =Font.'Segoe UI'
-                Height: =32
-                HoverBorderColor: =ColorFade(RGBA(0, 120, 212, 1), -30%)
-                HoverColor: =RGBA(51, 51, 51, 1)
-                HoverFill: =RGBA(212, 212, 212, 1)
-                InputTextPlaceholder: =
-                Items: =Split(LookUp('Actual Cause Master', 区分.Value=rdbClaimDescriptionType.Selected.Value && Process=ddlP2RCProcess.Selected.Process).'Actual Cause', Char(10))
-                PressedBorderColor: =ColorFade(RGBA(0, 120, 212, 1), -30%)
-                PressedColor: =RGBA(255, 255, 255, 1)
-                PressedFill: =RGBA(0, 120, 212, 1)
-                SearchFields: =["Value"]
-                SearchItems: =Search(Split(LookUp('Actual Cause Master', 区分.Value=rdbClaimDescriptionType.Selected.Value && Process=ddlP2RCProcess.Selected.Process).'Actual Cause', Char(10)),cmbP2RCActualCause.SearchText,"Value")
-                SelectionFill: =RGBA(0, 120, 212, 1)
-                Width: =Parent.Width * 0.59
-                X: =lblP2RCActualCause.X + lblP2RCActualCause.Width
-                Y: =lblP2RCProcess.Y
-                ZIndex: =6
-
-            lblP2CAInternal As label:
-                Align: =Align.Center
-                BorderColor: =RGBA(246, 88, 16, 1)
-                BorderThickness: =1
-                Color: =RGBA(51, 51, 51, 1)
-                DisabledBorderColor: =RGBA(0, 0, 0, 0)
-                DisabledColor: =RGBA(166, 166, 166, 1)
-                Fill: =RGBA(253, 222, 207, 1)
-                FocusedBorderThickness: =1
-                Font: =Font.'Segoe UI'
-                Height: =(lblP2RCProcess.Height) * 3 + rtxP1RCComment.Height + 50 + 36
-                PaddingLeft: =0
-                Size: =10.5
-                Text: |-
-                    ="CA
-                    (inter
-                    nal)"
-                Width: =50
-                X: =lblP2Rootcause.X
-                Y: =lblP2Rootcause.Y + lblP2Rootcause.Height
-                ZIndex: =7
-
-            lblP2CAIControlItem As label:
-                Align: =Align.Center
-                BorderColor: =RGBA(0, 0, 0, 0)
-                BorderStyle: =BorderStyle.None
-                BorderThickness: =1
-                Color: =RGBA(51, 51, 51, 1)
-                DisabledBorderColor: =RGBA(0, 0, 0, 0)
-                DisabledColor: =RGBA(166, 166, 166, 1)
-                FocusedBorderThickness: =1
-                Font: =Font.'Segoe UI'
-                Height: =32
-                PaddingLeft: =0
-                Size: =11
-                Text: ="Control item"
-                Width: =Parent.Width * 0.1
-                X: =lblP2CAInternal.X + lblP2CAInternal.Width
-                Y: =lblP2CAInternal.Y + 10
-                ZIndex: =8
-
-            txtP2CAIControlItem As text:
-                BorderColor: =RGBA(166, 166, 166, 1)
-                Color: =RGBA(51, 51, 51, 1)
-                Default: =ThisItem.'Process1 CA Internal Control Item'
-                DisabledBorderColor: =RGBA(0, 0, 0, 0)
-                DisabledColor: =RGBA(166, 166, 166, 1)
-                DisabledFill: =RGBA(244, 244, 244, 1)
-                FocusedBorderThickness: =1
-                Font: =Font.'Segoe UI'
-                Height: =32
-                HoverBorderColor: =ColorFade(RGBA(0, 120, 212, 1), -30%)
-                HoverColor: =RGBA(51, 51, 51, 1)
-                HoverFill: =RGBA(255, 255, 255, 1)
-                PressedBorderColor: =RGBA(0, 120, 212, 1)
-                PressedColor: =RGBA(51, 51, 51, 1)
-                PressedFill: =RGBA(255, 255, 255, 1)
-                RadiusBottomLeft: =0
-                RadiusBottomRight: =0
-                RadiusTopLeft: =0
-                RadiusTopRight: =0
-                Size: =11
-                Tooltip: ="※ Please input 50 characters or less "
-                Width: =Parent.Width * 0.84
-                X: =lblP2CAIControlItem.X + lblP2CAIControlItem.Width
-                Y: =lblP2CAIControlItem.Y
-                ZIndex: =9
-
-            lblP2CAISpec As label:
-                Align: =Align.Center
-                BorderColor: =RGBA(0, 0, 0, 0)
-                BorderStyle: =BorderStyle.None
-                BorderThickness: =1
-                Color: =RGBA(51, 51, 51, 1)
-                DisabledBorderColor: =RGBA(0, 0, 0, 0)
-                DisabledColor: =RGBA(166, 166, 166, 1)
-                FocusedBorderThickness: =1
-                Font: =Font.'Segoe UI'
-                Height: =32
-                PaddingLeft: =0
-                Size: =11
-                Text: ="Spec/Control"
-                Width: =Parent.Width * 0.1
-                X: =lblP2CAIControlItem.X
-                Y: =lblP2CAIControlItem.Y + lblP2CAIControlItem.Height + WarningMessage2_1.Height + 10
-                ZIndex: =10
-
-            txtP2CAISpec As text:
-                BorderColor: =RGBA(166, 166, 166, 1)
-                Color: =RGBA(51, 51, 51, 1)
-                Default: =ThisItem.'Process1 CA Internal Spec/Control'
-                DisabledBorderColor: =RGBA(0, 0, 0, 0)
-                DisabledColor: =RGBA(166, 166, 166, 1)
-                DisabledFill: =RGBA(244, 244, 244, 1)
-                FocusedBorderThickness: =1
-                Font: =Font.'Segoe UI'
-                Height: =32
-                HoverBorderColor: =ColorFade(RGBA(0, 120, 212, 1), -30%)
-                HoverColor: =RGBA(51, 51, 51, 1)
-                HoverFill: =RGBA(255, 255, 255, 1)
-                PressedBorderColor: =RGBA(0, 120, 212, 1)
-                PressedColor: =RGBA(51, 51, 51, 1)
-                PressedFill: =RGBA(255, 255, 255, 1)
-                RadiusBottomLeft: =0
-                RadiusBottomRight: =0
-                RadiusTopLeft: =0
-                RadiusTopRight: =0
-                Size: =11
-                Tooltip: ="※ Please input 50 characters or less "
-                Width: =Parent.Width * 0.84
-                X: =lblP2CAISpec.X + lblP2CAISpec.Width
-                Y: =lblP2CAISpec.Y
-                ZIndex: =11
-
-            lblP1CAIEquipmentImprovement_1 As label:
-                Align: =Align.Center
-                BorderColor: =RGBA(0, 0, 0, 0)
-                BorderStyle: =BorderStyle.None
-                BorderThickness: =1
-                Color: =RGBA(51, 51, 51, 1)
-                DisabledBorderColor: =RGBA(0, 0, 0, 0)
-                DisabledColor: =RGBA(166, 166, 166, 1)
-                FocusedBorderThickness: =1
-                Font: =Font.'Segoe UI'
-                Height: =32
-                PaddingLeft: =0
-                Size: =11
-                Text: ="Equipment improvement"
-                Width: =Parent.Width * 0.2
-                X: =lblP2CAIControlItem.X
-                Y: =rtxP1CAIComment.Y + rtxP1CAIComment.Height + 10
-                ZIndex: =12
-
-            lblP1CAIImplementationDate_1 As label:
-                Align: =Align.Center
-                BorderColor: =RGBA(0, 0, 0, 0)
-                BorderStyle: =BorderStyle.None
-                BorderThickness: =1
-                Color: =RGBA(51, 51, 51, 1)
-                DisabledBorderColor: =RGBA(0, 0, 0, 0)
-                DisabledColor: =RGBA(166, 166, 166, 1)
-                FocusedBorderThickness: =1
-                Font: =Font.'Segoe UI'
-                Height: =32
-                PaddingLeft: =0
-                Size: =11
-                Text: ="Implementation Date"
-                Width: =Parent.Width * 0.15
-                X: =rdbP1CAIEquipmentImprovement_1.X + rdbP1CAIEquipmentImprovement_1.Width
-                Y: =lblP1CAIEquipmentImprovement_1.Y
-                ZIndex: =13
-
-            rdbP1CAIEquipmentImprovement_1 As radio:
-                BorderColor: =RGBA(51, 51, 51, 1)
-                BorderStyle: =BorderStyle.None
-                BorderThickness: =1
-                Color: =RGBA(0, 84, 148, 1)
-                Default: =ThisItem.'Process1 CA Internal Equipment Improvement'
-                DisabledBorderColor: =RGBA(0, 0, 0, 0)
-                DisabledColor: =RGBA(166, 166, 166, 1)
-                FocusedBorderThickness: =1
-                Font: =Font.'Segoe UI'
-                FontWeight: =FontWeight.Semibold
-                Height: =ddlSite.Height
-                HoverColor: =RGBA(51, 51, 51, 1)
-                HoverFill: =RGBA(0, 0, 0, 0)
-                Items: =Split(LookUp(選択肢マスター, 項目="Equipment improvement").選択肢, Char(10))
-                Layout: =Layout.Horizontal
-                PaddingBottom: =5
-                PaddingTop: =5
-                PressedColor: =RGBA(51, 51, 51, 1)
-                PressedFill: =RGBA(0, 0, 0, 0)
-                RadioBorderColor: =RGBA(51, 51, 51, 1)
-                RadioSelectionFill: =RGBA(0, 120, 212, 1)
-                RadioSize: =18
-                Size: =11
-                Width: =Parent.Width * 0.2
-                X: =lblP1CAIEquipmentImprovement_1.X + lblP1CAIEquipmentImprovement_1.Width
-                Y: =lblP1CAIEquipmentImprovement_1.Y
-                ZIndex: =14
-
-            datP1CAIImplementationDate_1 As datepicker:
-                BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
-                BorderThickness: =1
-                CalendarHeaderFill: =ColorFade(RGBA(0, 120, 212, 1), -30%)
-                Color: =RGBA(51, 51, 51, 1)
-                DefaultDate: =ThisItem.'Process1 CA Internal Implementation Date'
-                DisabledBorderColor: =RGBA(0, 0, 0, 0)
-                DisabledColor: =RGBA(166, 166, 166, 1)
-                DisabledFill: =RGBA(244, 244, 244, 1)
-                DisplayMode: =Parent.DisplayMode
-                EndYear: =Year(Today())+100
-                FocusedBorderThickness: =1
-                Font: =Font.'Segoe UI'
-                Height: =32
-                HoverDateFill: =RGBA(200, 200, 200, 1)
-                IconBackground: =RGBA(0, 120, 212, 1)
-                IsEditable: =true
-                PaddingBottom: =0
-                PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
-                SelectedDateFill: =RGBA(0, 120, 212, 1)
-                Size: =11
-                StartYear: =1899
-                Tooltip: =Parent.DisplayName
-                Width: =(Parent.Width - 60) * 0.2
-                X: =lblP1CAIImplementationDate_1.X + lblP1CAIImplementationDate_1.Width
-                Y: =lblP1CAIEquipmentImprovement_1.Y
-                ZIndex: =15
-
-            WarningMessage2_1 As label:
-                AutoHeight: =true
-                BorderColor: =RGBA(0, 0, 0, 0)
-                BorderStyle: =BorderStyle.None
-                BorderThickness: =1
-                Color: =RGBA(54, 176, 75, 1)
-                DisabledBorderColor: =RGBA(0, 0, 0, 0)
-                DisabledColor: |-
-                    =//RGBA(168, 0, 0, 1)
-                    Self.Color
-                FocusedBorderThickness: =1
-                Font: =Font.'Segoe UI'
-                FontWeight: =FontWeight.Semibold
-                Height: =10
-                Live: =Live.Assertive
-                PaddingBottom: =0
-                PaddingLeft: =0
-                PaddingRight: =0
-                PaddingTop: =0
-                Size: =11
-                Text: ="　※ Please input 50 characters or less "
-                Visible: =Parent.DisplayMode<>DisplayMode.View
-                Width: |-
-                    =//  Parent.Width - 60
-                    txtP2CAIControlItem.Width
-                X: =txtP2CAIControlItem.X
-                Y: =txtP2CAIControlItem.Y + txtP2CAIControlItem.Height
-                ZIndex: =16
-
-            WarningMessage3_1 As label:
-                AutoHeight: =true
-                BorderColor: =RGBA(0, 0, 0, 0)
-                BorderStyle: =BorderStyle.None
-                BorderThickness: =1
-                Color: =RGBA(54, 176, 75, 1)
-                DisabledBorderColor: =RGBA(0, 0, 0, 0)
-                DisabledColor: |-
-                    =//RGBA(168, 0, 0, 1)
-                    Self.Color
-                FocusedBorderThickness: =1
-                Font: =Font.'Segoe UI'
-                FontWeight: =FontWeight.Semibold
-                Height: =10
-                Live: =Live.Assertive
-                PaddingBottom: =0
-                PaddingLeft: =0
-                PaddingRight: =0
-                PaddingTop: =0
-                Size: =11
-                Text: ="　※ Please input 50 characters or less "
-                Visible: =Parent.DisplayMode<>DisplayMode.View
-                Width: |-
-                    =//  Parent.Width - 60
-                    txtP2CAIControlItem.Width
-                X: =txtP2CAISpec.X
-                Y: =txtP2CAISpec.Y + txtP2CAISpec.Height
-                ZIndex: =17
-
-            lblP1CACustomer_1 As label:
-                Align: =Align.Center
-                BorderColor: =RGBA(246, 88, 16, 1)
-                BorderThickness: =1
-                Color: =RGBA(51, 51, 51, 1)
-                DisabledBorderColor: =RGBA(0, 0, 0, 0)
-                DisabledColor: =RGBA(166, 166, 166, 1)
-                Fill: =RGBA(253, 222, 207, 1)
-                FocusedBorderThickness: =1
-                Font: =Font.'Segoe UI'
-                Height: =(lblP2RCProcess.Height) * 3 + rtxP1RCComment.Height + 30 + 36
-                PaddingLeft: =0
-                Size: =10.5
-                Text: |-
-                    ="CA
-                    (Customer)"
-                Width: =50
-                Y: =lblP2CAInternal.Y + lblP2CAInternal.Height
-                ZIndex: =18
-
-            lblP1CACControlItem_1 As label:
-                Align: =Align.Center
-                BorderColor: =RGBA(0, 0, 0, 0)
-                BorderStyle: =BorderStyle.None
-                BorderThickness: =1
-                Color: =RGBA(51, 51, 51, 1)
-                DisabledBorderColor: =RGBA(0, 0, 0, 0)
-                DisabledColor: =RGBA(166, 166, 166, 1)
-                FocusedBorderThickness: =1
-                Font: =Font.'Segoe UI'
-                Height: =32
-                PaddingLeft: =0
-                Size: =11
-                Text: ="Control item"
-                Width: =Parent.Width * 0.1
-                X: =lblP1CACustomer_1.Width
-                Y: =lblP1CACustomer_1.Y + 10
-                ZIndex: =19
-
-            txtP1CACControlItem_1 As text:
-                BorderColor: =RGBA(166, 166, 166, 1)
-                Color: =RGBA(51, 51, 51, 1)
-                Default: =ThisItem.'Process1 CA Internal Control Item'
-                DisabledBorderColor: =RGBA(0, 0, 0, 0)
-                DisabledColor: =RGBA(166, 166, 166, 1)
-                DisabledFill: =RGBA(244, 244, 244, 1)
-                FocusedBorderThickness: =1
-                Font: =Font.'Segoe UI'
-                Height: =32
-                HoverBorderColor: =ColorFade(RGBA(0, 120, 212, 1), -30%)
-                HoverColor: =RGBA(51, 51, 51, 1)
-                HoverFill: =RGBA(255, 255, 255, 1)
-                PressedBorderColor: =RGBA(0, 120, 212, 1)
-                PressedColor: =RGBA(51, 51, 51, 1)
-                PressedFill: =RGBA(255, 255, 255, 1)
-                RadiusBottomLeft: =0
-                RadiusBottomRight: =0
-                RadiusTopLeft: =0
-                RadiusTopRight: =0
-                Size: =11
-                Tooltip: ="※ Please input 50 characters or less "
-                Width: =Parent.Width * 0.84
-                X: =lblP1CACControlItem_1.X + lblP1CACControlItem_1.Width
-                Y: =lblP1CACControlItem_1.Y
-                ZIndex: =20
-
-            lblP1CACSpec_1 As label:
-                Align: =Align.Center
-                BorderColor: =RGBA(0, 0, 0, 0)
-                BorderStyle: =BorderStyle.None
-                BorderThickness: =1
-                Color: =RGBA(51, 51, 51, 1)
-                DisabledBorderColor: =RGBA(0, 0, 0, 0)
-                DisabledColor: =RGBA(166, 166, 166, 1)
-                FocusedBorderThickness: =1
-                Font: =Font.'Segoe UI'
-                Height: =32
-                PaddingLeft: =0
-                Size: =11
-                Text: ="Spec/Control"
-                Width: =Parent.Width * 0.1
-                X: =lblP1CACControlItem_1.X
-                Y: =lblP1CACControlItem_1.Y + lblP1CACControlItem_1.Height + WarningMessage4_1.Height
-                ZIndex: =21
-
-            txtP1CACSpec_1 As text:
-                BorderColor: =RGBA(166, 166, 166, 1)
-                Color: =RGBA(51, 51, 51, 1)
-                Default: =ThisItem.'Process1 CA Internal Spec/Control'
-                DisabledBorderColor: =RGBA(0, 0, 0, 0)
-                DisabledColor: =RGBA(166, 166, 166, 1)
-                DisabledFill: =RGBA(244, 244, 244, 1)
-                FocusedBorderThickness: =1
-                Font: =Font.'Segoe UI'
-                Height: =32
-                HoverBorderColor: =ColorFade(RGBA(0, 120, 212, 1), -30%)
-                HoverColor: =RGBA(51, 51, 51, 1)
-                HoverFill: =RGBA(255, 255, 255, 1)
-                PressedBorderColor: =RGBA(0, 120, 212, 1)
-                PressedColor: =RGBA(51, 51, 51, 1)
-                PressedFill: =RGBA(255, 255, 255, 1)
-                RadiusBottomLeft: =0
-                RadiusBottomRight: =0
-                RadiusTopLeft: =0
-                RadiusTopRight: =0
-                Size: =11
-                Tooltip: ="※ Please input 50 characters or less "
-                Width: =Parent.Width * 0.84
-                X: =lblP1CACSpec_1.X + lblP1CACSpec_1.Width
-                Y: =lblP1CACSpec_1.Y
-                ZIndex: =22
-
-            lblP1CACImplementationDate_1 As label:
-                Align: =Align.Center
-                BorderColor: =RGBA(0, 0, 0, 0)
-                BorderStyle: =BorderStyle.None
-                BorderThickness: =1
-                Color: =RGBA(51, 51, 51, 1)
-                DisabledBorderColor: =RGBA(0, 0, 0, 0)
-                DisabledColor: =RGBA(166, 166, 166, 1)
-                FocusedBorderThickness: =1
-                Font: =Font.'Segoe UI'
-                Height: =32
-                PaddingLeft: =0
-                Size: =11
-                Text: ="Implementation Date"
-                Width: =Parent.Width * 0.15
-                X: =lblP1CACControlItem_1.X
-                Y: =rtxP1CACComment.Y + rtxP1CACComment.Height + 10
-                ZIndex: =23
-
-            datP1CACImplementationDate_1 As datepicker:
-                BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
-                BorderThickness: =1
-                CalendarHeaderFill: =ColorFade(RGBA(0, 120, 212, 1), -30%)
-                Color: =RGBA(51, 51, 51, 1)
-                DefaultDate: =ThisItem.'Process1 CA Internal Implementation Date'
-                DisabledBorderColor: =RGBA(0, 0, 0, 0)
-                DisabledColor: =RGBA(166, 166, 166, 1)
-                DisabledFill: =RGBA(244, 244, 244, 1)
-                DisplayMode: =Parent.DisplayMode
-                EndYear: =Year(Today())+100
-                FocusedBorderThickness: =1
-                Font: =Font.'Segoe UI'
-                Height: =32
-                HoverDateFill: =RGBA(200, 200, 200, 1)
-                IconBackground: =RGBA(0, 120, 212, 1)
-                IsEditable: =true
-                PaddingBottom: =0
-                PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
-                SelectedDateFill: =RGBA(0, 120, 212, 1)
-                Size: =11
-                StartYear: =1899
-                Tooltip: =Parent.DisplayName
-                Width: =(Parent.Width - 60) * 0.2
-                X: =lblP1CACImplementationDate_1.X + lblP1CACImplementationDate_1.Width
-                Y: =lblP1CACImplementationDate_1.Y
-                ZIndex: =24
-
-            WarningMessage4_1 As label:
-                AutoHeight: =true
-                BorderColor: =RGBA(0, 0, 0, 0)
-                BorderStyle: =BorderStyle.None
-                BorderThickness: =1
-                Color: =RGBA(54, 176, 75, 1)
-                DisabledBorderColor: =RGBA(0, 0, 0, 0)
-                DisabledColor: |-
-                    =//RGBA(168, 0, 0, 1)
-                    Self.Color
-                FocusedBorderThickness: =1
-                Font: =Font.'Segoe UI'
-                FontWeight: =FontWeight.Semibold
-                Height: =10
-                Live: =Live.Assertive
-                PaddingBottom: =0
-                PaddingLeft: =0
-                PaddingRight: =0
-                PaddingTop: =0
-                Size: =11
-                Text: ="　※ Please input 50 characters or less "
-                Visible: =Parent.DisplayMode<>DisplayMode.View
-                Width: |-
-                    =//  Parent.Width - 60
-                    txtP1CACControlItem_1.Width
-                X: =169
-                Y: =txtP1CACControlItem_1.Y + txtP1CACControlItem_1.Height
-                ZIndex: =25
-
-            WarningMessage5_1 As label:
-                AutoHeight: =true
-                BorderColor: =RGBA(0, 0, 0, 0)
-                BorderStyle: =BorderStyle.None
-                BorderThickness: =1
-                Color: =RGBA(54, 176, 75, 1)
-                DisabledBorderColor: =RGBA(0, 0, 0, 0)
-                DisabledColor: |-
-                    =//RGBA(168, 0, 0, 1)
-                    Self.Color
-                FocusedBorderThickness: =1
-                Font: =Font.'Segoe UI'
-                FontWeight: =FontWeight.Semibold
-                Height: =10
-                Live: =Live.Assertive
-                PaddingBottom: =0
-                PaddingLeft: =0
-                PaddingRight: =0
-                PaddingTop: =0
-                Size: =11
-                Text: ="　※ Please input 50 characters or less "
-                Visible: =Parent.DisplayMode<>DisplayMode.View
-                Width: |-
-                    =//  Parent.Width - 60
-                    txtP1CACControlItem_1.Width
-                X: =169
-                Y: =txtP1CACSpec_1.Y + txtP1CACSpec_1.Height
-                ZIndex: =26
-
-            P1Rectangle2_1 As rectangle:
-                BorderColor: =RGBA(246, 88, 16, 1)
-                BorderThickness: =1
-                DisabledFill: =RGBA(0, 0, 0, 0)
-                Fill: =RGBA(0, 0, 0, 0)
-                FocusedBorderThickness: =1
-                Height: =1
-                HoverFill: =RGBA(0, 0, 0, 0)
-                PressedFill: =RGBA(0, 0, 0, 0)
-                Width: =P1Rectangle1_1.Width
-                X: =lblP2CAInternal.X
-                Y: =lblP2CAInternal.Y
-                ZIndex: =27
-
-            P1Rectangle3_1 As rectangle:
-                BorderColor: =RGBA(246, 88, 16, 1)
-                BorderThickness: =1
-                DisabledFill: =RGBA(166, 166, 166, 1)
-                Fill: =RGBA(0, 0, 0, 0)
-                FocusedBorderThickness: =1
-                Height: =1
-                HoverFill: =RGBA(0, 120, 212, 1)
-                PressedFill: =RGBA(0, 120, 212, 1)
-                Width: =P1Rectangle1_1.Width
-                X: =lblP1CACustomer_1.X
-                Y: =lblP1CACustomer_1.Y
-                ZIndex: =28
-
-            P1Rectangle1_1 As rectangle:
-                BorderColor: =RGBA(246, 88, 16, 1)
-                BorderThickness: =1
-                DisabledFill: =RGBA(0, 0, 0, 0)
-                DisplayMode: =DisplayMode.View
-                Fill: =RGBA(0, 0, 0, 0)
-                FocusedBorderThickness: =1
-                Height: =1
-                HoverFill: =RGBA(0, 0, 0, 0)
-                PressedFill: =RGBA(0, 0, 0, 0)
-                Width: =Parent.Width
-                X: =lblP2Rootcause.X
-                Y: =lblP2Rootcause.Y
-                ZIndex: =29
-
         Process3_DataCard As typedDataCard.blankCard:
             BorderColor: =RGBA(166, 166, 166, 1)
             BorderStyle: =BorderStyle.Solid
@@ -2309,7 +2309,7 @@
             Y: =9
             ZIndex: =1
 
-            lblP1RCProcess_2 As label:
+            lblP3RCProcess As label:
                 Align: =Align.Center
                 BorderColor: =RGBA(0, 0, 0, 0)
                 BorderStyle: =BorderStyle.None
@@ -2324,11 +2324,11 @@
                 Size: =10.5
                 Text: ="Process"
                 Width: =Parent.Width * 0.1
-                X: =lblP1Rootcause_2.X + lblP1Rootcause_2.Width
+                X: =lblP3Rootcause.X + lblP3Rootcause.Width
                 Y: =10
                 ZIndex: =2
 
-            lblP1Rootcause_2 As label:
+            lblP3Rootcause As label:
                 Align: =Align.Center
                 BorderColor: =RGBA(246, 88, 16, 1)
                 BorderThickness: =1
@@ -2338,7 +2338,7 @@
                 Fill: =RGBA(253, 222, 207, 1)
                 FocusedBorderThickness: =1
                 Font: =Font.'Segoe UI'
-                Height: =lblP1RCProcess_2.Height + rtxP1RCComment.Height + 20
+                Height: =lblP3RCProcess.Height + rtxP1RCComment.Height + 20
                 PaddingLeft: =0
                 Size: =10.5
                 Text: |-
@@ -2347,7 +2347,7 @@
                 Width: =50
                 ZIndex: =3
 
-            ddlP1RCProcess_2 As dropdown:
+            ddlP3RCProcess As dropdown:
                 BorderColor: =RGBA(166, 166, 166, 1)
                 BorderThickness: =1
                 ChevronBackground: =RGBA(255, 255, 255, 1)
@@ -2380,10 +2380,10 @@
                 Size: =12
                 Width: =180
                 X: =DataCardKey10_1.X + DataCardKey10_1.Width
-                Y: =lblP1RCProcess_2.Y
+                Y: =lblP3RCProcess.Y
                 ZIndex: =4
 
-            lblP1RCActualCause_2 As label:
+            lblP3RCActualCause As label:
                 Align: =Align.Center
                 BorderColor: =RGBA(0, 0, 0, 0)
                 BorderStyle: =BorderStyle.None
@@ -2398,11 +2398,11 @@
                 Size: =10.5
                 Text: ="Actual cause"
                 Width: =Parent.Width * 0.1
-                X: =ddlP1RCProcess_2.X + ddlP1RCProcess_2.Width
-                Y: =lblP1RCProcess_2.Y
+                X: =ddlP3RCProcess.X + ddlP3RCProcess.Width
+                Y: =lblP3RCProcess.Y
                 ZIndex: =5
 
-            cmbP1RCActualCause_2 As combobox:
+            cmbP3RCActualCause As combobox:
                 BorderColor: =RGBA(166, 166, 166, 1)
                 BorderThickness: =1
                 ChevronBackground: =RGBA(255, 255, 255, 1)
@@ -2425,19 +2425,19 @@
                 HoverColor: =RGBA(51, 51, 51, 1)
                 HoverFill: =RGBA(212, 212, 212, 1)
                 InputTextPlaceholder: =
-                Items: =Split(LookUp('Actual Cause Master', 区分.Value=rdbClaimDescriptionType.Selected.Value && Process=ddlP1RCProcess_2.Selected.Process).'Actual Cause', Char(10))
+                Items: =Split(LookUp('Actual Cause Master', 区分.Value=rdbClaimDescriptionType.Selected.Value && Process=ddlP3RCProcess.Selected.Process).'Actual Cause', Char(10))
                 PressedBorderColor: =ColorFade(RGBA(0, 120, 212, 1), -30%)
                 PressedColor: =RGBA(255, 255, 255, 1)
                 PressedFill: =RGBA(0, 120, 212, 1)
                 SearchFields: =["Value"]
-                SearchItems: =Search(Split(LookUp('Actual Cause Master', 区分.Value=rdbClaimDescriptionType.Selected.Value && Process=ddlP1RCProcess_2.Selected.Process).'Actual Cause', Char(10)),cmbP1RCActualCause_2.SearchText,"Value")
+                SearchItems: =Search(Split(LookUp('Actual Cause Master', 区分.Value=rdbClaimDescriptionType.Selected.Value && Process=ddlP3RCProcess.Selected.Process).'Actual Cause', Char(10)),cmbP3RCActualCause.SearchText,"Value")
                 SelectionFill: =RGBA(0, 120, 212, 1)
                 Width: =Parent.Width * 0.59
-                X: =lblP1RCActualCause_2.X + lblP1RCActualCause_2.Width
-                Y: =lblP1RCProcess_2.Y
+                X: =lblP3RCActualCause.X + lblP3RCActualCause.Width
+                Y: =lblP3RCProcess.Y
                 ZIndex: =6
 
-            lblP1CAInternal_2 As label:
+            lblP3CAInternal As label:
                 Align: =Align.Center
                 BorderColor: =RGBA(246, 88, 16, 1)
                 BorderThickness: =1
@@ -2447,7 +2447,7 @@
                 Fill: =RGBA(253, 222, 207, 1)
                 FocusedBorderThickness: =1
                 Font: =Font.'Segoe UI'
-                Height: =(lblP1RCProcess_2.Height) * 3 + rtxP1RCComment.Height + 50 + 36
+                Height: =(lblP3RCProcess.Height) * 3 + rtxP1RCComment.Height + 50 + 36
                 PaddingLeft: =0
                 Size: =10.5
                 Text: |-
@@ -2455,11 +2455,11 @@
                     (inter
                     nal)"
                 Width: =50
-                X: =lblP1Rootcause_2.X
-                Y: =lblP1Rootcause_2.Y + lblP1Rootcause_2.Height
+                X: =lblP3Rootcause.X
+                Y: =lblP3Rootcause.Y + lblP3Rootcause.Height
                 ZIndex: =7
 
-            lblP1CAIControlItem_2 As label:
+            lblP3CAIControlItem As label:
                 Align: =Align.Center
                 BorderColor: =RGBA(0, 0, 0, 0)
                 BorderStyle: =BorderStyle.None
@@ -2474,11 +2474,11 @@
                 Size: =11
                 Text: ="Control item"
                 Width: =Parent.Width * 0.1
-                X: =lblP1CAInternal_2.X + lblP1CAInternal_2.Width
-                Y: =lblP1CAInternal_2.Y + 10
+                X: =lblP3CAInternal.X + lblP3CAInternal.Width
+                Y: =lblP3CAInternal.Y + 10
                 ZIndex: =8
 
-            txtP1CAIControlItem_2 As text:
+            txtP3CAIControlItem As text:
                 BorderColor: =RGBA(166, 166, 166, 1)
                 Color: =RGBA(51, 51, 51, 1)
                 Default: =ThisItem.'Process1 CA Internal Control Item'
@@ -2501,11 +2501,11 @@
                 Size: =11
                 Tooltip: ="※ Please input 50 characters or less "
                 Width: =Parent.Width * 0.84
-                X: =lblP1CAIControlItem_2.X + lblP1CAIControlItem_2.Width
-                Y: =lblP1CAIControlItem_2.Y
+                X: =lblP3CAIControlItem.X + lblP3CAIControlItem.Width
+                Y: =lblP3CAIControlItem.Y
                 ZIndex: =9
 
-            lblP1CAISpec_2 As label:
+            lblP3CAISpec As label:
                 Align: =Align.Center
                 BorderColor: =RGBA(0, 0, 0, 0)
                 BorderStyle: =BorderStyle.None
@@ -2520,11 +2520,11 @@
                 Size: =11
                 Text: ="Spec/Control"
                 Width: =Parent.Width * 0.1
-                X: =lblP1CAIControlItem_2.X
-                Y: =lblP1CAIControlItem_2.Y + lblP1CAIControlItem_2.Height + WarningMessage2_2.Height + 10
+                X: =lblP3CAIControlItem.X
+                Y: =lblP3CAIControlItem.Y + lblP3CAIControlItem.Height + WarningMessageP32.Height + 10
                 ZIndex: =10
 
-            txtP1CAISpec_2 As text:
+            txtP3CAISpec As text:
                 BorderColor: =RGBA(166, 166, 166, 1)
                 Color: =RGBA(51, 51, 51, 1)
                 Default: =ThisItem.'Process1 CA Internal Spec/Control'
@@ -2547,11 +2547,11 @@
                 Size: =11
                 Tooltip: ="※ Please input 50 characters or less "
                 Width: =Parent.Width * 0.84
-                X: =lblP1CAISpec_2.X + lblP1CAISpec_2.Width
-                Y: =lblP1CAISpec_2.Y
+                X: =lblP3CAISpec.X + lblP3CAISpec.Width
+                Y: =lblP3CAISpec.Y
                 ZIndex: =11
 
-            lblP1CAIEquipmentImprovement_2 As label:
+            lblP3CAIEquipmentImprovement As label:
                 Align: =Align.Center
                 BorderColor: =RGBA(0, 0, 0, 0)
                 BorderStyle: =BorderStyle.None
@@ -2566,11 +2566,11 @@
                 Size: =11
                 Text: ="Equipment improvement"
                 Width: =Parent.Width * 0.2
-                X: =lblP1CAIControlItem_2.X
+                X: =lblP3CAIControlItem.X
                 Y: =rtxP1CAIComment.Y + rtxP1CAIComment.Height + 10
                 ZIndex: =12
 
-            lblP1CAIImplementationDate_2 As label:
+            lblP3CAIImplementationDate As label:
                 Align: =Align.Center
                 BorderColor: =RGBA(0, 0, 0, 0)
                 BorderStyle: =BorderStyle.None
@@ -2585,11 +2585,11 @@
                 Size: =11
                 Text: ="Implementation Date"
                 Width: =Parent.Width * 0.15
-                X: =rdbP1CAIEquipmentImprovement_2.X + rdbP1CAIEquipmentImprovement_2.Width
-                Y: =lblP1CAIEquipmentImprovement_2.Y
+                X: =rdbP3CAIEquipmentImprovement.X + rdbP3CAIEquipmentImprovement.Width
+                Y: =lblP3CAIEquipmentImprovement.Y
                 ZIndex: =13
 
-            rdbP1CAIEquipmentImprovement_2 As radio:
+            rdbP3CAIEquipmentImprovement As radio:
                 BorderColor: =RGBA(51, 51, 51, 1)
                 BorderStyle: =BorderStyle.None
                 BorderThickness: =1
@@ -2614,11 +2614,11 @@
                 RadioSize: =18
                 Size: =11
                 Width: =Parent.Width * 0.2
-                X: =lblP1CAIEquipmentImprovement_2.X + lblP1CAIEquipmentImprovement_2.Width
-                Y: =lblP1CAIEquipmentImprovement_2.Y
+                X: =lblP3CAIEquipmentImprovement.X + lblP3CAIEquipmentImprovement.Width
+                Y: =lblP3CAIEquipmentImprovement.Y
                 ZIndex: =14
 
-            datP1CAIImplementationDate_2 As datepicker:
+            datP3CAIImplementationDate As datepicker:
                 BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
                 BorderThickness: =1
                 CalendarHeaderFill: =ColorFade(RGBA(0, 120, 212, 1), -30%)
@@ -2642,11 +2642,11 @@
                 StartYear: =1899
                 Tooltip: =Parent.DisplayName
                 Width: =(Parent.Width - 60) * 0.2
-                X: =lblP1CAIImplementationDate_2.X + lblP1CAIImplementationDate_2.Width
-                Y: =lblP1CAIEquipmentImprovement_2.Y
+                X: =lblP3CAIImplementationDate.X + lblP3CAIImplementationDate.Width
+                Y: =lblP3CAIEquipmentImprovement.Y
                 ZIndex: =15
 
-            WarningMessage2_2 As label:
+            WarningMessageP32 As label:
                 AutoHeight: =true
                 BorderColor: =RGBA(0, 0, 0, 0)
                 BorderStyle: =BorderStyle.None
@@ -2670,12 +2670,12 @@
                 Visible: =Parent.DisplayMode<>DisplayMode.View
                 Width: |-
                     =//  Parent.Width - 60
-                    txtP1CAIControlItem_2.Width
-                X: =txtP1CAIControlItem_2.X
-                Y: =txtP1CAIControlItem_2.Y + txtP1CAIControlItem_2.Height
+                    txtP3CAIControlItem.Width
+                X: =txtP3CAIControlItem.X
+                Y: =txtP3CAIControlItem.Y + txtP3CAIControlItem.Height
                 ZIndex: =16
 
-            WarningMessage3_2 As label:
+            WarningMessageP33 As label:
                 AutoHeight: =true
                 BorderColor: =RGBA(0, 0, 0, 0)
                 BorderStyle: =BorderStyle.None
@@ -2699,12 +2699,12 @@
                 Visible: =Parent.DisplayMode<>DisplayMode.View
                 Width: |-
                     =//  Parent.Width - 60
-                    txtP1CAIControlItem_2.Width
-                X: =txtP1CAISpec_2.X
-                Y: =txtP1CAISpec_2.Y + txtP1CAISpec_2.Height
+                    txtP3CAIControlItem.Width
+                X: =txtP3CAISpec.X
+                Y: =txtP3CAISpec.Y + txtP3CAISpec.Height
                 ZIndex: =17
 
-            lblP1CACustomer_2 As label:
+            lblP3CACustomer As label:
                 Align: =Align.Center
                 BorderColor: =RGBA(246, 88, 16, 1)
                 BorderThickness: =1
@@ -2714,17 +2714,17 @@
                 Fill: =RGBA(253, 222, 207, 1)
                 FocusedBorderThickness: =1
                 Font: =Font.'Segoe UI'
-                Height: =(lblP1RCProcess_2.Height) * 3 + rtxP1RCComment.Height + 30 + 36
+                Height: =(lblP3RCProcess.Height) * 3 + rtxP1RCComment.Height + 30 + 36
                 PaddingLeft: =0
                 Size: =10.5
                 Text: |-
                     ="CA
                     (Customer)"
                 Width: =50
-                Y: =lblP1CAInternal_2.Y + lblP1CAInternal_2.Height
+                Y: =lblP3CAInternal.Y + lblP3CAInternal.Height
                 ZIndex: =18
 
-            lblP1CACControlItem_2 As label:
+            lblP3CACControlItem As label:
                 Align: =Align.Center
                 BorderColor: =RGBA(0, 0, 0, 0)
                 BorderStyle: =BorderStyle.None
@@ -2739,11 +2739,11 @@
                 Size: =11
                 Text: ="Control item"
                 Width: =Parent.Width * 0.1
-                X: =lblP1CACustomer_2.Width
-                Y: =lblP1CACustomer_2.Y + 10
+                X: =lblP3CACustomer.Width
+                Y: =lblP3CACustomer.Y + 10
                 ZIndex: =19
 
-            txtP1CACControlItem_2 As text:
+            txtP3CACControlItem As text:
                 BorderColor: =RGBA(166, 166, 166, 1)
                 Color: =RGBA(51, 51, 51, 1)
                 Default: =ThisItem.'Process1 CA Internal Control Item'
@@ -2766,11 +2766,11 @@
                 Size: =11
                 Tooltip: ="※ Please input 50 characters or less "
                 Width: =Parent.Width * 0.84
-                X: =lblP1CACControlItem_2.X + lblP1CACControlItem_2.Width
-                Y: =lblP1CACControlItem_2.Y
+                X: =lblP3CACControlItem.X + lblP3CACControlItem.Width
+                Y: =lblP3CACControlItem.Y
                 ZIndex: =20
 
-            lblP1CACSpec_2 As label:
+            lblP3CACSpec As label:
                 Align: =Align.Center
                 BorderColor: =RGBA(0, 0, 0, 0)
                 BorderStyle: =BorderStyle.None
@@ -2785,11 +2785,11 @@
                 Size: =11
                 Text: ="Spec/Control"
                 Width: =Parent.Width * 0.1
-                X: =lblP1CACControlItem_2.X
-                Y: =lblP1CACControlItem_2.Y + lblP1CACControlItem_2.Height + WarningMessage4_2.Height
+                X: =lblP3CACControlItem.X
+                Y: =lblP3CACControlItem.Y + lblP3CACControlItem.Height + WarningMessageP34.Height
                 ZIndex: =21
 
-            txtP1CACSpec_2 As text:
+            txtP3CACSpec As text:
                 BorderColor: =RGBA(166, 166, 166, 1)
                 Color: =RGBA(51, 51, 51, 1)
                 Default: =ThisItem.'Process1 CA Internal Spec/Control'
@@ -2812,11 +2812,11 @@
                 Size: =11
                 Tooltip: ="※ Please input 50 characters or less "
                 Width: =Parent.Width * 0.84
-                X: =lblP1CACSpec_2.X + lblP1CACSpec_2.Width
-                Y: =lblP1CACSpec_2.Y
+                X: =lblP3CACSpec.X + lblP3CACSpec.Width
+                Y: =lblP3CACSpec.Y
                 ZIndex: =22
 
-            lblP1CACImplementationDate_2 As label:
+            lblP3CACImplementationDate As label:
                 Align: =Align.Center
                 BorderColor: =RGBA(0, 0, 0, 0)
                 BorderStyle: =BorderStyle.None
@@ -2831,11 +2831,11 @@
                 Size: =11
                 Text: ="Implementation Date"
                 Width: =Parent.Width * 0.15
-                X: =lblP1CACControlItem_2.X
+                X: =lblP3CACControlItem.X
                 Y: =rtxP1CACComment.Y + rtxP1CACComment.Height + 10
                 ZIndex: =23
 
-            datP1CACImplementationDate_2 As datepicker:
+            datP3CACImplementationDate As datepicker:
                 BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
                 BorderThickness: =1
                 CalendarHeaderFill: =ColorFade(RGBA(0, 120, 212, 1), -30%)
@@ -2859,11 +2859,11 @@
                 StartYear: =1899
                 Tooltip: =Parent.DisplayName
                 Width: =(Parent.Width - 60) * 0.2
-                X: =lblP1CACImplementationDate_2.X + lblP1CACImplementationDate_2.Width
-                Y: =lblP1CACImplementationDate_2.Y
+                X: =lblP3CACImplementationDate.X + lblP3CACImplementationDate.Width
+                Y: =lblP3CACImplementationDate.Y
                 ZIndex: =24
 
-            WarningMessage4_2 As label:
+            WarningMessageP34 As label:
                 AutoHeight: =true
                 BorderColor: =RGBA(0, 0, 0, 0)
                 BorderStyle: =BorderStyle.None
@@ -2887,12 +2887,12 @@
                 Visible: =Parent.DisplayMode<>DisplayMode.View
                 Width: |-
                     =//  Parent.Width - 60
-                    txtP1CACControlItem_2.Width
+                    txtP3CACControlItem.Width
                 X: =169
-                Y: =txtP1CACControlItem_2.Y + txtP1CACControlItem_2.Height
+                Y: =txtP3CACControlItem.Y + txtP3CACControlItem.Height
                 ZIndex: =25
 
-            WarningMessage5_2 As label:
+            WarningMessagePp35 As label:
                 AutoHeight: =true
                 BorderColor: =RGBA(0, 0, 0, 0)
                 BorderStyle: =BorderStyle.None
@@ -2916,12 +2916,12 @@
                 Visible: =Parent.DisplayMode<>DisplayMode.View
                 Width: |-
                     =//  Parent.Width - 60
-                    txtP1CACControlItem_2.Width
+                    txtP3CACControlItem.Width
                 X: =169
-                Y: =txtP1CACSpec_2.Y + txtP1CACSpec_2.Height
+                Y: =txtP3CACSpec.Y + txtP3CACSpec.Height
                 ZIndex: =26
 
-            P1Rectangle2_2 As rectangle:
+            P3Rectangle2 As rectangle:
                 BorderColor: =RGBA(246, 88, 16, 1)
                 BorderThickness: =1
                 DisabledFill: =RGBA(0, 0, 0, 0)
@@ -2930,12 +2930,12 @@
                 Height: =1
                 HoverFill: =RGBA(0, 0, 0, 0)
                 PressedFill: =RGBA(0, 0, 0, 0)
-                Width: =P1Rectangle1_2.Width
-                X: =lblP1CAInternal_2.X
-                Y: =lblP1CAInternal_2.Y
+                Width: =P3Rectangle1.Width
+                X: =lblP3CAInternal.X
+                Y: =lblP3CAInternal.Y
                 ZIndex: =27
 
-            P1Rectangle3_2 As rectangle:
+            P3Rectangle3 As rectangle:
                 BorderColor: =RGBA(246, 88, 16, 1)
                 BorderThickness: =1
                 DisabledFill: =RGBA(166, 166, 166, 1)
@@ -2944,12 +2944,12 @@
                 Height: =1
                 HoverFill: =RGBA(0, 120, 212, 1)
                 PressedFill: =RGBA(0, 120, 212, 1)
-                Width: =P1Rectangle1_2.Width
-                X: =lblP1CACustomer_2.X
-                Y: =lblP1CACustomer_2.Y
+                Width: =P3Rectangle1.Width
+                X: =lblP3CACustomer.X
+                Y: =lblP3CACustomer.Y
                 ZIndex: =28
 
-            P1Rectangle1_2 As rectangle:
+            P3Rectangle1 As rectangle:
                 BorderColor: =RGBA(246, 88, 16, 1)
                 BorderThickness: =1
                 DisabledFill: =RGBA(0, 0, 0, 0)
@@ -2960,8 +2960,8 @@
                 HoverFill: =RGBA(0, 0, 0, 0)
                 PressedFill: =RGBA(0, 0, 0, 0)
                 Width: =Parent.Width
-                X: =lblP1Rootcause_2.X
-                Y: =lblP1Rootcause_2.Y
+                X: =lblP3Rootcause.X
+                Y: =lblP3Rootcause.Y
                 ZIndex: =29
 
         "'Process1 RC Process_DataCard1' As typedDataCard.textualEditCard":
