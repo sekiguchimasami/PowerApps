@@ -35,6 +35,7 @@
       "Title": "Process",
       "zzActualCause": "Actual Cause",
       "zzDivision": "区分",
+      "zzDivision#Id": "区分 Id",
       "zzEditHistory": "編集履歴",
       "zzMemo": "備考"
     },

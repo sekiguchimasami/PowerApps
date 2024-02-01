@@ -940,7 +940,7 @@
             BorderThickness: =1
             DisplayMode: =DisplayMode.Edit
             Fill: =RGBA(204, 231, 246, 1)
-            Height: =227
+            Height: =363
             Width: =1184
             WidthFit: =false
             X: =0
@@ -969,6 +969,7 @@
                 ZIndex: =1
 
             lblProcess1 As label:
+                Align: =Align.Center
                 BorderColor: =RGBA(0, 0, 0, 0)
                 BorderStyle: =BorderStyle.None
                 BorderThickness: =1
@@ -982,9 +983,120 @@
                 Size: =10.5
                 Text: ="Process"
                 Width: =Parent.Width * 0.1
-                X: =25
+                X: =lblRootcause.X + lblRootcause.Width
                 Y: =10
                 ZIndex: =2
+
+            lblRootcause As label:
+                Align: =Align.Center
+                BorderColor: =RGBA(0, 0, 0, 0)
+                BorderStyle: =BorderStyle.None
+                BorderThickness: =1
+                Color: =RGBA(51, 51, 51, 1)
+                DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                DisabledColor: =RGBA(166, 166, 166, 1)
+                Fill: =RGBA(253, 222, 207, 1)
+                FocusedBorderThickness: =1
+                Font: =Font.'Segoe UI'
+                Height: =295
+                PaddingLeft: =0
+                Size: =10.5
+                Text: |-
+                    ="Root
+                    Cause"
+                Width: =50
+                ZIndex: =3
+
+            ddlP1RCProcess As dropdown:
+                BorderColor: =RGBA(166, 166, 166, 1)
+                BorderThickness: =1
+                ChevronBackground: =RGBA(255, 255, 255, 1)
+                ChevronDisabledBackground: =RGBA(244, 244, 244, 1)
+                ChevronDisabledFill: =RGBA(166, 166, 166, 1)
+                ChevronFill: =RGBA(33, 33, 33, 1)
+                ChevronHoverBackground: =RGBA(212, 212, 212, 1)
+                ChevronHoverFill: =RGBA(33, 33, 33, 1)
+                Color: =RGBA(0, 84, 148, 1)
+                Default: =ThisItem.Customer
+                DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                DisabledColor: =RGBA(166, 166, 166, 1)
+                DisabledFill: =RGBA(244, 244, 244, 1)
+                FocusedBorderThickness: =1
+                Font: =Font.'Segoe UI'
+                FontWeight: =FontWeight.Semibold
+                Height: =32
+                HoverBorderColor: =ColorFade(RGBA(0, 120, 212, 1), -30%)
+                HoverColor: =RGBA(51, 51, 51, 1)
+                HoverFill: =RGBA(212, 212, 212, 1)
+                Items: =Filter('Actual Cause Master', 区分.Value=rdbClaimDescriptionType.Selected.Value).Title
+                PaddingBottom: =5
+                PaddingLeft: =12
+                PaddingRight: =5
+                PaddingTop: =5
+                PressedBorderColor: =ColorFade(RGBA(0, 120, 212, 1), -30%)
+                PressedColor: =RGBA(255, 255, 255, 1)
+                PressedFill: =RGBA(0, 120, 212, 1)
+                SelectionFill: =RGBA(0, 120, 212, 1)
+                Size: =12
+                Width: =180
+                X: =DataCardKey10_1.X + DataCardKey10_1.Width
+                Y: =lblProcess1.Y
+                ZIndex: =4
+
+            lblP1RCActualCause As label:
+                Align: =Align.Center
+                BorderColor: =RGBA(0, 0, 0, 0)
+                BorderStyle: =BorderStyle.None
+                BorderThickness: =1
+                Color: =RGBA(51, 51, 51, 1)
+                DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                DisabledColor: =RGBA(166, 166, 166, 1)
+                FocusedBorderThickness: =1
+                Font: =Font.'Segoe UI'
+                Height: =31
+                PaddingLeft: =0
+                Size: =10.5
+                Text: ="Actual cause"
+                Width: =Parent.Width * 0.1
+                X: =ddlP1RCProcess.X + ddlP1RCProcess.Width
+                Y: =lblProcess1.Y
+                ZIndex: =5
+
+            cmbMediaProgram_1 As combobox:
+                BorderColor: =RGBA(166, 166, 166, 1)
+                BorderThickness: =1
+                ChevronBackground: =RGBA(255, 255, 255, 1)
+                ChevronDisabledBackground: =RGBA(244, 244, 244, 1)
+                ChevronDisabledFill: =RGBA(166, 166, 166, 1)
+                ChevronFill: =RGBA(33, 33, 33, 1)
+                ChevronHoverBackground: =RGBA(212, 212, 212, 1)
+                ChevronHoverFill: =RGBA(33, 33, 33, 1)
+                Color: =RGBA(51, 51, 51, 1)
+                DefaultSelectedItems: |-
+                    ={Value:ThisItem.'Media Program'}
+                DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                DisabledColor: =RGBA(166, 166, 166, 1)
+                DisabledFill: =RGBA(244, 244, 244, 1)
+                DisplayFields: =["Value"]
+                FocusedBorderThickness: =1
+                Font: =Font.'Segoe UI'
+                Height: =32
+                HoverBorderColor: =ColorFade(RGBA(0, 120, 212, 1), -30%)
+                HoverColor: =RGBA(51, 51, 51, 1)
+                HoverFill: =RGBA(212, 212, 212, 1)
+                InputTextPlaceholder: =
+                Items: =Split(LookUp('Actual Cause Master', 区分.Value=rdbClaimDescriptionType.Selected.Value && Process=ddlClaimDescription.Selected.Value).'Actual Cause', Char(10))
+                PressedBorderColor: =ColorFade(RGBA(0, 120, 212, 1), -30%)
+                PressedColor: =RGBA(255, 255, 255, 1)
+                PressedFill: =RGBA(0, 120, 212, 1)
+                SearchFields: =["Value"]
+                SearchItems: =Search(Split(LookUp('Actual Cause Master', 区分.Value=rdbClaimDescriptionType.Selected.Value && Process=ddlClaimDescription.Selected.Value).'Actual Cause', Char(10)),cmbMediaProgram_1.SearchText,"Value")
+                SelectionFill: =RGBA(0, 120, 212, 1)
+                SelectMultiple: =false
+                Width: =Parent.Width * 0.5
+                X: =lblP1RCActualCause.X + lblP1RCActualCause.Width
+                Y: =lblProcess1.Y
+                ZIndex: =6
 
         "'Process1 RC Process_DataCard1' As typedDataCard.textualEditCard":
             BorderColor: =RGBA(166, 166, 166, 1)
@@ -997,7 +1109,9 @@
             Height: =50
             MaxLength: =DataSourceInfo([@'Quality Problem Status'], DataSourceInfo.MaxLength, "zzP1RCProcess")
             Required: =false
-            Update: =DataCardValue14.Text
+            Update: |-
+                =//DataCardValue14.Text
+                ddlP1RCProcess.Selected.Process
             Width: =592
             X: =0
             Y: =8
