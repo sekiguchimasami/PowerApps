@@ -1141,7 +1141,7 @@
                 Font: =Font.'Segoe UI'
                 Height: =32
                 PaddingLeft: =0
-                Size: =10.5
+                Size: =11
                 Text: ="Control item"
                 Width: =Parent.Width * 0.1
                 X: =lblP1CAInternal.X + lblP1CAInternal.Width
@@ -1151,7 +1151,7 @@
             txtP1CAIControlItem As text:
                 BorderColor: =RGBA(166, 166, 166, 1)
                 Color: =RGBA(51, 51, 51, 1)
-                Default: ="テキスト入力"
+                Default: =ThisItem.'Process1 CA Internal Control Item'
                 DisabledBorderColor: =RGBA(0, 0, 0, 0)
                 DisabledColor: =RGBA(166, 166, 166, 1)
                 DisabledFill: =RGBA(244, 244, 244, 1)
@@ -1168,9 +1168,9 @@
                 RadiusBottomRight: =0
                 RadiusTopLeft: =0
                 RadiusTopRight: =0
-                Size: =10.5
+                Size: =11
                 Width: =Parent.Width * 0.84
-                X: =167
+                X: =lblP1CAIControlItem.X + lblP1CAIControlItem.Width
                 Y: =lblP1CAIControlItem.Y
                 ZIndex: =10
 
@@ -1186,7 +1186,7 @@
                 Font: =Font.'Segoe UI'
                 Height: =32
                 PaddingLeft: =0
-                Size: =10.5
+                Size: =11
                 Text: ="Spec/Control"
                 Width: =Parent.Width * 0.1
                 X: =lblP1CAIControlItem.X
@@ -1196,7 +1196,7 @@
             txtP1CAISpec As text:
                 BorderColor: =RGBA(166, 166, 166, 1)
                 Color: =RGBA(51, 51, 51, 1)
-                Default: ="テキスト入力"
+                Default: =ThisItem.'Process1 CA Internal Spec/Control'
                 DisabledBorderColor: =RGBA(0, 0, 0, 0)
                 DisabledColor: =RGBA(166, 166, 166, 1)
                 DisabledFill: =RGBA(244, 244, 244, 1)
@@ -1213,9 +1213,9 @@
                 RadiusBottomRight: =0
                 RadiusTopLeft: =0
                 RadiusTopRight: =0
-                Size: =10.5
+                Size: =11
                 Width: =Parent.Width * 0.84
-                X: =169
+                X: =lblP1CAISpec.X + lblP1CAISpec.Width
                 Y: =lblP1CAISpec.Y
                 ZIndex: =12
 
@@ -1240,9 +1240,9 @@
                 Font: =Font.'Segoe UI'
                 Height: =32
                 PaddingLeft: =0
-                Size: =10.5
+                Size: =11
                 Text: ="Equipment improvement"
-                Width: =Parent.Width * 0.15
+                Width: =Parent.Width * 0.2
                 X: =lblP1CAIControlItem.X
                 Y: =rtxP1CAIComment.Y + rtxP1CAIComment.Height + 10
                 ZIndex: =14
@@ -1259,7 +1259,7 @@
                 Font: =Font.'Segoe UI'
                 Height: =32
                 PaddingLeft: =0
-                Size: =10.5
+                Size: =11
                 Text: ="Implementation Date"
                 Width: =Parent.Width * 0.15
                 X: =rdbP1CAIEquipmentImprovement.X + rdbP1CAIEquipmentImprovement.Width
@@ -1289,7 +1289,7 @@
                 RadioBorderColor: =RGBA(51, 51, 51, 1)
                 RadioSelectionFill: =RGBA(0, 120, 212, 1)
                 RadioSize: =18
-                Size: =10.5
+                Size: =11
                 Width: =Parent.Width * 0.2
                 X: =lblP1CAIEquipmentImprovement.X + lblP1CAIEquipmentImprovement.Width
                 Y: =lblP1CAIEquipmentImprovement.Y
@@ -1315,7 +1315,7 @@
                 PaddingBottom: =0
                 PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
                 SelectedDateFill: =RGBA(0, 120, 212, 1)
-                Size: =10.5
+                Size: =11
                 StartYear: =1899
                 Tooltip: =Parent.DisplayName
                 Width: =(Parent.Width - 60) * 0.2
