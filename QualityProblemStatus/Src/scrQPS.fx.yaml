@@ -941,6 +941,7 @@
             DisplayMode: =DisplayMode.Edit
             Fill: =RGBA(204, 231, 246, 1)
             Height: =P1Rectangle1.Height + P1Rectangle1.Height + P1Rectangle1.Height
+            Visible: =varTabSelected=1
             Width: =1184
             WidthFit: =false
             X: =0
