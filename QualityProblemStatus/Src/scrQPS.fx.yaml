@@ -478,13 +478,13 @@
                 RadiusTopLeft: =0
                 RadiusTopRight: =0
                 Size: =10.5
-                Tooltip: =Parent.DisplayName
+                Tooltip: ="※ Please input 100 characters or less "
                 Width: =(Parent.Width - 60) * 0.9
                 X: =DataCardKey9.X + DataCardKey9.Width
                 Y: =10
                 ZIndex: =2
 
-            ErrorMessage9 As label:
+            WarningMessage1 As label:
                 AutoHeight: =true
                 BorderColor: =RGBA(0, 0, 0, 0)
                 BorderStyle: =BorderStyle.None
@@ -1117,7 +1117,7 @@
                 Fill: =RGBA(253, 222, 207, 1)
                 FocusedBorderThickness: =1
                 Font: =Font.'Segoe UI'
-                Height: =(lblP1RCProcess.Height) * 3 + rtxP1RCComment.Height + 40
+                Height: =(lblP1RCProcess.Height) * 3 + rtxP1RCComment.Height + 40 + 36
                 PaddingLeft: =0
                 Size: =10.5
                 Text: |-
@@ -1169,6 +1169,7 @@
                 RadiusTopLeft: =0
                 RadiusTopRight: =0
                 Size: =11
+                Tooltip: ="※ Please input 50 characters or less "
                 Width: =Parent.Width * 0.84
                 X: =lblP1CAIControlItem.X + lblP1CAIControlItem.Width
                 Y: =lblP1CAIControlItem.Y
@@ -1190,7 +1191,7 @@
                 Text: ="Spec/Control"
                 Width: =Parent.Width * 0.1
                 X: =lblP1CAIControlItem.X
-                Y: =lblP1CAIControlItem.Y + lblP1CAIControlItem.Height + 10
+                Y: =lblP1CAIControlItem.Y + lblP1CAIControlItem.Height + WarningMessage2.Height + 10
                 ZIndex: =11
 
             txtP1CAISpec As text:
@@ -1214,6 +1215,7 @@
                 RadiusTopLeft: =0
                 RadiusTopRight: =0
                 Size: =11
+                Tooltip: ="※ Please input 50 characters or less "
                 Width: =Parent.Width * 0.84
                 X: =lblP1CAISpec.X + lblP1CAISpec.Width
                 Y: =lblP1CAISpec.Y
@@ -1225,7 +1227,7 @@
                 Height: =rtxP1RCComment.Height
                 Width: =1111
                 X: =lblP1CAIControlItem.X
-                Y: =lblP1CAISpec.Y + lblP1CAISpec.Height + 10
+                Y: =lblP1CAISpec.Y + lblP1CAISpec.Height + WarningMessage3.Height + 10
                 ZIndex: =13
 
             lblP1CAIEquipmentImprovement As label:
@@ -1322,6 +1324,64 @@
                 X: =lblP1CAIImplementationDate.X + lblP1CAIImplementationDate.Width
                 Y: =lblP1CAIEquipmentImprovement.Y
                 ZIndex: =17
+
+            WarningMessage2 As label:
+                AutoHeight: =true
+                BorderColor: =RGBA(0, 0, 0, 0)
+                BorderStyle: =BorderStyle.None
+                BorderThickness: =1
+                Color: =RGBA(54, 176, 75, 1)
+                DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                DisabledColor: |-
+                    =//RGBA(168, 0, 0, 1)
+                    Self.Color
+                FocusedBorderThickness: =1
+                Font: =Font.'Segoe UI'
+                FontWeight: =FontWeight.Semibold
+                Height: =10
+                Live: =Live.Assertive
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Size: =11
+                Text: ="Please input 50 characters or less "
+                Visible: =Parent.DisplayMode<>DisplayMode.View
+                Width: |-
+                    =//  Parent.Width - 60
+                    txtP1CAIControlItem.Width
+                X: =txtP1CAIControlItem.X
+                Y: =txtP1CAIControlItem.Y + txtP1CAIControlItem.Height
+                ZIndex: =18
+
+            WarningMessage3 As label:
+                AutoHeight: =true
+                BorderColor: =RGBA(0, 0, 0, 0)
+                BorderStyle: =BorderStyle.None
+                BorderThickness: =1
+                Color: =RGBA(54, 176, 75, 1)
+                DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                DisabledColor: |-
+                    =//RGBA(168, 0, 0, 1)
+                    Self.Color
+                FocusedBorderThickness: =1
+                Font: =Font.'Segoe UI'
+                FontWeight: =FontWeight.Semibold
+                Height: =10
+                Live: =Live.Assertive
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Size: =11
+                Text: ="Please input 50 characters or less "
+                Visible: =Parent.DisplayMode<>DisplayMode.View
+                Width: |-
+                    =//  Parent.Width - 60
+                    txtP1CAIControlItem.Width
+                X: =txtP1CAISpec.X
+                Y: =txtP1CAISpec.Y + txtP1CAISpec.Height
+                ZIndex: =19
 
         "'Process1 RC Process_DataCard1' As typedDataCard.textualEditCard":
             BorderColor: =RGBA(166, 166, 166, 1)
