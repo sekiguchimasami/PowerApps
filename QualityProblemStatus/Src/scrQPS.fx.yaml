@@ -940,7 +940,7 @@
             BorderThickness: =1
             DisplayMode: =DisplayMode.Edit
             Fill: =RGBA(204, 231, 246, 1)
-            Height: =671
+            Height: =886
             Width: =1184
             WidthFit: =false
             X: =0
@@ -1117,7 +1117,7 @@
                 Fill: =RGBA(253, 222, 207, 1)
                 FocusedBorderThickness: =1
                 Font: =Font.'Segoe UI'
-                Height: =lblP1RCProcess.Height + rtxP1RCComment.Height + 20
+                Height: =(lblP1RCProcess.Height) * 3 + rtxP1RCComment.Height + 40
                 PaddingLeft: =0
                 Size: =10.5
                 Text: |-
@@ -1125,7 +1125,8 @@
                     (inter
                     nal)"
                 Width: =50
-                Y: =251
+                X: =lblP1Rootcause.X
+                Y: =lblP1Rootcause.Y + lblP1Rootcause.Height
                 ZIndex: =8
 
             lblP1CAIControlItem As label:
@@ -1143,8 +1144,8 @@
                 Size: =10.5
                 Text: ="Control item"
                 Width: =Parent.Width * 0.1
-                X: =50
-                Y: =251
+                X: =lblP1CAInternal.X + lblP1CAInternal.Width
+                Y: =lblP1CAInternal.Y + 10
                 ZIndex: =9
 
             txtP1CAIControlItem As text:
@@ -1170,7 +1171,7 @@
                 Size: =10.5
                 Width: =Parent.Width * 0.84
                 X: =167
-                Y: =251
+                Y: =lblP1CAIControlItem.Y
                 ZIndex: =10
 
             lblP1CAISpec As label:
@@ -1188,8 +1189,8 @@
                 Size: =10.5
                 Text: ="Spec/Control"
                 Width: =Parent.Width * 0.1
-                X: =52
-                Y: =283
+                X: =lblP1CAIControlItem.X
+                Y: =lblP1CAIControlItem.Y + lblP1CAIControlItem.Height + 10
                 ZIndex: =11
 
             txtP1CAISpec As text:
@@ -1215,8 +1216,112 @@
                 Size: =10.5
                 Width: =Parent.Width * 0.84
                 X: =169
-                Y: =283
+                Y: =lblP1CAISpec.Y
                 ZIndex: =12
+
+            rtxP1CAIComment As richTextEditor:
+                BorderColor: =RGBA(166, 166, 166, 1)
+                Default: =ThisItem.'Process1 CA Internal Comment'
+                Height: =rtxP1RCComment.Height
+                Width: =1111
+                X: =lblP1CAIControlItem.X
+                Y: =lblP1CAISpec.Y + lblP1CAISpec.Height + 10
+                ZIndex: =13
+
+            lblP1CAIEquipmentImprovement As label:
+                Align: =Align.Center
+                BorderColor: =RGBA(0, 0, 0, 0)
+                BorderStyle: =BorderStyle.None
+                BorderThickness: =1
+                Color: =RGBA(51, 51, 51, 1)
+                DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                DisabledColor: =RGBA(166, 166, 166, 1)
+                FocusedBorderThickness: =1
+                Font: =Font.'Segoe UI'
+                Height: =32
+                PaddingLeft: =0
+                Size: =10.5
+                Text: ="Equipment improvement"
+                Width: =Parent.Width * 0.15
+                X: =lblP1CAIControlItem.X
+                Y: =rtxP1CAIComment.Y + rtxP1CAIComment.Height + 10
+                ZIndex: =14
+
+            lblP1CAIImplementationDate As label:
+                Align: =Align.Center
+                BorderColor: =RGBA(0, 0, 0, 0)
+                BorderStyle: =BorderStyle.None
+                BorderThickness: =1
+                Color: =RGBA(51, 51, 51, 1)
+                DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                DisabledColor: =RGBA(166, 166, 166, 1)
+                FocusedBorderThickness: =1
+                Font: =Font.'Segoe UI'
+                Height: =32
+                PaddingLeft: =0
+                Size: =10.5
+                Text: ="Implementation Date"
+                Width: =Parent.Width * 0.15
+                X: =rdbP1CAIEquipmentImprovement.X + rdbP1CAIEquipmentImprovement.Width
+                Y: =lblP1CAIEquipmentImprovement.Y
+                ZIndex: =15
+
+            rdbP1CAIEquipmentImprovement As radio:
+                BorderColor: =RGBA(51, 51, 51, 1)
+                BorderStyle: =BorderStyle.None
+                BorderThickness: =1
+                Color: =RGBA(0, 84, 148, 1)
+                Default: =ThisItem.'Process1 CA Internal Equipment Improvement'
+                DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                DisabledColor: =RGBA(166, 166, 166, 1)
+                FocusedBorderThickness: =1
+                Font: =Font.'Segoe UI'
+                FontWeight: =FontWeight.Semibold
+                Height: =ddlSite.Height
+                HoverColor: =RGBA(51, 51, 51, 1)
+                HoverFill: =RGBA(0, 0, 0, 0)
+                Items: =Split(LookUp(選択肢マスター, 項目="Equipment improvement").選択肢, Char(10))
+                Layout: =Layout.Horizontal
+                PaddingBottom: =5
+                PaddingTop: =5
+                PressedColor: =RGBA(51, 51, 51, 1)
+                PressedFill: =RGBA(0, 0, 0, 0)
+                RadioBorderColor: =RGBA(51, 51, 51, 1)
+                RadioSelectionFill: =RGBA(0, 120, 212, 1)
+                RadioSize: =18
+                Size: =10.5
+                Width: =Parent.Width * 0.2
+                X: =lblP1CAIEquipmentImprovement.X + lblP1CAIEquipmentImprovement.Width
+                Y: =lblP1CAIEquipmentImprovement.Y
+                ZIndex: =16
+
+            datP1CAIImplementationDate As datepicker:
+                BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                BorderThickness: =1
+                CalendarHeaderFill: =ColorFade(RGBA(0, 120, 212, 1), -30%)
+                Color: =RGBA(51, 51, 51, 1)
+                DefaultDate: =ThisItem.'Process1 CA Internal Implementation Date'
+                DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                DisabledColor: =RGBA(166, 166, 166, 1)
+                DisabledFill: =RGBA(244, 244, 244, 1)
+                DisplayMode: =Parent.DisplayMode
+                EndYear: =Year(Today())+100
+                FocusedBorderThickness: =1
+                Font: =Font.'Segoe UI'
+                Height: =32
+                HoverDateFill: =RGBA(200, 200, 200, 1)
+                IconBackground: =RGBA(0, 120, 212, 1)
+                IsEditable: =true
+                PaddingBottom: =0
+                PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
+                SelectedDateFill: =RGBA(0, 120, 212, 1)
+                Size: =10.5
+                StartYear: =1899
+                Tooltip: =Parent.DisplayName
+                Width: =(Parent.Width - 60) * 0.2
+                X: =lblP1CAIImplementationDate.X + lblP1CAIImplementationDate.Width
+                Y: =lblP1CAIEquipmentImprovement.Y
+                ZIndex: =17
 
         "'Process1 RC Process_DataCard1' As typedDataCard.textualEditCard":
             BorderColor: =RGBA(166, 166, 166, 1)
@@ -1787,7 +1892,9 @@
             Fill: =RGBA(0, 0, 0, 0)
             Height: =40
             Required: =false
-            Update: =DataCardValue16.HtmlText
+            Update: |-
+                =//DataCardValue16.HtmlText
+                rtxP1CAIComment.HtmlText
             Width: =592
             X: =1
             Y: =10
