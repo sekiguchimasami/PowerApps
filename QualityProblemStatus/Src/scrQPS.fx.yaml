@@ -1815,7 +1815,7 @@
             txtP2CAIControlItem As text:
                 BorderColor: =RGBA(166, 166, 166, 1)
                 Color: =RGBA(51, 51, 51, 1)
-                Default: =ThisItem.'Process1 CA Internal Control Item'
+                Default: =ThisItem.'Process2 CA Internal Control Item'
                 DisabledBorderColor: =RGBA(0, 0, 0, 0)
                 DisabledColor: =RGBA(166, 166, 166, 1)
                 DisabledFill: =RGBA(244, 244, 244, 1)
@@ -1861,7 +1861,7 @@
             txtP2CAISpec As text:
                 BorderColor: =RGBA(166, 166, 166, 1)
                 Color: =RGBA(51, 51, 51, 1)
-                Default: =ThisItem.'Process1 CA Internal Spec/Control'
+                Default: =ThisItem.'Process2 CA Internal Spec/Control'
                 DisabledBorderColor: =RGBA(0, 0, 0, 0)
                 DisabledColor: =RGBA(166, 166, 166, 1)
                 DisabledFill: =RGBA(244, 244, 244, 1)
@@ -2080,7 +2080,7 @@
             txtP2CACControlItem As text:
                 BorderColor: =RGBA(166, 166, 166, 1)
                 Color: =RGBA(51, 51, 51, 1)
-                Default: =ThisItem.'Process1 CA Internal Control Item'
+                Default: =ThisItem.'Process2 CA Customer Control Item'
                 DisabledBorderColor: =RGBA(0, 0, 0, 0)
                 DisabledColor: =RGBA(166, 166, 166, 1)
                 DisabledFill: =RGBA(244, 244, 244, 1)
@@ -2126,7 +2126,7 @@
             txtP2CACSpec As text:
                 BorderColor: =RGBA(166, 166, 166, 1)
                 Color: =RGBA(51, 51, 51, 1)
-                Default: =ThisItem.'Process1 CA Internal Spec/Control'
+                Default: =ThisItem.'Process2 CA Customer Spec/Control'
                 DisabledBorderColor: =RGBA(0, 0, 0, 0)
                 DisabledColor: =RGBA(166, 166, 166, 1)
                 DisabledFill: =RGBA(244, 244, 244, 1)
@@ -2357,7 +2357,7 @@
                 ChevronHoverBackground: =RGBA(212, 212, 212, 1)
                 ChevronHoverFill: =RGBA(33, 33, 33, 1)
                 Color: =RGBA(0, 84, 148, 1)
-                Default: =ThisItem.Customer
+                Default: =ThisItem.'Process3 RC Process'
                 DisabledBorderColor: =RGBA(0, 0, 0, 0)
                 DisabledColor: =RGBA(166, 166, 166, 1)
                 DisabledFill: =RGBA(244, 244, 244, 1)
@@ -2413,7 +2413,7 @@
                 ChevronHoverFill: =RGBA(33, 33, 33, 1)
                 Color: =RGBA(51, 51, 51, 1)
                 DefaultSelectedItems: |-
-                    ={Value:ThisItem.'Media Program'}
+                    ={Value:ThisItem.'Process3 RC Actual Cause'}
                 DisabledBorderColor: =RGBA(0, 0, 0, 0)
                 DisabledColor: =RGBA(166, 166, 166, 1)
                 DisabledFill: =RGBA(244, 244, 244, 1)
@@ -2481,7 +2481,7 @@
             txtP3CAIControlItem As text:
                 BorderColor: =RGBA(166, 166, 166, 1)
                 Color: =RGBA(51, 51, 51, 1)
-                Default: =ThisItem.'Process1 CA Internal Control Item'
+                Default: =ThisItem.'Process3 CA Internal Control Item'
                 DisabledBorderColor: =RGBA(0, 0, 0, 0)
                 DisabledColor: =RGBA(166, 166, 166, 1)
                 DisabledFill: =RGBA(244, 244, 244, 1)
@@ -2527,7 +2527,7 @@
             txtP3CAISpec As text:
                 BorderColor: =RGBA(166, 166, 166, 1)
                 Color: =RGBA(51, 51, 51, 1)
-                Default: =ThisItem.'Process1 CA Internal Spec/Control'
+                Default: =ThisItem.'Process3 CA Internal Spec/Control'
                 DisabledBorderColor: =RGBA(0, 0, 0, 0)
                 DisabledColor: =RGBA(166, 166, 166, 1)
                 DisabledFill: =RGBA(244, 244, 244, 1)
@@ -2594,7 +2594,7 @@
                 BorderStyle: =BorderStyle.None
                 BorderThickness: =1
                 Color: =RGBA(0, 84, 148, 1)
-                Default: =ThisItem.'Process1 CA Internal Equipment Improvement'
+                Default: =ThisItem.'Process3 CA Internal Equipment Improvement'
                 DisabledBorderColor: =RGBA(0, 0, 0, 0)
                 DisabledColor: =RGBA(166, 166, 166, 1)
                 FocusedBorderThickness: =1
@@ -2623,7 +2623,7 @@
                 BorderThickness: =1
                 CalendarHeaderFill: =ColorFade(RGBA(0, 120, 212, 1), -30%)
                 Color: =RGBA(51, 51, 51, 1)
-                DefaultDate: =ThisItem.'Process1 CA Internal Implementation Date'
+                DefaultDate: =ThisItem.'Process3 CA Internal Implementation Date'
                 DisabledBorderColor: =RGBA(0, 0, 0, 0)
                 DisabledColor: =RGBA(166, 166, 166, 1)
                 DisabledFill: =RGBA(244, 244, 244, 1)
@@ -2746,7 +2746,7 @@
             txtP3CACControlItem As text:
                 BorderColor: =RGBA(166, 166, 166, 1)
                 Color: =RGBA(51, 51, 51, 1)
-                Default: =ThisItem.'Process1 CA Internal Control Item'
+                Default: =ThisItem.'Process3 CA Customer Control Item'
                 DisabledBorderColor: =RGBA(0, 0, 0, 0)
                 DisabledColor: =RGBA(166, 166, 166, 1)
                 DisabledFill: =RGBA(244, 244, 244, 1)
@@ -2792,7 +2792,7 @@
             txtP3CACSpec As text:
                 BorderColor: =RGBA(166, 166, 166, 1)
                 Color: =RGBA(51, 51, 51, 1)
-                Default: =ThisItem.'Process1 CA Internal Spec/Control'
+                Default: =ThisItem.'Process3 CA Customer Spec/Control'
                 DisabledBorderColor: =RGBA(0, 0, 0, 0)
                 DisabledColor: =RGBA(166, 166, 166, 1)
                 DisabledFill: =RGBA(244, 244, 244, 1)
@@ -2840,7 +2840,7 @@
                 BorderThickness: =1
                 CalendarHeaderFill: =ColorFade(RGBA(0, 120, 212, 1), -30%)
                 Color: =RGBA(51, 51, 51, 1)
-                DefaultDate: =ThisItem.'Process1 CA Internal Implementation Date'
+                DefaultDate: =ThisItem.'Process3 CA Customer Implementation Date'
                 DisabledBorderColor: =RGBA(0, 0, 0, 0)
                 DisabledColor: =RGBA(166, 166, 166, 1)
                 DisabledFill: =RGBA(244, 244, 244, 1)
