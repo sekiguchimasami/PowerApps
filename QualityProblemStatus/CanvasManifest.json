@@ -23,7 +23,7 @@
       "cdsdataformatting": false,
       "classiccontrols": false,
       "consistentreturnschemafortabularfunctions": true,
-      "copyandmerge": true,
+      "copyandmerge": false,
       "dataflowanalysisenabled": false,
       "datatablev2control": true,
       "dataverseactionsenabled": true,
