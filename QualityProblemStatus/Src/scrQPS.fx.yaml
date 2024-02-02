@@ -1633,8 +1633,9 @@
                 ZIndex: =32
 
         Process2_DataCard As typedDataCard.blankCard:
-            BorderColor: =RGBA(166, 166, 166, 1)
+            BorderColor: =RGBA(102, 152, 191, 1)
             BorderStyle: =BorderStyle.Solid
+            BorderThickness: =1
             DisplayMode: =DisplayMode.Edit
             Fill: =RGBA(204, 228, 246, 1)
             Height: =100
@@ -1928,7 +1929,7 @@
                 BorderStyle: =BorderStyle.None
                 BorderThickness: =1
                 Color: =RGBA(0, 84, 148, 1)
-                Default: =ThisItem.'Process2 CA Customer Implementation Date'
+                Default: =ThisItem.'Process2 CA Internal Equipment Improvement'
                 DisabledBorderColor: =RGBA(0, 0, 0, 0)
                 DisabledColor: =RGBA(166, 166, 166, 1)
                 FocusedBorderThickness: =1
@@ -2326,8 +2327,9 @@
                 ZIndex: =32
 
         Process3_DataCard As typedDataCard.blankCard:
-            BorderColor: =RGBA(166, 166, 166, 1)
+            BorderColor: =RGBA(187, 221, 140, 1)
             BorderStyle: =BorderStyle.Solid
+            BorderThickness: =1
             DisplayMode: =DisplayMode.Edit
             Fill: =RGBA(204, 228, 246, 1)
             Height: =100
@@ -2993,7 +2995,7 @@
 
             rtxP3RCComment As richTextEditor:
                 BorderColor: =RGBA(166, 166, 166, 1)
-                Default: ="ここに<strong>リッチ テキスト</strong>を入力してください。"
+                Default: =ThisItem.'Process3 RC Comment'
                 Height: =rtxP1RCComment.Height
                 Width: =rtxP1RCComment.Width
                 X: =lblP3RCProcess.X
@@ -3002,7 +3004,7 @@
 
             rtxP3CAIComment As richTextEditor:
                 BorderColor: =RGBA(166, 166, 166, 1)
-                Default: ="ここに<strong>リッチ テキスト</strong>を入力してください。"
+                Default: =ThisItem.'Process3 CA Internal Comment'
                 Height: =rtxP3RCComment.Height
                 Width: =rtxP3RCComment.Width
                 X: =lblP3CAIControlItem.X
@@ -3011,12 +3013,312 @@
 
             rtxP3CACComment As richTextEditor:
                 BorderColor: =RGBA(166, 166, 166, 1)
-                Default: ="ここに<strong>リッチ テキスト</strong>を入力してください。"
+                Default: =ThisItem.'Process3 CA Customer Comment'
                 Height: =rtxP3RCComment.Height
                 Width: =rtxP3RCComment.Width
                 X: =lblP3CACControlItem.X
                 Y: =lblP3CACSpec.Y + lblP3CACSpec.Height + WarningMessageP35.Height + 10
                 ZIndex: =32
+
+        DataCard4 As typedDataCard.blankCard:
+            BorderColor: =RGBA(166, 166, 166, 1)
+            BorderStyle: =BorderStyle.Solid
+            DisplayMode: =DisplayMode.Edit
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =100
+            Width: =1190
+            X: =0
+            Y: =10
+            ZIndex: =1
+
+            lblAppliedProgram As label:
+                BorderColor: =RGBA(0, 0, 0, 0)
+                BorderStyle: =BorderStyle.None
+                BorderThickness: =1
+                Color: =RGBA(51, 51, 51, 1)
+                DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                DisabledColor: =RGBA(166, 166, 166, 1)
+                FocusedBorderThickness: =1
+                Font: =Font.'Segoe UI'
+                FontWeight: =FontWeight.Semibold
+                Height: =32
+                PaddingLeft: =0
+                Size: =11
+                Text: ="AppliedProgram"
+                Width: =(Parent.Width - 60) * 0.18
+                X: =40
+                Y: =10
+                ZIndex: =1
+
+            lblAppliedProgramComment As label:
+                BorderColor: =RGBA(0, 0, 0, 0)
+                BorderStyle: =BorderStyle.None
+                BorderThickness: =1
+                Color: =RGBA(51, 51, 51, 1)
+                DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                DisabledColor: =RGBA(166, 166, 166, 1)
+                FocusedBorderThickness: =1
+                Font: =Font.'Segoe UI'
+                FontWeight: =FontWeight.Semibold
+                Height: =32
+                PaddingLeft: =0
+                Size: =11
+                Text: ="Comment"
+                Width: =(Parent.Width - 60) * 0.18
+                X: =lblAppliedProgram.X
+                Y: =lblAppliedProgram.Y + lblAppliedProgram.Height + 10
+                ZIndex: =3
+
+            rtxAppliedProgramComment As richTextEditor:
+                BorderColor: =RGBA(166, 166, 166, 1)
+                Default: =ThisItem.'Applied Program Comment'
+                Width: =cmbAppliedProgram.Width
+                X: =lblAppliedProgramComment.X + lblAppliedProgramComment.Width
+                Y: =lblAppliedProgramComment.Y
+                ZIndex: =4
+
+            cmbAppliedProgram As combobox:
+                BorderColor: =RGBA(166, 166, 166, 1)
+                BorderThickness: =1
+                ChevronBackground: =RGBA(255, 255, 255, 1)
+                ChevronDisabledBackground: =RGBA(244, 244, 244, 1)
+                ChevronDisabledFill: =RGBA(166, 166, 166, 1)
+                ChevronFill: =RGBA(33, 33, 33, 1)
+                ChevronHoverBackground: =RGBA(212, 212, 212, 1)
+                ChevronHoverFill: =RGBA(33, 33, 33, 1)
+                Color: =RGBA(51, 51, 51, 1)
+                DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                DisabledColor: =RGBA(166, 166, 166, 1)
+                DisabledFill: =RGBA(244, 244, 244, 1)
+                DisplayFields: =["zzProgram"]
+                FocusedBorderThickness: =1
+                Font: =Font.'Segoe UI'
+                Height: =32
+                HoverBorderColor: =ColorFade(RGBA(0, 120, 212, 1), -30%)
+                HoverColor: =RGBA(51, 51, 51, 1)
+                HoverFill: =RGBA(212, 212, 212, 1)
+                IsSearchable: =false
+                Items: =Split(Filter('Program Master', 区分.Value="Media").Program, Char(10))
+                PressedBorderColor: =ColorFade(RGBA(0, 120, 212, 1), -30%)
+                PressedColor: =RGBA(255, 255, 255, 1)
+                PressedFill: =RGBA(0, 120, 212, 1)
+                SearchFields: =["zzProgram"]
+                SearchItems: =[]
+                SelectionFill: =RGBA(0, 120, 212, 1)
+                Size: =10.5
+                Width: =(Parent.Width - 60) * 0.8
+                X: =lblAppliedProgram.X + lblAppliedProgram.Width
+                Y: =lblAppliedProgram.Y
+                ZIndex: =5
+
+        "'Applied Program Comment_DataCard2' As typedDataCard.richTextEditorEditCard":
+            BorderColor: =RGBA(166, 166, 166, 1)
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="zzAppliedProgramComment"
+            Default: =ThisItem.'Applied Program Comment'
+            DisplayMode: =Parent.DisplayMode
+            DisplayName: =DataSourceInfo([@'Quality Problem Status'],DataSourceInfo.DisplayName,"zzAppliedProgramComment")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =40
+            Required: =false
+            Update: =DataCardValue48.HtmlText
+            Width: =588
+            X: =0
+            Y: =12
+            ZIndex: =1
+
+            DataCardKey48 As label:
+                AutoHeight: =true
+                BorderColor: =RGBA(0, 0, 0, 0)
+                BorderStyle: =BorderStyle.None
+                BorderThickness: =1
+                Color: =RGBA(51, 51, 51, 1)
+                DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                DisabledColor: =RGBA(166, 166, 166, 1)
+                FocusedBorderThickness: =1
+                Font: =Font.'Segoe UI'
+                FontWeight: =FontWeight.Semibold
+                Height: =34
+                PaddingLeft: =0
+                Size: =10.5
+                Text: =Parent.DisplayName
+                Width: =(Parent.Width - 60) * 0.4
+                Wrap: =false
+                X: =32
+                Y: =10 + (DataCardValue48.Height / 2) - (Self.Height / 2)
+                ZIndex: =1
+
+            DataCardValue48 As richTextEditor:
+                BorderColor: =RGBA(166, 166, 166, 1)
+                Default: =Parent.Default
+                DisplayMode: =Parent.DisplayMode
+                Width: =(Parent.Width - 60) * 0.6
+                X: =DataCardKey48.X + DataCardKey48.Width
+                Y: =10
+                ZIndex: =2
+
+            ErrorMessage48 As label:
+                AutoHeight: =true
+                BorderColor: =RGBA(0, 0, 0, 0)
+                BorderStyle: =BorderStyle.None
+                BorderThickness: =1
+                Color: =RGBA(168, 0, 0, 1)
+                DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                DisabledColor: =RGBA(168, 0, 0, 1)
+                FocusedBorderThickness: =1
+                Font: =Font.'Segoe UI'
+                FontWeight: =FontWeight.Semibold
+                Height: =10
+                Live: =Live.Assertive
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Size: =10.5
+                Text: =Parent.Error
+                Visible: =Parent.DisplayMode=DisplayMode.Edit
+                Width: =Parent.Width - 60
+                X: =32
+                Y: =DataCardValue48.Y + DataCardValue48.Height
+                ZIndex: =3
+
+            StarVisible48 As label:
+                Align: =Align.Center
+                BorderColor: =RGBA(0, 0, 0, 0)
+                BorderStyle: =BorderStyle.None
+                BorderThickness: =1
+                Color: =RGBA(51, 51, 51, 1)
+                DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                DisabledColor: =RGBA(166, 166, 166, 1)
+                FocusedBorderThickness: =1
+                Font: =Font.'Segoe UI'
+                FontWeight: =FontWeight.Semibold
+                Height: =DataCardKey48.Height
+                PaddingLeft: =0
+                Size: =10.5
+                Text: ="*"
+                Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                Width: =30
+                Wrap: =false
+                X: =2
+                Y: =DataCardKey48.Y
+                ZIndex: =4
+
+        "'Applied Program_DataCard1' As typedDataCard.textualEditCard":
+            BorderColor: =RGBA(166, 166, 166, 1)
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="zzAppliedProgram"
+            Default: =ThisItem.'Applied Program'
+            DisplayMode: =Parent.DisplayMode
+            DisplayName: =DataSourceInfo([@'Quality Problem Status'],DataSourceInfo.DisplayName,"zzAppliedProgram")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =50
+            MaxLength: =DataSourceInfo([@'Quality Problem Status'], DataSourceInfo.MaxLength, "zzAppliedProgram")
+            Required: =false
+            Update: =DataCardValue25.Text
+            Width: =1184
+            X: =0
+            Y: =12
+            ZIndex: =1
+
+            DataCardKey25 As label:
+                AutoHeight: =true
+                BorderColor: =RGBA(0, 0, 0, 0)
+                BorderStyle: =BorderStyle.None
+                BorderThickness: =1
+                Color: =RGBA(51, 51, 51, 1)
+                DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                DisabledColor: =RGBA(166, 166, 166, 1)
+                FocusedBorderThickness: =1
+                Font: =Font.'Segoe UI'
+                FontWeight: =FontWeight.Semibold
+                Height: =34
+                PaddingLeft: =0
+                Size: =10.5
+                Text: =Parent.DisplayName
+                Width: =(Parent.Width - 60) * 0.4
+                Wrap: =false
+                X: =32
+                Y: =10 + (DataCardValue25.Height / 2) - (Self.Height / 2)
+                ZIndex: =1
+
+            DataCardValue25 As text:
+                BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                Color: =RGBA(51, 51, 51, 1)
+                Default: =Parent.Default
+                DelayOutput: =true
+                DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                DisabledColor: =RGBA(166, 166, 166, 1)
+                DisabledFill: =RGBA(244, 244, 244, 1)
+                DisplayMode: =Parent.DisplayMode
+                FocusedBorderThickness: =1
+                Font: =Font.'Segoe UI'
+                Height: =32
+                HoverBorderColor: =ColorFade(RGBA(0, 120, 212, 1), -30%)
+                HoverColor: =RGBA(51, 51, 51, 1)
+                HoverFill: =RGBA(255, 255, 255, 1)
+                MaxLength: =Parent.MaxLength
+                PaddingLeft: =5
+                PressedBorderColor: =RGBA(0, 120, 212, 1)
+                PressedColor: =RGBA(51, 51, 51, 1)
+                PressedFill: =RGBA(255, 255, 255, 1)
+                RadiusBottomLeft: =0
+                RadiusBottomRight: =0
+                RadiusTopLeft: =0
+                RadiusTopRight: =0
+                Size: =10.5
+                Tooltip: =Parent.DisplayName
+                Width: =(Parent.Width - 60) * 0.6
+                X: =DataCardKey25.X + DataCardKey25.Width
+                Y: =10
+                ZIndex: =2
+
+            ErrorMessage20 As label:
+                AutoHeight: =true
+                BorderColor: =RGBA(0, 0, 0, 0)
+                BorderStyle: =BorderStyle.None
+                BorderThickness: =1
+                Color: =RGBA(168, 0, 0, 1)
+                DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                DisabledColor: =RGBA(168, 0, 0, 1)
+                FocusedBorderThickness: =1
+                Font: =Font.'Segoe UI'
+                FontWeight: =FontWeight.Semibold
+                Height: =10
+                Live: =Live.Assertive
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Size: =10.5
+                Text: =Parent.Error
+                Visible: =Parent.DisplayMode=DisplayMode.Edit
+                Width: =Parent.Width - 60
+                X: =32
+                Y: =DataCardValue25.Y + DataCardValue25.Height
+                ZIndex: =3
+
+            StarVisible25 As label:
+                Align: =Align.Center
+                BorderColor: =RGBA(0, 0, 0, 0)
+                BorderStyle: =BorderStyle.None
+                BorderThickness: =1
+                Color: =RGBA(51, 51, 51, 1)
+                DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                DisabledColor: =RGBA(166, 166, 166, 1)
+                FocusedBorderThickness: =1
+                Font: =Font.'Segoe UI'
+                FontWeight: =FontWeight.Semibold
+                Height: =DataCardKey25.Height
+                PaddingLeft: =0
+                Size: =10.5
+                Text: ="*"
+                Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                Width: =30
+                Wrap: =false
+                X: =2
+                Y: =DataCardKey25.Y
+                ZIndex: =4
 
         "'Process1 RC Process_DataCard1' As typedDataCard.textualEditCard":
             BorderColor: =RGBA(166, 166, 166, 1)
@@ -3033,8 +3335,8 @@
                 =//DataCardValue14.Text
                 ddlP1RCProcess.Selected.Process
             Width: =592
-            X: =0
-            Y: =10
+            X: =1
+            Y: =12
             ZIndex: =1
 
             DataCardKey14 As label:
@@ -3149,8 +3451,8 @@
             Required: =false
             Update: =DataCardValue15.Text
             Width: =592
-            X: =1
-            Y: =10
+            X: =0
+            Y: =13
             ZIndex: =1
 
             DataCardKey15 As label:
@@ -3264,8 +3566,8 @@
             Required: =false
             Update: =DataCardValue6.HtmlText
             Width: =592
-            X: =0
-            Y: =11
+            X: =1
+            Y: =13
             ZIndex: =1
 
             DataCardKey6 As label:
@@ -3358,8 +3660,8 @@
             Required: =false
             Update: =DataCardValue17.Text
             Width: =592
-            X: =1
-            Y: =11
+            X: =0
+            Y: =14
             ZIndex: =1
 
             DataCardKey17 As label:
@@ -3474,8 +3776,8 @@
             Required: =false
             Update: =DataCardValue18.Text
             Width: =592
-            X: =0
-            Y: =12
+            X: =1
+            Y: =14
             ZIndex: =1
 
             DataCardKey18 As label:
@@ -3591,8 +3893,8 @@
                 =//DataCardValue16.HtmlText
                 rtxP1CAIComment.HtmlText
             Width: =592
-            X: =1
-            Y: =12
+            X: =0
+            Y: =15
             ZIndex: =1
 
             DataCardKey16 As label:
@@ -3672,7 +3974,7 @@
                 Y: =DataCardKey16.Y
                 ZIndex: =4
 
-        "'Process1 CA Internal Equipment Improvement_DataCard1' As typedDataCard.toggleEditCard":
+        "'Process1 CA Internal Equipment Improvement_DataCard1' As typedDataCard.yesNoRadioEditCard":
             BorderColor: =RGBA(166, 166, 166, 1)
             BorderStyle: =BorderStyle.Solid
             DataField: ="zzP1CAIEquipmentImprovement"
@@ -3682,13 +3984,13 @@
             Fill: =RGBA(0, 0, 0, 0)
             Height: =50
             Required: =false
-            Update: =DataCardValue20.Value
+            Update: =DataCardValue4.Selected.Value = "はい"
             Width: =592
-            X: =0
-            Y: =13
+            X: =1
+            Y: =15
             ZIndex: =1
 
-            DataCardKey20 As label:
+            DataCardKey4 As label:
                 AutoHeight: =true
                 BorderColor: =RGBA(0, 0, 0, 0)
                 BorderStyle: =BorderStyle.None
@@ -3706,34 +4008,39 @@
                 Width: =(Parent.Width - 60) * 0.4
                 Wrap: =false
                 X: =32
-                Y: =10 + (DataCardValue20.Height / 2) - (Self.Height / 2)
+                Y: =10 + (DataCardValue4.Height / 2) - (Self.Height / 2)
                 ZIndex: =1
 
-            DataCardValue20 As toggleSwitch:
+            DataCardValue4 As radio:
                 BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
                 BorderStyle: =BorderStyle.None
+                BorderThickness: =1
                 Color: =RGBA(51, 51, 51, 1)
-                Default: =Parent.Default
+                Default: =If(Parent.Default, "はい", "いいえ")
                 DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                DisabledColor: =RGBA(166, 166, 166, 1)
                 DisplayMode: =Parent.DisplayMode
-                FalseFill: =RGBA(102, 102, 102, 1)
-                FalseHoverFill: =RGBA(33, 33, 33, 1)
                 FocusedBorderThickness: =1
                 Font: =Font.'Segoe UI'
-                HandleFill: =RGBA(255, 255, 255, 1)
-                Height: =22
-                HoverBorderColor: =RGBA(0, 0, 0, 0)
-                PressedBorderColor: =RGBA(0, 0, 0, 0)
+                Height: =44
+                HoverColor: =RGBA(51, 51, 51, 1)
+                HoverFill: =RGBA(0, 0, 0, 0)
+                Items: =["はい", "いいえ"]
+                Layout: =Layout.Horizontal
+                PaddingBottom: =0
+                PaddingTop: =0
+                PressedColor: =RGBA(51, 51, 51, 1)
+                PressedFill: =RGBA(0, 0, 0, 0)
+                RadioBorderColor: =RGBA(51, 51, 51, 1)
+                RadioSelectionFill: =RGBA(0, 120, 212, 1)
                 Size: =10.5
                 Tooltip: =Parent.DisplayName
-                TrueFill: =RGBA(0, 120, 212, 1)
-                TrueHoverFill: =ColorFade(RGBA(0, 120, 212, 1), -30%)
-                Width: =40
-                X: =Parent.Width  - Self.Width - 30
-                Y: =12
+                Width: =(Parent.Width - 70) * 0.6
+                X: =DataCardKey4.X + DataCardKey4.Width - 16
+                Y: =10
                 ZIndex: =2
 
-            ErrorMessage20 As label:
+            ErrorMessage4 As label:
                 AutoHeight: =true
                 BorderColor: =RGBA(0, 0, 0, 0)
                 BorderStyle: =BorderStyle.None
@@ -3755,10 +4062,10 @@
                 Visible: =Parent.DisplayMode=DisplayMode.Edit
                 Width: =Parent.Width - 60
                 X: =32
-                Y: =DataCardValue20.Y + DataCardValue20.Height
+                Y: =DataCardValue4.Y + DataCardValue4.Height
                 ZIndex: =3
 
-            StarVisible20 As label:
+            StarVisible4 As label:
                 Align: =Align.Center
                 BorderColor: =RGBA(0, 0, 0, 0)
                 BorderStyle: =BorderStyle.None
@@ -3769,7 +4076,7 @@
                 FocusedBorderThickness: =1
                 Font: =Font.'Segoe UI'
                 FontWeight: =FontWeight.Semibold
-                Height: =DataCardKey20.Height
+                Height: =DataCardKey4.Height
                 PaddingLeft: =0
                 Size: =10.5
                 Text: ="*"
@@ -3777,7 +4084,7 @@
                 Width: =30
                 Wrap: =false
                 X: =2
-                Y: =DataCardKey20.Y
+                Y: =DataCardKey4.Y
                 ZIndex: =4
 
         "'Process1 CA Internal Implementation Date_DataCard1' As typedDataCard.dateEditCard":
@@ -3792,8 +4099,8 @@
             Required: =false
             Update: =DataCardValue21.SelectedDate
             Width: =592
-            X: =1
-            Y: =13
+            X: =0
+            Y: =16
             ZIndex: =1
 
             DataCardKey21 As label:
@@ -3905,8 +4212,8 @@
             Required: =false
             Update: =DataCardValue22.Text
             Width: =592
-            X: =0
-            Y: =14
+            X: =1
+            Y: =16
             ZIndex: =1
 
             DataCardKey22 As label:
@@ -4020,8 +4327,8 @@
             Required: =false
             Update: =DataCardValue23.SelectedDate
             Width: =592
-            X: =1
-            Y: =14
+            X: =0
+            Y: =17
             ZIndex: =1
 
             DataCardKey23 As label:
@@ -4133,8 +4440,8 @@
             Required: =false
             Update: =DataCardValue24.Text
             Width: =592
-            X: =0
-            Y: =15
+            X: =1
+            Y: =17
             ZIndex: =1
 
             DataCardKey24 As label:
@@ -4249,8 +4556,8 @@
             Required: =false
             Update: =DataCardValue26.Text
             Width: =592
-            X: =1
-            Y: =15
+            X: =0
+            Y: =18
             ZIndex: =1
 
             DataCardKey26 As label:
@@ -4365,8 +4672,8 @@
             Required: =false
             Update: =DataCardValue27.Text
             Width: =592
-            X: =0
-            Y: =16
+            X: =1
+            Y: =18
             ZIndex: =1
 
             DataCardKey27 As label:
@@ -4480,8 +4787,8 @@
             Required: =false
             Update: =DataCardValue19.HtmlText
             Width: =592
-            X: =1
-            Y: =16
+            X: =0
+            Y: =19
             ZIndex: =1
 
             DataCardKey19 As label:
@@ -4574,8 +4881,8 @@
             Required: =false
             Update: =DataCardValue29.Text
             Width: =592
-            X: =0
-            Y: =17
+            X: =1
+            Y: =19
             ZIndex: =1
 
             DataCardKey29 As label:
@@ -4690,8 +4997,8 @@
             Required: =false
             Update: =DataCardValue30.Text
             Width: =592
-            X: =1
-            Y: =17
+            X: =0
+            Y: =20
             ZIndex: =1
 
             DataCardKey30 As label:
@@ -4805,8 +5112,8 @@
             Required: =false
             Update: =DataCardValue28.HtmlText
             Width: =592
-            X: =0
-            Y: =18
+            X: =1
+            Y: =20
             ZIndex: =1
 
             DataCardKey28 As label:
@@ -4898,8 +5205,8 @@
             Required: =false
             Update: =DataCardValue32.Value
             Width: =592
-            X: =1
-            Y: =18
+            X: =0
+            Y: =21
             ZIndex: =1
 
             DataCardKey32 As label:
@@ -5006,8 +5313,8 @@
             Required: =false
             Update: =DataCardValue33.SelectedDate
             Width: =592
-            X: =0
-            Y: =19
+            X: =1
+            Y: =21
             ZIndex: =1
 
             DataCardKey33 As label:
@@ -5119,8 +5426,8 @@
             Required: =false
             Update: =DataCardValue34.Text
             Width: =592
-            X: =1
-            Y: =19
+            X: =0
+            Y: =22
             ZIndex: =1
 
             DataCardKey34 As label:
@@ -5235,8 +5542,8 @@
             Required: =false
             Update: =DataCardValue35.Text
             Width: =592
-            X: =0
-            Y: =20
+            X: =1
+            Y: =22
             ZIndex: =1
 
             DataCardKey35 As label:
@@ -5350,8 +5657,8 @@
             Required: =false
             Update: =DataCardValue31.HtmlText
             Width: =592
-            X: =1
-            Y: =20
+            X: =0
+            Y: =23
             ZIndex: =1
 
             DataCardKey31 As label:
@@ -5443,8 +5750,8 @@
             Required: =false
             Update: =DataCardValue37.SelectedDate
             Width: =592
-            X: =0
-            Y: =21
+            X: =1
+            Y: =23
             ZIndex: =1
 
             DataCardKey37 As label:
@@ -5556,8 +5863,8 @@
             Required: =false
             Update: =DataCardValue38.Text
             Width: =592
-            X: =1
-            Y: =21
+            X: =0
+            Y: =24
             ZIndex: =1
 
             DataCardKey38 As label:
@@ -5672,8 +5979,8 @@
             Required: =false
             Update: =DataCardValue39.Text
             Width: =592
-            X: =0
-            Y: =22
+            X: =1
+            Y: =24
             ZIndex: =1
 
             DataCardKey39 As label:
@@ -5787,8 +6094,8 @@
             Required: =false
             Update: =DataCardValue36.HtmlText
             Width: =592
-            X: =1
-            Y: =22
+            X: =0
+            Y: =25
             ZIndex: =1
 
             DataCardKey36 As label:
@@ -5881,8 +6188,8 @@
             Required: =false
             Update: =DataCardValue41.Text
             Width: =592
-            X: =0
-            Y: =23
+            X: =1
+            Y: =25
             ZIndex: =1
 
             DataCardKey41 As label:
@@ -5997,8 +6304,8 @@
             Required: =false
             Update: =DataCardValue42.Text
             Width: =592
-            X: =1
-            Y: =23
+            X: =0
+            Y: =26
             ZIndex: =1
 
             DataCardKey42 As label:
@@ -6112,8 +6419,8 @@
             Required: =false
             Update: =DataCardValue40.HtmlText
             Width: =592
-            X: =0
-            Y: =24
+            X: =1
+            Y: =26
             ZIndex: =1
 
             DataCardKey40 As label:
@@ -6205,8 +6512,8 @@
             Required: =false
             Update: =DataCardValue44.Value
             Width: =592
-            X: =1
-            Y: =24
+            X: =0
+            Y: =27
             ZIndex: =1
 
             DataCardKey44 As label:
@@ -6313,8 +6620,8 @@
             Required: =false
             Update: =DataCardValue45.SelectedDate
             Width: =592
-            X: =0
-            Y: =25
+            X: =1
+            Y: =27
             ZIndex: =1
 
             DataCardKey45 As label:
@@ -6426,8 +6733,8 @@
             Required: =false
             Update: =DataCardValue46.Text
             Width: =592
-            X: =1
-            Y: =25
+            X: =0
+            Y: =28
             ZIndex: =1
 
             DataCardKey46 As label:
@@ -6542,8 +6849,8 @@
             Required: =false
             Update: =DataCardValue47.Text
             Width: =592
-            X: =0
-            Y: =26
+            X: =1
+            Y: =28
             ZIndex: =1
 
             DataCardKey47 As label:
@@ -6657,8 +6964,8 @@
             Required: =false
             Update: =DataCardValue43.HtmlText
             Width: =592
-            X: =1
-            Y: =26
+            X: =0
+            Y: =29
             ZIndex: =1
 
             DataCardKey43 As label:
@@ -6750,8 +7057,8 @@
             Required: =false
             Update: =DataCardValue49.SelectedDate
             Width: =592
-            X: =0
-            Y: =27
+            X: =1
+            Y: =29
             ZIndex: =1
 
             DataCardKey49 As label:
@@ -6850,215 +7157,6 @@
                 Y: =DataCardKey49.Y
                 ZIndex: =4
 
-        "'Applied Program_DataCard1' As typedDataCard.textualEditCard":
-            BorderColor: =RGBA(166, 166, 166, 1)
-            BorderStyle: =BorderStyle.Solid
-            DataField: ="zzAppliedProgram"
-            Default: =ThisItem.'Applied Program'
-            DisplayMode: =Parent.DisplayMode
-            DisplayName: =DataSourceInfo([@'Quality Problem Status'],DataSourceInfo.DisplayName,"zzAppliedProgram")
-            Fill: =RGBA(0, 0, 0, 0)
-            Height: =50
-            MaxLength: =DataSourceInfo([@'Quality Problem Status'], DataSourceInfo.MaxLength, "zzAppliedProgram")
-            Required: =false
-            Update: =DataCardValue50.Text
-            Width: =592
-            X: =1
-            Y: =27
-            ZIndex: =1
-
-            DataCardKey50 As label:
-                AutoHeight: =true
-                BorderColor: =RGBA(0, 0, 0, 0)
-                BorderStyle: =BorderStyle.None
-                BorderThickness: =1
-                Color: =RGBA(51, 51, 51, 1)
-                DisabledBorderColor: =RGBA(0, 0, 0, 0)
-                DisabledColor: =RGBA(166, 166, 166, 1)
-                FocusedBorderThickness: =1
-                Font: =Font.'Segoe UI'
-                FontWeight: =FontWeight.Semibold
-                Height: =34
-                PaddingLeft: =0
-                Size: =10.5
-                Text: =Parent.DisplayName
-                Width: =(Parent.Width - 60) * 0.4
-                Wrap: =false
-                X: =32
-                Y: =10 + (DataCardValue50.Height / 2) - (Self.Height / 2)
-                ZIndex: =1
-
-            DataCardValue50 As text:
-                BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
-                Color: =RGBA(51, 51, 51, 1)
-                Default: =Parent.Default
-                DelayOutput: =true
-                DisabledBorderColor: =RGBA(0, 0, 0, 0)
-                DisabledColor: =RGBA(166, 166, 166, 1)
-                DisabledFill: =RGBA(244, 244, 244, 1)
-                DisplayMode: =Parent.DisplayMode
-                FocusedBorderThickness: =1
-                Font: =Font.'Segoe UI'
-                Height: =32
-                HoverBorderColor: =ColorFade(RGBA(0, 120, 212, 1), -30%)
-                HoverColor: =RGBA(51, 51, 51, 1)
-                HoverFill: =RGBA(255, 255, 255, 1)
-                MaxLength: =Parent.MaxLength
-                PaddingLeft: =5
-                PressedBorderColor: =RGBA(0, 120, 212, 1)
-                PressedColor: =RGBA(51, 51, 51, 1)
-                PressedFill: =RGBA(255, 255, 255, 1)
-                RadiusBottomLeft: =0
-                RadiusBottomRight: =0
-                RadiusTopLeft: =0
-                RadiusTopRight: =0
-                Size: =10.5
-                Tooltip: =Parent.DisplayName
-                Width: =(Parent.Width - 60) * 0.6
-                X: =DataCardKey50.X + DataCardKey50.Width
-                Y: =10
-                ZIndex: =2
-
-            ErrorMessage50 As label:
-                AutoHeight: =true
-                BorderColor: =RGBA(0, 0, 0, 0)
-                BorderStyle: =BorderStyle.None
-                BorderThickness: =1
-                Color: =RGBA(168, 0, 0, 1)
-                DisabledBorderColor: =RGBA(0, 0, 0, 0)
-                DisabledColor: =RGBA(168, 0, 0, 1)
-                FocusedBorderThickness: =1
-                Font: =Font.'Segoe UI'
-                FontWeight: =FontWeight.Semibold
-                Height: =10
-                Live: =Live.Assertive
-                PaddingBottom: =0
-                PaddingLeft: =0
-                PaddingRight: =0
-                PaddingTop: =0
-                Size: =10.5
-                Text: =Parent.Error
-                Visible: =Parent.DisplayMode=DisplayMode.Edit
-                Width: =Parent.Width - 60
-                X: =32
-                Y: =DataCardValue50.Y + DataCardValue50.Height
-                ZIndex: =3
-
-            StarVisible50 As label:
-                Align: =Align.Center
-                BorderColor: =RGBA(0, 0, 0, 0)
-                BorderStyle: =BorderStyle.None
-                BorderThickness: =1
-                Color: =RGBA(51, 51, 51, 1)
-                DisabledBorderColor: =RGBA(0, 0, 0, 0)
-                DisabledColor: =RGBA(166, 166, 166, 1)
-                FocusedBorderThickness: =1
-                Font: =Font.'Segoe UI'
-                FontWeight: =FontWeight.Semibold
-                Height: =DataCardKey50.Height
-                PaddingLeft: =0
-                Size: =10.5
-                Text: ="*"
-                Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
-                Width: =30
-                Wrap: =false
-                X: =2
-                Y: =DataCardKey50.Y
-                ZIndex: =4
-
-        "'Applied Program Comment_DataCard2' As typedDataCard.richTextEditorEditCard":
-            BorderColor: =RGBA(166, 166, 166, 1)
-            BorderStyle: =BorderStyle.Solid
-            DataField: ="zzAppliedProgramComment"
-            Default: =ThisItem.'Applied Program Comment'
-            DisplayMode: =Parent.DisplayMode
-            DisplayName: =DataSourceInfo([@'Quality Problem Status'],DataSourceInfo.DisplayName,"zzAppliedProgramComment")
-            Fill: =RGBA(0, 0, 0, 0)
-            Height: =40
-            Required: =false
-            Update: =DataCardValue48.HtmlText
-            Width: =592
-            X: =0
-            Y: =28
-            ZIndex: =1
-
-            DataCardKey48 As label:
-                AutoHeight: =true
-                BorderColor: =RGBA(0, 0, 0, 0)
-                BorderStyle: =BorderStyle.None
-                BorderThickness: =1
-                Color: =RGBA(51, 51, 51, 1)
-                DisabledBorderColor: =RGBA(0, 0, 0, 0)
-                DisabledColor: =RGBA(166, 166, 166, 1)
-                FocusedBorderThickness: =1
-                Font: =Font.'Segoe UI'
-                FontWeight: =FontWeight.Semibold
-                Height: =34
-                PaddingLeft: =0
-                Size: =10.5
-                Text: =Parent.DisplayName
-                Width: =(Parent.Width - 60) * 0.4
-                Wrap: =false
-                X: =32
-                Y: =10 + (DataCardValue48.Height / 2) - (Self.Height / 2)
-                ZIndex: =1
-
-            DataCardValue48 As richTextEditor:
-                BorderColor: =RGBA(166, 166, 166, 1)
-                Default: =Parent.Default
-                DisplayMode: =Parent.DisplayMode
-                Width: =(Parent.Width - 60) * 0.6
-                X: =DataCardKey48.X + DataCardKey48.Width
-                Y: =10
-                ZIndex: =2
-
-            ErrorMessage48 As label:
-                AutoHeight: =true
-                BorderColor: =RGBA(0, 0, 0, 0)
-                BorderStyle: =BorderStyle.None
-                BorderThickness: =1
-                Color: =RGBA(168, 0, 0, 1)
-                DisabledBorderColor: =RGBA(0, 0, 0, 0)
-                DisabledColor: =RGBA(168, 0, 0, 1)
-                FocusedBorderThickness: =1
-                Font: =Font.'Segoe UI'
-                FontWeight: =FontWeight.Semibold
-                Height: =10
-                Live: =Live.Assertive
-                PaddingBottom: =0
-                PaddingLeft: =0
-                PaddingRight: =0
-                PaddingTop: =0
-                Size: =10.5
-                Text: =Parent.Error
-                Visible: =Parent.DisplayMode=DisplayMode.Edit
-                Width: =Parent.Width - 60
-                X: =32
-                Y: =DataCardValue48.Y + DataCardValue48.Height
-                ZIndex: =3
-
-            StarVisible48 As label:
-                Align: =Align.Center
-                BorderColor: =RGBA(0, 0, 0, 0)
-                BorderStyle: =BorderStyle.None
-                BorderThickness: =1
-                Color: =RGBA(51, 51, 51, 1)
-                DisabledBorderColor: =RGBA(0, 0, 0, 0)
-                DisabledColor: =RGBA(166, 166, 166, 1)
-                FocusedBorderThickness: =1
-                Font: =Font.'Segoe UI'
-                FontWeight: =FontWeight.Semibold
-                Height: =DataCardKey48.Height
-                PaddingLeft: =0
-                Size: =10.5
-                Text: ="*"
-                Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
-                Width: =30
-                Wrap: =false
-                X: =2
-                Y: =DataCardKey48.Y
-                ZIndex: =4
-
         Equip_DataCard1 As typedDataCard.comboBoxEditCard:
             BorderColor: =RGBA(166, 166, 166, 1)
             BorderStyle: =BorderStyle.Solid
@@ -7071,8 +7169,8 @@
             Required: =false
             Update: =DataCardValue52.Selected
             Width: =592
-            X: =1
-            Y: =28
+            X: =0
+            Y: =30
             ZIndex: =1
 
             DataCardKey52 As label:
@@ -7193,8 +7291,8 @@
             Required: =false
             Update: =DataCardValue51.HtmlText
             Width: =592
-            X: =0
-            Y: =29
+            X: =1
+            Y: =30
             ZIndex: =1
 
             DataCardKey51 As label:
@@ -7287,8 +7385,8 @@
             Required: =false
             Update: =DataCardValue54.Text
             Width: =592
-            X: =1
-            Y: =29
+            X: =0
+            Y: =31
             ZIndex: =1
 
             DataCardKey55 As label:
@@ -7405,8 +7503,8 @@
                 =//DataCardValue5.Text
                 ddlSite.Selected.Value
             Width: =592
-            X: =0
-            Y: =30
+            X: =1
+            Y: =31
             ZIndex: =1
 
             DataCardKey5 As label:
@@ -7523,8 +7621,8 @@
                 =//DataCardValue8.Text
                 ddlClaimDescription.Selected.Value
             Width: =592
-            X: =1
-            Y: =30
+            X: =0
+            Y: =32
             ZIndex: =1
 
             DataCardKey8 As label:
@@ -7641,8 +7739,8 @@
                 =//DataCardValue7.Text
                 rdbClaimDescriptionType.Selected.Value
             Width: =592
-            X: =0
-            Y: =31
+            X: =1
+            Y: =32
             ZIndex: =1
 
             DataCardKey7 As label:
@@ -7759,8 +7857,8 @@
                 =//  DataCardValue10.Text
                 ddlCustomer.Selected.Customer
             Width: =592
-            X: =1
-            Y: =31
+            X: =0
+            Y: =33
             ZIndex: =1
 
             DataCardKey10 As label:
@@ -7877,8 +7975,8 @@
                 =//DataCardValue11.Text
                 cmbMediaProgram.Selected.Value
             Width: =592
-            X: =0
-            Y: =32
+            X: =1
+            Y: =33
             ZIndex: =1
 
             DataCardKey11 As label:
@@ -7995,8 +8093,8 @@
                 =//  DataCardValue12.Text
                 ddlSubstrateSupplier.Selected.Customer
             Width: =592
-            X: =1
-            Y: =32
+            X: =0
+            Y: =34
             ZIndex: =1
 
             DataCardKey12 As label:
@@ -8113,8 +8211,8 @@
                 =//  DataCardValue13.Text
                 cmbSubstrateProgram.Selected.Value
             Width: =592
-            X: =0
-            Y: =33
+            X: =1
+            Y: =34
             ZIndex: =1
 
             DataCardKey13 As label:
@@ -8216,7 +8314,7 @@
                 Y: =DataCardKey13.Y
                 ZIndex: =4
 
-        "'Process1 CA Customer Comment_DataCard4' As typedDataCard.richTextEditorEditCard":
+        "'Process1 CA Customer Comment_DataCard1' As typedDataCard.richTextEditorEditCard":
             BorderColor: =RGBA(166, 166, 166, 1)
             BorderStyle: =BorderStyle.Solid
             DataField: ="zzP1CACComment"
@@ -8228,8 +8326,8 @@
             Required: =false
             Update: =DataCardValue53.HtmlText
             Width: =592
-            X: =1
-            Y: =33
+            X: =0
+            Y: =35
             ZIndex: =1
 
             DataCardKey53 As label:
