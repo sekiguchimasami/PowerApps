@@ -12,7 +12,7 @@
         BorderColor: =RGBA(166, 166, 166, 1)
         DelayItemLoading: =true
         Height: =Parent.Height - Self.Y
-        Items: =選択肢マスター
+        Items: ='Program Master'
         Layout: =Layout.Vertical
         LoadingSpinner: =LoadingSpinner.Data
         ShowScrollbar: =false
@@ -45,14 +45,17 @@
             ZIndex: =1
 
         Title2 As label:
+            Font: =Font.'Segoe UI'
             FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
             Height: =Self.Size * 1.8
             OnSelect: =Select(Parent)
+            Overflow: =Overflow.Scroll
             PaddingBottom: =0
             PaddingLeft: =0
             PaddingRight: =0
             PaddingTop: =0
-            Text: =ThisItem.項目
+            Size: =11
+            Text: =ThisItem.Customer
             VerticalAlign: =VerticalAlign.Top
             Width: =Parent.TemplateWidth - 185
             X: =115
@@ -67,7 +70,7 @@
             PaddingLeft: =0
             PaddingRight: =0
             PaddingTop: =0
-            Text: =ThisItem.選択肢
+            Text: =ThisItem.区分.Value
             VerticalAlign: =VerticalAlign.Top
             Width: =Title2.Width
             X: =Title2.X
@@ -82,7 +85,7 @@
             PaddingLeft: =0
             PaddingRight: =0
             PaddingTop: =0
-            Text: =ThisItem.登録者.Claims
+            Text: =Substitute(ThisItem.Program, Char(10), "@@@")
             VerticalAlign: =VerticalAlign.Top
             Width: =Subtitle2.Width
             X: =Title2.X

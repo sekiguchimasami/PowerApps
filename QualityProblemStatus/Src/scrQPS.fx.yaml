@@ -3098,16 +3098,7 @@
                 HoverColor: =RGBA(51, 51, 51, 1)
                 HoverFill: =RGBA(212, 212, 212, 1)
                 IsSearchable: =false
-                Items: |-
-                    =With(
-                        {sList:Filter('Program Master', 区分.Value=rdbClaimDescriptionType.Selected.Value).Program},
-                        ForAll(sList,
-                            If(IsMatch(First(sList).Program, Char(10)),
-                                Split(First(sList).Program, Char(10)),
-                                First(sList).Program
-                            )
-                        )
-                    )
+                Items: =Split(Filter('Program Master', 区分.Value=rdbClaimDescriptionType.Selected.Value).Program, Char(10))
                 PressedBorderColor: =ColorFade(RGBA(0, 120, 212, 1), -30%)
                 PressedColor: =RGBA(255, 255, 255, 1)
                 PressedFill: =RGBA(0, 120, 212, 1)
