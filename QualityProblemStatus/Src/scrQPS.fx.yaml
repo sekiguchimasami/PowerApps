@@ -705,7 +705,9 @@
             DisplayMode: =DisplayMode.Edit
             Fill: =RGBA(204, 231, 246, 1)
             Height: =P1Rectangle1.Height + P1Rectangle1.Height + P1Rectangle1.Height
-            Visible: =varTabSelected=1
+            Visible: |-
+                =//varTabSelected=1
+                true
             Width: =1184
             WidthFit: =false
             X: =0
@@ -1403,7 +1405,9 @@
             DisplayMode: =DisplayMode.Edit
             Fill: =RGBA(204, 228, 246, 1)
             Height: =100
-            Visible: =varTabSelected=2
+            Visible: |-
+                =//varTabSelected=2
+                true
             Width: =1184
             X: =0
             Y: =6
@@ -2098,7 +2102,9 @@
             DisplayMode: =DisplayMode.Edit
             Fill: =RGBA(204, 228, 246, 1)
             Height: =100
-            Visible: =varTabSelected=3
+            Visible: |-
+                =//varTabSelected=3
+                true
             Width: =1184
             X: =0
             Y: =7
@@ -2885,6 +2891,9 @@
             DisplayMode: =DisplayMode.Edit
             Fill: =RGBA(204, 228, 246, 1)
             Height: =lblRHDI.Height
+            Visible: |-
+                =//ddlSite.Selected.Value="RHDS"
+                true
             Width: =Parent.Width
             X: =0
             Y: =9
@@ -3074,6 +3083,9 @@
             DisplayMode: =DisplayMode.Edit
             Fill: =RGBA(255, 255, 0, 0.2)
             Height: =100
+            Visible: |-
+                =//ddlSite.Selected.Value="RHDI"
+                true
             Width: =Parent.Width
             X: =0
             Y: =10
@@ -3263,6 +3275,9 @@
             DisplayMode: =DisplayMode.Edit
             Fill: =RGBA(204, 228, 246, 1)
             Height: =100
+            Visible: |-
+                =//ddlSite.Selected.Value="RHDO" || ddlSite.Selected.Value="RHDY"
+                true
             Width: =Parent.Width
             X: =0
             Y: =11
@@ -3452,6 +3467,9 @@
             DisplayMode: =DisplayMode.Edit
             Fill: =RGBA(255, 255, 0, 0.2)
             Height: =100
+            Visible: |-
+                =//ddlSite.Selected.Value="RHDM" || ddlSite.Selected.Value="RHDY"
+                true
             Width: =Parent.Width
             X: =0
             Y: =12
@@ -3641,6 +3659,9 @@
             DisplayMode: =DisplayMode.Edit
             Fill: =RGBA(232, 244, 217, 1)
             Height: =100
+            Visible: |-
+                =//  ddlSite.Selected.Value="RHDM" || ddlSite.Selected.Value="RHDO"
+                true
             Width: =Parent.Width
             X: =0
             Y: =13
