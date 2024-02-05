@@ -462,6 +462,372 @@
             {
               "logicalLocations": [
                 {
+                  "fullyQualifiedName": "scrQPS.frmQPS.RHDM_DataCard.cmbRHDMAppliedProgram.DefaultSelectedItems"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "scrQPS.frmQPS.RHDM_DataCard.cmbRHDMAppliedProgram.DefaultSelectedItems",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 23,
+                  "charOffset": 8,
+                  "snippet": {
+                    "text": ".'RHDM Applied Program'"
+                  }
+                }
+              },
+              "properties": {
+                "member": "DefaultSelectedItems",
+                "module": "scrQPS",
+                "type": "scrQPS.frmQPS.RHDM_DataCard.cmbRHDMAppliedProgram"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "Table",
+              "Text"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "High"
+          },
+          "ruleId": "app-ErrIncompatibleRulePropTypes-PropKind-RuleKind",
+          "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "scrQPS.frmQPS.RHDM_DataCard.cmbRHDMAppliedProgram.Items"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "scrQPS.frmQPS.RHDM_DataCard.cmbRHDMAppliedProgram.Items",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 8,
+                  "charOffset": 79,
+                  "snippet": {
+                    "text": ".Program"
+                  }
+                }
+              },
+              "properties": {
+                "member": "Items",
+                "module": "scrQPS",
+                "type": "scrQPS.frmQPS.RHDM_DataCard.cmbRHDMAppliedProgram"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "Text",
+              "Table"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "High"
+          },
+          "ruleId": "app-ErrBadType-ExpectedType-ProvidedType",
+          "ruleIndex": 0
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "scrQPS.frmQPS.RHDM_DataCard.cmbRHDMAppliedProgram.Items"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "scrQPS.frmQPS.RHDM_DataCard.cmbRHDMAppliedProgram.Items",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 98,
+                  "charOffset": 0,
+                  "snippet": {
+                    "text": "Split(Filter('Program Master', 区分.Value=rdbClaimDescriptionType.Selected.Value).Program, Char(10))"
+                  }
+                }
+              },
+              "properties": {
+                "member": "Items",
+                "module": "scrQPS",
+                "type": "scrQPS.frmQPS.RHDM_DataCard.cmbRHDMAppliedProgram"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "Split"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "High"
+          },
+          "ruleId": "app-ErrInvalidArgs-Func",
+          "ruleIndex": 1
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "scrQPS.frmQPS.RHDO_DataCard.cmbRHDOAppliedProgram.DefaultSelectedItems"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "scrQPS.frmQPS.RHDO_DataCard.cmbRHDOAppliedProgram.DefaultSelectedItems",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 23,
+                  "charOffset": 8,
+                  "snippet": {
+                    "text": ".'RHDO Applied Program'"
+                  }
+                }
+              },
+              "properties": {
+                "member": "DefaultSelectedItems",
+                "module": "scrQPS",
+                "type": "scrQPS.frmQPS.RHDO_DataCard.cmbRHDOAppliedProgram"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "Table",
+              "Text"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "High"
+          },
+          "ruleId": "app-ErrIncompatibleRulePropTypes-PropKind-RuleKind",
+          "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "scrQPS.frmQPS.RHDO_DataCard.cmbRHDOAppliedProgram.Items"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "scrQPS.frmQPS.RHDO_DataCard.cmbRHDOAppliedProgram.Items",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 8,
+                  "charOffset": 79,
+                  "snippet": {
+                    "text": ".Program"
+                  }
+                }
+              },
+              "properties": {
+                "member": "Items",
+                "module": "scrQPS",
+                "type": "scrQPS.frmQPS.RHDO_DataCard.cmbRHDOAppliedProgram"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "Text",
+              "Table"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "High"
+          },
+          "ruleId": "app-ErrBadType-ExpectedType-ProvidedType",
+          "ruleIndex": 0
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "scrQPS.frmQPS.RHDO_DataCard.cmbRHDOAppliedProgram.Items"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "scrQPS.frmQPS.RHDO_DataCard.cmbRHDOAppliedProgram.Items",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 98,
+                  "charOffset": 0,
+                  "snippet": {
+                    "text": "Split(Filter('Program Master', 区分.Value=rdbClaimDescriptionType.Selected.Value).Program, Char(10))"
+                  }
+                }
+              },
+              "properties": {
+                "member": "Items",
+                "module": "scrQPS",
+                "type": "scrQPS.frmQPS.RHDO_DataCard.cmbRHDOAppliedProgram"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "Split"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "High"
+          },
+          "ruleId": "app-ErrInvalidArgs-Func",
+          "ruleIndex": 1
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "scrQPS.frmQPS.RHDY_DataCard.cmbRHDYAppliedProgram.Items"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "scrQPS.frmQPS.RHDY_DataCard.cmbRHDYAppliedProgram.Items",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 8,
+                  "charOffset": 79,
+                  "snippet": {
+                    "text": ".Program"
+                  }
+                }
+              },
+              "properties": {
+                "member": "Items",
+                "module": "scrQPS",
+                "type": "scrQPS.frmQPS.RHDY_DataCard.cmbRHDYAppliedProgram"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "Text",
+              "Table"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "High"
+          },
+          "ruleId": "app-ErrBadType-ExpectedType-ProvidedType",
+          "ruleIndex": 0
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "scrQPS.frmQPS.RHDY_DataCard.cmbRHDYAppliedProgram.Items"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "scrQPS.frmQPS.RHDY_DataCard.cmbRHDYAppliedProgram.Items",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 98,
+                  "charOffset": 0,
+                  "snippet": {
+                    "text": "Split(Filter('Program Master', 区分.Value=rdbClaimDescriptionType.Selected.Value).Program, Char(10))"
+                  }
+                }
+              },
+              "properties": {
+                "member": "Items",
+                "module": "scrQPS",
+                "type": "scrQPS.frmQPS.RHDY_DataCard.cmbRHDYAppliedProgram"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "Split"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "High"
+          },
+          "ruleId": "app-ErrInvalidArgs-Func",
+          "ruleIndex": 1
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "scrQPS.frmQPS.RHDY_DataCard.cmbRHDYAppliedProgram.DefaultSelectedItems"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "scrQPS.frmQPS.RHDY_DataCard.cmbRHDYAppliedProgram.DefaultSelectedItems",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 23,
+                  "charOffset": 8,
+                  "snippet": {
+                    "text": ".'RHDY Applied Program'"
+                  }
+                }
+              },
+              "properties": {
+                "member": "DefaultSelectedItems",
+                "module": "scrQPS",
+                "type": "scrQPS.frmQPS.RHDY_DataCard.cmbRHDYAppliedProgram"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "Table",
+              "Text"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "High"
+          },
+          "ruleId": "app-ErrIncompatibleRulePropTypes-PropKind-RuleKind",
+          "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
                   "fullyQualifiedName": "scrQPS.galProcess.AccessibleLabel"
                 }
               ],
@@ -2142,19 +2508,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "scrQPS.frmQPS.RHDS_DataCard.RichTextEditor2.AccessibleLabel"
+                  "fullyQualifiedName": "scrQPS.frmQPS.RHDS_DataCard.rtxSHDSRemark.AccessibleLabel"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "scrQPS.frmQPS.RHDS_DataCard.RichTextEditor2.AccessibleLabel",
+                  "fullyQualifiedName": "scrQPS.frmQPS.RHDS_DataCard.rtxSHDSRemark.AccessibleLabel",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "AccessibleLabel",
                 "module": "scrQPS",
-                "type": "scrQPS.frmQPS.RHDS_DataCard.RichTextEditor2"
+                "type": "scrQPS.frmQPS.RHDS_DataCard.rtxSHDSRemark"
               }
             }
           ],
@@ -4571,6 +4937,366 @@
             {
               "logicalLocations": [
                 {
+                  "fullyQualifiedName": "scrQPS.frmQPS.RHDM_DataCard.rdbRHDMApply.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "scrQPS.frmQPS.RHDM_DataCard.rdbRHDMApply.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "scrQPS",
+                "type": "scrQPS.frmQPS.RHDM_DataCard.rdbRHDMApply"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 4
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "scrQPS.frmQPS.RHDM_DataCard.datRHDMImpleDate.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "scrQPS.frmQPS.RHDM_DataCard.datRHDMImpleDate.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "scrQPS",
+                "type": "scrQPS.frmQPS.RHDM_DataCard.datRHDMImpleDate"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 4
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "scrQPS.frmQPS.RHDM_DataCard.cmbRHDMAppliedProgram.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "scrQPS.frmQPS.RHDM_DataCard.cmbRHDMAppliedProgram.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "scrQPS",
+                "type": "scrQPS.frmQPS.RHDM_DataCard.cmbRHDMAppliedProgram"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 4
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "scrQPS.frmQPS.RHDM_DataCard.rtxSHDMRemark.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "scrQPS.frmQPS.RHDM_DataCard.rtxSHDMRemark.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "scrQPS",
+                "type": "scrQPS.frmQPS.RHDM_DataCard.rtxSHDMRemark"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 4
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "scrQPS.frmQPS.RHDO_DataCard.rdbRHDOApply.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "scrQPS.frmQPS.RHDO_DataCard.rdbRHDOApply.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "scrQPS",
+                "type": "scrQPS.frmQPS.RHDO_DataCard.rdbRHDOApply"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 4
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "scrQPS.frmQPS.RHDO_DataCard.datRHDOImpleDate.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "scrQPS.frmQPS.RHDO_DataCard.datRHDOImpleDate.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "scrQPS",
+                "type": "scrQPS.frmQPS.RHDO_DataCard.datRHDOImpleDate"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 4
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "scrQPS.frmQPS.RHDO_DataCard.cmbRHDOAppliedProgram.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "scrQPS.frmQPS.RHDO_DataCard.cmbRHDOAppliedProgram.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "scrQPS",
+                "type": "scrQPS.frmQPS.RHDO_DataCard.cmbRHDOAppliedProgram"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 4
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "scrQPS.frmQPS.RHDO_DataCard.rtxSHDORemark.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "scrQPS.frmQPS.RHDO_DataCard.rtxSHDORemark.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "scrQPS",
+                "type": "scrQPS.frmQPS.RHDO_DataCard.rtxSHDORemark"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 4
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "scrQPS.frmQPS.RHDY_DataCard.rdbRHDYApply.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "scrQPS.frmQPS.RHDY_DataCard.rdbRHDYApply.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "scrQPS",
+                "type": "scrQPS.frmQPS.RHDY_DataCard.rdbRHDYApply"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 4
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "scrQPS.frmQPS.RHDY_DataCard.datRHDYImpleDate.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "scrQPS.frmQPS.RHDY_DataCard.datRHDYImpleDate.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "scrQPS",
+                "type": "scrQPS.frmQPS.RHDY_DataCard.datRHDYImpleDate"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 4
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "scrQPS.frmQPS.RHDY_DataCard.cmbRHDYAppliedProgram.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "scrQPS.frmQPS.RHDY_DataCard.cmbRHDYAppliedProgram.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "scrQPS",
+                "type": "scrQPS.frmQPS.RHDY_DataCard.cmbRHDYAppliedProgram"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 4
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "scrQPS.frmQPS.RHDY_DataCard.rtxSHDYRemark.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "scrQPS.frmQPS.RHDY_DataCard.rtxSHDYRemark.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "scrQPS",
+                "type": "scrQPS.frmQPS.RHDY_DataCard.rtxSHDYRemark"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 4
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
                   "fullyQualifiedName": "scrQPS"
                 }
               ],
@@ -4819,7 +5545,7 @@
                 ],
                 "level": "Medium",
                 "primaryCategory": "performance",
-                "whyFix": "各コントロールはリソースを消費するため、画面のコントロールが多すぎると、アプリが低速になったり応答性が悪くなったりする可能性があります。\"scrQPS\" の推定複雑度は 540 です。これは、推奨される最大しきい値 (300) を超えています。"
+                "whyFix": "各コントロールはリソースを消費するため、画面のコントロールが多すぎると、アプリが低速になったり応答性が悪くなったりする可能性があります。\"scrQPS\" の推定複雑度は 564 です。これは、推奨される最大しきい値 (300) を超えています。"
               }
             },
             {

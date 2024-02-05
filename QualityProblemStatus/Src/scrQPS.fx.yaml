@@ -154,7 +154,7 @@
             Height: =53
             Width: =1184
             X: =0
-            Y: =2
+            Y: =1
             ZIndex: =1
 
             DataCardKey5_1 As label:
@@ -316,7 +316,7 @@
             Update: =DataCardValue9.Text
             Width: =1184
             X: =0
-            Y: =3
+            Y: =2
             ZIndex: =1
 
             DataCardKey9 As label:
@@ -455,7 +455,7 @@
             Height: =52
             Width: =1184
             X: =0
-            Y: =5
+            Y: =3
             ZIndex: =1
 
             DataCardKey10_1 As label:
@@ -581,7 +581,7 @@
             Visible: =Lower(rdbClaimDescriptionType.Selected.Value) = Lower("SubStrate")
             Width: =Parent.Width
             X: =0
-            Y: =6
+            Y: =4
             ZIndex: =1
 
             DataCardKey12_1 As label:
@@ -709,7 +709,7 @@
             Width: =1184
             WidthFit: =false
             X: =0
-            Y: =7
+            Y: =5
             ZIndex: =1
 
             lblP1RCProcess As label:
@@ -1403,9 +1403,10 @@
             DisplayMode: =DisplayMode.Edit
             Fill: =RGBA(204, 228, 246, 1)
             Height: =100
+            Visible: =varTabSelected=2
             Width: =1184
             X: =0
-            Y: =8
+            Y: =6
             ZIndex: =1
 
             lblP2RCProcess As label:
@@ -2097,9 +2098,10 @@
             DisplayMode: =DisplayMode.Edit
             Fill: =RGBA(204, 228, 246, 1)
             Height: =100
+            Visible: =varTabSelected=3
             Width: =1184
             X: =0
-            Y: =9
+            Y: =7
             ZIndex: =1
 
             lblP3RCProcess As label:
@@ -2792,7 +2794,7 @@
             Height: =cmbAppliedProgram.Y + cmbAppliedProgram.Height + rtxAppliedProgramComment.Height + 20
             Width: =1184
             X: =0
-            Y: =10
+            Y: =8
             ZIndex: =1
 
             lblAppliedProgram As label:
@@ -2810,7 +2812,7 @@
                 Size: =11
                 Text: ="Applied Program"
                 Width: =(Parent.Width - 60) * 0.12
-                X: =40
+                X: =32
                 Y: =10
                 ZIndex: =1
 
@@ -2885,7 +2887,7 @@
             Height: =lblRHDI.Height
             Width: =Parent.Width
             X: =0
-            Y: =11
+            Y: =9
             ZIndex: =1
 
             lblRHDI As label:
@@ -2895,7 +2897,7 @@
                 Color: =RGBA(51, 51, 51, 1)
                 DisabledBorderColor: =RGBA(0, 0, 0, 0)
                 DisabledColor: =RGBA(166, 166, 166, 1)
-                Fill: =RGBA(204, 228, 246, 1)
+                Fill: =RGBA(153, 207, 236, 1)
                 FocusedBorderThickness: =1
                 Font: =Font.'Segoe UI'
                 FontWeight: =FontWeight.Semibold
@@ -3068,12 +3070,13 @@
         RHDS_DataCard As typedDataCard.blankCard:
             BorderColor: =RGBA(255, 255, 0, 1)
             BorderStyle: =BorderStyle.Solid
+            BorderThickness: =1
             DisplayMode: =DisplayMode.Edit
             Fill: =RGBA(255, 255, 0, 0.2)
             Height: =100
             Width: =Parent.Width
             X: =0
-            Y: =12
+            Y: =10
             ZIndex: =1
 
             lblRHDS As label:
@@ -3083,7 +3086,7 @@
                 Color: =RGBA(51, 51, 51, 1)
                 DisabledBorderColor: =RGBA(0, 0, 0, 0)
                 DisabledColor: =RGBA(166, 166, 166, 1)
-                Fill: =RGBA(255, 255, 0, 0.1)
+                Fill: =RGBA(255, 255, 0, 0.4)
                 FocusedBorderThickness: =1
                 Font: =Font.'Segoe UI'
                 FontWeight: =FontWeight.Semibold
@@ -3244,9 +3247,9 @@
                 Y: =lblRHDSAppliedProgram.Y
                 ZIndex: =7
 
-            RichTextEditor2 As richTextEditor:
+            rtxSHDSRemark As richTextEditor:
                 BorderColor: =RGBA(166, 166, 166, 1)
-                Default: ="ここに<strong>リッチ テキスト</strong>を入力してください。"
+                Default: =ThisItem.'RHDS Remark'
                 Height: =rtxSHDIRemark.Height
                 Width: =rtxSHDIRemark.Width
                 X: =50
@@ -3254,37 +3257,571 @@
                 ZIndex: =8
 
         RHDM_DataCard As typedDataCard.blankCard:
-            BorderColor: =RGBA(166, 166, 166, 1)
+            BorderColor: =RGBA(0, 84, 148, 1)
             BorderStyle: =BorderStyle.Solid
+            BorderThickness: =1
             DisplayMode: =DisplayMode.Edit
-            Fill: =RGBA(0, 0, 0, 0)
+            Fill: =RGBA(204, 228, 246, 1)
             Height: =100
-            Width: =1172
+            Width: =Parent.Width
+            X: =0
+            Y: =11
+            ZIndex: =1
+
+            lblRHDM As label:
+                Align: =Align.Center
+                BorderColor: =RGBA(0, 84, 148, 1)
+                BorderThickness: =1
+                Color: =RGBA(51, 51, 51, 1)
+                DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                DisabledColor: =RGBA(166, 166, 166, 1)
+                Fill: =RGBA(153, 207, 236, 1)
+                FocusedBorderThickness: =1
+                Font: =Font.'Segoe UI'
+                FontWeight: =FontWeight.Semibold
+                Height: =lblRHDI.Height
+                PaddingLeft: =0
+                Size: =10.5
+                Text: ="RHDM"
+                Width: =lblRHDI.Width
+                ZIndex: =1
+
+            rdbRHDMApply As radio:
+                BorderColor: =RGBA(51, 51, 51, 1)
+                BorderStyle: =BorderStyle.None
+                BorderThickness: =1
+                Color: =RGBA(51, 51, 51, 1)
+                Default: =ThisItem.'RHDM Apply Status'
+                DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                DisabledColor: =RGBA(166, 166, 166, 1)
+                FocusedBorderThickness: =1
+                Font: =Font.'Segoe UI'
+                FontWeight: =FontWeight.Semibold
+                Height: =36
+                HoverColor: =RGBA(51, 51, 51, 1)
+                HoverFill: =RGBA(0, 0, 0, 0)
+                Items: =Split(LookUp(選択肢マスター, 項目="Apply").選択肢, Char(10))
+                Layout: =Layout.Horizontal
+                LineHeight: =1
+                PaddingBottom: =5
+                PaddingLeft: =5
+                PaddingRight: =5
+                PaddingTop: =8
+                PressedColor: =RGBA(51, 51, 51, 1)
+                PressedFill: =RGBA(0, 0, 0, 0)
+                RadioBorderColor: =RGBA(51, 51, 51, 1)
+                RadioSelectionFill: =RGBA(0, 120, 212, 1)
+                RadioSize: =18
+                Size: =11
+                Width: =(Parent.Width - 60) * 0.4
+                X: =lblRHDM.X + lblRHDM.Width
+                Y: =10
+                ZIndex: =2
+
+            datRHDMImpleDate As datepicker:
+                BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                BorderThickness: =1
+                CalendarHeaderFill: =ColorFade(RGBA(0, 120, 212, 1), -30%)
+                Color: =RGBA(51, 51, 51, 1)
+                DefaultDate: =ThisItem.'RHDM Implementation Date'
+                DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                DisabledColor: =RGBA(166, 166, 166, 1)
+                DisabledFill: =RGBA(244, 244, 244, 1)
+                DisplayMode: =Parent.DisplayMode
+                EndYear: =Year(Today())+100
+                FocusedBorderThickness: =1
+                Font: =Font.'Segoe UI'
+                Height: =32
+                HoverDateFill: =RGBA(200, 200, 200, 1)
+                IconBackground: =RGBA(0, 120, 212, 1)
+                IsEditable: =true
+                PaddingBottom: =0
+                PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
+                SelectedDateFill: =RGBA(0, 120, 212, 1)
+                Size: =10.5
+                StartYear: =1899
+                Tooltip: =Parent.DisplayName
+                Width: =(Parent.Width - 60) * 0.2
+                X: =lblRHDMImpleDate.X + lblRHDMImpleDate.Width
+                Y: =rdbRHDMApply.Y
+                ZIndex: =3
+
+            lblRHDMImpleDate As label:
+                Align: =Align.Center
+                BorderColor: =RGBA(0, 0, 0, 0)
+                BorderStyle: =BorderStyle.None
+                BorderThickness: =1
+                Color: =RGBA(51, 51, 51, 1)
+                DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                DisabledColor: =RGBA(166, 166, 166, 1)
+                FocusedBorderThickness: =1
+                Font: =Font.'Segoe UI'
+                Height: =32
+                PaddingLeft: =0
+                Size: =11
+                Text: ="Implementation Date"
+                Width: =Parent.Width * 0.2
+                X: =rdbRHDMApply.X + rdbRHDMApply.Width
+                Y: =rdbRHDMApply.Y
+                ZIndex: =4
+
+            lblRHDMCheckInformation As label:
+                BorderColor: =RGBA(0, 0, 0, 0)
+                BorderStyle: =BorderStyle.None
+                BorderThickness: =1
+                Color: =RGBA(51, 51, 51, 1)
+                DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                DisabledColor: =RGBA(166, 166, 166, 1)
+                FocusedBorderThickness: =1
+                Font: =Font.'Segoe UI'
+                Height: =32
+                PaddingLeft: =0
+                Size: =11
+                Text: ="　" & ThisItem.'RHDM Check Information'
+                Width: =Parent.Width * 0.93
+                X: =rdbRHDMApply.X
+                Y: =rdbRHDMApply.Y + rdbRHDMApply.Height
+                ZIndex: =5
+
+            lblRHDMAppliedProgram As label:
+                BorderColor: =RGBA(0, 0, 0, 0)
+                BorderStyle: =BorderStyle.None
+                BorderThickness: =1
+                Color: =RGBA(51, 51, 51, 1)
+                DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                DisabledColor: =RGBA(166, 166, 166, 1)
+                FocusedBorderThickness: =1
+                Font: =Font.'Segoe UI'
+                Height: =30
+                PaddingLeft: =0
+                Size: =11
+                Text: ="　Applied Program"
+                Width: =Parent.Width * 0.14
+                X: =rdbRHDMApply.X
+                Y: =lblRHDMCheckInformation.Y + lblRHDMCheckInformation.Height
+                ZIndex: =6
+
+            cmbRHDMAppliedProgram As combobox:
+                BorderColor: =RGBA(166, 166, 166, 1)
+                BorderThickness: =1
+                ChevronBackground: =RGBA(255, 255, 255, 1)
+                ChevronDisabledBackground: =RGBA(244, 244, 244, 1)
+                ChevronDisabledFill: =RGBA(166, 166, 166, 1)
+                ChevronFill: =RGBA(33, 33, 33, 1)
+                ChevronHoverBackground: =RGBA(212, 212, 212, 1)
+                ChevronHoverFill: =RGBA(33, 33, 33, 1)
+                Color: =RGBA(51, 51, 51, 1)
+                DefaultSelectedItems: =ThisItem.'RHDM Applied Program'
+                DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                DisabledColor: =RGBA(166, 166, 166, 1)
+                DisabledFill: =RGBA(244, 244, 244, 1)
+                DisplayFields: =["Value"]
+                FocusedBorderThickness: =1
+                Font: =Font.'Segoe UI'
+                Height: =32
+                HoverBorderColor: =ColorFade(RGBA(0, 120, 212, 1), -30%)
+                HoverColor: =RGBA(51, 51, 51, 1)
+                HoverFill: =RGBA(212, 212, 212, 1)
+                IsSearchable: =false
+                Items: =Split(Filter('Program Master', 区分.Value=rdbClaimDescriptionType.Selected.Value).Program, Char(10))
+                PressedBorderColor: =ColorFade(RGBA(0, 120, 212, 1), -30%)
+                PressedColor: =RGBA(255, 255, 255, 1)
+                PressedFill: =RGBA(0, 120, 212, 1)
+                SearchFields: =["Value"]
+                SearchItems: =[]
+                SelectionFill: =RGBA(0, 120, 212, 1)
+                Size: =10.5
+                Width: =(Parent.Width - 60) * 0.83
+                X: =lblRHDMAppliedProgram.X + lblRHDMAppliedProgram.Width
+                Y: =lblRHDMAppliedProgram.Y
+                ZIndex: =7
+
+            rtxSHDMRemark As richTextEditor:
+                BorderColor: =RGBA(166, 166, 166, 1)
+                Default: =ThisItem.'RHDM Remark'
+                Height: =rtxSHDIRemark.Height
+                Width: =rtxSHDIRemark.Width
+                X: =rdbRHDMApply.X
+                Y: =lblRHDMAppliedProgram.Y + lblRHDMAppliedProgram.Height + 10
+                ZIndex: =8
+
+        RHDO_DataCard As typedDataCard.blankCard:
+            BorderColor: =RGBA(255, 255, 0, 1)
+            BorderStyle: =BorderStyle.Solid
+            BorderThickness: =1
+            DisplayMode: =DisplayMode.Edit
+            Fill: =RGBA(255, 255, 0, 0.2)
+            Height: =100
+            Width: =Parent.Width
+            X: =0
+            Y: =12
+            ZIndex: =1
+
+            lblRHDO As label:
+                Align: =Align.Center
+                BorderColor: =RGBA(255, 255, 0, 1)
+                BorderThickness: =1
+                Color: =RGBA(51, 51, 51, 1)
+                DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                DisabledColor: =RGBA(166, 166, 166, 1)
+                Fill: =RGBA(255, 255, 0, 0.4)
+                FocusedBorderThickness: =1
+                Font: =Font.'Segoe UI'
+                FontWeight: =FontWeight.Semibold
+                Height: =lblRHDI.Height
+                PaddingLeft: =0
+                Size: =10.5
+                Text: ="RHDO"
+                Width: =lblRHDI.Width
+                ZIndex: =1
+
+            rdbRHDOApply As radio:
+                BorderColor: =RGBA(51, 51, 51, 1)
+                BorderStyle: =BorderStyle.None
+                BorderThickness: =1
+                Color: =RGBA(51, 51, 51, 1)
+                Default: =ThisItem.'RHDO Apply Status'
+                DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                DisabledColor: =RGBA(166, 166, 166, 1)
+                FocusedBorderThickness: =1
+                Font: =Font.'Segoe UI'
+                FontWeight: =FontWeight.Semibold
+                Height: =36
+                HoverColor: =RGBA(51, 51, 51, 1)
+                HoverFill: =RGBA(0, 0, 0, 0)
+                Items: =Split(LookUp(選択肢マスター, 項目="Apply").選択肢, Char(10))
+                Layout: =Layout.Horizontal
+                LineHeight: =1
+                PaddingBottom: =5
+                PaddingLeft: =5
+                PaddingRight: =5
+                PaddingTop: =8
+                PressedColor: =RGBA(51, 51, 51, 1)
+                PressedFill: =RGBA(0, 0, 0, 0)
+                RadioBorderColor: =RGBA(51, 51, 51, 1)
+                RadioSelectionFill: =RGBA(0, 120, 212, 1)
+                RadioSize: =18
+                Size: =11
+                Width: =(Parent.Width - 60) * 0.4
+                X: =lblRHDO.X + lblRHDO.Width
+                Y: =10
+                ZIndex: =2
+
+            datRHDOImpleDate As datepicker:
+                BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                BorderThickness: =1
+                CalendarHeaderFill: =ColorFade(RGBA(0, 120, 212, 1), -30%)
+                Color: =RGBA(51, 51, 51, 1)
+                DefaultDate: =ThisItem.'RHDO Implementation Date'
+                DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                DisabledColor: =RGBA(166, 166, 166, 1)
+                DisabledFill: =RGBA(244, 244, 244, 1)
+                DisplayMode: =Parent.DisplayMode
+                EndYear: =Year(Today())+100
+                FocusedBorderThickness: =1
+                Font: =Font.'Segoe UI'
+                Height: =32
+                HoverDateFill: =RGBA(200, 200, 200, 1)
+                IconBackground: =RGBA(0, 120, 212, 1)
+                IsEditable: =true
+                PaddingBottom: =0
+                PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
+                SelectedDateFill: =RGBA(0, 120, 212, 1)
+                Size: =10.5
+                StartYear: =1899
+                Tooltip: =Parent.DisplayName
+                Width: =(Parent.Width - 60) * 0.2
+                X: =lblRHDOImpleDate.X + lblRHDOImpleDate.Width
+                Y: =rdbRHDOApply.Y
+                ZIndex: =3
+
+            lblRHDOImpleDate As label:
+                Align: =Align.Center
+                BorderColor: =RGBA(0, 0, 0, 0)
+                BorderStyle: =BorderStyle.None
+                BorderThickness: =1
+                Color: =RGBA(51, 51, 51, 1)
+                DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                DisabledColor: =RGBA(166, 166, 166, 1)
+                FocusedBorderThickness: =1
+                Font: =Font.'Segoe UI'
+                Height: =32
+                PaddingLeft: =0
+                Size: =11
+                Text: ="Implementation Date"
+                Width: =Parent.Width * 0.2
+                X: =rdbRHDOApply.X + rdbRHDOApply.Width
+                Y: =rdbRHDOApply.Y
+                ZIndex: =4
+
+            lblRHDOCheckInformation As label:
+                BorderColor: =RGBA(0, 0, 0, 0)
+                BorderStyle: =BorderStyle.None
+                BorderThickness: =1
+                Color: =RGBA(51, 51, 51, 1)
+                DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                DisabledColor: =RGBA(166, 166, 166, 1)
+                FocusedBorderThickness: =1
+                Font: =Font.'Segoe UI'
+                Height: =32
+                PaddingLeft: =0
+                Size: =11
+                Text: ="　" & ThisItem.'RHDO Check Information'
+                Width: =Parent.Width * 0.93
+                X: =rdbRHDOApply.X
+                Y: =rdbRHDOApply.Y + rdbRHDOApply.Height
+                ZIndex: =5
+
+            lblRHDOAppliedProgram As label:
+                BorderColor: =RGBA(0, 0, 0, 0)
+                BorderStyle: =BorderStyle.None
+                BorderThickness: =1
+                Color: =RGBA(51, 51, 51, 1)
+                DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                DisabledColor: =RGBA(166, 166, 166, 1)
+                FocusedBorderThickness: =1
+                Font: =Font.'Segoe UI'
+                Height: =30
+                PaddingLeft: =0
+                Size: =11
+                Text: ="　Applied Program"
+                Width: =Parent.Width * 0.14
+                X: =rdbRHDOApply.X
+                Y: =lblRHDOCheckInformation.Y + lblRHDOCheckInformation.Height
+                ZIndex: =6
+
+            cmbRHDOAppliedProgram As combobox:
+                BorderColor: =RGBA(166, 166, 166, 1)
+                BorderThickness: =1
+                ChevronBackground: =RGBA(255, 255, 255, 1)
+                ChevronDisabledBackground: =RGBA(244, 244, 244, 1)
+                ChevronDisabledFill: =RGBA(166, 166, 166, 1)
+                ChevronFill: =RGBA(33, 33, 33, 1)
+                ChevronHoverBackground: =RGBA(212, 212, 212, 1)
+                ChevronHoverFill: =RGBA(33, 33, 33, 1)
+                Color: =RGBA(51, 51, 51, 1)
+                DefaultSelectedItems: =ThisItem.'RHDO Applied Program'
+                DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                DisabledColor: =RGBA(166, 166, 166, 1)
+                DisabledFill: =RGBA(244, 244, 244, 1)
+                DisplayFields: =["Value"]
+                FocusedBorderThickness: =1
+                Font: =Font.'Segoe UI'
+                Height: =32
+                HoverBorderColor: =ColorFade(RGBA(0, 120, 212, 1), -30%)
+                HoverColor: =RGBA(51, 51, 51, 1)
+                HoverFill: =RGBA(212, 212, 212, 1)
+                IsSearchable: =false
+                Items: =Split(Filter('Program Master', 区分.Value=rdbClaimDescriptionType.Selected.Value).Program, Char(10))
+                PressedBorderColor: =ColorFade(RGBA(0, 120, 212, 1), -30%)
+                PressedColor: =RGBA(255, 255, 255, 1)
+                PressedFill: =RGBA(0, 120, 212, 1)
+                SearchFields: =["Value"]
+                SearchItems: =[]
+                SelectionFill: =RGBA(0, 120, 212, 1)
+                Size: =10.5
+                Width: =(Parent.Width - 60) * 0.83
+                X: =lblRHDOAppliedProgram.X + lblRHDOAppliedProgram.Width
+                Y: =lblRHDOAppliedProgram.Y
+                ZIndex: =7
+
+            rtxSHDORemark As richTextEditor:
+                BorderColor: =RGBA(166, 166, 166, 1)
+                Default: ="ここに<strong>リッチ テキスト</strong>を入力してください。"
+                Height: =rtxSHDIRemark.Height
+                Width: =rtxSHDIRemark.Width
+                X: =rdbRHDOApply.X
+                Y: =lblRHDOAppliedProgram.Y + lblRHDOAppliedProgram.Height + 10
+                ZIndex: =8
+
+        RHDY_DataCard As typedDataCard.blankCard:
+            BorderColor: =RGBA(54, 176, 75, 1)
+            BorderStyle: =BorderStyle.Solid
+            BorderThickness: =1
+            DisplayMode: =DisplayMode.Edit
+            Fill: =RGBA(232, 244, 217, 1)
+            Height: =100
+            Width: =Parent.Width
             X: =0
             Y: =13
             ZIndex: =1
 
-        RHDO_DataCard As typedDataCard.blankCard:
-            BorderColor: =RGBA(166, 166, 166, 1)
-            BorderStyle: =BorderStyle.Solid
-            DisplayMode: =DisplayMode.Edit
-            Fill: =RGBA(0, 0, 0, 0)
-            Height: =100
-            Width: =1148
-            X: =0
-            Y: =14
-            ZIndex: =1
+            lblRHDY As label:
+                Align: =Align.Center
+                BorderColor: =RGBA(187, 221, 140, 1)
+                BorderThickness: =1
+                Color: =RGBA(51, 51, 51, 1)
+                DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                DisabledColor: =RGBA(166, 166, 166, 1)
+                Fill: =RGBA(187, 221, 140, 1)
+                FocusedBorderThickness: =1
+                Font: =Font.'Segoe UI'
+                FontWeight: =FontWeight.Semibold
+                Height: =lblRHDI.Height
+                PaddingLeft: =0
+                Size: =10.5
+                Text: ="RHDY"
+                Width: =lblRHDI.Width
+                ZIndex: =1
 
-        RHDY_DataCard As typedDataCard.blankCard:
-            BorderColor: =RGBA(166, 166, 166, 1)
-            BorderStyle: =BorderStyle.Solid
-            DisplayMode: =DisplayMode.Edit
-            Fill: =RGBA(0, 0, 0, 0)
-            Height: =100
-            Width: =1158
-            X: =0
-            Y: =15
-            ZIndex: =1
+            rdbRHDYApply As radio:
+                BorderColor: =RGBA(51, 51, 51, 1)
+                BorderStyle: =BorderStyle.None
+                BorderThickness: =1
+                Color: =RGBA(51, 51, 51, 1)
+                Default: =ThisItem.'RHDY Apply Status'
+                DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                DisabledColor: =RGBA(166, 166, 166, 1)
+                FocusedBorderThickness: =1
+                Font: =Font.'Segoe UI'
+                FontWeight: =FontWeight.Semibold
+                Height: =36
+                HoverColor: =RGBA(51, 51, 51, 1)
+                HoverFill: =RGBA(0, 0, 0, 0)
+                Items: =Split(LookUp(選択肢マスター, 項目="Apply").選択肢, Char(10))
+                Layout: =Layout.Horizontal
+                LineHeight: =1
+                PaddingBottom: =5
+                PaddingLeft: =5
+                PaddingRight: =5
+                PaddingTop: =8
+                PressedColor: =RGBA(51, 51, 51, 1)
+                PressedFill: =RGBA(0, 0, 0, 0)
+                RadioBorderColor: =RGBA(51, 51, 51, 1)
+                RadioSelectionFill: =RGBA(0, 120, 212, 1)
+                RadioSize: =18
+                Size: =11
+                Width: =(Parent.Width - 60) * 0.4
+                X: =lblRHDO.X + lblRHDO.Width
+                Y: =10
+                ZIndex: =2
+
+            datRHDYImpleDate As datepicker:
+                BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                BorderThickness: =1
+                CalendarHeaderFill: =ColorFade(RGBA(0, 120, 212, 1), -30%)
+                Color: =RGBA(51, 51, 51, 1)
+                DefaultDate: =ThisItem.'RHDY Implementation Date'
+                DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                DisabledColor: =RGBA(166, 166, 166, 1)
+                DisabledFill: =RGBA(244, 244, 244, 1)
+                DisplayMode: =Parent.DisplayMode
+                EndYear: =Year(Today())+100
+                FocusedBorderThickness: =1
+                Font: =Font.'Segoe UI'
+                Height: =32
+                HoverDateFill: =RGBA(200, 200, 200, 1)
+                IconBackground: =RGBA(0, 120, 212, 1)
+                IsEditable: =true
+                PaddingBottom: =0
+                PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
+                SelectedDateFill: =RGBA(0, 120, 212, 1)
+                Size: =10.5
+                StartYear: =1899
+                Tooltip: =Parent.DisplayName
+                Width: =(Parent.Width - 60) * 0.2
+                X: =lblRHDYImpleDate.X + lblRHDYImpleDate.Width
+                Y: =rdbRHDYApply.Y
+                ZIndex: =3
+
+            lblRHDYImpleDate As label:
+                Align: =Align.Center
+                BorderColor: =RGBA(0, 0, 0, 0)
+                BorderStyle: =BorderStyle.None
+                BorderThickness: =1
+                Color: =RGBA(51, 51, 51, 1)
+                DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                DisabledColor: =RGBA(166, 166, 166, 1)
+                FocusedBorderThickness: =1
+                Font: =Font.'Segoe UI'
+                Height: =32
+                PaddingLeft: =0
+                Size: =11
+                Text: ="Implementation Date"
+                Width: =Parent.Width * 0.2
+                X: =rdbRHDYApply.X + rdbRHDYApply.Width
+                Y: =rdbRHDYApply.Y
+                ZIndex: =4
+
+            lblRHDYCheckInformation As label:
+                BorderColor: =RGBA(0, 0, 0, 0)
+                BorderStyle: =BorderStyle.None
+                BorderThickness: =1
+                Color: =RGBA(51, 51, 51, 1)
+                DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                DisabledColor: =RGBA(166, 166, 166, 1)
+                FocusedBorderThickness: =1
+                Font: =Font.'Segoe UI'
+                Height: =32
+                PaddingLeft: =0
+                Size: =11
+                Text: ="　" & ThisItem.'RHDY Check Information'
+                Width: =Parent.Width * 0.93
+                X: =rdbRHDYApply.X
+                Y: =rdbRHDYApply.Y + rdbRHDYApply.Height
+                ZIndex: =5
+
+            lblRHDYAppliedProgram As label:
+                BorderColor: =RGBA(0, 0, 0, 0)
+                BorderStyle: =BorderStyle.None
+                BorderThickness: =1
+                Color: =RGBA(51, 51, 51, 1)
+                DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                DisabledColor: =RGBA(166, 166, 166, 1)
+                FocusedBorderThickness: =1
+                Font: =Font.'Segoe UI'
+                Height: =30
+                PaddingLeft: =0
+                Size: =11
+                Text: ="　Applied Program"
+                Width: =Parent.Width * 0.14
+                X: =rdbRHDYApply.X
+                Y: =lblRHDYCheckInformation.Y + lblRHDYCheckInformation.Height
+                ZIndex: =6
+
+            cmbRHDYAppliedProgram As combobox:
+                BorderColor: =RGBA(166, 166, 166, 1)
+                BorderThickness: =1
+                ChevronBackground: =RGBA(255, 255, 255, 1)
+                ChevronDisabledBackground: =RGBA(244, 244, 244, 1)
+                ChevronDisabledFill: =RGBA(166, 166, 166, 1)
+                ChevronFill: =RGBA(33, 33, 33, 1)
+                ChevronHoverBackground: =RGBA(212, 212, 212, 1)
+                ChevronHoverFill: =RGBA(33, 33, 33, 1)
+                Color: =RGBA(51, 51, 51, 1)
+                DefaultSelectedItems: =ThisItem.'RHDY Applied Program'
+                DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                DisabledColor: =RGBA(166, 166, 166, 1)
+                DisabledFill: =RGBA(244, 244, 244, 1)
+                DisplayFields: =["Value"]
+                FocusedBorderThickness: =1
+                Font: =Font.'Segoe UI'
+                Height: =32
+                HoverBorderColor: =ColorFade(RGBA(0, 120, 212, 1), -30%)
+                HoverColor: =RGBA(51, 51, 51, 1)
+                HoverFill: =RGBA(212, 212, 212, 1)
+                IsSearchable: =false
+                Items: =Split(Filter('Program Master', 区分.Value=rdbClaimDescriptionType.Selected.Value).Program, Char(10))
+                PressedBorderColor: =ColorFade(RGBA(0, 120, 212, 1), -30%)
+                PressedColor: =RGBA(255, 255, 255, 1)
+                PressedFill: =RGBA(0, 120, 212, 1)
+                SearchFields: =["Value"]
+                SearchItems: =[]
+                SelectionFill: =RGBA(0, 120, 212, 1)
+                Size: =10.5
+                Width: =(Parent.Width - 60) * 0.83
+                X: =lblRHDYAppliedProgram.X + lblRHDYAppliedProgram.Width
+                Y: =lblRHDYAppliedProgram.Y
+                ZIndex: =7
+
+            rtxSHDYRemark As richTextEditor:
+                BorderColor: =RGBA(166, 166, 166, 1)
+                Default: =ThisItem.'RHDY Remark'
+                Height: =rtxSHDIRemark.Height
+                Width: =rtxSHDIRemark.Width
+                X: =rdbRHDYApply.X
+                Y: =lblRHDYAppliedProgram.Y + lblRHDYAppliedProgram.Height + 10
+                ZIndex: =8
 
         "'Edit History_DataCard2' As typedDataCard.textualMultiLineEditCard":
             BorderColor: =RGBA(166, 166, 166, 1)
@@ -3297,9 +3834,9 @@
             Height: =50
             Required: =false
             Update: =DataCardValue78.Text
-            Width: =592
+            Width: =Parent.Width
             X: =0
-            Y: =16
+            Y: =14
             ZIndex: =1
 
             DataCardKey78 As label:
@@ -3317,39 +3854,38 @@
                 PaddingLeft: =0
                 Size: =10.5
                 Text: =Parent.DisplayName
-                Width: =(Parent.Width - 60) * 0.4
+                Width: =(Parent.Width - 60) * 0.1
                 Wrap: =false
                 X: =32
                 Y: =10 + (DataCardValue78.Height / 2) - (Self.Height / 2)
                 ZIndex: =1
 
             DataCardValue78 As text:
-                BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                BorderColor: =RGBA(204, 231, 246, 1)
                 Color: =RGBA(51, 51, 51, 1)
                 Default: =Parent.Default
                 DelayOutput: =true
                 DisabledBorderColor: =RGBA(0, 0, 0, 0)
                 DisabledColor: =RGBA(166, 166, 166, 1)
                 DisabledFill: =RGBA(244, 244, 244, 1)
-                DisplayMode: =Parent.DisplayMode
                 FocusedBorderThickness: =1
                 Font: =Font.'Segoe UI'
-                Height: =64
-                HoverBorderColor: =ColorFade(RGBA(0, 120, 212, 1), -30%)
+                Height: =130
+                HoverBorderColor: =RGBA(204, 231, 246, 1)
                 HoverColor: =RGBA(51, 51, 51, 1)
                 HoverFill: =RGBA(255, 255, 255, 1)
                 Mode: =TextMode.MultiLine
                 PaddingLeft: =5
-                PressedBorderColor: =RGBA(0, 120, 212, 1)
+                PressedBorderColor: =RGBA(204, 231, 246, 1)
                 PressedColor: =RGBA(51, 51, 51, 1)
                 PressedFill: =RGBA(255, 255, 255, 1)
                 RadiusBottomLeft: =0
                 RadiusBottomRight: =0
                 RadiusTopLeft: =0
                 RadiusTopRight: =0
-                Size: =10.5
+                Size: =11
                 Tooltip: =Parent.DisplayName
-                Width: =(Parent.Width - 60) * 0.6
+                Width: =(Parent.Width - 60) * 0.9
                 X: =DataCardKey78.X + DataCardKey78.Width
                 Y: =10
                 ZIndex: =2
@@ -3416,8 +3952,8 @@
                 =//DataCardValue14.Text
                 ddlP1RCProcess.Selected.Process
             Width: =592
-            X: =1
-            Y: =16
+            X: =0
+            Y: =15
             ZIndex: =1
 
             DataCardKey14 As label:
@@ -3532,8 +4068,8 @@
             Required: =false
             Update: =DataCardValue15.Text
             Width: =592
-            X: =0
-            Y: =17
+            X: =1
+            Y: =15
             ZIndex: =1
 
             DataCardKey15 As label:
@@ -3648,8 +4184,8 @@
             Required: =false
             Update: =DataCardValue17.Text
             Width: =592
-            X: =1
-            Y: =17
+            X: =0
+            Y: =16
             ZIndex: =1
 
             DataCardKey17 As label:
@@ -3764,8 +4300,8 @@
             Required: =false
             Update: =DataCardValue18.Text
             Width: =592
-            X: =0
-            Y: =18
+            X: =1
+            Y: =16
             ZIndex: =1
 
             DataCardKey18 As label:
@@ -3879,8 +4415,8 @@
             Required: =false
             Update: =DataCardValue4.Selected.Value = "はい"
             Width: =592
-            X: =1
-            Y: =18
+            X: =0
+            Y: =17
             ZIndex: =1
 
             DataCardKey4 As label:
@@ -3992,8 +4528,8 @@
             Required: =false
             Update: =DataCardValue21.SelectedDate
             Width: =592
-            X: =0
-            Y: =19
+            X: =1
+            Y: =17
             ZIndex: =1
 
             DataCardKey21 As label:
@@ -4105,8 +4641,8 @@
             Required: =false
             Update: =DataCardValue22.Text
             Width: =592
-            X: =1
-            Y: =19
+            X: =0
+            Y: =18
             ZIndex: =1
 
             DataCardKey22 As label:
@@ -4220,8 +4756,8 @@
             Required: =false
             Update: =DataCardValue23.SelectedDate
             Width: =592
-            X: =0
-            Y: =20
+            X: =1
+            Y: =18
             ZIndex: =1
 
             DataCardKey23 As label:
@@ -4333,8 +4869,8 @@
             Required: =false
             Update: =DataCardValue24.Text
             Width: =592
-            X: =1
-            Y: =20
+            X: =0
+            Y: =19
             ZIndex: =1
 
             DataCardKey24 As label:
@@ -4449,8 +4985,8 @@
             Required: =false
             Update: =DataCardValue26.Text
             Width: =592
-            X: =0
-            Y: =21
+            X: =1
+            Y: =19
             ZIndex: =1
 
             DataCardKey26 As label:
@@ -4565,8 +5101,8 @@
             Required: =false
             Update: =DataCardValue27.Text
             Width: =592
-            X: =1
-            Y: =21
+            X: =0
+            Y: =20
             ZIndex: =1
 
             DataCardKey27 As label:
@@ -4681,8 +5217,8 @@
             Required: =false
             Update: =DataCardValue29.Text
             Width: =592
-            X: =0
-            Y: =22
+            X: =1
+            Y: =20
             ZIndex: =1
 
             DataCardKey29 As label:
@@ -4797,8 +5333,8 @@
             Required: =false
             Update: =DataCardValue30.Text
             Width: =592
-            X: =1
-            Y: =22
+            X: =0
+            Y: =21
             ZIndex: =1
 
             DataCardKey30 As label:
@@ -4912,8 +5448,8 @@
             Required: =false
             Update: =DataCardValue32.Value
             Width: =592
-            X: =0
-            Y: =23
+            X: =1
+            Y: =21
             ZIndex: =1
 
             DataCardKey32 As label:
@@ -5020,8 +5556,8 @@
             Required: =false
             Update: =DataCardValue33.SelectedDate
             Width: =592
-            X: =1
-            Y: =23
+            X: =0
+            Y: =22
             ZIndex: =1
 
             DataCardKey33 As label:
@@ -5133,8 +5669,8 @@
             Required: =false
             Update: =DataCardValue34.Text
             Width: =592
-            X: =0
-            Y: =24
+            X: =1
+            Y: =22
             ZIndex: =1
 
             DataCardKey34 As label:
@@ -5249,8 +5785,8 @@
             Required: =false
             Update: =DataCardValue35.Text
             Width: =592
-            X: =1
-            Y: =24
+            X: =0
+            Y: =23
             ZIndex: =1
 
             DataCardKey35 As label:
@@ -5364,8 +5900,8 @@
             Required: =false
             Update: =DataCardValue37.SelectedDate
             Width: =592
-            X: =0
-            Y: =25
+            X: =1
+            Y: =23
             ZIndex: =1
 
             DataCardKey37 As label:
@@ -5477,8 +6013,8 @@
             Required: =false
             Update: =DataCardValue38.Text
             Width: =592
-            X: =1
-            Y: =25
+            X: =0
+            Y: =24
             ZIndex: =1
 
             DataCardKey38 As label:
@@ -5593,8 +6129,8 @@
             Required: =false
             Update: =DataCardValue39.Text
             Width: =592
-            X: =0
-            Y: =26
+            X: =1
+            Y: =24
             ZIndex: =1
 
             DataCardKey39 As label:
@@ -5709,8 +6245,8 @@
             Required: =false
             Update: =DataCardValue41.Text
             Width: =592
-            X: =1
-            Y: =26
+            X: =0
+            Y: =25
             ZIndex: =1
 
             DataCardKey41 As label:
@@ -5825,8 +6361,8 @@
             Required: =false
             Update: =DataCardValue42.Text
             Width: =592
-            X: =0
-            Y: =27
+            X: =1
+            Y: =25
             ZIndex: =1
 
             DataCardKey42 As label:
@@ -5940,8 +6476,8 @@
             Required: =false
             Update: =DataCardValue44.Value
             Width: =592
-            X: =1
-            Y: =27
+            X: =0
+            Y: =26
             ZIndex: =1
 
             DataCardKey44 As label:
@@ -6048,8 +6584,8 @@
             Required: =false
             Update: =DataCardValue45.SelectedDate
             Width: =592
-            X: =0
-            Y: =28
+            X: =1
+            Y: =26
             ZIndex: =1
 
             DataCardKey45 As label:
@@ -6161,8 +6697,8 @@
             Required: =false
             Update: =DataCardValue46.Text
             Width: =592
-            X: =1
-            Y: =28
+            X: =0
+            Y: =27
             ZIndex: =1
 
             DataCardKey46 As label:
@@ -6277,8 +6813,8 @@
             Required: =false
             Update: =DataCardValue47.Text
             Width: =592
-            X: =0
-            Y: =29
+            X: =1
+            Y: =27
             ZIndex: =1
 
             DataCardKey47 As label:
@@ -6392,8 +6928,8 @@
             Required: =false
             Update: =DataCardValue49.SelectedDate
             Width: =592
-            X: =1
-            Y: =29
+            X: =0
+            Y: =28
             ZIndex: =1
 
             DataCardKey49 As label:
@@ -6504,8 +7040,8 @@
             Required: =false
             Update: =DataCardValue52.Selected
             Width: =592
-            X: =0
-            Y: =30
+            X: =1
+            Y: =28
             ZIndex: =1
 
             DataCardKey52 As label:
@@ -6627,8 +7163,8 @@
             Required: =false
             Update: =DataCardValue25.Text
             Width: =592
-            X: =1
-            Y: =30
+            X: =0
+            Y: =29
             ZIndex: =1
 
             DataCardKey25 As label:
@@ -6745,8 +7281,8 @@
                 =//DataCardValue5.Text
                 ddlSite.Selected.Value
             Width: =592
-            X: =0
-            Y: =31
+            X: =1
+            Y: =29
             ZIndex: =1
 
             DataCardKey5 As label:
@@ -6863,8 +7399,8 @@
                 =//DataCardValue8.Text
                 ddlClaimDescription.Selected.Value
             Width: =592
-            X: =1
-            Y: =31
+            X: =0
+            Y: =30
             ZIndex: =1
 
             DataCardKey8 As label:
@@ -6981,8 +7517,8 @@
                 =//DataCardValue7.Text
                 rdbClaimDescriptionType.Selected.Value
             Width: =592
-            X: =0
-            Y: =32
+            X: =1
+            Y: =30
             ZIndex: =1
 
             DataCardKey7 As label:
@@ -7099,8 +7635,8 @@
                 =//  DataCardValue10.Text
                 ddlCustomer.Selected.Customer
             Width: =592
-            X: =1
-            Y: =32
+            X: =0
+            Y: =31
             ZIndex: =1
 
             DataCardKey10 As label:
@@ -7217,8 +7753,8 @@
                 =//DataCardValue11.Text
                 cmbMediaProgram.Selected.Value
             Width: =592
-            X: =0
-            Y: =33
+            X: =1
+            Y: =31
             ZIndex: =1
 
             DataCardKey11 As label:
@@ -7335,8 +7871,8 @@
                 =//  DataCardValue12.Text
                 ddlSubstrateSupplier.Selected.Customer
             Width: =592
-            X: =1
-            Y: =33
+            X: =0
+            Y: =32
             ZIndex: =1
 
             DataCardKey12 As label:
@@ -7453,8 +7989,8 @@
                 =//  DataCardValue13.Text
                 cmbSubstrateProgram.Selected.Value
             Width: =592
-            X: =0
-            Y: =34
+            X: =1
+            Y: =32
             ZIndex: =1
 
             DataCardKey13 As label:
@@ -7568,8 +8104,8 @@
             Required: =false
             Update: =DataCardValue53.HtmlText
             Width: =592
-            X: =1
-            Y: =34
+            X: =0
+            Y: =33
             ZIndex: =1
 
             DataCardKey53 As label:
@@ -7661,8 +8197,8 @@
             Required: =false
             Update: =DataCardValue6.HtmlText
             Width: =592
-            X: =0
-            Y: =35
+            X: =1
+            Y: =33
             ZIndex: =1
 
             DataCardKey6 As label:
@@ -7756,8 +8292,8 @@
                 =//DataCardValue16.HtmlText
                 rtxP1CAIComment.HtmlText
             Width: =592
-            X: =1
-            Y: =35
+            X: =0
+            Y: =34
             ZIndex: =1
 
             DataCardKey16 As label:
@@ -7849,8 +8385,8 @@
             Required: =false
             Update: =rtxAppliedProgramComment.HtmlText
             Width: =588
-            X: =0
-            Y: =36
+            X: =1
+            Y: =34
             ZIndex: =1
 
             DataCardKey48 As label:
@@ -7942,8 +8478,8 @@
             Required: =false
             Update: =DataCardValue19.HtmlText
             Width: =592
-            X: =1
-            Y: =36
+            X: =0
+            Y: =35
             ZIndex: =1
 
             DataCardKey19 As label:
@@ -8035,8 +8571,8 @@
             Required: =false
             Update: =DataCardValue28.HtmlText
             Width: =592
-            X: =0
-            Y: =37
+            X: =1
+            Y: =35
             ZIndex: =1
 
             DataCardKey28 As label:
@@ -8128,8 +8664,8 @@
             Required: =false
             Update: =DataCardValue31.HtmlText
             Width: =592
-            X: =1
-            Y: =37
+            X: =0
+            Y: =36
             ZIndex: =1
 
             DataCardKey31 As label:
@@ -8221,8 +8757,8 @@
             Required: =false
             Update: =DataCardValue36.HtmlText
             Width: =592
-            X: =0
-            Y: =38
+            X: =1
+            Y: =36
             ZIndex: =1
 
             DataCardKey36 As label:
@@ -8314,8 +8850,8 @@
             Required: =false
             Update: =DataCardValue40.HtmlText
             Width: =592
-            X: =1
-            Y: =38
+            X: =0
+            Y: =37
             ZIndex: =1
 
             DataCardKey40 As label:
@@ -8407,8 +8943,8 @@
             Required: =false
             Update: =DataCardValue43.HtmlText
             Width: =592
-            X: =0
-            Y: =39
+            X: =1
+            Y: =37
             ZIndex: =1
 
             DataCardKey43 As label:
@@ -8500,8 +9036,8 @@
             Required: =false
             Update: =DataCardValue51.HtmlText
             Width: =592
-            X: =1
-            Y: =39
+            X: =0
+            Y: =38
             ZIndex: =1
 
             DataCardKey51 As label:
@@ -8594,8 +9130,8 @@
             Required: =false
             Update: =DataCardValue20.Text
             Width: =592
-            X: =0
-            Y: =40
+            X: =1
+            Y: =38
             ZIndex: =1
 
             DataCardKey20 As label:
@@ -8709,8 +9245,8 @@
             Required: =false
             Update: =DataCardValue50.SelectedDate
             Width: =592
-            X: =1
-            Y: =40
+            X: =0
+            Y: =39
             ZIndex: =1
 
             DataCardKey50 As label:
@@ -8822,8 +9358,8 @@
             Required: =false
             Update: =DataCardValue55.Text
             Width: =592
-            X: =0
-            Y: =41
+            X: =1
+            Y: =39
             ZIndex: =1
 
             DataCardKey54 As label:
@@ -8938,8 +9474,8 @@
             Required: =false
             Update: =DataCardValue56.Text
             Width: =592
-            X: =1
-            Y: =41
+            X: =0
+            Y: =40
             ZIndex: =1
 
             DataCardKey56 As label:
@@ -9054,8 +9590,8 @@
             Required: =false
             Update: =DataCardValue57.Text
             Width: =592
-            X: =0
-            Y: =42
+            X: =1
+            Y: =40
             ZIndex: =1
 
             DataCardKey57 As label:
@@ -9170,8 +9706,8 @@
             Required: =false
             Update: =DataCardValue58.Text
             Width: =592
-            X: =1
-            Y: =42
+            X: =0
+            Y: =41
             ZIndex: =1
 
             DataCardKey58 As label:
@@ -9285,8 +9821,8 @@
             Required: =false
             Update: =DataCardValue59.SelectedDate
             Width: =592
-            X: =0
-            Y: =43
+            X: =1
+            Y: =41
             ZIndex: =1
 
             DataCardKey59 As label:
@@ -9398,8 +9934,8 @@
             Required: =false
             Update: =DataCardValue60.Text
             Width: =592
-            X: =1
-            Y: =43
+            X: =0
+            Y: =42
             ZIndex: =1
 
             DataCardKey60 As label:
@@ -9514,8 +10050,8 @@
             Required: =false
             Update: =DataCardValue61.Text
             Width: =592
-            X: =0
-            Y: =44
+            X: =1
+            Y: =42
             ZIndex: =1
 
             DataCardKey61 As label:
@@ -9630,8 +10166,8 @@
             Required: =false
             Update: =DataCardValue62.Text
             Width: =592
-            X: =1
-            Y: =44
+            X: =0
+            Y: =43
             ZIndex: =1
 
             DataCardKey62 As label:
@@ -9746,8 +10282,8 @@
             Required: =false
             Update: =DataCardValue63.Text
             Width: =592
-            X: =0
-            Y: =45
+            X: =1
+            Y: =43
             ZIndex: =1
 
             DataCardKey63 As label:
@@ -9861,8 +10397,8 @@
             Required: =false
             Update: =DataCardValue64.SelectedDate
             Width: =592
-            X: =1
-            Y: =45
+            X: =0
+            Y: =44
             ZIndex: =1
 
             DataCardKey64 As label:
@@ -9974,8 +10510,8 @@
             Required: =false
             Update: =DataCardValue65.Text
             Width: =592
-            X: =0
-            Y: =46
+            X: =1
+            Y: =44
             ZIndex: =1
 
             DataCardKey65 As label:
@@ -10090,8 +10626,8 @@
             Required: =false
             Update: =DataCardValue66.Text
             Width: =592
-            X: =1
-            Y: =46
+            X: =0
+            Y: =45
             ZIndex: =1
 
             DataCardKey66 As label:
@@ -10206,8 +10742,8 @@
             Required: =false
             Update: =DataCardValue67.Text
             Width: =592
-            X: =0
-            Y: =47
+            X: =1
+            Y: =45
             ZIndex: =1
 
             DataCardKey67 As label:
@@ -10322,8 +10858,8 @@
             Required: =false
             Update: =DataCardValue68.Text
             Width: =592
-            X: =1
-            Y: =47
+            X: =0
+            Y: =46
             ZIndex: =1
 
             DataCardKey68 As label:
@@ -10437,8 +10973,8 @@
             Required: =false
             Update: =DataCardValue69.SelectedDate
             Width: =592
-            X: =0
-            Y: =48
+            X: =1
+            Y: =46
             ZIndex: =1
 
             DataCardKey69 As label:
@@ -10550,8 +11086,8 @@
             Required: =false
             Update: =DataCardValue70.Text
             Width: =592
-            X: =1
-            Y: =48
+            X: =0
+            Y: =47
             ZIndex: =1
 
             DataCardKey70 As label:
@@ -10666,8 +11202,8 @@
             Required: =false
             Update: =DataCardValue71.Text
             Width: =592
-            X: =0
-            Y: =49
+            X: =1
+            Y: =47
             ZIndex: =1
 
             DataCardKey71 As label:
@@ -10782,8 +11318,8 @@
             Required: =false
             Update: =DataCardValue72.Text
             Width: =592
-            X: =1
-            Y: =49
+            X: =0
+            Y: =48
             ZIndex: =1
 
             DataCardKey72 As label:
@@ -10898,8 +11434,8 @@
             Required: =false
             Update: =DataCardValue73.Text
             Width: =592
-            X: =0
-            Y: =50
+            X: =1
+            Y: =48
             ZIndex: =1
 
             DataCardKey73 As label:
@@ -11013,8 +11549,8 @@
             Required: =false
             Update: =DataCardValue74.SelectedDate
             Width: =592
-            X: =1
-            Y: =50
+            X: =0
+            Y: =49
             ZIndex: =1
 
             DataCardKey74 As label:
@@ -11126,8 +11662,8 @@
             Required: =false
             Update: =DataCardValue75.Text
             Width: =592
-            X: =0
-            Y: =51
+            X: =1
+            Y: =49
             ZIndex: =1
 
             DataCardKey75 As label:
@@ -11242,8 +11778,8 @@
             Required: =false
             Update: =DataCardValue76.Text
             Width: =592
-            X: =1
-            Y: =51
+            X: =0
+            Y: =50
             ZIndex: =1
 
             DataCardKey76 As label:
@@ -11358,8 +11894,8 @@
             Required: =false
             Update: =DataCardValue77.Text
             Width: =592
-            X: =0
-            Y: =52
+            X: =1
+            Y: =50
             ZIndex: =1
 
             DataCardKey77 As label:
@@ -11475,7 +12011,7 @@
             Visible: =false
             Width: =592
             X: =0
-            Y: =61
+            Y: =51
             ZIndex: =1
 
             DataCardKey3 As label:
@@ -11587,8 +12123,8 @@
             Update: =DataCardValue2.Selected
             Visible: =false
             Width: =592
-            X: =0
-            Y: =64
+            X: =1
+            Y: =51
             ZIndex: =1
 
             DataCardKey2 As label:
