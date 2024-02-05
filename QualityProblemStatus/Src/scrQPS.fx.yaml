@@ -3117,7 +3117,7 @@
             BorderStyle: =BorderStyle.Solid
             DisplayMode: =DisplayMode.Edit
             Fill: =RGBA(204, 228, 246, 1)
-            Height: =376
+            Height: =309
             Width: =1184
             X: =0
             Y: =11
@@ -3134,7 +3134,7 @@
                 FocusedBorderThickness: =1
                 Font: =Font.'Segoe UI'
                 FontWeight: =FontWeight.Semibold
-                Height: =(lblP3RCProcess.Height) * 3 + rtxP1RCComment.Height + 50 + 36
+                Height: =(lblP3RCProcess.Height) * 2 + rtxP1RCComment.Height + 30
                 PaddingLeft: =0
                 Size: =10.5
                 Text: ="RHDI"
@@ -3143,10 +3143,11 @@
 
             RichTextEditor1 As richTextEditor:
                 BorderColor: =RGBA(166, 166, 166, 1)
-                Default: =ThisItem.'Process1 CA Customer Comment'
+                Default: =ThisItem.'RHDI Remark'
+                Height: =rtxP1RCComment.Height
                 Width: =1103
                 X: =50
-                Y: =112
+                Y: =90
                 ZIndex: =2
 
             rdbRHDIApply As radio:
