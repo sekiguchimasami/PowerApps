@@ -3045,7 +3045,7 @@
                 PaddingLeft: =0
                 Size: =11
                 Text: ="Applied Program"
-                Width: =(Parent.Width - 60) * 0.18
+                Width: =(Parent.Width - 60) * 0.12
                 X: =40
                 Y: =10
                 ZIndex: =1
@@ -3064,7 +3064,7 @@
                 PaddingLeft: =0
                 Size: =11
                 Text: ="Comment"
-                Width: =(Parent.Width - 60) * 0.18
+                Width: =(Parent.Width - 60) * 0.12
                 X: =lblAppliedProgram.X
                 Y: =lblAppliedProgram.Y + lblAppliedProgram.Height + 10
                 ZIndex: =3
@@ -3107,7 +3107,7 @@
                 SearchItems: =[]
                 SelectionFill: =RGBA(0, 120, 212, 1)
                 Size: =10.5
-                Width: =(Parent.Width - 60) * 0.8
+                Width: =(Parent.Width - 60) * 0.88
                 X: =lblAppliedProgram.X + lblAppliedProgram.Width
                 Y: =lblAppliedProgram.Y
                 ZIndex: =5
