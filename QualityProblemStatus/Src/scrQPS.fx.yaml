@@ -2978,7 +2978,7 @@
                 PaddingBottom: =0
                 PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
                 SelectedDateFill: =RGBA(0, 120, 212, 1)
-                Size: =10.5
+                Size: =11
                 StartYear: =1899
                 Tooltip: =Parent.DisplayName
                 Width: =(Parent.Width - 60) * 0.2
@@ -3161,7 +3161,7 @@
                 PaddingBottom: =0
                 PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
                 SelectedDateFill: =RGBA(0, 120, 212, 1)
-                Size: =10.5
+                Size: =1
                 StartYear: =1899
                 Tooltip: =Parent.DisplayName
                 Width: =(Parent.Width - 60) * 0.2
@@ -3353,7 +3353,7 @@
                 PaddingBottom: =0
                 PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
                 SelectedDateFill: =RGBA(0, 120, 212, 1)
-                Size: =10.5
+                Size: =11
                 StartYear: =1899
                 Tooltip: =Parent.DisplayName
                 Width: =(Parent.Width - 60) * 0.2
@@ -3545,7 +3545,7 @@
                 PaddingBottom: =0
                 PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
                 SelectedDateFill: =RGBA(0, 120, 212, 1)
-                Size: =10.5
+                Size: =11
                 StartYear: =1899
                 Tooltip: =Parent.DisplayName
                 Width: =(Parent.Width - 60) * 0.2
@@ -3737,7 +3737,7 @@
                 PaddingBottom: =0
                 PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
                 SelectedDateFill: =RGBA(0, 120, 212, 1)
-                Size: =10.5
+                Size: =11
                 StartYear: =1899
                 Tooltip: =Parent.DisplayName
                 Width: =(Parent.Width - 60) * 0.2

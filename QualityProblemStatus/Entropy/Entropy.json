@@ -584,7 +584,7 @@
   },
   "FunctionParamsInvariantScripts": {},
   "FunctionParamsInvariantScriptsOnInstances": {},
-  "HeaderLastSavedDateTimeUTC": "02/06/2024 00:32:04",
+  "HeaderLastSavedDateTimeUTC": "02/06/2024 01:04:16",
   "IsLegacyComponentAllowGlobalScopeCase": false,
   "LocalConnectionIDReferences": {
     "75ed78bd-b964-4a77-8192-3937b748a1ba": "\"/providers/microsoft.powerapps/apis/shared_sharepointonline/connections/2d50d16266ff4965a740480cabf8de75\""
@@ -1796,7 +1796,7 @@
   "RuleScreenIdWithoutScreen": {},
   "TemplateVersions": {},
   "VolatileProperties": {
-    "AnalysisLoadTime": 13.7376334,
+    "AnalysisLoadTime": 17.454063,
     "ControlCount": {
       "button": 1,
       "combobox": 14,
@@ -1817,7 +1817,7 @@
       "toggleSwitch": 2,
       "typedDataCard": 89
     },
-    "DeserializationLoadTime": 7.6124708
+    "DeserializationLoadTime": 9.4333561
   },
   "WasLocalDatabaseReferencesEmpty": true
 }
