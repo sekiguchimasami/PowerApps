@@ -1,4 +1,4 @@
-"Screen1 As screen.'phoneLayout_HeaderAndGallery_ver3.0'":
+"scrTest As screen.'phoneLayout_HeaderAndGallery_ver3.0'":
     LoadingSpinnerColor: =RGBA(0, 120, 212, 1)
 
     RectQuickActionBar1 As rectangle:
