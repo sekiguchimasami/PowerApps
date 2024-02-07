@@ -11,14 +11,14 @@
     "BrowseGallery1 As gallery.'BrowseLayout_Vertical_ThreeTextOneImageVariant_ver5.0'":
         BorderColor: =RGBA(166, 166, 166, 1)
         DelayItemLoading: =true
-        Height: =Parent.Height - Self.Y
+        Height: =399
         Items: ='Program Master'
         Layout: =Layout.Vertical
         LoadingSpinner: =LoadingSpinner.Data
         ShowScrollbar: =false
         TemplatePadding: =0
         TemplateSize: =116
-        Width: =Parent.Width
+        Width: =522
         Y: =TextSearchBox1.Y + TextSearchBox1.Height
         ZIndex: =1
 
@@ -286,7 +286,7 @@
         SelectionFill: =RGBA(0, 120, 212, 1)
         Size: =10.5
         Width: =Parent.Width * 0.3
-        X: =474
-        Y: =28
+        X: =588
+        Y: =172
         ZIndex: =9
 
