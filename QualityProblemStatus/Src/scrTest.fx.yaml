@@ -210,14 +210,13 @@
 
     TextSearchBox1 As text:
         Default: =""
-        Height: =68
         HintText: ="検索アイテム"
         PaddingLeft: =70
         RadiusBottomLeft: =0
         RadiusBottomRight: =7
         RadiusTopLeft: =0
         RadiusTopRight: =7
-        Width: =Parent.Width
+        Width: =522
         Y: =RectQuickActionBar1.Height
         ZIndex: =6
 
@@ -286,7 +285,7 @@
         SelectionFill: =RGBA(0, 120, 212, 1)
         Size: =10.5
         Width: =Parent.Width * 0.3
-        X: =588
-        Y: =172
+        X: =522
+        Y: =88
         ZIndex: =9
 
