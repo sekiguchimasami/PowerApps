@@ -828,41 +828,81 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "scrTest.Label1.Text"
+                  "fullyQualifiedName": "scrTest.Button1.OnSelect"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "scrTest.Label1.Text",
+                  "fullyQualifiedName": "scrTest.Button1.OnSelect",
                   "relativeAddress": 0
                 },
                 "region": {
-                  "charLength": 7,
-                  "charOffset": 0,
+                  "charLength": 27,
+                  "charOffset": 60,
                   "snippet": {
-                    "text": "iNumber"
+                    "text": "{text:\"RHDI\",text_1:\"2024\"}"
                   }
                 }
               },
               "properties": {
-                "member": "Text",
+                "member": "OnSelect",
                 "module": "scrTest",
-                "type": "scrTest.Label1"
+                "type": "scrTest.Button1"
               }
             }
           ],
           "message": {
             "arguments": [
-              "Text",
-              "Error"
+              "Number",
+              "Record"
             ],
             "id": "issue"
           },
           "properties": {
             "level": "High"
           },
-          "ruleId": "app-ErrIncompatibleRulePropTypes-PropKind-RuleKind",
-          "ruleIndex": 2
+          "ruleId": "app-ErrBadType-ExpectedType-ProvidedType",
+          "ruleIndex": 0
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "scrTest.Button1.OnSelect"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "scrTest.Button1.OnSelect",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 50,
+                  "charOffset": 38,
+                  "snippet": {
+                    "text": "PowerAutomate採番.Run(1,{text:\"RHDI\",text_1:\"2024\"})"
+                  }
+                }
+              },
+              "properties": {
+                "member": "OnSelect",
+                "module": "scrTest",
+                "type": "scrTest.Button1"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "Run"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "High"
+          },
+          "ruleId": "app-ErrInvalidArgs-Func",
+          "ruleIndex": 1
         },
         {
           "locations": [
@@ -5411,6 +5451,36 @@
                 "member": "Process3Tab",
                 "module": "scrQPS",
                 "type": "scrQPS"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-UnusedVariables",
+          "ruleIndex": 7
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "scrTest.iNumber"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "scrTest.iNumber",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "iNumber",
+                "module": "scrTest",
+                "type": "scrTest"
               }
             }
           ],

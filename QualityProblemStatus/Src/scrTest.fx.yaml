@@ -304,7 +304,7 @@
         Height: =32
         PaddingLeft: =0
         Size: =11
-        Text: =iNumber
+        Text: =iNo
         Width: =260
         X: =799
         Y: =160
@@ -327,7 +327,7 @@
         HoverFill: =ColorFade(RGBA(0, 120, 212, 1), -10%)
         OnSelect: |
             =UpdateContext({iNumber:0});
-            Set(iNo, PowerAutomate採番.Run({text:"RHDI"}));
+            Set(iNo, PowerAutomate採番.Run(1,{text:"RHDI",text_1:"2024"}));
             UpdateContext({iNumber:iNo});
         PressedBorderColor: =ColorFade(RGBA(0, 120, 212, 1), -50%)
         PressedColor: =RGBA(255, 255, 255, 1)

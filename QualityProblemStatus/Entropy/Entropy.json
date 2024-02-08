@@ -592,11 +592,11 @@
   },
   "FunctionParamsInvariantScripts": {},
   "FunctionParamsInvariantScriptsOnInstances": {},
-  "HeaderLastSavedDateTimeUTC": "02/08/2024 02:06:40",
+  "HeaderLastSavedDateTimeUTC": "02/08/2024 08:47:07",
   "IsLegacyComponentAllowGlobalScopeCase": false,
   "LocalConnectionIDReferences": {
-    "1627786d-68bd-4378-b89f-a2f041d5a811": "\"/providers/microsoft.powerapps/apis/shared_logicflows/connections/27592a09ad704f6d9c464856f8db6c5f-8248763fb269a39f\"",
-    "75ed78bd-b964-4a77-8192-3937b748a1ba": "\"/providers/microsoft.powerapps/apis/shared_sharepointonline/connections/2d50d16266ff4965a740480cabf8de75\""
+    "75ed78bd-b964-4a77-8192-3937b748a1ba": "\"/providers/microsoft.powerapps/apis/shared_sharepointonline/connections/2d50d16266ff4965a740480cabf8de75\"",
+    "d207da8b-0744-4187-88e6-6b55043e95b3": "\"/providers/Microsoft.PowerApps/apis/shared_logicflows/connections/27592A09AD704F6D9C464856F8DB6C5F-8248763FB269A39F\""
   },
   "LocalDatabaseReferencesAsEmpty": false,
   "LocalResourceFileNames": {},
