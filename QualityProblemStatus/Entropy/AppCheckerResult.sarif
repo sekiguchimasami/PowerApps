@@ -828,6 +828,47 @@
             {
               "logicalLocations": [
                 {
+                  "fullyQualifiedName": "scrTest.Label1.Text"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "scrTest.Label1.Text",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 7,
+                  "charOffset": 0,
+                  "snippet": {
+                    "text": "iNumber"
+                  }
+                }
+              },
+              "properties": {
+                "member": "Text",
+                "module": "scrTest",
+                "type": "scrTest.Label1"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "Text",
+              "Error"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "High"
+          },
+          "ruleId": "app-ErrIncompatibleRulePropTypes-PropKind-RuleKind",
+          "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
                   "fullyQualifiedName": "scrQPS.galProcess.AccessibleLabel"
                 }
               ],
