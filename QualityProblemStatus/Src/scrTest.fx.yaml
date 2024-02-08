@@ -285,8 +285,8 @@
         SelectionFill: =RGBA(0, 120, 212, 1)
         Size: =10.5
         Width: =Parent.Width * 0.3
-        X: =522
-        Y: =88
+        X: =623
+        Y: =216
         ZIndex: =9
 
     Label1 As label:

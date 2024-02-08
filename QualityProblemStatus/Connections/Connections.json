@@ -53,6 +53,9 @@
       "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1664/1.0.1664.3477/logicflows/icon.png",
       "id": "/providers/microsoft.powerapps/apis/shared_logicflows",
       "parameterHints": {
+        "75ed78bd-b964-4a77-8192-3937b748a1ba": {
+          "value": "shared_sharepointonline"
+        },
         "workflowDisplayName": {
           "value": "PowerAutomate採番"
         },
@@ -62,6 +65,9 @@
         }
       },
       "parameterHintsV2": {
+        "shared_sharepointonline": {
+          "value": "75ed78bd-b964-4a77-8192-3937b748a1ba"
+        },
         "workflowDisplayName": {
           "value": "PowerAutomate採番"
         },
