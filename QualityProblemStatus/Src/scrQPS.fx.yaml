@@ -2992,6 +2992,7 @@
                 ChevronHoverBackground: =RGBA(212, 212, 212, 1)
                 ChevronHoverFill: =RGBA(33, 33, 33, 1)
                 Color: =RGBA(51, 51, 51, 1)
+                DefaultSelectedItems: =Split(ThisItem.'Applied Program', " ")
                 DisabledBorderColor: =RGBA(0, 0, 0, 0)
                 DisabledColor: =RGBA(166, 166, 166, 1)
                 DisabledFill: =RGBA(244, 244, 244, 1)
@@ -3184,7 +3185,7 @@
                 ChevronHoverBackground: =RGBA(212, 212, 212, 1)
                 ChevronHoverFill: =RGBA(33, 33, 33, 1)
                 Color: =RGBA(51, 51, 51, 1)
-                DefaultSelectedItems: =ThisItem.'RHDI Applied Program'
+                DefaultSelectedItems: =Split(ThisItem.'RHDI Applied Program', " ")
                 DisabledBorderColor: =RGBA(0, 0, 0, 0)
                 DisabledColor: =RGBA(166, 166, 166, 1)
                 DisabledFill: =RGBA(244, 244, 244, 1)
@@ -3368,7 +3369,7 @@
                 ChevronHoverBackground: =RGBA(212, 212, 212, 1)
                 ChevronHoverFill: =RGBA(33, 33, 33, 1)
                 Color: =RGBA(51, 51, 51, 1)
-                DefaultSelectedItems: =ThisItem.'RHDS Applied Program'
+                DefaultSelectedItems: =Split(ThisItem.'RHDS Applied Program', " ")
                 DisabledBorderColor: =RGBA(0, 0, 0, 0)
                 DisabledColor: =RGBA(166, 166, 166, 1)
                 DisabledFill: =RGBA(244, 244, 244, 1)
@@ -3560,7 +3561,7 @@
                 ChevronHoverBackground: =RGBA(212, 212, 212, 1)
                 ChevronHoverFill: =RGBA(33, 33, 33, 1)
                 Color: =RGBA(51, 51, 51, 1)
-                DefaultSelectedItems: =ThisItem.'RHDM Applied Program'
+                DefaultSelectedItems: =Split(ThisItem.'RHDM Applied Program', " ")
                 DisabledBorderColor: =RGBA(0, 0, 0, 0)
                 DisabledColor: =RGBA(166, 166, 166, 1)
                 DisabledFill: =RGBA(244, 244, 244, 1)
@@ -3752,7 +3753,7 @@
                 ChevronHoverBackground: =RGBA(212, 212, 212, 1)
                 ChevronHoverFill: =RGBA(33, 33, 33, 1)
                 Color: =RGBA(51, 51, 51, 1)
-                DefaultSelectedItems: =ThisItem.'RHDO Applied Program'
+                DefaultSelectedItems: =Split(ThisItem.'RHDO Applied Program', " ")
                 DisabledBorderColor: =RGBA(0, 0, 0, 0)
                 DisabledColor: =RGBA(166, 166, 166, 1)
                 DisabledFill: =RGBA(244, 244, 244, 1)
@@ -3944,7 +3945,7 @@
                 ChevronHoverBackground: =RGBA(212, 212, 212, 1)
                 ChevronHoverFill: =RGBA(33, 33, 33, 1)
                 Color: =RGBA(51, 51, 51, 1)
-                DefaultSelectedItems: =ThisItem.'RHDY Applied Program'
+                DefaultSelectedItems: =Split(ThisItem.'RHDY Applied Program', " ")
                 DisabledBorderColor: =RGBA(0, 0, 0, 0)
                 DisabledColor: =RGBA(166, 166, 166, 1)
                 DisabledFill: =RGBA(244, 244, 244, 1)
