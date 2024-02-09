@@ -861,7 +861,7 @@
                 HoverBorderColor: =ColorFade(RGBA(0, 120, 212, 1), -30%)
                 HoverColor: =RGBA(51, 51, 51, 1)
                 HoverFill: =RGBA(212, 212, 212, 1)
-                Items: =Filter('Actual Cause Master', 区分.Value=rdbClaimDescriptionType.Selected.Value).Title
+                Items: =Filter('Actual Cause Master', 区分.Value=rdbClaimDescriptionType.Selected.Value).Process
                 PaddingBottom: =5
                 PaddingLeft: =12
                 PaddingRight: =5
@@ -1604,7 +1604,7 @@
                 HoverBorderColor: =ColorFade(RGBA(0, 120, 212, 1), -30%)
                 HoverColor: =RGBA(51, 51, 51, 1)
                 HoverFill: =RGBA(212, 212, 212, 1)
-                Items: =Filter('Actual Cause Master', 区分.Value=rdbClaimDescriptionType.Selected.Value).Title
+                Items: =Filter('Actual Cause Master', 区分.Value=rdbClaimDescriptionType.Selected.Value).Process
                 PaddingBottom: =5
                 PaddingLeft: =12
                 PaddingRight: =5
@@ -2301,7 +2301,7 @@
                 HoverBorderColor: =ColorFade(RGBA(0, 120, 212, 1), -30%)
                 HoverColor: =RGBA(51, 51, 51, 1)
                 HoverFill: =RGBA(212, 212, 212, 1)
-                Items: =Filter('Actual Cause Master', 区分.Value=rdbClaimDescriptionType.Selected.Value).Title
+                Items: =Filter('Actual Cause Master', 区分.Value=rdbClaimDescriptionType.Selected.Value).Process
                 PaddingBottom: =5
                 PaddingLeft: =12
                 PaddingRight: =5
