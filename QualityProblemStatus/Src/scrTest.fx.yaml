@@ -290,7 +290,7 @@
         ZIndex: =9
 
     Label1 As label:
-        Align: =Align.Right
+        Align: =Align.Center
         BorderColor: =RGBA(0, 0, 0, 0)
         BorderStyle: =BorderStyle.None
         BorderThickness: =1

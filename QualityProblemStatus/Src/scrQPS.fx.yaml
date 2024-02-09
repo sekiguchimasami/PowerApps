@@ -794,8 +794,8 @@
             Fill: =RGBA(204, 231, 246, 1)
             Height: =P1Rectangle1.Height + P1Rectangle1.Height + P1Rectangle1.Height
             Visible: |-
-                =//varTabSelected=1
-                true
+                =varTabSelected=1
+                //true
             Width: =1184
             WidthFit: =false
             X: =0
@@ -1538,8 +1538,8 @@
             Fill: =RGBA(204, 228, 246, 1)
             Height: =100
             Visible: |-
-                =//varTabSelected=2
-                true
+                =varTabSelected=2
+                //true
             Width: =1184
             X: =0
             Y: =6
@@ -2235,8 +2235,8 @@
             Fill: =RGBA(204, 228, 246, 1)
             Height: =100
             Visible: |-
-                =//varTabSelected=3
-                true
+                =varTabSelected=3
+                //true
             Width: =1184
             X: =0
             Y: =7
