@@ -13,7 +13,9 @@ App As appinfo:
         DataSource: =[@'Quality Problem Status']
         OnCancel: =ResetForm(frmQPS)
         OnEdit: =EditForm(frmQPS)
-        OnNew: =NewForm(frmQPS)
+        OnNew: |-
+            =
+            NewForm(frmQPS)
         OnSave: =SubmitForm(frmQPS)
         OnView: =ViewForm(frmQPS)
         SelectedHidden: =LookUp([@'Quality Problem Status'], ID = Self.SelectedListItemID)

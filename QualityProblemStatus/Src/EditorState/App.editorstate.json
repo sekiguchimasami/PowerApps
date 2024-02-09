@@ -114,7 +114,14 @@
       "ControlPropertyState": [
         "DataSource",
         "SelectedHidden",
-        "OnNew",
+        {
+          "AFDDataSourceName": "",
+          "AutoRuleBindingEnabled": false,
+          "AutoRuleBindingString": "NewForm(frmQPS)",
+          "InvariantPropertyName": "OnNew",
+          "IsLockable": false,
+          "NameMapSourceSchema": "?"
+        },
         "OnEdit",
         "OnView",
         "OnSave",
@@ -167,7 +174,7 @@
         {
           "Category": "Behavior",
           "PropertyName": "OnNew",
-          "RuleProviderType": "Unknown"
+          "RuleProviderType": "User"
         }
       ],
       "StyleName": "",
