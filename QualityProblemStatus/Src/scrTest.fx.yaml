@@ -328,7 +328,8 @@
         OnSelect: |
             =UpdateContext({iNumber:0});
             Set(iNo, PowerAutomate採番.Run("RHDI",1));
-            UpdateContext({iNumber:iNo});
+            UpdateContext({iNumber:1});
+            UpdateContext({striNo:iNo});
         PressedBorderColor: =ColorFade(RGBA(0, 120, 212, 1), -50%)
         PressedColor: =RGBA(255, 255, 255, 1)
         PressedFill: =ColorFade(RGBA(0, 120, 212, 1), -30%)
