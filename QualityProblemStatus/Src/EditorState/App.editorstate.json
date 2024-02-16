@@ -124,7 +124,14 @@
         },
         "OnEdit",
         "OnView",
-        "OnSave",
+        {
+          "AFDDataSourceName": "",
+          "AutoRuleBindingEnabled": false,
+          "AutoRuleBindingString": "SubmitForm(frmQPS)",
+          "InvariantPropertyName": "OnSave",
+          "IsLockable": false,
+          "NameMapSourceSchema": "?"
+        },
         "OnCancel"
       ],
       "HasDynamicProperties": false,
@@ -159,7 +166,7 @@
         {
           "Category": "Behavior",
           "PropertyName": "OnSave",
-          "RuleProviderType": "Unknown"
+          "RuleProviderType": "User"
         },
         {
           "Category": "Behavior",
