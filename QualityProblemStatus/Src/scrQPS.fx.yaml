@@ -4100,6 +4100,27 @@
                                 Char(10) & Char(9) & Char(9) & 
                                 "Process1 CA Customer Implementation Date：" & Char(9) & "「" & ThisItem.'Process1 CA Customer Implementation Date' & "」⇒「" & datP1CACImplementationDate.SelectedDate & "」"
                             ) & 
+                            //  Applied Program
+                            If(ThisItem.'Applied Program'<>cmbAppliedProgram.Selected.Value,
+                                Char(10) & Char(9) & Char(9) & 
+                                "Applied Program：" & Char(9) & "「" & ThisItem.'Applied Program' & "」⇒「" & cmbAppliedProgram.Selected.Value & "」"
+                            ) & 
+                            //  *** Site ***
+                            //  RHDI Apply Status
+                            If(ThisItem.'RHDI Apply Status'<>rdbRHDIApply.Selected.Value,
+                                Char(10) & Char(9) & Char(9) & 
+                                "RHDI Apply Status：" & Char(9) & "「" & ThisItem.'RHDI Apply Status' & "」⇒「" & rdbRHDIApply.Selected.Value & "」"
+                            ) & 
+                            //  RHDI Implementation Date
+                            If(ThisItem.'RHDI Implementation Date'<>datRHDIImpleDate.SelectedDate,
+                                Char(10) & Char(9) & Char(9) & 
+                                "RHDI Implementation Date：" & Char(9) & "「" & ThisItem.'RHDI Implementation Date' & "」⇒「" & datRHDIImpleDate.SelectedDate & "」"
+                            ) & 
+                            //  RHDI Applied Program
+                            If(ThisItem.'RHDI Applied Program'<>cmbRHDIAppliedProgram.Selected.Value,
+                                Char(10) & Char(9) & Char(9) & 
+                                "RHDI Applied Program：" & Char(9) & "「" & ThisItem.'RHDI Applied Program' & "」⇒「" & cmbRHDIAppliedProgram.Selected.Value & "」"
+                            ) & 
                             //  Customer
                             If(ThisItem.Customer<>ddlCustomer.Selected.Customer,
                                 Char(10) & Char(9) & Char(9) & 

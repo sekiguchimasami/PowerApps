@@ -166,7 +166,7 @@
         {
           "Category": "Behavior",
           "PropertyName": "OnSave",
-          "RuleProviderType": "User"
+          "RuleProviderType": "Unknown"
         },
         {
           "Category": "Behavior",
@@ -181,7 +181,7 @@
         {
           "Category": "Behavior",
           "PropertyName": "OnNew",
-          "RuleProviderType": "User"
+          "RuleProviderType": "Unknown"
         }
       ],
       "StyleName": "",
