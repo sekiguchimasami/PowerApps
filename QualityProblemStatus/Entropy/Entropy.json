@@ -592,7 +592,7 @@
   },
   "FunctionParamsInvariantScripts": {},
   "FunctionParamsInvariantScriptsOnInstances": {},
-  "HeaderLastSavedDateTimeUTC": "02/16/2024 06:52:57",
+  "HeaderLastSavedDateTimeUTC": "02/19/2024 09:59:08",
   "IsLegacyComponentAllowGlobalScopeCase": false,
   "LocalConnectionIDReferences": {
     "3336b5c9-bd85-41f8-ba91-ec9ab633e654": "\"/providers/microsoft.powerapps/apis/shared_logicflows/connections/27592a09-ad70-4f6d-9c46-4856f8db6c5f\"",
@@ -1515,15 +1515,15 @@
     "galleryTemplate2": 4,
     "galProcess": 3,
     "Host": 0,
-    "IconNewItem1": 566,
-    "IconRefresh1": 564,
-    "IconSortUpDown1": 565,
+    "IconNewItem1": 565,
+    "IconRefresh1": 563,
+    "IconSortUpDown1": 564,
     "Image3": 572,
     "Label1": 580,
     "lbl_Header": 1,
     "lblAppliedProgram": 138,
     "lblAppliedProgramComment": 140,
-    "LblAppName1": 563,
+    "LblAppName1": 566,
     "lblOriginator": 8,
     "lblP1CACControlItem": 64,
     "lblP1CACImplementationDate": 71,
@@ -1822,7 +1822,7 @@
   "RuleScreenIdWithoutScreen": {},
   "TemplateVersions": {},
   "VolatileProperties": {
-    "AnalysisLoadTime": 6.0898836,
+    "AnalysisLoadTime": 16.2092469,
     "ControlCount": {
       "button": 2,
       "combobox": 14,
@@ -1843,7 +1843,7 @@
       "toggleSwitch": 2,
       "typedDataCard": 89
     },
-    "DeserializationLoadTime": 3.4534301
+    "DeserializationLoadTime": 11.2521568
   },
   "WasLocalDatabaseReferencesEmpty": true
 }

@@ -19,36 +19,7 @@ App As appinfo:
         OnSave: |-
             =//  保存処理
             
-            //  編集履歴
-            With(
-                //  編集者と貸与品区分を取得
-                {fullName:Split(User().FullName," "),
-                 str区分:rdbClaimDescriptionType.Selected.Value,
-                 strSite:ddlSite.Selected.Value,
-                 strCustomer:ddlCustomer.Selected.Customer,
-                 strMediaProgram:cmbMediaProgram.Selected.Value,
-                 strSubstrateSupplier:ddlSubstrateSupplier.Selected.Customer,
-                 strSubstrateProgram:cmbSubstrateProgram.Selected.Value},
-                
-                //  編集日時と編集者
-                Now() & Char(9) & Last(fullName).Value & " " & First(fullName).Value & 
-                If(
-                    frmQPS.Mode=FormMode.New, 
-                        "が「" & strCustomer & ":" & strMediaProgram & Char(10) & 
-                        If(Lower(str区分)=Lower("SubStrate"), 
-                            strSubstrateSupplier & Char(9) & strSubstrateProgram
-                        ) & "」を新規作成",
             
-                    frmQPS.Mode=FormMode.Edit, 
-                        //  編集
-                        "が編集" & Char(9) & 
-                        //  貸与品区分
-                        If(ThisItem.P1RCProcess<>ddlP1RCProcess.Selected.Process,
-                            Char(10) & Char(9) & Char(9) & 
-                            "貸与品区分：" & Char(9) & "「" & ThisItem.貸与品区分.Value & "」⇒「" & rdbLendingDivision.Selected.Value & "」"
-                        )
-                )
-            ) & Char(10) & ThisItem.EditHistory;
             
             //  保存
             SubmitForm(frmQPS)
