@@ -4100,11 +4100,105 @@
                                 Char(10) & Char(9) & Char(9) & 
                                 "Process1 CA Customer Implementation Date：" & Char(9) & "「" & ThisItem.'Process1 CA Customer Implementation Date' & "」⇒「" & datP1CACImplementationDate.SelectedDate & "」"
                             ) & 
+                            //  *** Process2 *** 
+                            //  Process2 RC Process
+                            If(ThisItem.'Process2 RC Process'<>ddlP2RCProcess.Selected.Process,
+                                Char(10) & Char(9) & Char(9) & 
+                                "Process2 RC Process：" & Char(9) & "「" & ThisItem.'Process2 RC Process' & "」⇒「" & ddlP2RCProcess.Selected.Process & "」"
+                            ) & 
+                            //  Process2 RC Actual Cause
+                            If(ThisItem.'Process2 RC Actual Cause'<>cmbP2RCActualCause.Selected.Value,
+                                Char(10) & Char(9) & Char(9) & 
+                                "Process2 RC Actual Cause：" & Char(9) & "「" & ThisItem.'Process2 RC Actual Cause' & "」⇒「" & cmbP2RCActualCause.Selected.Value & "」"
+                            ) & 
+                            //  Process2 CA Internal Control Item
+                            If(ThisItem.'Process2 CA Internal Control Item'<>txtP2CAIControlItem.Text,
+                                Char(10) & Char(9) & Char(9) & 
+                                "Process2 CA Internal Control Item：" & Char(9) & "「" & ThisItem.'Process2 CA Internal Control Item' & "」⇒「" & txtP2CAIControlItem.Text & "」"
+                            ) & 
+                            //  Process2 CA Internal Spec/Control
+                            If(ThisItem.'Process2 CA Internal Spec/Control'<>txtP2CAISpec.Text,
+                                Char(10) & Char(9) & Char(9) & 
+                                "Process2 CA Internal Spec/Control：" & Char(9) & "「" & ThisItem.'Process2 CA Internal Spec/Control' & "」⇒「" & txtP2CAISpec.Text & "」"
+                            ) & 
+                            //  Process2 CA Internal Equipment Improvement
+                            If(ThisItem.'Process2 CA Internal Equipment Improvement'<>rdbP2CAIEquipmentImprovement.Selected.Value,
+                                Char(10) & Char(9) & Char(9) & 
+                                "Process2 CA Internal Equipment Improvement：" & Char(9) & "「" & ThisItem.'Process2 CA Internal Equipment Improvement' & "」⇒「" & rdbP2CAIEquipmentImprovement.Selected.Value & "」"
+                            ) & 
+                            //  Process2 CA Internal Implementation Date
+                            If(ThisItem.'Process2 CA Internal Implementation Date'<>datP2CAIImplementationDate.SelectedDate,
+                                Char(10) & Char(9) & Char(9) & 
+                                "Process2 CA Internal Implementation Date：" & Char(9) & "「" & ThisItem.'Process2 CA Internal Implementation Date' & "」⇒「" & datP2CAIImplementationDate.SelectedDate & "」"
+                            ) & 
+                            //  Process2 CA Customer Control Item
+                            If(ThisItem.'Process2 CA Customer Control Item'<>txtP2CACControlItem.Text,
+                                Char(10) & Char(9) & Char(9) & 
+                                "Process2 CA Customer Control Item：" & Char(9) & "「" & ThisItem.'Process2 CA Customer Control Item' & "」⇒「" & txtP2CACControlItem.Text & "」"
+                            ) & 
+                            //  Process2 CA Customer Spec/Control
+                            If(ThisItem.'Process2 CA Customer Spec/Control'<>txtP2CACSpec.Text,
+                                Char(10) & Char(9) & Char(9) & 
+                                "Process2 CA Customer Spec/Control：" & Char(9) & "「" & ThisItem.'Process2 CA Customer Spec/Control' & "」⇒「" & txtP2CACSpec.Text & "」"
+                            ) & 
+                            //  Process2 CA Customer Implementation Date
+                            If(ThisItem.'Process2 CA Customer Implementation Date'<>datP2CACImplementationDate.SelectedDate,
+                                Char(10) & Char(9) & Char(9) & 
+                                "Process2 CA Customer Implementation Date：" & Char(9) & "「" & ThisItem.'Process2 CA Customer Implementation Date' & "」⇒「" & datP2CACImplementationDate.SelectedDate & "」"
+                            ) & 
+                            //  *** Process3 *** 
+                            //  Process3 RC Process
+                            If(ThisItem.'Process1 RC Process'<>ddlP1RCProcess.Selected.Process,
+                                Char(10) & Char(9) & Char(9) & 
+                                "Process1 RC Process：" & Char(9) & "「" & ThisItem.'Process1 RC Process' & "」⇒「" & ddlP1RCProcess.Selected.Process & "」"
+                            ) & 
+                            //  Process1 RC Actual Cause
+                            If(ThisItem.'Process1 RC Actual Cause'<>cmbP1RCActualCause.Selected.Value,
+                                Char(10) & Char(9) & Char(9) & 
+                                "Process1 RC Actual Cause：" & Char(9) & "「" & ThisItem.'Process1 RC Actual Cause' & "」⇒「" & cmbP1RCActualCause.Selected.Value & "」"
+                            ) & 
+                            //  Process1 CA Internal Control Item
+                            If(ThisItem.'Process1 CA Internal Control Item'<>txtP1CAIControlItem.Text,
+                                Char(10) & Char(9) & Char(9) & 
+                                "Process1 CA Internal Control Item：" & Char(9) & "「" & ThisItem.'Process1 CA Internal Control Item' & "」⇒「" & txtP1CAIControlItem.Text & "」"
+                            ) & 
+                            //  Process1 CA Internal Spec/Control
+                            If(ThisItem.'Process1 CA Internal Spec/Control'<>txtP1CAISpec.Text,
+                                Char(10) & Char(9) & Char(9) & 
+                                "Process1 CA Internal Spec/Control：" & Char(9) & "「" & ThisItem.'Process1 CA Internal Spec/Control' & "」⇒「" & txtP1CAISpec.Text & "」"
+                            ) & 
+                            //  Process1 CA Internal Equipment Improvement
+                            If(ThisItem.'Process1 CA Internal Equipment Improvement'<>rdbP1CAIEquipmentImprovement.Selected.Value,
+                                Char(10) & Char(9) & Char(9) & 
+                                "Process1 CA Internal Equipment Improvement：" & Char(9) & "「" & ThisItem.'Process1 CA Internal Equipment Improvement' & "」⇒「" & rdbP1CAIEquipmentImprovement.Selected.Value & "」"
+                            ) & 
+                            //  Process1 CA Internal Implementation Date
+                            If(ThisItem.'Process1 CA Internal Implementation Date'<>datP1CAIImplementationDate.SelectedDate,
+                                Char(10) & Char(9) & Char(9) & 
+                                "Process1 CA Internal Implementation Date：" & Char(9) & "「" & ThisItem.'Process1 CA Internal Implementation Date' & "」⇒「" & datP1CAIImplementationDate.SelectedDate & "」"
+                            ) & 
+                            //  Process1 CA Customer Control Item
+                            If(ThisItem.'Process1 CA Customer Control Item'<>txtP1CACControlItem.Text,
+                                Char(10) & Char(9) & Char(9) & 
+                                "Process1 CA Customer Control Item：" & Char(9) & "「" & ThisItem.'Process1 CA Customer Control Item' & "」⇒「" & txtP1CACControlItem.Text & "」"
+                            ) & 
+                            //  Process1 CA Customer Spec/Control
+                            If(ThisItem.'Process1 CA Customer Spec/Control'<>txtP1CACSpec.Text,
+                                Char(10) & Char(9) & Char(9) & 
+                                "Process1 CA Customer Spec/Control：" & Char(9) & "「" & ThisItem.'Process1 CA Customer Spec/Control' & "」⇒「" & txtP1CACSpec.Text & "」"
+                            ) & 
+                            //  Process1 CA Customer Implementation Date
+                            If(ThisItem.'Process1 CA Customer Implementation Date'<>datP1CACImplementationDate.SelectedDate,
+                                Char(10) & Char(9) & Char(9) & 
+                                "Process1 CA Customer Implementation Date：" & Char(9) & "「" & ThisItem.'Process1 CA Customer Implementation Date' & "」⇒「" & datP1CACImplementationDate.SelectedDate & "」"
+                            ) & 
+                
                             //  Applied Program
                             If(ThisItem.'Applied Program'<>cmbAppliedProgram.Selected.Value,
                                 Char(10) & Char(9) & Char(9) & 
                                 "Applied Program：" & Char(9) & "「" & ThisItem.'Applied Program' & "」⇒「" & cmbAppliedProgram.Selected.Value & "」"
                             ) & 
+                
                             //  *** Site ***
                             //  RHDI Apply Status
                             If(ThisItem.'RHDI Apply Status'<>rdbRHDIApply.Selected.Value,
