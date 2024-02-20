@@ -3244,7 +3244,7 @@
                 Width: =lblRHDI.Width
                 ZIndex: =1
 
-            rdbRHDSSApply As radio:
+            rdbRHDSApply As radio:
                 BorderColor: =RGBA(51, 51, 51, 1)
                 BorderStyle: =BorderStyle.None
                 BorderThickness: =1
@@ -3301,7 +3301,7 @@
                 Tooltip: =Parent.DisplayName
                 Width: =(Parent.Width - 60) * 0.2
                 X: =lblRHDSImpleDate.X + lblRHDSImpleDate.Width
-                Y: =rdbRHDSSApply.Y
+                Y: =rdbRHDSApply.Y
                 ZIndex: =3
 
             lblRHDSImpleDate As label:
@@ -3319,8 +3319,8 @@
                 Size: =11
                 Text: ="Implementation Date"
                 Width: =Parent.Width * 0.2
-                X: =rdbRHDSSApply.X + rdbRHDSSApply.Width
-                Y: =rdbRHDSSApply.Y
+                X: =rdbRHDSApply.X + rdbRHDSApply.Width
+                Y: =rdbRHDSApply.Y
                 ZIndex: =4
 
             lblRHDSCheckInformation As label:
@@ -3337,8 +3337,8 @@
                 Size: =11
                 Text: ="　" & ThisItem.'RHDS Check Information'
                 Width: =Parent.Width * 0.93
-                X: =rdbRHDSSApply.X
-                Y: =rdbRHDSSApply.Y + rdbRHDSSApply.Height
+                X: =rdbRHDSApply.X
+                Y: =rdbRHDSApply.Y + rdbRHDSApply.Height
                 ZIndex: =5
 
             lblRHDSAppliedProgram As label:
@@ -3355,7 +3355,7 @@
                 Size: =11
                 Text: ="　Applied Program"
                 Width: =Parent.Width * 0.14
-                X: =rdbRHDSSApply.X
+                X: =rdbRHDSApply.X
                 Y: =lblRHDSCheckInformation.Y + lblRHDSCheckInformation.Height
                 ZIndex: =6
 

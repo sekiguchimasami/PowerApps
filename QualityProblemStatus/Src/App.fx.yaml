@@ -16,13 +16,37 @@ App As appinfo:
         OnNew: |-
             =
             NewForm(frmQPS)
-        OnSave: |-
-            =//  保存処理
-            
-            
-            
-            //  保存
-            SubmitForm(frmQPS)
+        OnSave: |
+            =//  入力チェック
+            With(
+                // 貸与品区分 
+                {strSite:ddlSite.Selected.Value,
+                 strClaimDescription:rdbClaimDescriptionType.Selected.Value,
+                 strCustomer:ddlCustomer.Selected.Customer,
+                 strMediaProgram:cmbMediaProgram.Selected.Value,
+                 strP1Process:ddlP1RCProcess.Selected.Process,
+                 strP1ActualCause:cmbP1RCActualCause.Selected.Value},
+                
+                If(
+                    IsBlank(strSite),
+                        Notify("Please select a Site！", NotificationType.Warning),
+                    IsBlank(strClaimDescription),
+                        Notify("Please select a Claim description！", NotificationType.Warning),
+                    IsBlank(strCustomer),
+                        Notify("Please select a Customer！", NotificationType.Warning),
+                    IsBlank(strMediaProgram),
+                        Notify("Please select a Media Program！", NotificationType.Warning),
+                    IsBlank(strP1Process),
+                        Notify("Please select a Process1 Process！", NotificationType.Warning),
+                    IsBlank(strP1ActualCause),
+                        Notify("Please select a Process1 Actual cause！", NotificationType.Warning),
+                    
+                    //  ABC
+                    
+                    //  保存処理
+                    SubmitForm(frmQPS)
+                )
+            )
         OnView: =ViewForm(frmQPS)
         SelectedHidden: =LookUp([@'Quality Problem Status'], ID = Self.SelectedListItemID)
 
