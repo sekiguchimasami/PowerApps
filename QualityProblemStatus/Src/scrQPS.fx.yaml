@@ -786,6 +786,50 @@
                 Y: =DataCardKey12_1.Y
                 ZIndex: =4
 
+        DataCard1 As typedDataCard.blankCard:
+            BorderColor: =RGBA(166, 166, 166, 1)
+            BorderStyle: =BorderStyle.Solid
+            DisplayMode: =DisplayMode.Edit
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =40
+            Width: =1184
+            X: =0
+            Y: =5
+            ZIndex: =1
+
+            lblProcess1Title As label:
+                BorderColor: =RGBA(0, 0, 0, 0)
+                BorderStyle: =BorderStyle.None
+                BorderThickness: =1
+                Color: =RGBA(51, 51, 51, 1)
+                DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                DisabledColor: =RGBA(166, 166, 166, 1)
+                DisplayMode: =DisplayMode.View
+                Fill: |-
+                    =//lblP1Rootcause.Fill
+                    RGBA(0,0,0,0)
+                FocusedBorderThickness: =1
+                Font: =Font.'Segoe UI'
+                PaddingLeft: =0
+                Size: =10.5
+                Text: |-
+                    =//  縮小拡大
+                    With(
+                        {strProcess:ddlP1RCProcess.Selected.Process,
+                         strActualCause:Concat(cmbP1RCActualCause.SelectedItems, Value, ", ")
+                        },
+                    
+                        "  - Process1 : " & 
+                            If(IsBlank(strProcess), 
+                                "No Data", 
+                                strProcess & If(!IsBlank(strActualCause), " (" & strActualCause & ")")
+                            )
+                    
+                    )
+                Width: =Parent.Width - 10
+                Y: =20
+                ZIndex: =1
+
         Process1_DataCard As typedDataCard.blankCard:
             BorderColor: =RGBA(246, 88, 16, 1)
             BorderStyle: =BorderStyle.Solid
@@ -799,7 +843,7 @@
             Width: =1184
             WidthFit: =false
             X: =0
-            Y: =5
+            Y: =6
             ZIndex: =1
 
             lblP1RCProcess As label:
@@ -1542,7 +1586,7 @@
                 true
             Width: =1184
             X: =0
-            Y: =6
+            Y: =7
             ZIndex: =1
 
             lblP2RCProcess As label:
@@ -2239,7 +2283,7 @@
                 true
             Width: =1184
             X: =0
-            Y: =7
+            Y: =8
             ZIndex: =1
 
             lblP3RCProcess As label:
@@ -2932,7 +2976,7 @@
             Height: =cmbAppliedProgram.Y + cmbAppliedProgram.Height + rtxAppliedProgramComment.Height + 20
             Width: =1184
             X: =0
-            Y: =8
+            Y: =9
             ZIndex: =1
 
             lblAppliedProgram As label:
@@ -3030,7 +3074,7 @@
                 true
             Width: =Parent.Width
             X: =0
-            Y: =9
+            Y: =10
             ZIndex: =1
 
             lblRHDI As label:
@@ -3223,7 +3267,7 @@
                 true
             Width: =Parent.Width
             X: =0
-            Y: =10
+            Y: =11
             ZIndex: =1
 
             lblRHDS As label:
@@ -3415,7 +3459,7 @@
                 true
             Width: =Parent.Width
             X: =0
-            Y: =11
+            Y: =12
             ZIndex: =1
 
             lblRHDM As label:
@@ -3607,7 +3651,7 @@
                 true
             Width: =Parent.Width
             X: =0
-            Y: =12
+            Y: =13
             ZIndex: =1
 
             lblRHDO As label:
@@ -3799,7 +3843,7 @@
                 true
             Width: =Parent.Width
             X: =0
-            Y: =13
+            Y: =14
             ZIndex: =1
 
             lblRHDY As label:
@@ -4279,7 +4323,7 @@
                 ) & Char(10) & ThisItem.'Edit History'
             Width: =Parent.Width
             X: =0
-            Y: =14
+            Y: =15
             ZIndex: =1
 
             DataCardKey78 As label:
@@ -4396,7 +4440,7 @@
                 ddlP1RCProcess.Selected.Process
             Width: =592
             X: =0
-            Y: =15
+            Y: =16
             ZIndex: =1
 
             DataCardKey14 As label:
@@ -4512,7 +4556,7 @@
             Update: =DataCardValue15.Text
             Width: =592
             X: =1
-            Y: =15
+            Y: =16
             ZIndex: =1
 
             DataCardKey15 As label:
@@ -4628,7 +4672,7 @@
             Update: =DataCardValue17.Text
             Width: =592
             X: =0
-            Y: =16
+            Y: =17
             ZIndex: =1
 
             DataCardKey17 As label:
@@ -4744,7 +4788,7 @@
             Update: =DataCardValue18.Text
             Width: =592
             X: =1
-            Y: =16
+            Y: =17
             ZIndex: =1
 
             DataCardKey18 As label:
@@ -4859,7 +4903,7 @@
             Update: =DataCardValue4.Selected.Value = "はい"
             Width: =592
             X: =0
-            Y: =17
+            Y: =18
             ZIndex: =1
 
             DataCardKey4 As label:
@@ -4972,7 +5016,7 @@
             Update: =DataCardValue21.SelectedDate
             Width: =592
             X: =1
-            Y: =17
+            Y: =18
             ZIndex: =1
 
             DataCardKey21 As label:
@@ -5085,7 +5129,7 @@
             Update: =DataCardValue22.Text
             Width: =592
             X: =0
-            Y: =18
+            Y: =19
             ZIndex: =1
 
             DataCardKey22 As label:
@@ -5200,7 +5244,7 @@
             Update: =DataCardValue23.SelectedDate
             Width: =592
             X: =1
-            Y: =18
+            Y: =19
             ZIndex: =1
 
             DataCardKey23 As label:
@@ -5313,7 +5357,7 @@
             Update: =DataCardValue24.Text
             Width: =592
             X: =0
-            Y: =19
+            Y: =20
             ZIndex: =1
 
             DataCardKey24 As label:
@@ -5429,7 +5473,7 @@
             Update: =DataCardValue26.Text
             Width: =592
             X: =1
-            Y: =19
+            Y: =20
             ZIndex: =1
 
             DataCardKey26 As label:
@@ -5545,7 +5589,7 @@
             Update: =DataCardValue27.Text
             Width: =592
             X: =0
-            Y: =20
+            Y: =21
             ZIndex: =1
 
             DataCardKey27 As label:
@@ -5661,7 +5705,7 @@
             Update: =DataCardValue29.Text
             Width: =592
             X: =1
-            Y: =20
+            Y: =21
             ZIndex: =1
 
             DataCardKey29 As label:
@@ -5777,7 +5821,7 @@
             Update: =DataCardValue30.Text
             Width: =592
             X: =0
-            Y: =21
+            Y: =22
             ZIndex: =1
 
             DataCardKey30 As label:
@@ -5892,7 +5936,7 @@
             Update: =DataCardValue32.Value
             Width: =592
             X: =1
-            Y: =21
+            Y: =22
             ZIndex: =1
 
             DataCardKey32 As label:
@@ -6000,7 +6044,7 @@
             Update: =DataCardValue33.SelectedDate
             Width: =592
             X: =0
-            Y: =22
+            Y: =23
             ZIndex: =1
 
             DataCardKey33 As label:
@@ -6113,7 +6157,7 @@
             Update: =DataCardValue34.Text
             Width: =592
             X: =1
-            Y: =22
+            Y: =23
             ZIndex: =1
 
             DataCardKey34 As label:
@@ -6229,7 +6273,7 @@
             Update: =DataCardValue35.Text
             Width: =592
             X: =0
-            Y: =23
+            Y: =24
             ZIndex: =1
 
             DataCardKey35 As label:
@@ -6344,7 +6388,7 @@
             Update: =DataCardValue37.SelectedDate
             Width: =592
             X: =1
-            Y: =23
+            Y: =24
             ZIndex: =1
 
             DataCardKey37 As label:
@@ -6457,7 +6501,7 @@
             Update: =DataCardValue38.Text
             Width: =592
             X: =0
-            Y: =24
+            Y: =25
             ZIndex: =1
 
             DataCardKey38 As label:
@@ -6573,7 +6617,7 @@
             Update: =DataCardValue39.Text
             Width: =592
             X: =1
-            Y: =24
+            Y: =25
             ZIndex: =1
 
             DataCardKey39 As label:
@@ -6689,7 +6733,7 @@
             Update: =DataCardValue41.Text
             Width: =592
             X: =0
-            Y: =25
+            Y: =26
             ZIndex: =1
 
             DataCardKey41 As label:
@@ -6805,7 +6849,7 @@
             Update: =DataCardValue42.Text
             Width: =592
             X: =1
-            Y: =25
+            Y: =26
             ZIndex: =1
 
             DataCardKey42 As label:
@@ -6920,7 +6964,7 @@
             Update: =DataCardValue44.Value
             Width: =592
             X: =0
-            Y: =26
+            Y: =27
             ZIndex: =1
 
             DataCardKey44 As label:
@@ -7028,7 +7072,7 @@
             Update: =DataCardValue45.SelectedDate
             Width: =592
             X: =1
-            Y: =26
+            Y: =27
             ZIndex: =1
 
             DataCardKey45 As label:
@@ -7141,7 +7185,7 @@
             Update: =DataCardValue46.Text
             Width: =592
             X: =0
-            Y: =27
+            Y: =28
             ZIndex: =1
 
             DataCardKey46 As label:
@@ -7257,7 +7301,7 @@
             Update: =DataCardValue47.Text
             Width: =592
             X: =1
-            Y: =27
+            Y: =28
             ZIndex: =1
 
             DataCardKey47 As label:
@@ -7372,7 +7416,7 @@
             Update: =DataCardValue49.SelectedDate
             Width: =592
             X: =0
-            Y: =28
+            Y: =29
             ZIndex: =1
 
             DataCardKey49 As label:
@@ -7484,7 +7528,7 @@
             Update: =DataCardValue52.Selected
             Width: =592
             X: =1
-            Y: =28
+            Y: =29
             ZIndex: =1
 
             DataCardKey52 As label:
@@ -7607,7 +7651,7 @@
             Update: =DataCardValue25.Text
             Width: =592
             X: =0
-            Y: =29
+            Y: =30
             ZIndex: =1
 
             DataCardKey25 As label:
@@ -7725,7 +7769,7 @@
                 ddlSite.Selected.Value
             Width: =592
             X: =1
-            Y: =29
+            Y: =30
             ZIndex: =1
 
             DataCardKey5 As label:
@@ -7843,7 +7887,7 @@
                 ddlClaimDescription.Selected.Value
             Width: =592
             X: =0
-            Y: =30
+            Y: =31
             ZIndex: =1
 
             DataCardKey8 As label:
@@ -7961,7 +8005,7 @@
                 rdbClaimDescriptionType.Selected.Value
             Width: =592
             X: =1
-            Y: =30
+            Y: =31
             ZIndex: =1
 
             DataCardKey7 As label:
@@ -8079,7 +8123,7 @@
                 ddlCustomer.Selected.Customer
             Width: =592
             X: =0
-            Y: =31
+            Y: =32
             ZIndex: =1
 
             DataCardKey10 As label:
@@ -8197,7 +8241,7 @@
                 cmbMediaProgram.Selected.Value
             Width: =592
             X: =1
-            Y: =31
+            Y: =32
             ZIndex: =1
 
             DataCardKey11 As label:
@@ -8315,7 +8359,7 @@
                 ddlSubstrateSupplier.Selected.Customer
             Width: =592
             X: =0
-            Y: =32
+            Y: =33
             ZIndex: =1
 
             DataCardKey12 As label:
@@ -8433,7 +8477,7 @@
                 cmbSubstrateProgram.Selected.Value
             Width: =592
             X: =1
-            Y: =32
+            Y: =33
             ZIndex: =1
 
             DataCardKey13 As label:
@@ -8548,7 +8592,7 @@
             Update: =DataCardValue53.HtmlText
             Width: =592
             X: =0
-            Y: =33
+            Y: =34
             ZIndex: =1
 
             DataCardKey53 As label:
@@ -8641,7 +8685,7 @@
             Update: =DataCardValue6.HtmlText
             Width: =592
             X: =1
-            Y: =33
+            Y: =34
             ZIndex: =1
 
             DataCardKey6 As label:
@@ -8736,7 +8780,7 @@
                 rtxP1CAIComment.HtmlText
             Width: =592
             X: =0
-            Y: =34
+            Y: =35
             ZIndex: =1
 
             DataCardKey16 As label:
@@ -8829,7 +8873,7 @@
             Update: =rtxAppliedProgramComment.HtmlText
             Width: =588
             X: =1
-            Y: =34
+            Y: =35
             ZIndex: =1
 
             DataCardKey48 As label:
@@ -8922,7 +8966,7 @@
             Update: =DataCardValue19.HtmlText
             Width: =592
             X: =0
-            Y: =35
+            Y: =36
             ZIndex: =1
 
             DataCardKey19 As label:
@@ -9015,7 +9059,7 @@
             Update: =DataCardValue28.HtmlText
             Width: =592
             X: =1
-            Y: =35
+            Y: =36
             ZIndex: =1
 
             DataCardKey28 As label:
@@ -9108,7 +9152,7 @@
             Update: =DataCardValue31.HtmlText
             Width: =592
             X: =0
-            Y: =36
+            Y: =37
             ZIndex: =1
 
             DataCardKey31 As label:
@@ -9201,7 +9245,7 @@
             Update: =DataCardValue36.HtmlText
             Width: =592
             X: =1
-            Y: =36
+            Y: =37
             ZIndex: =1
 
             DataCardKey36 As label:
@@ -9294,7 +9338,7 @@
             Update: =DataCardValue40.HtmlText
             Width: =592
             X: =0
-            Y: =37
+            Y: =38
             ZIndex: =1
 
             DataCardKey40 As label:
@@ -9387,7 +9431,7 @@
             Update: =DataCardValue43.HtmlText
             Width: =592
             X: =1
-            Y: =37
+            Y: =38
             ZIndex: =1
 
             DataCardKey43 As label:
@@ -9480,7 +9524,7 @@
             Update: =DataCardValue51.HtmlText
             Width: =592
             X: =0
-            Y: =38
+            Y: =39
             ZIndex: =1
 
             DataCardKey51 As label:
@@ -9574,7 +9618,7 @@
             Update: =DataCardValue20.Text
             Width: =592
             X: =1
-            Y: =38
+            Y: =39
             ZIndex: =1
 
             DataCardKey20 As label:
@@ -9689,7 +9733,7 @@
             Update: =DataCardValue50.SelectedDate
             Width: =592
             X: =0
-            Y: =39
+            Y: =40
             ZIndex: =1
 
             DataCardKey50 As label:
@@ -9802,7 +9846,7 @@
             Update: =DataCardValue55.Text
             Width: =592
             X: =1
-            Y: =39
+            Y: =40
             ZIndex: =1
 
             DataCardKey54 As label:
@@ -9918,7 +9962,7 @@
             Update: =DataCardValue56.Text
             Width: =592
             X: =0
-            Y: =40
+            Y: =41
             ZIndex: =1
 
             DataCardKey56 As label:
@@ -10034,7 +10078,7 @@
             Update: =DataCardValue57.Text
             Width: =592
             X: =1
-            Y: =40
+            Y: =41
             ZIndex: =1
 
             DataCardKey57 As label:
@@ -10150,7 +10194,7 @@
             Update: =DataCardValue58.Text
             Width: =592
             X: =0
-            Y: =41
+            Y: =42
             ZIndex: =1
 
             DataCardKey58 As label:
@@ -10265,7 +10309,7 @@
             Update: =DataCardValue59.SelectedDate
             Width: =592
             X: =1
-            Y: =41
+            Y: =42
             ZIndex: =1
 
             DataCardKey59 As label:
@@ -10378,7 +10422,7 @@
             Update: =DataCardValue60.Text
             Width: =592
             X: =0
-            Y: =42
+            Y: =43
             ZIndex: =1
 
             DataCardKey60 As label:
@@ -10494,7 +10538,7 @@
             Update: =DataCardValue61.Text
             Width: =592
             X: =1
-            Y: =42
+            Y: =43
             ZIndex: =1
 
             DataCardKey61 As label:
@@ -10610,7 +10654,7 @@
             Update: =DataCardValue62.Text
             Width: =592
             X: =0
-            Y: =43
+            Y: =44
             ZIndex: =1
 
             DataCardKey62 As label:
@@ -10726,7 +10770,7 @@
             Update: =DataCardValue63.Text
             Width: =592
             X: =1
-            Y: =43
+            Y: =44
             ZIndex: =1
 
             DataCardKey63 As label:
@@ -10841,7 +10885,7 @@
             Update: =DataCardValue64.SelectedDate
             Width: =592
             X: =0
-            Y: =44
+            Y: =45
             ZIndex: =1
 
             DataCardKey64 As label:
@@ -10954,7 +10998,7 @@
             Update: =DataCardValue65.Text
             Width: =592
             X: =1
-            Y: =44
+            Y: =45
             ZIndex: =1
 
             DataCardKey65 As label:
@@ -11070,7 +11114,7 @@
             Update: =DataCardValue66.Text
             Width: =592
             X: =0
-            Y: =45
+            Y: =46
             ZIndex: =1
 
             DataCardKey66 As label:
@@ -11186,7 +11230,7 @@
             Update: =DataCardValue67.Text
             Width: =592
             X: =1
-            Y: =45
+            Y: =46
             ZIndex: =1
 
             DataCardKey67 As label:
@@ -11302,7 +11346,7 @@
             Update: =DataCardValue68.Text
             Width: =592
             X: =0
-            Y: =46
+            Y: =47
             ZIndex: =1
 
             DataCardKey68 As label:
@@ -11417,7 +11461,7 @@
             Update: =DataCardValue69.SelectedDate
             Width: =592
             X: =1
-            Y: =46
+            Y: =47
             ZIndex: =1
 
             DataCardKey69 As label:
@@ -11530,7 +11574,7 @@
             Update: =DataCardValue70.Text
             Width: =592
             X: =0
-            Y: =47
+            Y: =48
             ZIndex: =1
 
             DataCardKey70 As label:
@@ -11646,7 +11690,7 @@
             Update: =DataCardValue71.Text
             Width: =592
             X: =1
-            Y: =47
+            Y: =48
             ZIndex: =1
 
             DataCardKey71 As label:
@@ -11762,7 +11806,7 @@
             Update: =DataCardValue72.Text
             Width: =592
             X: =0
-            Y: =48
+            Y: =49
             ZIndex: =1
 
             DataCardKey72 As label:
@@ -11878,7 +11922,7 @@
             Update: =DataCardValue73.Text
             Width: =592
             X: =1
-            Y: =48
+            Y: =49
             ZIndex: =1
 
             DataCardKey73 As label:
@@ -11993,7 +12037,7 @@
             Update: =DataCardValue74.SelectedDate
             Width: =592
             X: =0
-            Y: =49
+            Y: =50
             ZIndex: =1
 
             DataCardKey74 As label:
@@ -12106,7 +12150,7 @@
             Update: =DataCardValue75.Text
             Width: =592
             X: =1
-            Y: =49
+            Y: =50
             ZIndex: =1
 
             DataCardKey75 As label:
@@ -12222,7 +12266,7 @@
             Update: =DataCardValue76.Text
             Width: =592
             X: =0
-            Y: =50
+            Y: =51
             ZIndex: =1
 
             DataCardKey76 As label:
@@ -12338,7 +12382,7 @@
             Update: =DataCardValue77.Text
             Width: =592
             X: =1
-            Y: =50
+            Y: =51
             ZIndex: =1
 
             DataCardKey77 As label:
@@ -12454,7 +12498,7 @@
             Visible: =false
             Width: =592
             X: =0
-            Y: =51
+            Y: =52
             ZIndex: =1
 
             DataCardKey3 As label:
@@ -12567,7 +12611,7 @@
             Visible: =false
             Width: =592
             X: =1
-            Y: =51
+            Y: =52
             ZIndex: =1
 
             DataCardKey2 As label:
