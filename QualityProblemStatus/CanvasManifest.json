@@ -2,7 +2,7 @@
   "FormatVersion": "0.24",
   "Header": {
     "AnalysisOptions": {
-      "DataflowAnalysisEnabled": true,
+      "DataflowAnalysisEnabled": false,
       "DataflowAnalysisFlagStateToggledByUser": true
     },
     "DocVersion": "1.337",
@@ -24,7 +24,7 @@
       "classiccontrols": false,
       "consistentreturnschemafortabularfunctions": true,
       "copyandmerge": false,
-      "dataflowanalysisenabled": true,
+      "dataflowanalysisenabled": false,
       "datatablev2control": true,
       "dataverseactionsenabled": true,
       "delaycontrolrendering": true,
@@ -97,7 +97,7 @@
       "usenonblockingonstartrule": true,
       "userdefinedfunctions": false,
       "webbarcodescanner": false,
-      "zeroalltabindexes": false
+      "zeroalltabindexes": true
     },
     "Author": "",
     "BindingErrorCount": 7,
