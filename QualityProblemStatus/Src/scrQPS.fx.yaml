@@ -144,7 +144,7 @@
                 FocusedBorderThickness: =1
                 Font: =Font.'Segoe UI'
                 PaddingLeft: =0
-                Size: =10.5
+                Size: =11
                 Text: ="Date：" & ThisItem.Date & Char(9) & Char(9) & ThisItem.登録者.DisplayName
                 Width: =Parent.Width * 0.7
                 X: =DataCardValue1.X + DataCardValue1.Width + 50
@@ -796,7 +796,7 @@
             BorderStyle: =BorderStyle.Solid
             DisplayMode: =DisplayMode.Edit
             Fill: =RGBA(0, 0, 0, 0)
-            Height: =40
+            Height: =45
             Width: =1184
             X: =0
             Y: =5
@@ -819,7 +819,7 @@
                     )
                 OnSelect: =Set(Process1DisplayFlag, !Process1DisplayFlag);
                 Width: =Parent.Width - 10
-                Y: =5
+                Y: =10
                 ZIndex: =2
 
         Process1_DataCard As typedDataCard.blankCard:
@@ -1575,6 +1575,26 @@
             Y: =6
             ZIndex: =1
 
+            HtmlTextProcess2 As htmlViewer:
+                Height: =33
+                HtmlText: |
+                    =//  縮小拡大
+                    With(
+                        {strProcess:ddlP2RCProcess.Selected.Process,
+                         strActualCause:Concat(cmbP2RCActualCause.SelectedItems, Value, ", ")
+                        },
+                    
+                        Concatenate("<b><span style='cursor:pointer; color:blue'>　　", If(Process2DisplayFlag, "－", "＋"), " Process2 : ", 
+                            If(IsBlank(strProcess), 
+                                "No Data", 
+                                strProcess & If(!IsBlank(strActualCause), " (" & strActualCause & ")")
+                            ), "</span></b>")
+                    )
+                OnSelect: =Set(Process2DisplayFlag, !Process2DisplayFlag);
+                Width: =Parent.Width - 10
+                Y: =12
+                ZIndex: =1
+
         Process2_DataCard As typedDataCard.blankCard:
             BorderColor: =RGBA(102, 152, 191, 1)
             BorderStyle: =BorderStyle.Solid
@@ -1582,9 +1602,7 @@
             DisplayMode: =DisplayMode.Edit
             Fill: =RGBA(204, 228, 246, 1)
             Height: =100
-            Visible: |-
-                =//varTabSelected=2
-                true
+            Visible: =Process2DisplayFlag
             Width: =1184
             X: =0
             Y: =7
@@ -2272,6 +2290,37 @@
                 Y: =lblP2CACSpec.Y + lblP2CACSpec.Height + WarningMessageP25.Height + 10
                 ZIndex: =32
 
+        P3TitleDataCard1 As typedDataCard.blankCard:
+            BorderColor: =RGBA(166, 166, 166, 1)
+            BorderStyle: =BorderStyle.Solid
+            DisplayMode: =DisplayMode.Edit
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =P1TitleDataCard1.Height
+            Width: =P1TitleDataCard1.Width
+            X: =1
+            Y: =7
+            ZIndex: =1
+
+            HtmlTextProcess3 As htmlViewer:
+                Height: =33
+                HtmlText: |
+                    =//  縮小拡大
+                    With(
+                        {strProcess:ddlP3RCProcess.Selected.Process,
+                         strActualCause:Concat(cmbP3RCActualCause.SelectedItems, Value, ", ")
+                        },
+                    
+                        Concatenate("<b><span style='cursor:pointer; color:blue'>　　", If(Process3DisplayFlag, "－", "＋"), " Process3 : ", 
+                            If(IsBlank(strProcess), 
+                                "No Data", 
+                                strProcess & If(!IsBlank(strActualCause), " (" & strActualCause & ")")
+                            ), "</span></b>")
+                    )
+                OnSelect: =Set(Process3DisplayFlag, !Process3DisplayFlag);
+                Width: =Parent.Width - 10
+                Y: =12
+                ZIndex: =1
+
         Process3_DataCard As typedDataCard.blankCard:
             BorderColor: =RGBA(187, 221, 140, 1)
             BorderStyle: =BorderStyle.Solid
@@ -2279,9 +2328,7 @@
             DisplayMode: =DisplayMode.Edit
             Fill: =RGBA(204, 228, 246, 1)
             Height: =100
-            Visible: |-
-                =//varTabSelected=3
-                true
+            Visible: =Process3DisplayFlag
             Width: =1184
             X: =0
             Y: =8
@@ -12720,17 +12767,6 @@
                 X: =2
                 Y: =DataCardKey2.Y
                 ZIndex: =4
-
-        P3TitleDataCard1 As typedDataCard.blankCard:
-            BorderColor: =RGBA(166, 166, 166, 1)
-            BorderStyle: =BorderStyle.Solid
-            DisplayMode: =DisplayMode.Edit
-            Fill: =RGBA(0, 0, 0, 0)
-            Height: =100
-            Width: =592
-            X: =1
-            Y: =53
-            ZIndex: =1
 
     Rectangle_Header As rectangle:
         BorderColor: =Self.Fill
