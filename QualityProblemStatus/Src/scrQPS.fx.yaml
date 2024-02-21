@@ -6947,7 +6947,10 @@
             Height: =50
             MaxLength: =DataSourceInfo([@'Quality Problem Status'], DataSourceInfo.MaxLength, "zzP3CACControlItem")
             Required: =false
-            Update: =DataCardValue46.Text
+            Update: |-
+                =txtP3CACControlItem.Text
+                //  DataCardValue46.Text
+            Visible: =false
             Width: =592
             X: =1
             Y: =28
@@ -7063,7 +7066,10 @@
             Height: =50
             MaxLength: =DataSourceInfo([@'Quality Problem Status'], DataSourceInfo.MaxLength, "zzP3CACSpec")
             Required: =false
-            Update: =DataCardValue47.Text
+            Update: |-
+                =txtP3CACSpec.Text
+                //  DataCardValue47.Text
+            Visible: =false
             Width: =592
             X: =0
             Y: =29
@@ -7178,7 +7184,10 @@
             Fill: =RGBA(0, 0, 0, 0)
             Height: =50
             Required: =false
-            Update: =DataCardValue49.SelectedDate
+            Update: |-
+                =datP3CACImplementationDate.SelectedDate
+                //  DataCardValue49.SelectedDate
+            Visible: =false
             Width: =592
             X: =1
             Y: =29
@@ -9220,7 +9229,10 @@
             Fill: =RGBA(0, 0, 0, 0)
             Height: =40
             Required: =false
-            Update: =DataCardValue43.HtmlText
+            Update: |-
+                =rtxP3CACComment.HtmlText
+                //  DataCardValue43.HtmlText
+            Visible: =false
             Width: =592
             X: =0
             Y: =39
