@@ -5417,8 +5417,8 @@
             MaxLength: =DataSourceInfo([@'Quality Problem Status'], DataSourceInfo.MaxLength, "zzP2RCActualCause")
             Required: =false
             Update: |-
-                =//  DataCardValue27.Text
-                Concat(cmbP2RCActualCause.SelectedItems, "Value", "")
+                =Concat(cmbP2RCActualCause.SelectedItems, Value, "")
+                //  DataCardValue27.Text
             Visible: =false
             Width: =592
             X: =1
@@ -6007,8 +6007,9 @@
             MaxLength: =DataSourceInfo([@'Quality Problem Status'], DataSourceInfo.MaxLength, "zzP2CACControlItem")
             Required: =false
             Update: |-
-                =
+                =txtP2CACControlItem.Text
                 //  DataCardValue34.Text
+            Visible: =false
             Width: =592
             X: =1
             Y: =24
@@ -6124,7 +6125,10 @@
             Height: =50
             MaxLength: =DataSourceInfo([@'Quality Problem Status'], DataSourceInfo.MaxLength, "zzP2CACSpec")
             Required: =false
-            Update: =DataCardValue35.Text
+            Update: |-
+                =txtP2CACSpec.Text
+                //  DataCardValue35.Text
+            Visible: =false
             Width: =592
             X: =0
             Y: =25
@@ -6239,7 +6243,10 @@
             Fill: =RGBA(0, 0, 0, 0)
             Height: =50
             Required: =false
-            Update: =DataCardValue37.SelectedDate
+            Update: |-
+                =datP2CACImplementationDate.SelectedDate
+                //  DataCardValue37.SelectedDate
+            Visible: =false
             Width: =592
             X: =1
             Y: =25
@@ -6352,7 +6359,9 @@
             Height: =50
             MaxLength: =DataSourceInfo([@'Quality Problem Status'], DataSourceInfo.MaxLength, "zzP3RCProcess")
             Required: =false
-            Update: =DataCardValue38.Text
+            Update: |-
+                =ddlP3RCProcess.Selected.Process
+                //  DataCardValue38.Text
             Width: =592
             X: =0
             Y: =26
@@ -6468,7 +6477,9 @@
             Height: =50
             MaxLength: =DataSourceInfo([@'Quality Problem Status'], DataSourceInfo.MaxLength, "zzP3RCActualCause")
             Required: =false
-            Update: =DataCardValue39.Text
+            Update: |-
+                =Concat(cmbP3RCActualCause.SelectedItems, Value, "")
+                //  DataCardValue39.Text
             Width: =592
             X: =1
             Y: =26
@@ -6584,7 +6595,10 @@
             Height: =50
             MaxLength: =DataSourceInfo([@'Quality Problem Status'], DataSourceInfo.MaxLength, "zzP3CAIControlItem")
             Required: =false
-            Update: =DataCardValue41.Text
+            Update: |-
+                =txtP3CAIControlItem.Text
+                //  DataCardValue41.Text
+            Visible: =false
             Width: =592
             X: =0
             Y: =27
@@ -6700,7 +6714,9 @@
             Height: =50
             MaxLength: =DataSourceInfo([@'Quality Problem Status'], DataSourceInfo.MaxLength, "zzP3CAISpec")
             Required: =false
-            Update: =DataCardValue42.Text
+            Update: |-
+                =txtP3CAISpec.Text
+                //  DataCardValue42.Text
             Width: =592
             X: =1
             Y: =27
@@ -6815,7 +6831,10 @@
             Fill: =RGBA(0, 0, 0, 0)
             Height: =50
             Required: =false
-            Update: =DataCardValue45.SelectedDate
+            Update: |-
+                =datP3CAIImplementationDate.SelectedDate
+                //  DataCardValue45.SelectedDate
+            Visible: =false
             Width: =592
             X: =0
             Y: =28
@@ -8913,7 +8932,10 @@
             Fill: =RGBA(0, 0, 0, 0)
             Height: =40
             Required: =false
-            Update: =DataCardValue31.HtmlText
+            Update: |-
+                =rtxP2CACComment.HtmlText
+                //  DataCardValue31.HtmlText
+            Visible: =false
             Width: =592
             X: =1
             Y: =37
@@ -9006,7 +9028,10 @@
             Fill: =RGBA(0, 0, 0, 0)
             Height: =40
             Required: =false
-            Update: =DataCardValue36.HtmlText
+            Update: |-
+                =rtxP3RCComment.HtmlText
+                //  DataCardValue36.HtmlText
+            Visible: =false
             Width: =592
             X: =0
             Y: =38
@@ -9099,7 +9124,10 @@
             Fill: =RGBA(0, 0, 0, 0)
             Height: =40
             Required: =false
-            Update: =DataCardValue40.HtmlText
+            Update: |-
+                =rtxP3CAIComment.HtmlText
+                //  DataCardValue40.HtmlText
+            Visible: =false
             Width: =592
             X: =1
             Y: =38
