@@ -1,5 +1,10 @@
 "scrQPS As screen.'webHostedFormLayout_ver3.0'":
     LoadingSpinnerColor: =RGBA(0, 120, 212, 1)
+    OnVisible: |
+        =//  Process1、2、3を表示
+        Set(Process1DisplayFlag, true);
+        Set(Process2DisplayFlag, true);
+        Set(Process3DisplayFlag, true);
 
     frmQPS As form:
         BorderColor: =RGBA(166, 166, 166, 1)
@@ -786,7 +791,7 @@
                 Y: =DataCardKey12_1.Y
                 ZIndex: =4
 
-        DataCard1 As typedDataCard.blankCard:
+        P1TitleDataCard1 As typedDataCard.blankCard:
             BorderColor: =RGBA(166, 166, 166, 1)
             BorderStyle: =BorderStyle.Solid
             DisplayMode: =DisplayMode.Edit
@@ -797,38 +802,25 @@
             Y: =5
             ZIndex: =1
 
-            lblProcess1Title As label:
-                BorderColor: =RGBA(0, 0, 0, 0)
-                BorderStyle: =BorderStyle.None
-                BorderThickness: =1
-                Color: =RGBA(51, 51, 51, 1)
-                DisabledBorderColor: =RGBA(0, 0, 0, 0)
-                DisabledColor: =RGBA(166, 166, 166, 1)
-                DisplayMode: =DisplayMode.View
-                Fill: |-
-                    =//lblP1Rootcause.Fill
-                    RGBA(0,0,0,0)
-                FocusedBorderThickness: =1
-                Font: =Font.'Segoe UI'
-                PaddingLeft: =0
-                Size: =10.5
-                Text: |-
+            HtmlTextProcess1 As htmlViewer:
+                Height: =33
+                HtmlText: |
                     =//  縮小拡大
                     With(
                         {strProcess:ddlP1RCProcess.Selected.Process,
                          strActualCause:Concat(cmbP1RCActualCause.SelectedItems, Value, ", ")
                         },
                     
-                        "  - Process1 : " & 
+                        Concatenate("<b><span style='cursor:pointer; color:blue'>　　", If(Process1DisplayFlag, "－", "＋"), " Process1 : ", 
                             If(IsBlank(strProcess), 
                                 "No Data", 
                                 strProcess & If(!IsBlank(strActualCause), " (" & strActualCause & ")")
-                            )
-                    
+                            ), "</span></b>")
                     )
+                OnSelect: =Set(Process1DisplayFlag, !Process1DisplayFlag);
                 Width: =Parent.Width - 10
-                Y: =20
-                ZIndex: =1
+                Y: =5
+                ZIndex: =2
 
         Process1_DataCard As typedDataCard.blankCard:
             BorderColor: =RGBA(246, 88, 16, 1)
@@ -837,9 +829,7 @@
             DisplayMode: =DisplayMode.Edit
             Fill: =RGBA(204, 231, 246, 1)
             Height: =P1Rectangle1.Height + P1Rectangle1.Height + P1Rectangle1.Height
-            Visible: |-
-                =//varTabSelected=1
-                true
+            Visible: =Process1DisplayFlag
             Width: =1184
             WidthFit: =false
             X: =0
@@ -1573,6 +1563,17 @@
                 X: =lblP1RCActualCause.X - 3
                 Y: =lblP1RCActualCause.Y
                 ZIndex: =34
+
+        P2TitleDataCard1 As typedDataCard.blankCard:
+            BorderColor: =RGBA(166, 166, 166, 1)
+            BorderStyle: =BorderStyle.Solid
+            DisplayMode: =DisplayMode.Edit
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =P1TitleDataCard1.Height
+            Width: =P1TitleDataCard1.Width
+            X: =0
+            Y: =6
+            ZIndex: =1
 
         Process2_DataCard As typedDataCard.blankCard:
             BorderColor: =RGBA(102, 152, 191, 1)
@@ -12720,6 +12721,17 @@
                 Y: =DataCardKey2.Y
                 ZIndex: =4
 
+        P3TitleDataCard1 As typedDataCard.blankCard:
+            BorderColor: =RGBA(166, 166, 166, 1)
+            BorderStyle: =BorderStyle.Solid
+            DisplayMode: =DisplayMode.Edit
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =100
+            Width: =592
+            X: =1
+            Y: =53
+            ZIndex: =1
+
     Rectangle_Header As rectangle:
         BorderColor: =Self.Fill
         BorderStyle: =BorderStyle.None
@@ -12742,76 +12754,11 @@
         FontWeight: =FontWeight.Semibold
         Height: =Rectangle_Header.Height
         PaddingLeft: =0
-        Text: =Char(9) & "Quality Problem Status"
+        Text: =Char(9) & Char(9) & Char(9) & "Quality Problem Status"
         Width: =Rectangle_Header.Width
         X: =Rectangle_Header.X
         Y: =Rectangle_Header.Y
         ZIndex: =3
-
-    galProcess As gallery.galleryHorizontal:
-        BorderColor: =RGBA(166, 166, 166, 1)
-        DelayItemLoading: =true
-        Fill: =RGBA(255, 255, 255, 1)
-        Height: =Rectangle_Header.Height
-        Items: |-
-            =Table({ID:1, Label:"Process1:"},{ID:2, Label:"Process2:"},{ID:3, Label:"Process3:"})
-        LoadingSpinner: =LoadingSpinner.Data
-        TemplateSize: |-
-            =//  If(Self.Layout = Layout.Horizontal, Min(320, Self.Width - 60), Min(320, Self.Height - 60))
-            200
-        Width: =620
-        X: =Parent.Width - Self.Width - 20
-        Y: =Rectangle_Header.Y
-        ZIndex: =4
-
-        btnProcess As button:
-            BorderColor: =RGBA(0, 0, 0, 0)
-            BorderStyle: =BorderStyle.None
-            BorderThickness: =1
-            DisabledBorderColor: |-
-                =//RGBA(0, 0, 0, 0)
-                Self.Fill
-            DisabledColor: |
-                =RGBA(166, 166, 166, 1)
-            DisabledFill: |-
-                =//RGBA(244, 244, 244, 1)
-                Self.Fill
-            Fill: |-
-                =//RGBA(102, 182, 227, 1)
-                If(varTabSelected=ThisItem.ID, 
-                    RGBA(0, 120, 212, 1),
-                    RGBA(102, 182, 227, 1)
-                )
-            FocusedBorderThickness: =1
-            Font: =Font.'Segoe UI'
-            FontWeight: =FontWeight.Semibold
-            Height: =35
-            HoverBorderColor: =RGBA(0, 0, 0, 0)
-            HoverColor: |
-                =RGBA(255, 255, 255, 1)
-            HoverFill: |-
-                =//ColorFade(RGBA(0, 120, 212, 1), -10%)
-                Self.Fill
-            OnSelect: |
-                =Set(varTabSelected, ThisItem.ID);
-                UpdateContext({Process1Tab: ThisItem.ID=1});
-                UpdateContext({Process2Tab: ThisItem.ID=2});
-                UpdateContext({Process3Tab: ThisItem.ID=3})
-            PressedBorderColor: |
-                =ColorFade(RGBA(0, 120, 212, 1), -50%)
-            PressedColor: |
-                =RGBA(255, 255, 255, 1)
-            PressedFill: |-
-                =//ColorFade(RGBA(0, 120, 212, 1), -30%)
-                Self.Fill
-            RadiusBottomLeft: =0
-            RadiusBottomRight: =0
-            RadiusTopLeft: =20
-            RadiusTopRight: =20
-            Size: =11
-            Text: =ThisItem.Label
-            Width: =200
-            ZIndex: =1
 
     lblStatus As label:
         BorderColor: =RGBA(0, 0, 0, 0)
@@ -12825,7 +12772,7 @@
         FontWeight: =FontWeight.Semibold
         PaddingLeft: =0
         Size: =12
-        Text: =DataCardValue2.Selected.Value
-        X: =Parent.Width / 3
+        Text: ="【 " & DataCardValue2.Selected.Value & " 】"
+        X: =Parent.Width - 385
         ZIndex: =5
 
