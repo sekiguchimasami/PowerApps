@@ -348,7 +348,7 @@
         BorderColor: =RGBA(166, 166, 166, 1)
         DelayItemLoading: =true
         Fill: =RGBA(255, 255, 255, 1)
-        Height: =Rectangle_Header.Height
+        Height: =RectangleHeader.Height
         Items: |-
             =Table({ID:1, Label:"Process1:"},{ID:2, Label:"Process2:"},{ID:3, Label:"Process3:"})
         LoadingSpinner: =LoadingSpinner.Data
@@ -358,7 +358,7 @@
         Visible: =false
         Width: =620
         X: =Parent.Width - Self.Width - 20
-        Y: =Rectangle_Header.Y
+        Y: =RectangleHeader.Y
         ZIndex: =12
 
         btnProcess As button:
