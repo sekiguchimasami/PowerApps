@@ -41,7 +41,8 @@ App As appinfo:
                     IsBlank(strP1ActualCause),
                         Notify("Please select a Process1 Actual cause！", NotificationType.Warning),
                     
-                    //  ABC
+                    //  Status
+                    //UpdateContext({flag});
                     
                     //  保存処理
                     SubmitForm(frmQPS)
