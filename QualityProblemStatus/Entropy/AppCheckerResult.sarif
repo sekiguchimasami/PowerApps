@@ -3344,36 +3344,6 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "scrQPS.frmQPS.備考_DataCard2.DataCardValue51.AccessibleLabel"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "scrQPS.frmQPS.備考_DataCard2.DataCardValue51.AccessibleLabel",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "AccessibleLabel",
-                "module": "scrQPS",
-                "type": "scrQPS.frmQPS.備考_DataCard2.DataCardValue51"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-AccessibleLabelNeeded",
-          "ruleIndex": 0
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
                   "fullyQualifiedName": "scrQPS.frmQPS.'RHDI Remark_DataCard2'.DataCardValue54.AccessibleLabel"
                 }
               ],
@@ -4716,7 +4686,7 @@
                 ],
                 "level": "Medium",
                 "primaryCategory": "performance",
-                "whyFix": "各コントロールはリソースを消費するため、画面のコントロールが多すぎると、アプリが低速になったり応答性が悪くなったりする可能性があります。\"scrQPS\" の推定複雑度は 566 です。これは、推奨される最大しきい値 (300) を超えています。"
+                "whyFix": "各コントロールはリソースを消費するため、画面のコントロールが多すぎると、アプリが低速になったり応答性が悪くなったりする可能性があります。\"scrQPS\" の推定複雑度は 562 です。これは、推奨される最大しきい値 (300) を超えています。"
               }
             },
             {
