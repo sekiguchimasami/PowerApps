@@ -181,7 +181,7 @@
         {
           "Category": "Behavior",
           "PropertyName": "OnNew",
-          "RuleProviderType": "Unknown"
+          "RuleProviderType": "User"
         }
       ],
       "StyleName": "",

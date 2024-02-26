@@ -12,7 +12,13 @@
         Height: =750
         Item: =If(IsBlank(SharePointIntegration.Selected),First([@'Quality Problem Status']),SharePointIntegration.Selected)
         NumberOfColumns: =2
-        OnSuccess: =ResetForm(Self); RequestHide()
+        OnSuccess: |-
+            =//  新規の場合、QPS番号採番
+            If(frmQPS.Mode=FormMode.New,
+                S_H0410_QPS_採番.Run(ddlSite.Selected.Value, frmQPS.LastSubmit.ID)
+            );
+            
+            ResetForm(Self); RequestHide()
         Width: =Parent.Width
         Y: =RectangleHeader.Y + RectangleHeader.Height
         ZIndex: =1
@@ -1595,37 +1601,6 @@
                 Y: =12
                 ZIndex: =1
 
-        P3TitleDataCard1 As typedDataCard.blankCard:
-            BorderColor: =RGBA(166, 166, 166, 1)
-            BorderStyle: =BorderStyle.Solid
-            DisplayMode: =DisplayMode.Edit
-            Fill: =RGBA(0, 0, 0, 0)
-            Height: =P1TitleDataCard1.Height
-            Width: =P1TitleDataCard1.Width
-            X: =0
-            Y: =9
-            ZIndex: =1
-
-            HtmlTextProcess3 As htmlViewer:
-                Height: =33
-                HtmlText: |
-                    =//  縮小拡大
-                    With(
-                        {strProcess:ddlP3RCProcess.Selected.Process,
-                         strActualCause:Concat(cmbP3RCActualCause.SelectedItems, Value, ", ")
-                        },
-                    
-                        Concatenate("<b><span style='cursor:pointer; color:blue'>　　", If(Process3DisplayFlag, "－", "＋"), " Process3 : ", 
-                            If(IsBlank(strProcess), 
-                                "No Data", 
-                                strProcess & If(!IsBlank(strActualCause), " (" & strActualCause & ")")
-                            ), "</span></b>")
-                    )
-                OnSelect: =Set(Process3DisplayFlag, !Process3DisplayFlag);
-                Width: =Parent.Width - 10
-                Y: =12
-                ZIndex: =1
-
         Process2_DataCard As typedDataCard.blankCard:
             BorderColor: =RGBA(102, 152, 191, 1)
             BorderStyle: =BorderStyle.Solid
@@ -2321,99 +2296,36 @@
                 Y: =lblP2CACSpec.Y + lblP2CACSpec.Height + WarningMessageP25.Height + 10
                 ZIndex: =32
 
-        AppliedProgram_DataCard As typedDataCard.blankCard:
+        P3TitleDataCard1 As typedDataCard.blankCard:
             BorderColor: =RGBA(166, 166, 166, 1)
             BorderStyle: =BorderStyle.Solid
             DisplayMode: =DisplayMode.Edit
             Fill: =RGBA(0, 0, 0, 0)
-            Height: =cmbAppliedProgram.Y + cmbAppliedProgram.Height + rtxAppliedProgramComment.Height + 20
-            Width: =1184
+            Height: =P1TitleDataCard1.Height
+            Width: =P1TitleDataCard1.Width
             X: =0
-            Y: =11
+            Y: =9
             ZIndex: =1
 
-            lblAppliedProgram As label:
-                BorderColor: =RGBA(0, 0, 0, 0)
-                BorderStyle: =BorderStyle.None
-                BorderThickness: =1
-                Color: =RGBA(51, 51, 51, 1)
-                DisabledBorderColor: =RGBA(0, 0, 0, 0)
-                DisabledColor: =RGBA(166, 166, 166, 1)
-                FocusedBorderThickness: =1
-                Font: =Font.'Segoe UI'
-                FontWeight: =FontWeight.Semibold
-                Height: =32
-                PaddingLeft: =0
-                Size: =11
-                Text: ="Applied Program"
-                Width: =(Parent.Width - 60) * 0.12
-                X: =32
-                Y: =10
+            HtmlTextProcess3 As htmlViewer:
+                Height: =33
+                HtmlText: |
+                    =//  縮小拡大
+                    With(
+                        {strProcess:ddlP3RCProcess.Selected.Process,
+                         strActualCause:Concat(cmbP3RCActualCause.SelectedItems, Value, ", ")
+                        },
+                    
+                        Concatenate("<b><span style='cursor:pointer; color:blue'>　　", If(Process3DisplayFlag, "－", "＋"), " Process3 : ", 
+                            If(IsBlank(strProcess), 
+                                "No Data", 
+                                strProcess & If(!IsBlank(strActualCause), " (" & strActualCause & ")")
+                            ), "</span></b>")
+                    )
+                OnSelect: =Set(Process3DisplayFlag, !Process3DisplayFlag);
+                Width: =Parent.Width - 10
+                Y: =12
                 ZIndex: =1
-
-            lblAppliedProgramComment As label:
-                BorderColor: =RGBA(0, 0, 0, 0)
-                BorderStyle: =BorderStyle.None
-                BorderThickness: =1
-                Color: =RGBA(51, 51, 51, 1)
-                DisabledBorderColor: =RGBA(0, 0, 0, 0)
-                DisabledColor: =RGBA(166, 166, 166, 1)
-                FocusedBorderThickness: =1
-                Font: =Font.'Segoe UI'
-                FontWeight: =FontWeight.Semibold
-                Height: =32
-                PaddingLeft: =0
-                Size: =11
-                Text: ="Comment"
-                Width: =(Parent.Width - 60) * 0.12
-                X: =lblAppliedProgram.X
-                Y: =lblAppliedProgram.Y + lblAppliedProgram.Height + 10
-                ZIndex: =3
-
-            rtxAppliedProgramComment As richTextEditor:
-                BorderColor: =RGBA(166, 166, 166, 1)
-                Default: =ThisItem.'Applied Program Comment'
-                Height: =rtxP1RCComment.Height
-                Width: =cmbAppliedProgram.Width
-                X: =lblAppliedProgramComment.X + lblAppliedProgramComment.Width
-                Y: =lblAppliedProgramComment.Y
-                ZIndex: =4
-
-            cmbAppliedProgram As combobox:
-                BorderColor: =RGBA(166, 166, 166, 1)
-                BorderThickness: =1
-                ChevronBackground: =RGBA(255, 255, 255, 1)
-                ChevronDisabledBackground: =RGBA(244, 244, 244, 1)
-                ChevronDisabledFill: =RGBA(166, 166, 166, 1)
-                ChevronFill: =RGBA(33, 33, 33, 1)
-                ChevronHoverBackground: =RGBA(212, 212, 212, 1)
-                ChevronHoverFill: =RGBA(33, 33, 33, 1)
-                Color: =RGBA(51, 51, 51, 1)
-                DefaultSelectedItems: =Split(ThisItem.'Applied Program', " ")
-                DisabledBorderColor: =RGBA(0, 0, 0, 0)
-                DisabledColor: =RGBA(166, 166, 166, 1)
-                DisabledFill: =RGBA(244, 244, 244, 1)
-                DisplayFields: =["Value"]
-                FocusedBorderThickness: =1
-                Font: =Font.'Segoe UI'
-                Height: =32
-                HoverBorderColor: =ColorFade(RGBA(0, 120, 212, 1), -30%)
-                HoverColor: =RGBA(51, 51, 51, 1)
-                HoverFill: =RGBA(212, 212, 212, 1)
-                IsSearchable: =false
-                Items: |
-                    =Split(Concat(Filter('Program Master', 区分.Value=rdbClaimDescriptionType.Selected.Value),Program, Char(10)), Char(10))
-                PressedBorderColor: =ColorFade(RGBA(0, 120, 212, 1), -30%)
-                PressedColor: =RGBA(255, 255, 255, 1)
-                PressedFill: =RGBA(0, 120, 212, 1)
-                SearchFields: =["Value"]
-                SearchItems: =[]
-                SelectionFill: =RGBA(0, 120, 212, 1)
-                Size: =10.5
-                Width: =(Parent.Width - 60) * 0.88
-                X: =lblAppliedProgram.X + lblAppliedProgram.Width
-                Y: =lblAppliedProgram.Y
-                ZIndex: =5
 
         Process3_DataCard As typedDataCard.blankCard:
             BorderColor: =RGBA(187, 221, 140, 1)
@@ -3110,6 +3022,100 @@
                 Y: =lblP3CACSpec.Y + lblP3CACSpec.Height + WarningMessageP35.Height + 10
                 ZIndex: =32
 
+        AppliedProgram_DataCard As typedDataCard.blankCard:
+            BorderColor: =RGBA(166, 166, 166, 1)
+            BorderStyle: =BorderStyle.Solid
+            DisplayMode: =DisplayMode.Edit
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =cmbAppliedProgram.Y + cmbAppliedProgram.Height + rtxAppliedProgramComment.Height + 20
+            Width: =1184
+            X: =0
+            Y: =11
+            ZIndex: =1
+
+            lblAppliedProgram As label:
+                BorderColor: =RGBA(0, 0, 0, 0)
+                BorderStyle: =BorderStyle.None
+                BorderThickness: =1
+                Color: =RGBA(51, 51, 51, 1)
+                DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                DisabledColor: =RGBA(166, 166, 166, 1)
+                FocusedBorderThickness: =1
+                Font: =Font.'Segoe UI'
+                FontWeight: =FontWeight.Semibold
+                Height: =32
+                PaddingLeft: =0
+                Size: =11
+                Text: ="Applied Program"
+                Width: =(Parent.Width - 60) * 0.12
+                X: =32
+                Y: =10
+                ZIndex: =1
+
+            lblAppliedProgramComment As label:
+                BorderColor: =RGBA(0, 0, 0, 0)
+                BorderStyle: =BorderStyle.None
+                BorderThickness: =1
+                Color: =RGBA(51, 51, 51, 1)
+                DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                DisabledColor: =RGBA(166, 166, 166, 1)
+                FocusedBorderThickness: =1
+                Font: =Font.'Segoe UI'
+                FontWeight: =FontWeight.Semibold
+                Height: =32
+                PaddingLeft: =0
+                Size: =11
+                Text: ="Comment"
+                Width: =(Parent.Width - 60) * 0.12
+                X: =lblAppliedProgram.X
+                Y: =lblAppliedProgram.Y + lblAppliedProgram.Height + 10
+                ZIndex: =3
+
+            rtxAppliedProgramComment As richTextEditor:
+                BorderColor: =RGBA(166, 166, 166, 1)
+                Default: =ThisItem.'Applied Program Comment'
+                Height: =rtxP1RCComment.Height
+                Width: =cmbAppliedProgram.Width
+                X: =lblAppliedProgramComment.X + lblAppliedProgramComment.Width
+                Y: =lblAppliedProgramComment.Y
+                ZIndex: =4
+
+            cmbAppliedProgram As combobox:
+                BorderColor: =RGBA(166, 166, 166, 1)
+                BorderThickness: =1
+                ChevronBackground: =RGBA(255, 255, 255, 1)
+                ChevronDisabledBackground: =RGBA(244, 244, 244, 1)
+                ChevronDisabledFill: =RGBA(166, 166, 166, 1)
+                ChevronFill: =RGBA(33, 33, 33, 1)
+                ChevronHoverBackground: =RGBA(212, 212, 212, 1)
+                ChevronHoverFill: =RGBA(33, 33, 33, 1)
+                Color: =RGBA(51, 51, 51, 1)
+                DefaultSelectedItems: =Split(ThisItem.'Applied Program', " ")
+                DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                DisabledColor: =RGBA(166, 166, 166, 1)
+                DisabledFill: =RGBA(244, 244, 244, 1)
+                DisplayFields: =["Value"]
+                FocusedBorderThickness: =1
+                Font: =Font.'Segoe UI'
+                Height: =32
+                HoverBorderColor: =ColorFade(RGBA(0, 120, 212, 1), -30%)
+                HoverColor: =RGBA(51, 51, 51, 1)
+                HoverFill: =RGBA(212, 212, 212, 1)
+                IsSearchable: =false
+                Items: |
+                    =Split(Concat(Filter('Program Master', 区分.Value=rdbClaimDescriptionType.Selected.Value),Program, Char(10)), Char(10))
+                PressedBorderColor: =ColorFade(RGBA(0, 120, 212, 1), -30%)
+                PressedColor: =RGBA(255, 255, 255, 1)
+                PressedFill: =RGBA(0, 120, 212, 1)
+                SearchFields: =["Value"]
+                SearchItems: =[]
+                SelectionFill: =RGBA(0, 120, 212, 1)
+                Size: =10.5
+                Width: =(Parent.Width - 60) * 0.88
+                X: =lblAppliedProgram.X + lblAppliedProgram.Width
+                Y: =lblAppliedProgram.Y
+                ZIndex: =5
+
         RHDI_DataCard As typedDataCard.blankCard:
             BorderColor: =RGBA(0, 84, 148, 1)
             BorderStyle: =BorderStyle.Solid
@@ -3491,6 +3497,426 @@
                 X: =50
                 Y: =lblRHDSAppliedProgram.Y + lblRHDSAppliedProgram.Height + 10
                 ZIndex: =8
+
+        "'Edit History_DataCard2' As typedDataCard.textualMultiLineEditCard":
+            BorderColor: =RGBA(166, 166, 166, 1)
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="zzEditHistory"
+            Default: =ThisItem.'Edit History'
+            DisplayMode: =Parent.DisplayMode
+            DisplayName: =DataSourceInfo([@'Quality Problem Status'],DataSourceInfo.DisplayName,"zzEditHistory")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =50
+            Required: =false
+            Update: |-
+                =//  DataCardValue78.Text
+                //  編集履歴
+                With(
+                    //  編集者と貸与品区分を取得
+                    {fullName:Split(User().FullName," "),
+                     str区分:rdbClaimDescriptionType.Selected.Value,
+                     strSite:ddlSite.Selected.Value,
+                     strCustomer:ddlCustomer.Selected.Customer,
+                     strMediaProgram:cmbMediaProgram.Selected.Value,
+                     strSubstrateSupplier:ddlSubstrateSupplier.Selected.Customer,
+                     strSubstrateProgram:cmbSubstrateProgram.Selected.Value},
+                    
+                    //  編集日時と編集者
+                    Now() & Char(9) & Last(fullName).Value & " " & First(fullName).Value & 
+                    If(
+                        frmQPS.Mode=FormMode.New, 
+                            "が「" & strCustomer & ":" & strMediaProgram & 
+                            If(Lower(str区分)=Lower("SubStrate"), 
+                                Char(10) & strSubstrateSupplier & Char(9) & strSubstrateProgram
+                            ) & "」を新規作成",
+                
+                        frmQPS.Mode=FormMode.Edit, 
+                            //  編集
+                            "が編集" & Char(9) & 
+                            //  Site
+                            If(ThisItem.Site<>ddlSite.Selected.Value,
+                                Char(10) & Char(9) & Char(9) & 
+                                "Site：" & Char(9) & "「" & ThisItem.Site & "」⇒「" & ddlSite.Selected.Value & "」"
+                            ) & 
+                            //  Claim description type
+                            If(ThisItem.'Claim description type'<>rdbClaimDescriptionType.Selected.Value,
+                                Char(10) & Char(9) & Char(9) & 
+                                "Claim description type：" & Char(9) & "「" & ThisItem.'Claim description type' & "」⇒「" & rdbClaimDescriptionType.Selected.Value & "」"
+                            ) & 
+                            //  Claim description
+                            If(ThisItem.'Claim description'<>ddlClaimDescription.Selected.Value,
+                                Char(10) & Char(9) & Char(9) & 
+                                "Claim description：" & Char(9) & "「" & ThisItem.'Claim description' & "」⇒「" & ddlClaimDescription.Selected.Value & "」"
+                            ) & 
+                            //  Comment
+                            If(ThisItem.Comment<>DataCardValue9.Text,
+                                Char(10) & Char(9) & Char(9) & 
+                                "Comment：" & Char(9) & "「" & ThisItem.Comment & "」⇒「" & DataCardValue9.Text & "」"
+                            ) & 
+                            //  Customer
+                            If(ThisItem.Customer<>ddlCustomer.Selected.Customer,
+                                Char(10) & Char(9) & Char(9) & 
+                                "Customer：" & Char(9) & "「" & ThisItem.Customer & "」⇒「" & ddlCustomer.Selected.Customer & "」"
+                            ) & 
+                            //  Media Program
+                            If(ThisItem.'Media Program'<>cmbMediaProgram.Selected.Value,
+                                Char(10) & Char(9) & Char(9) & 
+                                "Media Program：" & Char(9) & "「" & ThisItem.'Media Program' & "」⇒「" & cmbMediaProgram.Selected.Value & "」"
+                            ) & 
+                            //  Substrate Supplier
+                            If(ThisItem.'Substrate Supplier'<>ddlSubstrateSupplier.Selected.Customer,
+                                Char(10) & Char(9) & Char(9) & 
+                                "Substrate Supplier：" & Char(9) & "「" & ThisItem.'Substrate Supplier' & "」⇒「" & ddlSubstrateSupplier.Selected.Customer & "」"
+                            ) & 
+                            //  Substrate Program
+                            If(ThisItem.'Substrate Program'<>cmbSubstrateProgram.Selected.Value,
+                                Char(10) & Char(9) & Char(9) & 
+                                "Substrate Program：" & Char(9) & "「" & ThisItem.'Substrate Program' & "」⇒「" & cmbSubstrateProgram.Selected.Value & "」"
+                            ) & 
+                            //  *** Process1 *** 
+                            //  Process1 RC Process
+                            If(ThisItem.'Process1 RC Process'<>ddlP1RCProcess.Selected.Process,
+                                Char(10) & Char(9) & Char(9) & 
+                                "Process1 RC Process：" & Char(9) & "「" & ThisItem.'Process1 RC Process' & "」⇒「" & ddlP1RCProcess.Selected.Process & "」"
+                            ) & 
+                            //  Process1 RC Actual Cause
+                            If(ThisItem.'Process1 RC Actual Cause'<>cmbP1RCActualCause.Selected.Value,
+                                Char(10) & Char(9) & Char(9) & 
+                                "Process1 RC Actual Cause：" & Char(9) & "「" & ThisItem.'Process1 RC Actual Cause' & "」⇒「" & cmbP1RCActualCause.Selected.Value & "」"
+                            ) & 
+                            //  Process1 CA Internal Control Item
+                            If(ThisItem.'Process1 CA Internal Control Item'<>txtP1CAIControlItem.Text,
+                                Char(10) & Char(9) & Char(9) & 
+                                "Process1 CA Internal Control Item：" & Char(9) & "「" & ThisItem.'Process1 CA Internal Control Item' & "」⇒「" & txtP1CAIControlItem.Text & "」"
+                            ) & 
+                            //  Process1 CA Internal Spec/Control
+                            If(ThisItem.'Process1 CA Internal Spec/Control'<>txtP1CAISpec.Text,
+                                Char(10) & Char(9) & Char(9) & 
+                                "Process1 CA Internal Spec/Control：" & Char(9) & "「" & ThisItem.'Process1 CA Internal Spec/Control' & "」⇒「" & txtP1CAISpec.Text & "」"
+                            ) & 
+                            //  Process1 CA Internal Equipment Improvement
+                            If(ThisItem.'Process1 CA Internal Equipment Improvement'<>rdbP1CAIEquipmentImprovement.Selected.Value,
+                                Char(10) & Char(9) & Char(9) & 
+                                "Process1 CA Internal Equipment Improvement：" & Char(9) & "「" & ThisItem.'Process1 CA Internal Equipment Improvement' & "」⇒「" & rdbP1CAIEquipmentImprovement.Selected.Value & "」"
+                            ) & 
+                            //  Process1 CA Internal Implementation Date
+                            If(ThisItem.'Process1 CA Internal Implementation Date'<>datP1CAIImplementationDate.SelectedDate,
+                                Char(10) & Char(9) & Char(9) & 
+                                "Process1 CA Internal Implementation Date：" & Char(9) & "「" & ThisItem.'Process1 CA Internal Implementation Date' & "」⇒「" & datP1CAIImplementationDate.SelectedDate & "」"
+                            ) & 
+                            //  Process1 CA Customer Control Item
+                            If(ThisItem.'Process1 CA Customer Control Item'<>txtP1CACControlItem.Text,
+                                Char(10) & Char(9) & Char(9) & 
+                                "Process1 CA Customer Control Item：" & Char(9) & "「" & ThisItem.'Process1 CA Customer Control Item' & "」⇒「" & txtP1CACControlItem.Text & "」"
+                            ) & 
+                            //  Process1 CA Customer Spec/Control
+                            If(ThisItem.'Process1 CA Customer Spec/Control'<>txtP1CACSpec.Text,
+                                Char(10) & Char(9) & Char(9) & 
+                                "Process1 CA Customer Spec/Control：" & Char(9) & "「" & ThisItem.'Process1 CA Customer Spec/Control' & "」⇒「" & txtP1CACSpec.Text & "」"
+                            ) & 
+                            //  Process1 CA Customer Implementation Date
+                            If(ThisItem.'Process1 CA Customer Implementation Date'<>datP1CACImplementationDate.SelectedDate,
+                                Char(10) & Char(9) & Char(9) & 
+                                "Process1 CA Customer Implementation Date：" & Char(9) & "「" & ThisItem.'Process1 CA Customer Implementation Date' & "」⇒「" & datP1CACImplementationDate.SelectedDate & "」"
+                            ) & 
+                            //  *** Process2 *** 
+                            //  Process2 RC Process
+                            If(ThisItem.'Process2 RC Process'<>ddlP2RCProcess.Selected.Process,
+                                Char(10) & Char(9) & Char(9) & 
+                                "Process2 RC Process：" & Char(9) & "「" & ThisItem.'Process2 RC Process' & "」⇒「" & ddlP2RCProcess.Selected.Process & "」"
+                            ) & 
+                            //  Process2 RC Actual Cause
+                            If(ThisItem.'Process2 RC Actual Cause'<>cmbP2RCActualCause.Selected.Value,
+                                Char(10) & Char(9) & Char(9) & 
+                                "Process2 RC Actual Cause：" & Char(9) & "「" & ThisItem.'Process2 RC Actual Cause' & "」⇒「" & cmbP2RCActualCause.Selected.Value & "」"
+                            ) & 
+                            //  Process2 CA Internal Control Item
+                            If(ThisItem.'Process2 CA Internal Control Item'<>txtP2CAIControlItem.Text,
+                                Char(10) & Char(9) & Char(9) & 
+                                "Process2 CA Internal Control Item：" & Char(9) & "「" & ThisItem.'Process2 CA Internal Control Item' & "」⇒「" & txtP2CAIControlItem.Text & "」"
+                            ) & 
+                            //  Process2 CA Internal Spec/Control
+                            If(ThisItem.'Process2 CA Internal Spec/Control'<>txtP2CAISpec.Text,
+                                Char(10) & Char(9) & Char(9) & 
+                                "Process2 CA Internal Spec/Control：" & Char(9) & "「" & ThisItem.'Process2 CA Internal Spec/Control' & "」⇒「" & txtP2CAISpec.Text & "」"
+                            ) & 
+                            //  Process2 CA Internal Equipment Improvement
+                            If(ThisItem.'Process2 CA Internal Equipment Improvement'<>rdbP2CAIEquipmentImprovement.Selected.Value,
+                                Char(10) & Char(9) & Char(9) & 
+                                "Process2 CA Internal Equipment Improvement：" & Char(9) & "「" & ThisItem.'Process2 CA Internal Equipment Improvement' & "」⇒「" & rdbP2CAIEquipmentImprovement.Selected.Value & "」"
+                            ) & 
+                            //  Process2 CA Internal Implementation Date
+                            If(ThisItem.'Process2 CA Internal Implementation Date'<>datP2CAIImplementationDate.SelectedDate,
+                                Char(10) & Char(9) & Char(9) & 
+                                "Process2 CA Internal Implementation Date：" & Char(9) & "「" & ThisItem.'Process2 CA Internal Implementation Date' & "」⇒「" & datP2CAIImplementationDate.SelectedDate & "」"
+                            ) & 
+                            //  Process2 CA Customer Control Item
+                            If(ThisItem.'Process2 CA Customer Control Item'<>txtP2CACControlItem.Text,
+                                Char(10) & Char(9) & Char(9) & 
+                                "Process2 CA Customer Control Item：" & Char(9) & "「" & ThisItem.'Process2 CA Customer Control Item' & "」⇒「" & txtP2CACControlItem.Text & "」"
+                            ) & 
+                            //  Process2 CA Customer Spec/Control
+                            If(ThisItem.'Process2 CA Customer Spec/Control'<>txtP2CACSpec.Text,
+                                Char(10) & Char(9) & Char(9) & 
+                                "Process2 CA Customer Spec/Control：" & Char(9) & "「" & ThisItem.'Process2 CA Customer Spec/Control' & "」⇒「" & txtP2CACSpec.Text & "」"
+                            ) & 
+                            //  Process2 CA Customer Implementation Date
+                            If(ThisItem.'Process2 CA Customer Implementation Date'<>datP2CACImplementationDate.SelectedDate,
+                                Char(10) & Char(9) & Char(9) & 
+                                "Process2 CA Customer Implementation Date：" & Char(9) & "「" & ThisItem.'Process2 CA Customer Implementation Date' & "」⇒「" & datP2CACImplementationDate.SelectedDate & "」"
+                            ) & 
+                            //  *** Process3 *** 
+                            //  Process3 RC Process
+                            If(ThisItem.'Process3 RC Process'<>ddlP3RCProcess.Selected.Process,
+                                Char(10) & Char(9) & Char(9) & 
+                                "Process3 RC Process：" & Char(9) & "「" & ThisItem.'Process3 RC Process' & "」⇒「" & ddlP3RCProcess.Selected.Process & "」"
+                            ) & 
+                            //  Process3 RC Actual Cause
+                            If(ThisItem.'Process3 RC Actual Cause'<>cmbP3RCActualCause.Selected.Value,
+                                Char(10) & Char(9) & Char(9) & 
+                                "Process3 RC Actual Cause：" & Char(9) & "「" & ThisItem.'Process3 RC Actual Cause' & "」⇒「" & cmbP3RCActualCause.Selected.Value & "」"
+                            ) & 
+                            //  Process3 CA Internal Control Item
+                            If(ThisItem.'Process3 CA Internal Control Item'<>txtP3CAIControlItem.Text,
+                                Char(10) & Char(9) & Char(9) & 
+                                "Process3 CA Internal Control Item：" & Char(9) & "「" & ThisItem.'Process3 CA Internal Control Item' & "」⇒「" & txtP3CAIControlItem.Text & "」"
+                            ) & 
+                            //  Process3 CA Internal Spec/Control
+                            If(ThisItem.'Process3 CA Internal Spec/Control'<>txtP3CAISpec.Text,
+                                Char(10) & Char(9) & Char(9) & 
+                                "Process3 CA Internal Spec/Control：" & Char(9) & "「" & ThisItem.'Process3 CA Internal Spec/Control' & "」⇒「" & txtP3CAISpec.Text & "」"
+                            ) & 
+                            //  Process3 CA Internal Equipment Improvement
+                            If(ThisItem.'Process3 CA Internal Equipment Improvement'<>rdbP3CAIEquipmentImprovement.Selected.Value,
+                                Char(10) & Char(9) & Char(9) & 
+                                "Process3 CA Internal Equipment Improvement：" & Char(9) & "「" & ThisItem.'Process3 CA Internal Equipment Improvement' & "」⇒「" & rdbP3CAIEquipmentImprovement.Selected.Value & "」"
+                            ) & 
+                            //  Process3 CA Internal Implementation Date
+                            If(ThisItem.'Process3 CA Internal Implementation Date'<>datP3CAIImplementationDate.SelectedDate,
+                                Char(10) & Char(9) & Char(9) & 
+                                "Process3 CA Internal Implementation Date：" & Char(9) & "「" & ThisItem.'Process3 CA Internal Implementation Date' & "」⇒「" & datP3CAIImplementationDate.SelectedDate & "」"
+                            ) & 
+                            //  Process3 CA Customer Control Item
+                            If(ThisItem.'Process3 CA Customer Control Item'<>txtP3CACControlItem.Text,
+                                Char(10) & Char(9) & Char(9) & 
+                                "Process3 CA Customer Control Item：" & Char(9) & "「" & ThisItem.'Process3 CA Customer Control Item' & "」⇒「" & txtP3CACControlItem.Text & "」"
+                            ) & 
+                            //  Process3 CA Customer Spec/Control
+                            If(ThisItem.'Process3 CA Customer Spec/Control'<>txtP3CACSpec.Text,
+                                Char(10) & Char(9) & Char(9) & 
+                                "Process3 CA Customer Spec/Control：" & Char(9) & "「" & ThisItem.'Process3 CA Customer Spec/Control' & "」⇒「" & txtP3CACSpec.Text & "」"
+                            ) & 
+                            //  Process3 CA Customer Implementation Date
+                            If(ThisItem.'Process3 CA Customer Implementation Date'<>datP3CACImplementationDate.SelectedDate,
+                                Char(10) & Char(9) & Char(9) & 
+                                "Process3 CA Customer Implementation Date：" & Char(9) & "「" & ThisItem.'Process3 CA Customer Implementation Date' & "」⇒「" & datP3CACImplementationDate.SelectedDate & "」"
+                            ) & 
+                
+                            //  Applied Program
+                            If(ThisItem.'Applied Program'<>cmbAppliedProgram.Selected.Value,
+                                Char(10) & Char(9) & Char(9) & 
+                                "Applied Program：" & Char(9) & "「" & ThisItem.'Applied Program' & "」⇒「" & cmbAppliedProgram.Selected.Value & "」"
+                            ) & 
+                
+                            //  *** Site ***
+                            //  RHDI Apply Status
+                            If(ThisItem.'RHDI Apply Status'<>rdbRHDIApply.Selected.Value,
+                                Char(10) & Char(9) & Char(9) & 
+                                "RHDI Apply Status：" & Char(9) & "「" & ThisItem.'RHDI Apply Status' & "」⇒「" & rdbRHDIApply.Selected.Value & "」"
+                            ) & 
+                            //  RHDI Implementation Date
+                            If(ThisItem.'RHDI Implementation Date'<>datRHDIImpleDate.SelectedDate,
+                                Char(10) & Char(9) & Char(9) & 
+                                "RHDI Implementation Date：" & Char(9) & "「" & ThisItem.'RHDI Implementation Date' & "」⇒「" & datRHDIImpleDate.SelectedDate & "」"
+                            ) & 
+                            //  RHDI Applied Program
+                            If(ThisItem.'RHDI Applied Program'<>cmbRHDIAppliedProgram.Selected.Value,
+                                Char(10) & Char(9) & Char(9) & 
+                                "RHDI Applied Program：" & Char(9) & "「" & ThisItem.'RHDI Applied Program' & "」⇒「" & cmbRHDIAppliedProgram.Selected.Value & "」"
+                            ) & 
+                            //  RHDS Apply Status
+                            If(ThisItem.'RHDS Apply Status'<>rdbRHDSApply.Selected.Value,
+                                Char(10) & Char(9) & Char(9) & 
+                                "RHDS Apply Status：" & Char(9) & "「" & ThisItem.'RHDS Apply Status' & "」⇒「" & rdbRHDSApply.Selected.Value & "」"
+                            ) & 
+                            //  RHDS Implementation Date
+                            If(ThisItem.'RHDS Implementation Date'<>datRHDSImpleDate.SelectedDate,
+                                Char(10) & Char(9) & Char(9) & 
+                                "RHDS Implementation Date：" & Char(9) & "「" & ThisItem.'RHDS Implementation Date' & "」⇒「" & datRHDSImpleDate.SelectedDate & "」"
+                            ) & 
+                            //  RHDS Applied Program
+                            If(ThisItem.'RHDS Applied Program'<>cmbRHDSAppliedProgram.Selected.Value,
+                                Char(10) & Char(9) & Char(9) & 
+                                "RHDS Applied Program：" & Char(9) & "「" & ThisItem.'RHDS Applied Program' & "」⇒「" & cmbRHDSAppliedProgram.Selected.Value & "」"
+                            ) & 
+                            //  RHDM Apply Status
+                            If(ThisItem.'RHDM Apply Status'<>rdbRHDMApply.Selected.Value,
+                                Char(10) & Char(9) & Char(9) & 
+                                "RHDM Apply Status：" & Char(9) & "「" & ThisItem.'RHDM Apply Status' & "」⇒「" & rdbRHDMApply.Selected.Value & "」"
+                            ) & 
+                            //  RHDM Implementation Date
+                            If(ThisItem.'RHDM Implementation Date'<>datRHDMImpleDate.SelectedDate,
+                                Char(10) & Char(9) & Char(9) & 
+                                "RHDM Implementation Date：" & Char(9) & "「" & ThisItem.'RHDM Implementation Date' & "」⇒「" & datRHDMImpleDate.SelectedDate & "」"
+                            ) & 
+                            //  RHDM Applied Program
+                            If(ThisItem.'RHDM Applied Program'<>cmbRHDMAppliedProgram.Selected.Value,
+                                Char(10) & Char(9) & Char(9) & 
+                                "RHDM Applied Program：" & Char(9) & "「" & ThisItem.'RHDM Applied Program' & "」⇒「" & cmbRHDMAppliedProgram.Selected.Value & "」"
+                            ) & 
+                            //  RHDO Apply Status
+                            If(ThisItem.'RHDO Apply Status'<>rdbRHDOApply.Selected.Value,
+                                Char(10) & Char(9) & Char(9) & 
+                                "RHDO Apply Status：" & Char(9) & "「" & ThisItem.'RHDO Apply Status' & "」⇒「" & rdbRHDOApply.Selected.Value & "」"
+                            ) & 
+                            //  RHDO Implementation Date
+                            If(ThisItem.'RHDO Implementation Date'<>datRHDOImpleDate.SelectedDate,
+                                Char(10) & Char(9) & Char(9) & 
+                                "RHDO Implementation Date：" & Char(9) & "「" & ThisItem.'RHDO Implementation Date' & "」⇒「" & datRHDOImpleDate.SelectedDate & "」"
+                            ) & 
+                            //  RHDO Applied Program
+                            If(ThisItem.'RHDO Applied Program'<>cmbRHDOAppliedProgram.Selected.Value,
+                                Char(10) & Char(9) & Char(9) & 
+                                "RHDO Applied Program：" & Char(9) & "「" & ThisItem.'RHDO Applied Program' & "」⇒「" & cmbRHDOAppliedProgram.Selected.Value & "」"
+                            ) & 
+                            //  RHDY Apply Status
+                            If(ThisItem.'RHDY Apply Status'<>rdbRHDYApply.Selected.Value,
+                                Char(10) & Char(9) & Char(9) & 
+                                "RHDY Apply Status：" & Char(9) & "「" & ThisItem.'RHDY Apply Status' & "」⇒「" & rdbRHDYApply.Selected.Value & "」"
+                            ) & 
+                            //  RHDY Implementation Date
+                            If(ThisItem.'RHDY Implementation Date'<>datRHDYImpleDate.SelectedDate,
+                                Char(10) & Char(9) & Char(9) & 
+                                "RHDY Implementation Date：" & Char(9) & "「" & ThisItem.'RHDY Implementation Date' & "」⇒「" & datRHDYImpleDate.SelectedDate & "」"
+                            ) & 
+                            //  RHDY Applied Program
+                            If(ThisItem.'RHDY Applied Program'<>cmbRHDYAppliedProgram.Selected.Value,
+                                Char(10) & Char(9) & Char(9) & 
+                                "RHDY Applied Program：" & Char(9) & "「" & ThisItem.'RHDY Applied Program' & "」⇒「" & cmbRHDYAppliedProgram.Selected.Value & "」"
+                            )
+                    )
+                ) & Char(10) & ThisItem.'Edit History'
+            Width: =Parent.Width
+            X: =0
+            Y: =17
+            ZIndex: =1
+
+            DataCardKey78 As label:
+                AutoHeight: =true
+                BorderColor: =RGBA(0, 0, 0, 0)
+                BorderStyle: =BorderStyle.None
+                BorderThickness: =1
+                Color: =RGBA(51, 51, 51, 1)
+                DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                DisabledColor: =RGBA(166, 166, 166, 1)
+                FocusedBorderThickness: =1
+                Font: =Font.'Segoe UI'
+                FontWeight: =FontWeight.Semibold
+                Height: =34
+                PaddingLeft: =0
+                Size: =10.5
+                Text: =Parent.DisplayName
+                Width: =(Parent.Width - 60) * 0.1
+                Wrap: =false
+                X: =32
+                Y: =10 + (DataCardValue78.Height / 2) - (Self.Height / 2)
+                ZIndex: =1
+
+            DataCardValue78 As text:
+                BorderColor: =RGBA(204, 231, 246, 1)
+                Color: =RGBA(51, 51, 51, 1)
+                Default: =Parent.Default
+                DelayOutput: =true
+                DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                DisabledColor: =RGBA(166, 166, 166, 1)
+                DisabledFill: =RGBA(244, 244, 244, 1)
+                DisplayMode: =DisplayMode.View
+                FocusedBorderThickness: =1
+                Font: =Font.'Segoe UI'
+                Height: =130
+                HoverBorderColor: =RGBA(204, 231, 246, 1)
+                HoverColor: =RGBA(51, 51, 51, 1)
+                HoverFill: =RGBA(255, 255, 255, 1)
+                Mode: =TextMode.MultiLine
+                PaddingLeft: =5
+                PressedBorderColor: =RGBA(204, 231, 246, 1)
+                PressedColor: =RGBA(51, 51, 51, 1)
+                PressedFill: =RGBA(255, 255, 255, 1)
+                RadiusBottomLeft: =0
+                RadiusBottomRight: =0
+                RadiusTopLeft: =0
+                RadiusTopRight: =0
+                Size: =11
+                Tooltip: =Parent.DisplayName
+                Visible: =false
+                Width: =(Parent.Width - 60) * 0.9
+                X: =DataCardKey78.X + DataCardKey78.Width
+                Y: =10
+                ZIndex: =2
+
+            ErrorMessage77 As label:
+                AutoHeight: =true
+                BorderColor: =RGBA(0, 0, 0, 0)
+                BorderStyle: =BorderStyle.None
+                BorderThickness: =1
+                Color: =RGBA(168, 0, 0, 1)
+                DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                DisabledColor: =RGBA(168, 0, 0, 1)
+                FocusedBorderThickness: =1
+                Font: =Font.'Segoe UI'
+                FontWeight: =FontWeight.Semibold
+                Height: =10
+                Live: =Live.Assertive
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Size: =10.5
+                Text: =Parent.Error
+                Visible: =Parent.DisplayMode=DisplayMode.Edit
+                Width: =Parent.Width - 60
+                X: =32
+                Y: =DataCardValue78.Y + DataCardValue78.Height
+                ZIndex: =3
+
+            StarVisible78 As label:
+                Align: =Align.Center
+                BorderColor: =RGBA(0, 0, 0, 0)
+                BorderStyle: =BorderStyle.None
+                BorderThickness: =1
+                Color: =RGBA(51, 51, 51, 1)
+                DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                DisabledColor: =RGBA(166, 166, 166, 1)
+                FocusedBorderThickness: =1
+                Font: =Font.'Segoe UI'
+                FontWeight: =FontWeight.Semibold
+                Height: =DataCardKey78.Height
+                PaddingLeft: =0
+                Size: =10.5
+                Text: ="*"
+                Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                Width: =30
+                Wrap: =false
+                X: =2
+                Y: =DataCardKey78.Y
+                ZIndex: =4
+
+            lblEditHistory As label:
+                BorderColor: =RGBA(0, 120, 212, 1)
+                BorderThickness: =1
+                Color: =RGBA(51, 51, 51, 1)
+                DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                DisabledColor: =RGBA(166, 166, 166, 1)
+                FocusedBorderThickness: =1
+                Font: =Font.'Segoe UI'
+                Height: =DataCardValue78.Height
+                Overflow: =Overflow.Scroll
+                Size: =11
+                Text: =DataCardValue78.Text
+                Width: =DataCardValue78.Width
+                X: =DataCardValue78.X
+                Y: =DataCardValue78.Y
+                ZIndex: =5
 
         RHDM_DataCard As typedDataCard.blankCard:
             BorderColor: =RGBA(0, 84, 148, 1)
@@ -4061,426 +4487,6 @@
                 X: =rdbRHDYApply.X
                 Y: =lblRHDYAppliedProgram.Y + lblRHDYAppliedProgram.Height + 10
                 ZIndex: =8
-
-        "'Edit History_DataCard2' As typedDataCard.textualMultiLineEditCard":
-            BorderColor: =RGBA(166, 166, 166, 1)
-            BorderStyle: =BorderStyle.Solid
-            DataField: ="zzEditHistory"
-            Default: =ThisItem.'Edit History'
-            DisplayMode: =Parent.DisplayMode
-            DisplayName: =DataSourceInfo([@'Quality Problem Status'],DataSourceInfo.DisplayName,"zzEditHistory")
-            Fill: =RGBA(0, 0, 0, 0)
-            Height: =50
-            Required: =false
-            Update: |-
-                =//  DataCardValue78.Text
-                //  編集履歴
-                With(
-                    //  編集者と貸与品区分を取得
-                    {fullName:Split(User().FullName," "),
-                     str区分:rdbClaimDescriptionType.Selected.Value,
-                     strSite:ddlSite.Selected.Value,
-                     strCustomer:ddlCustomer.Selected.Customer,
-                     strMediaProgram:cmbMediaProgram.Selected.Value,
-                     strSubstrateSupplier:ddlSubstrateSupplier.Selected.Customer,
-                     strSubstrateProgram:cmbSubstrateProgram.Selected.Value},
-                    
-                    //  編集日時と編集者
-                    Now() & Char(9) & Last(fullName).Value & " " & First(fullName).Value & 
-                    If(
-                        frmQPS.Mode=FormMode.New, 
-                            "が「" & strCustomer & ":" & strMediaProgram & 
-                            If(Lower(str区分)=Lower("SubStrate"), 
-                                Char(10) & strSubstrateSupplier & Char(9) & strSubstrateProgram
-                            ) & "」を新規作成",
-                
-                        frmQPS.Mode=FormMode.Edit, 
-                            //  編集
-                            "が編集" & Char(9) & 
-                            //  Site
-                            If(ThisItem.Site<>ddlSite.Selected.Value,
-                                Char(10) & Char(9) & Char(9) & 
-                                "Site：" & Char(9) & "「" & ThisItem.Site & "」⇒「" & ddlSite.Selected.Value & "」"
-                            ) & 
-                            //  Claim description type
-                            If(ThisItem.'Claim description type'<>rdbClaimDescriptionType.Selected.Value,
-                                Char(10) & Char(9) & Char(9) & 
-                                "Claim description type：" & Char(9) & "「" & ThisItem.'Claim description type' & "」⇒「" & rdbClaimDescriptionType.Selected.Value & "」"
-                            ) & 
-                            //  Claim description
-                            If(ThisItem.'Claim description'<>ddlClaimDescription.Selected.Value,
-                                Char(10) & Char(9) & Char(9) & 
-                                "Claim description：" & Char(9) & "「" & ThisItem.'Claim description' & "」⇒「" & ddlClaimDescription.Selected.Value & "」"
-                            ) & 
-                            //  Comment
-                            If(ThisItem.Comment<>DataCardValue9.Text,
-                                Char(10) & Char(9) & Char(9) & 
-                                "Comment：" & Char(9) & "「" & ThisItem.Comment & "」⇒「" & DataCardValue9.Text & "」"
-                            ) & 
-                            //  Customer
-                            If(ThisItem.Customer<>ddlCustomer.Selected.Customer,
-                                Char(10) & Char(9) & Char(9) & 
-                                "Customer：" & Char(9) & "「" & ThisItem.Customer & "」⇒「" & ddlCustomer.Selected.Customer & "」"
-                            ) & 
-                            //  Media Program
-                            If(ThisItem.'Media Program'<>cmbMediaProgram.Selected.Value,
-                                Char(10) & Char(9) & Char(9) & 
-                                "Media Program：" & Char(9) & "「" & ThisItem.'Media Program' & "」⇒「" & cmbMediaProgram.Selected.Value & "」"
-                            ) & 
-                            //  Substrate Supplier
-                            If(ThisItem.'Substrate Supplier'<>ddlSubstrateSupplier.Selected.Customer,
-                                Char(10) & Char(9) & Char(9) & 
-                                "Substrate Supplier：" & Char(9) & "「" & ThisItem.'Substrate Supplier' & "」⇒「" & ddlSubstrateSupplier.Selected.Customer & "」"
-                            ) & 
-                            //  Substrate Program
-                            If(ThisItem.'Substrate Program'<>cmbSubstrateProgram.Selected.Value,
-                                Char(10) & Char(9) & Char(9) & 
-                                "Substrate Program：" & Char(9) & "「" & ThisItem.'Substrate Program' & "」⇒「" & cmbSubstrateProgram.Selected.Value & "」"
-                            ) & 
-                            //  *** Process1 *** 
-                            //  Process1 RC Process
-                            If(ThisItem.'Process1 RC Process'<>ddlP1RCProcess.Selected.Process,
-                                Char(10) & Char(9) & Char(9) & 
-                                "Process1 RC Process：" & Char(9) & "「" & ThisItem.'Process1 RC Process' & "」⇒「" & ddlP1RCProcess.Selected.Process & "」"
-                            ) & 
-                            //  Process1 RC Actual Cause
-                            If(ThisItem.'Process1 RC Actual Cause'<>cmbP1RCActualCause.Selected.Value,
-                                Char(10) & Char(9) & Char(9) & 
-                                "Process1 RC Actual Cause：" & Char(9) & "「" & ThisItem.'Process1 RC Actual Cause' & "」⇒「" & cmbP1RCActualCause.Selected.Value & "」"
-                            ) & 
-                            //  Process1 CA Internal Control Item
-                            If(ThisItem.'Process1 CA Internal Control Item'<>txtP1CAIControlItem.Text,
-                                Char(10) & Char(9) & Char(9) & 
-                                "Process1 CA Internal Control Item：" & Char(9) & "「" & ThisItem.'Process1 CA Internal Control Item' & "」⇒「" & txtP1CAIControlItem.Text & "」"
-                            ) & 
-                            //  Process1 CA Internal Spec/Control
-                            If(ThisItem.'Process1 CA Internal Spec/Control'<>txtP1CAISpec.Text,
-                                Char(10) & Char(9) & Char(9) & 
-                                "Process1 CA Internal Spec/Control：" & Char(9) & "「" & ThisItem.'Process1 CA Internal Spec/Control' & "」⇒「" & txtP1CAISpec.Text & "」"
-                            ) & 
-                            //  Process1 CA Internal Equipment Improvement
-                            If(ThisItem.'Process1 CA Internal Equipment Improvement'<>rdbP1CAIEquipmentImprovement.Selected.Value,
-                                Char(10) & Char(9) & Char(9) & 
-                                "Process1 CA Internal Equipment Improvement：" & Char(9) & "「" & ThisItem.'Process1 CA Internal Equipment Improvement' & "」⇒「" & rdbP1CAIEquipmentImprovement.Selected.Value & "」"
-                            ) & 
-                            //  Process1 CA Internal Implementation Date
-                            If(ThisItem.'Process1 CA Internal Implementation Date'<>datP1CAIImplementationDate.SelectedDate,
-                                Char(10) & Char(9) & Char(9) & 
-                                "Process1 CA Internal Implementation Date：" & Char(9) & "「" & ThisItem.'Process1 CA Internal Implementation Date' & "」⇒「" & datP1CAIImplementationDate.SelectedDate & "」"
-                            ) & 
-                            //  Process1 CA Customer Control Item
-                            If(ThisItem.'Process1 CA Customer Control Item'<>txtP1CACControlItem.Text,
-                                Char(10) & Char(9) & Char(9) & 
-                                "Process1 CA Customer Control Item：" & Char(9) & "「" & ThisItem.'Process1 CA Customer Control Item' & "」⇒「" & txtP1CACControlItem.Text & "」"
-                            ) & 
-                            //  Process1 CA Customer Spec/Control
-                            If(ThisItem.'Process1 CA Customer Spec/Control'<>txtP1CACSpec.Text,
-                                Char(10) & Char(9) & Char(9) & 
-                                "Process1 CA Customer Spec/Control：" & Char(9) & "「" & ThisItem.'Process1 CA Customer Spec/Control' & "」⇒「" & txtP1CACSpec.Text & "」"
-                            ) & 
-                            //  Process1 CA Customer Implementation Date
-                            If(ThisItem.'Process1 CA Customer Implementation Date'<>datP1CACImplementationDate.SelectedDate,
-                                Char(10) & Char(9) & Char(9) & 
-                                "Process1 CA Customer Implementation Date：" & Char(9) & "「" & ThisItem.'Process1 CA Customer Implementation Date' & "」⇒「" & datP1CACImplementationDate.SelectedDate & "」"
-                            ) & 
-                            //  *** Process2 *** 
-                            //  Process2 RC Process
-                            If(ThisItem.'Process2 RC Process'<>ddlP2RCProcess.Selected.Process,
-                                Char(10) & Char(9) & Char(9) & 
-                                "Process2 RC Process：" & Char(9) & "「" & ThisItem.'Process2 RC Process' & "」⇒「" & ddlP2RCProcess.Selected.Process & "」"
-                            ) & 
-                            //  Process2 RC Actual Cause
-                            If(ThisItem.'Process2 RC Actual Cause'<>cmbP2RCActualCause.Selected.Value,
-                                Char(10) & Char(9) & Char(9) & 
-                                "Process2 RC Actual Cause：" & Char(9) & "「" & ThisItem.'Process2 RC Actual Cause' & "」⇒「" & cmbP2RCActualCause.Selected.Value & "」"
-                            ) & 
-                            //  Process2 CA Internal Control Item
-                            If(ThisItem.'Process2 CA Internal Control Item'<>txtP2CAIControlItem.Text,
-                                Char(10) & Char(9) & Char(9) & 
-                                "Process2 CA Internal Control Item：" & Char(9) & "「" & ThisItem.'Process2 CA Internal Control Item' & "」⇒「" & txtP2CAIControlItem.Text & "」"
-                            ) & 
-                            //  Process2 CA Internal Spec/Control
-                            If(ThisItem.'Process2 CA Internal Spec/Control'<>txtP2CAISpec.Text,
-                                Char(10) & Char(9) & Char(9) & 
-                                "Process2 CA Internal Spec/Control：" & Char(9) & "「" & ThisItem.'Process2 CA Internal Spec/Control' & "」⇒「" & txtP2CAISpec.Text & "」"
-                            ) & 
-                            //  Process2 CA Internal Equipment Improvement
-                            If(ThisItem.'Process2 CA Internal Equipment Improvement'<>rdbP2CAIEquipmentImprovement.Selected.Value,
-                                Char(10) & Char(9) & Char(9) & 
-                                "Process2 CA Internal Equipment Improvement：" & Char(9) & "「" & ThisItem.'Process2 CA Internal Equipment Improvement' & "」⇒「" & rdbP2CAIEquipmentImprovement.Selected.Value & "」"
-                            ) & 
-                            //  Process2 CA Internal Implementation Date
-                            If(ThisItem.'Process2 CA Internal Implementation Date'<>datP2CAIImplementationDate.SelectedDate,
-                                Char(10) & Char(9) & Char(9) & 
-                                "Process2 CA Internal Implementation Date：" & Char(9) & "「" & ThisItem.'Process2 CA Internal Implementation Date' & "」⇒「" & datP2CAIImplementationDate.SelectedDate & "」"
-                            ) & 
-                            //  Process2 CA Customer Control Item
-                            If(ThisItem.'Process2 CA Customer Control Item'<>txtP2CACControlItem.Text,
-                                Char(10) & Char(9) & Char(9) & 
-                                "Process2 CA Customer Control Item：" & Char(9) & "「" & ThisItem.'Process2 CA Customer Control Item' & "」⇒「" & txtP2CACControlItem.Text & "」"
-                            ) & 
-                            //  Process2 CA Customer Spec/Control
-                            If(ThisItem.'Process2 CA Customer Spec/Control'<>txtP2CACSpec.Text,
-                                Char(10) & Char(9) & Char(9) & 
-                                "Process2 CA Customer Spec/Control：" & Char(9) & "「" & ThisItem.'Process2 CA Customer Spec/Control' & "」⇒「" & txtP2CACSpec.Text & "」"
-                            ) & 
-                            //  Process2 CA Customer Implementation Date
-                            If(ThisItem.'Process2 CA Customer Implementation Date'<>datP2CACImplementationDate.SelectedDate,
-                                Char(10) & Char(9) & Char(9) & 
-                                "Process2 CA Customer Implementation Date：" & Char(9) & "「" & ThisItem.'Process2 CA Customer Implementation Date' & "」⇒「" & datP2CACImplementationDate.SelectedDate & "」"
-                            ) & 
-                            //  *** Process3 *** 
-                            //  Process3 RC Process
-                            If(ThisItem.'Process3 RC Process'<>ddlP3RCProcess.Selected.Process,
-                                Char(10) & Char(9) & Char(9) & 
-                                "Process3 RC Process：" & Char(9) & "「" & ThisItem.'Process3 RC Process' & "」⇒「" & ddlP3RCProcess.Selected.Process & "」"
-                            ) & 
-                            //  Process3 RC Actual Cause
-                            If(ThisItem.'Process3 RC Actual Cause'<>cmbP3RCActualCause.Selected.Value,
-                                Char(10) & Char(9) & Char(9) & 
-                                "Process3 RC Actual Cause：" & Char(9) & "「" & ThisItem.'Process3 RC Actual Cause' & "」⇒「" & cmbP3RCActualCause.Selected.Value & "」"
-                            ) & 
-                            //  Process3 CA Internal Control Item
-                            If(ThisItem.'Process3 CA Internal Control Item'<>txtP3CAIControlItem.Text,
-                                Char(10) & Char(9) & Char(9) & 
-                                "Process3 CA Internal Control Item：" & Char(9) & "「" & ThisItem.'Process3 CA Internal Control Item' & "」⇒「" & txtP3CAIControlItem.Text & "」"
-                            ) & 
-                            //  Process3 CA Internal Spec/Control
-                            If(ThisItem.'Process3 CA Internal Spec/Control'<>txtP3CAISpec.Text,
-                                Char(10) & Char(9) & Char(9) & 
-                                "Process3 CA Internal Spec/Control：" & Char(9) & "「" & ThisItem.'Process3 CA Internal Spec/Control' & "」⇒「" & txtP3CAISpec.Text & "」"
-                            ) & 
-                            //  Process3 CA Internal Equipment Improvement
-                            If(ThisItem.'Process3 CA Internal Equipment Improvement'<>rdbP3CAIEquipmentImprovement.Selected.Value,
-                                Char(10) & Char(9) & Char(9) & 
-                                "Process3 CA Internal Equipment Improvement：" & Char(9) & "「" & ThisItem.'Process3 CA Internal Equipment Improvement' & "」⇒「" & rdbP3CAIEquipmentImprovement.Selected.Value & "」"
-                            ) & 
-                            //  Process3 CA Internal Implementation Date
-                            If(ThisItem.'Process3 CA Internal Implementation Date'<>datP3CAIImplementationDate.SelectedDate,
-                                Char(10) & Char(9) & Char(9) & 
-                                "Process3 CA Internal Implementation Date：" & Char(9) & "「" & ThisItem.'Process3 CA Internal Implementation Date' & "」⇒「" & datP3CAIImplementationDate.SelectedDate & "」"
-                            ) & 
-                            //  Process3 CA Customer Control Item
-                            If(ThisItem.'Process3 CA Customer Control Item'<>txtP3CACControlItem.Text,
-                                Char(10) & Char(9) & Char(9) & 
-                                "Process3 CA Customer Control Item：" & Char(9) & "「" & ThisItem.'Process3 CA Customer Control Item' & "」⇒「" & txtP3CACControlItem.Text & "」"
-                            ) & 
-                            //  Process3 CA Customer Spec/Control
-                            If(ThisItem.'Process3 CA Customer Spec/Control'<>txtP3CACSpec.Text,
-                                Char(10) & Char(9) & Char(9) & 
-                                "Process3 CA Customer Spec/Control：" & Char(9) & "「" & ThisItem.'Process3 CA Customer Spec/Control' & "」⇒「" & txtP3CACSpec.Text & "」"
-                            ) & 
-                            //  Process3 CA Customer Implementation Date
-                            If(ThisItem.'Process3 CA Customer Implementation Date'<>datP3CACImplementationDate.SelectedDate,
-                                Char(10) & Char(9) & Char(9) & 
-                                "Process3 CA Customer Implementation Date：" & Char(9) & "「" & ThisItem.'Process3 CA Customer Implementation Date' & "」⇒「" & datP3CACImplementationDate.SelectedDate & "」"
-                            ) & 
-                
-                            //  Applied Program
-                            If(ThisItem.'Applied Program'<>cmbAppliedProgram.Selected.Value,
-                                Char(10) & Char(9) & Char(9) & 
-                                "Applied Program：" & Char(9) & "「" & ThisItem.'Applied Program' & "」⇒「" & cmbAppliedProgram.Selected.Value & "」"
-                            ) & 
-                
-                            //  *** Site ***
-                            //  RHDI Apply Status
-                            If(ThisItem.'RHDI Apply Status'<>rdbRHDIApply.Selected.Value,
-                                Char(10) & Char(9) & Char(9) & 
-                                "RHDI Apply Status：" & Char(9) & "「" & ThisItem.'RHDI Apply Status' & "」⇒「" & rdbRHDIApply.Selected.Value & "」"
-                            ) & 
-                            //  RHDI Implementation Date
-                            If(ThisItem.'RHDI Implementation Date'<>datRHDIImpleDate.SelectedDate,
-                                Char(10) & Char(9) & Char(9) & 
-                                "RHDI Implementation Date：" & Char(9) & "「" & ThisItem.'RHDI Implementation Date' & "」⇒「" & datRHDIImpleDate.SelectedDate & "」"
-                            ) & 
-                            //  RHDI Applied Program
-                            If(ThisItem.'RHDI Applied Program'<>cmbRHDIAppliedProgram.Selected.Value,
-                                Char(10) & Char(9) & Char(9) & 
-                                "RHDI Applied Program：" & Char(9) & "「" & ThisItem.'RHDI Applied Program' & "」⇒「" & cmbRHDIAppliedProgram.Selected.Value & "」"
-                            ) & 
-                            //  RHDS Apply Status
-                            If(ThisItem.'RHDS Apply Status'<>rdbRHDSApply.Selected.Value,
-                                Char(10) & Char(9) & Char(9) & 
-                                "RHDS Apply Status：" & Char(9) & "「" & ThisItem.'RHDS Apply Status' & "」⇒「" & rdbRHDSApply.Selected.Value & "」"
-                            ) & 
-                            //  RHDS Implementation Date
-                            If(ThisItem.'RHDS Implementation Date'<>datRHDSImpleDate.SelectedDate,
-                                Char(10) & Char(9) & Char(9) & 
-                                "RHDS Implementation Date：" & Char(9) & "「" & ThisItem.'RHDS Implementation Date' & "」⇒「" & datRHDSImpleDate.SelectedDate & "」"
-                            ) & 
-                            //  RHDS Applied Program
-                            If(ThisItem.'RHDS Applied Program'<>cmbRHDSAppliedProgram.Selected.Value,
-                                Char(10) & Char(9) & Char(9) & 
-                                "RHDS Applied Program：" & Char(9) & "「" & ThisItem.'RHDS Applied Program' & "」⇒「" & cmbRHDSAppliedProgram.Selected.Value & "」"
-                            ) & 
-                            //  RHDM Apply Status
-                            If(ThisItem.'RHDM Apply Status'<>rdbRHDMApply.Selected.Value,
-                                Char(10) & Char(9) & Char(9) & 
-                                "RHDM Apply Status：" & Char(9) & "「" & ThisItem.'RHDM Apply Status' & "」⇒「" & rdbRHDMApply.Selected.Value & "」"
-                            ) & 
-                            //  RHDM Implementation Date
-                            If(ThisItem.'RHDM Implementation Date'<>datRHDMImpleDate.SelectedDate,
-                                Char(10) & Char(9) & Char(9) & 
-                                "RHDM Implementation Date：" & Char(9) & "「" & ThisItem.'RHDM Implementation Date' & "」⇒「" & datRHDMImpleDate.SelectedDate & "」"
-                            ) & 
-                            //  RHDM Applied Program
-                            If(ThisItem.'RHDM Applied Program'<>cmbRHDMAppliedProgram.Selected.Value,
-                                Char(10) & Char(9) & Char(9) & 
-                                "RHDM Applied Program：" & Char(9) & "「" & ThisItem.'RHDM Applied Program' & "」⇒「" & cmbRHDMAppliedProgram.Selected.Value & "」"
-                            ) & 
-                            //  RHDO Apply Status
-                            If(ThisItem.'RHDO Apply Status'<>rdbRHDOApply.Selected.Value,
-                                Char(10) & Char(9) & Char(9) & 
-                                "RHDO Apply Status：" & Char(9) & "「" & ThisItem.'RHDO Apply Status' & "」⇒「" & rdbRHDOApply.Selected.Value & "」"
-                            ) & 
-                            //  RHDO Implementation Date
-                            If(ThisItem.'RHDO Implementation Date'<>datRHDOImpleDate.SelectedDate,
-                                Char(10) & Char(9) & Char(9) & 
-                                "RHDO Implementation Date：" & Char(9) & "「" & ThisItem.'RHDO Implementation Date' & "」⇒「" & datRHDOImpleDate.SelectedDate & "」"
-                            ) & 
-                            //  RHDO Applied Program
-                            If(ThisItem.'RHDO Applied Program'<>cmbRHDOAppliedProgram.Selected.Value,
-                                Char(10) & Char(9) & Char(9) & 
-                                "RHDO Applied Program：" & Char(9) & "「" & ThisItem.'RHDO Applied Program' & "」⇒「" & cmbRHDOAppliedProgram.Selected.Value & "」"
-                            ) & 
-                            //  RHDY Apply Status
-                            If(ThisItem.'RHDY Apply Status'<>rdbRHDYApply.Selected.Value,
-                                Char(10) & Char(9) & Char(9) & 
-                                "RHDY Apply Status：" & Char(9) & "「" & ThisItem.'RHDY Apply Status' & "」⇒「" & rdbRHDYApply.Selected.Value & "」"
-                            ) & 
-                            //  RHDY Implementation Date
-                            If(ThisItem.'RHDY Implementation Date'<>datRHDYImpleDate.SelectedDate,
-                                Char(10) & Char(9) & Char(9) & 
-                                "RHDY Implementation Date：" & Char(9) & "「" & ThisItem.'RHDY Implementation Date' & "」⇒「" & datRHDYImpleDate.SelectedDate & "」"
-                            ) & 
-                            //  RHDY Applied Program
-                            If(ThisItem.'RHDY Applied Program'<>cmbRHDYAppliedProgram.Selected.Value,
-                                Char(10) & Char(9) & Char(9) & 
-                                "RHDY Applied Program：" & Char(9) & "「" & ThisItem.'RHDY Applied Program' & "」⇒「" & cmbRHDYAppliedProgram.Selected.Value & "」"
-                            )
-                    )
-                ) & Char(10) & ThisItem.'Edit History'
-            Width: =Parent.Width
-            X: =0
-            Y: =17
-            ZIndex: =1
-
-            DataCardKey78 As label:
-                AutoHeight: =true
-                BorderColor: =RGBA(0, 0, 0, 0)
-                BorderStyle: =BorderStyle.None
-                BorderThickness: =1
-                Color: =RGBA(51, 51, 51, 1)
-                DisabledBorderColor: =RGBA(0, 0, 0, 0)
-                DisabledColor: =RGBA(166, 166, 166, 1)
-                FocusedBorderThickness: =1
-                Font: =Font.'Segoe UI'
-                FontWeight: =FontWeight.Semibold
-                Height: =34
-                PaddingLeft: =0
-                Size: =10.5
-                Text: =Parent.DisplayName
-                Width: =(Parent.Width - 60) * 0.1
-                Wrap: =false
-                X: =32
-                Y: =10 + (DataCardValue78.Height / 2) - (Self.Height / 2)
-                ZIndex: =1
-
-            DataCardValue78 As text:
-                BorderColor: =RGBA(204, 231, 246, 1)
-                Color: =RGBA(51, 51, 51, 1)
-                Default: =Parent.Default
-                DelayOutput: =true
-                DisabledBorderColor: =RGBA(0, 0, 0, 0)
-                DisabledColor: =RGBA(166, 166, 166, 1)
-                DisabledFill: =RGBA(244, 244, 244, 1)
-                DisplayMode: =DisplayMode.View
-                FocusedBorderThickness: =1
-                Font: =Font.'Segoe UI'
-                Height: =130
-                HoverBorderColor: =RGBA(204, 231, 246, 1)
-                HoverColor: =RGBA(51, 51, 51, 1)
-                HoverFill: =RGBA(255, 255, 255, 1)
-                Mode: =TextMode.MultiLine
-                PaddingLeft: =5
-                PressedBorderColor: =RGBA(204, 231, 246, 1)
-                PressedColor: =RGBA(51, 51, 51, 1)
-                PressedFill: =RGBA(255, 255, 255, 1)
-                RadiusBottomLeft: =0
-                RadiusBottomRight: =0
-                RadiusTopLeft: =0
-                RadiusTopRight: =0
-                Size: =11
-                Tooltip: =Parent.DisplayName
-                Visible: =false
-                Width: =(Parent.Width - 60) * 0.9
-                X: =DataCardKey78.X + DataCardKey78.Width
-                Y: =10
-                ZIndex: =2
-
-            ErrorMessage77 As label:
-                AutoHeight: =true
-                BorderColor: =RGBA(0, 0, 0, 0)
-                BorderStyle: =BorderStyle.None
-                BorderThickness: =1
-                Color: =RGBA(168, 0, 0, 1)
-                DisabledBorderColor: =RGBA(0, 0, 0, 0)
-                DisabledColor: =RGBA(168, 0, 0, 1)
-                FocusedBorderThickness: =1
-                Font: =Font.'Segoe UI'
-                FontWeight: =FontWeight.Semibold
-                Height: =10
-                Live: =Live.Assertive
-                PaddingBottom: =0
-                PaddingLeft: =0
-                PaddingRight: =0
-                PaddingTop: =0
-                Size: =10.5
-                Text: =Parent.Error
-                Visible: =Parent.DisplayMode=DisplayMode.Edit
-                Width: =Parent.Width - 60
-                X: =32
-                Y: =DataCardValue78.Y + DataCardValue78.Height
-                ZIndex: =3
-
-            StarVisible78 As label:
-                Align: =Align.Center
-                BorderColor: =RGBA(0, 0, 0, 0)
-                BorderStyle: =BorderStyle.None
-                BorderThickness: =1
-                Color: =RGBA(51, 51, 51, 1)
-                DisabledBorderColor: =RGBA(0, 0, 0, 0)
-                DisabledColor: =RGBA(166, 166, 166, 1)
-                FocusedBorderThickness: =1
-                Font: =Font.'Segoe UI'
-                FontWeight: =FontWeight.Semibold
-                Height: =DataCardKey78.Height
-                PaddingLeft: =0
-                Size: =10.5
-                Text: ="*"
-                Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
-                Width: =30
-                Wrap: =false
-                X: =2
-                Y: =DataCardKey78.Y
-                ZIndex: =4
-
-            lblEditHistory As label:
-                BorderColor: =RGBA(0, 120, 212, 1)
-                BorderThickness: =1
-                Color: =RGBA(51, 51, 51, 1)
-                DisabledBorderColor: =RGBA(0, 0, 0, 0)
-                DisabledColor: =RGBA(166, 166, 166, 1)
-                FocusedBorderThickness: =1
-                Font: =Font.'Segoe UI'
-                Height: =DataCardValue78.Height
-                Overflow: =Overflow.Scroll
-                Size: =11
-                Text: =DataCardValue78.Text
-                Width: =DataCardValue78.Width
-                X: =DataCardValue78.X
-                Y: =DataCardValue78.Y
-                ZIndex: =5
 
         "'Process1 RC Process_DataCard1' As typedDataCard.textualEditCard":
             BorderColor: =RGBA(166, 166, 166, 1)
@@ -12836,4 +12842,116 @@
         X: =1000
         Y: =1
         ZIndex: =6
+
+    ContainerConfirm As groupContainer.manualLayoutContainer:
+        Height: =300
+        X: =(Parent.Width - Self.Width) / 2
+        Y: =(Parent.Height - Self.Height) / 2
+        ZIndex: =9
+
+        lblConfirm As label:
+            Align: =Align.Center
+            BorderColor: =RGBA(0, 0, 0, 0)
+            BorderStyle: =BorderStyle.None
+            BorderThickness: =1
+            Color: =RGBA(39, 113, 194, 1)
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            Fill: =RGBA(255, 255, 255, 1)
+            FocusedBorderThickness: =1
+            Font: =Font.'Segoe UI'
+            FontWeight: =FontWeight.Semibold
+            Height: =ContainerConfirm.Height - 100
+            PaddingLeft: =0
+            Text: ="Closeメールを送信しますか？"
+            Width: =ContainerConfirm.Width
+            X: =(Parent.Width - Self.Width) / 2
+            ZIndex: =1
+
+        btnYes As button:
+            BorderColor: =RGBA(0, 0, 0, 0)
+            BorderStyle: =BorderStyle.None
+            BorderThickness: =1
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            DisabledFill: =RGBA(244, 244, 244, 1)
+            Fill: =RGBA(0, 120, 212, 1)
+            FocusedBorderThickness: =1
+            Font: =Font.'Segoe UI'
+            FontWeight: =FontWeight.Semibold
+            Height: =32
+            HoverBorderColor: =RGBA(0, 0, 0, 0)
+            HoverColor: =RGBA(255, 255, 255, 1)
+            HoverFill: =ColorFade(RGBA(0, 120, 212, 1), -10%)
+            PressedBorderColor: =ColorFade(RGBA(0, 120, 212, 1), -50%)
+            PressedColor: =RGBA(255, 255, 255, 1)
+            PressedFill: =ColorFade(RGBA(0, 120, 212, 1), -30%)
+            RadiusBottomLeft: =0
+            RadiusBottomRight: =0
+            RadiusTopLeft: =0
+            RadiusTopRight: =0
+            Size: =14
+            Text: ="Yes"
+            Width: =100
+            X: =((500 - Self.Width) / 2 - Self.Width ) / 2
+            Y: =200 + (100 - Self.Height) / 2
+            ZIndex: =2
+
+        btnNo As button:
+            BorderColor: =RGBA(0, 0, 0, 0)
+            BorderStyle: =BorderStyle.None
+            BorderThickness: =1
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            DisabledFill: =RGBA(244, 244, 244, 1)
+            Fill: =RGBA(0, 120, 212, 1)
+            FocusedBorderThickness: =1
+            Font: =Font.'Segoe UI'
+            FontWeight: =FontWeight.Semibold
+            Height: =32
+            HoverBorderColor: =RGBA(0, 0, 0, 0)
+            HoverColor: =RGBA(255, 255, 255, 1)
+            HoverFill: =ColorFade(RGBA(0, 120, 212, 1), -10%)
+            PressedBorderColor: =ColorFade(RGBA(0, 120, 212, 1), -50%)
+            PressedColor: =RGBA(255, 255, 255, 1)
+            PressedFill: =ColorFade(RGBA(0, 120, 212, 1), -30%)
+            RadiusBottomLeft: =0
+            RadiusBottomRight: =0
+            RadiusTopLeft: =0
+            RadiusTopRight: =0
+            Size: =14
+            Text: ="No"
+            Width: =100
+            X: =(500 - Self.Width) / 2
+            Y: =btnYes.Y
+            ZIndex: =3
+
+        btnCancel As button:
+            BorderColor: =RGBA(0, 0, 0, 0)
+            BorderStyle: =BorderStyle.None
+            BorderThickness: =1
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            DisabledFill: =RGBA(244, 244, 244, 1)
+            Fill: =RGBA(0, 120, 212, 1)
+            FocusedBorderThickness: =1
+            Font: =Font.'Segoe UI'
+            FontWeight: =FontWeight.Semibold
+            Height: =32
+            HoverBorderColor: =RGBA(0, 0, 0, 0)
+            HoverColor: =RGBA(255, 255, 255, 1)
+            HoverFill: =ColorFade(RGBA(0, 120, 212, 1), -10%)
+            PressedBorderColor: =ColorFade(RGBA(0, 120, 212, 1), -50%)
+            PressedColor: =RGBA(255, 255, 255, 1)
+            PressedFill: =ColorFade(RGBA(0, 120, 212, 1), -30%)
+            RadiusBottomLeft: =0
+            RadiusBottomRight: =0
+            RadiusTopLeft: =0
+            RadiusTopRight: =0
+            Size: =14
+            Text: ="Cancel"
+            Width: =100
+            X: =(btnNo.X + btnNo.Width) + Self.Width / 2
+            Y: =btnYes.Y
+            ZIndex: =4
 

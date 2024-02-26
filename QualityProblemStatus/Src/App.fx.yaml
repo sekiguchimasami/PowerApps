@@ -14,12 +14,16 @@ App As appinfo:
         OnCancel: =ResetForm(frmQPS)
         OnEdit: =EditForm(frmQPS)
         OnNew: |-
-            =
+            =//  新規作成
             NewForm(frmQPS)
-        OnSave: |
-            =//  入力チェック
+        OnSave: |-
+            =// エラーフラグとエラーメッセージ
+            Set(gvErrorFlag, false);
+            Set(gvErrMsg, Blank());
+            
+            //  入力チェック
             With(
-                // 貸与品区分 
+                // 入力データ取得 
                 {strSite:ddlSite.Selected.Value,
                  strClaimDescription:rdbClaimDescriptionType.Selected.Value,
                  strCustomer:ddlCustomer.Selected.Customer,
@@ -29,24 +33,31 @@ App As appinfo:
                 
                 If(
                     IsBlank(strSite),
-                        Notify("Please select a Site！", NotificationType.Warning),
+                        Set(gvErrMsg, "Please select a Site！"),
                     IsBlank(strClaimDescription),
-                        Notify("Please select a Claim description！", NotificationType.Warning),
+                        Set(gvErrMsg, "Please select a Claim description！"),
                     IsBlank(strCustomer),
-                        Notify("Please select a Customer！", NotificationType.Warning),
+                        Set(gvErrMsg, "Please select a Customer！"),
                     IsBlank(strMediaProgram),
-                        Notify("Please select a Media Program！", NotificationType.Warning),
+                        Set(gvErrMsg, "Please select a Media Program！"),
                     IsBlank(strP1Process),
-                        Notify("Please select a Process1 Process！", NotificationType.Warning),
+                        Set(gvErrMsg, "Please select a Process1 Process！"),
                     IsBlank(strP1ActualCause),
-                        Notify("Please select a Process1 Actual cause！", NotificationType.Warning),
+                        Set(gvErrMsg, "Please select a Process1 Actual cause！")
+                );
+                If(!IsBlank(gvErrMsg),
+                    Notify(gvErrMsg, NotificationType.Warning);
+                    Set(gvErrorFlag, true)
+                )
+            );
+            
+            If(!gvErrorFlag,
+                    //  Status更新
                     
-                    //  Status
-                    //UpdateContext({flag});
+            
                     
                     //  保存処理
                     SubmitForm(frmQPS)
-                )
             )
         OnView: =ViewForm(frmQPS)
         SelectedHidden: =LookUp([@'Quality Problem Status'], ID = Self.SelectedListItemID)
