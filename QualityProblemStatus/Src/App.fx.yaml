@@ -17,9 +17,12 @@ App As appinfo:
             =//  新規作成
             NewForm(frmQPS)
         OnSave: |-
-            =// エラーフラグとエラーメッセージ
-            Set(gvErrorFlag, false);
-            Set(gvErrMsg, Blank());
+            =// フラグ初期化
+            Set(gvErrorFlag, false);            //  エラーフラグ
+            Set(gvErrMsg, Blank());             //  エラーメッセージ
+            Set(gvConfirmFlag, false);          //  確認PopUpの表示・非表示フラグ
+            Set(gvintCount, 0);                 //  カウンター
+            Set(gvCloseMail, false);            //  Closeメール送信フラグ
             
             //  入力チェック
             With(
@@ -52,10 +55,24 @@ App As appinfo:
             );
             
             If(!gvErrorFlag,
-                    //  Status更新
+                    //  Process1の Implementation Date が （CA）internal、（CA）customer の両方に入力あり
+                    If(IsBlank(datP1CAIImplementationDate.SelectedDate) || IsBlank(datP1CAIImplementationDate.SelectedDate), 
+                        Set(gvintCount, gvintCount + 1)
+                    );
+                    If(!IsBlank(ddlP2RCProcess), 
+                        If(IsBlank(datP2CAIImplementationDate.SelectedDate) || IsBlank(datP2CAIImplementationDate.SelectedDate), 
+                            Set(gvintCount, gvintCount + 1)
+                        )
+                    ),
+                    If(!IsBlank(ddlP3RCProcess), 
+                        If(IsBlank(datP3CAIImplementationDate.SelectedDate) || IsBlank(datP3CAIImplementationDate.SelectedDate), 
+                            Set(gvintCount, gvintCount + 1)
+                        )
+                    ),
                     
+                    //  確認PopUpを表示するか？
+                    If(gvintCount=0, Set(gvConfirmFlag, true));
             
-                    
                     //  保存処理
                     SubmitForm(frmQPS)
             )

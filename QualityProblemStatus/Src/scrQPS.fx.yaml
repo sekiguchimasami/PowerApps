@@ -1,10 +1,8 @@
 "scrQPS As screen.'webHostedFormLayout_ver3.0'":
     LoadingSpinnerColor: =RGBA(0, 120, 212, 1)
     OnVisible: |
-        =//  Process1、2、3を表示
-        Set(Process1DisplayFlag, true);
-        Set(Process2DisplayFlag, true);
-        Set(Process3DisplayFlag, true);
+        =//  確認PopUpを非表示
+        Set(gvConfirmFlag, false);
 
     frmQPS As form:
         BorderColor: =RGBA(166, 166, 166, 1)
@@ -12845,6 +12843,7 @@
 
     ContainerConfirm As groupContainer.manualLayoutContainer:
         Height: =300
+        Visible: =gvConfirmFlag
         X: =(Parent.Width - Self.Width) / 2
         Y: =(Parent.Height - Self.Height) / 2
         ZIndex: =9
@@ -12883,6 +12882,12 @@
             HoverBorderColor: =RGBA(0, 0, 0, 0)
             HoverColor: =RGBA(255, 255, 255, 1)
             HoverFill: =ColorFade(RGBA(0, 120, 212, 1), -10%)
+            OnSelect: |
+                =//  Closeメール送信処理
+                
+                
+                //  Popupフラグクリア
+                Set(gvConfirmFlag, false);
             PressedBorderColor: =ColorFade(RGBA(0, 120, 212, 1), -50%)
             PressedColor: =RGBA(255, 255, 255, 1)
             PressedFill: =ColorFade(RGBA(0, 120, 212, 1), -30%)
@@ -12912,6 +12917,9 @@
             HoverBorderColor: =RGBA(0, 0, 0, 0)
             HoverColor: =RGBA(255, 255, 255, 1)
             HoverFill: =ColorFade(RGBA(0, 120, 212, 1), -10%)
+            OnSelect: |
+                =//  確認PopUpを非表示
+                Set(gvConfirmFlag, false);
             PressedBorderColor: =ColorFade(RGBA(0, 120, 212, 1), -50%)
             PressedColor: =RGBA(255, 255, 255, 1)
             PressedFill: =ColorFade(RGBA(0, 120, 212, 1), -30%)
@@ -12941,6 +12949,9 @@
             HoverBorderColor: =RGBA(0, 0, 0, 0)
             HoverColor: =RGBA(255, 255, 255, 1)
             HoverFill: =ColorFade(RGBA(0, 120, 212, 1), -10%)
+            OnSelect: |
+                =//  確認PopUpを非表示
+                Set(gvConfirmFlag, false);
             PressedBorderColor: =ColorFade(RGBA(0, 120, 212, 1), -50%)
             PressedColor: =RGBA(255, 255, 255, 1)
             PressedFill: =ColorFade(RGBA(0, 120, 212, 1), -30%)
