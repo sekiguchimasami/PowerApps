@@ -11,7 +11,31 @@
         Item: =If(IsBlank(SharePointIntegration.Selected),First([@'Quality Problem Status']),SharePointIntegration.Selected)
         NumberOfColumns: =2
         OnSuccess: |-
-            =//  新規の場合、QPS番号採番
+            =If(!gvErrorFlag,
+                //  Process1の Implementation Date が （CA）internal、（CA）customer の両方に入力あり
+                If(IsBlank(datP1CAIImplementationDate.SelectedDate) || IsBlank(datP1CAIImplementationDate.SelectedDate), 
+                    Set(gvintCount, gvintCount + 1)
+                );
+                If(!IsBlank(ddlP2RCProcess), 
+                    If(IsBlank(datP2CAIImplementationDate.SelectedDate) || IsBlank(datP2CAIImplementationDate.SelectedDate), 
+                        Set(gvintCount, gvintCount + 1)
+                    )
+                ),
+                If(!IsBlank(ddlP3RCProcess), 
+                    If(IsBlank(datP3CAIImplementationDate.SelectedDate) || IsBlank(datP3CAIImplementationDate.SelectedDate), 
+                        Set(gvintCount, gvintCount + 1)
+                    )
+                ),
+                
+                //  確認PopUpを表示するか？
+                If(gvintCount=0, Set(gvConfirmFlag, true));
+            
+                //  保存処理
+                SubmitForm(frmQPS)
+            );
+            
+            
+            //  新規の場合、QPS番号採番
             If(frmQPS.Mode=FormMode.New,
                 S_H0410_QPS_採番.Run(ddlSite.Selected.Value, frmQPS.LastSubmit.ID)
             );
@@ -149,7 +173,16 @@
                 Font: =Font.'Segoe UI'
                 PaddingLeft: =0
                 Size: =11
-                Text: ="Date：" & ThisItem.Date & Char(9) & Char(9) & ThisItem.登録者.DisplayName
+                Text: |+
+                    =With(
+                        {fullName:Split(User().FullName," ")},
+                        
+                        If(frmQPS.Mode=FormMode.New,
+                            ("Date：" & Text(Now(), DateTimeFormat.LongDate) & Char(9) & Char(9) & Last(fullName).Value & " " & First(fullName).Value),
+                            ("Date：" & ThisItem.Date & Char(9) & Char(9) & ThisItem.登録者.DisplayName)
+                        )
+                    )
+                    
                 Width: =Parent.Width * 0.7
                 X: =DataCardValue1.X + DataCardValue1.Width + 50
                 Y: =6
