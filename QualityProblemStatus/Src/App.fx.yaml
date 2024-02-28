@@ -47,6 +47,7 @@ App As appinfo:
                         Set(gvErrMsg, "Please select a Process1 Process！"),
                     IsBlank(strP1ActualCause),
                         Set(gvErrMsg, "Please select a Process1 Actual cause！")
+                    
                 );
                 If(!IsBlank(gvErrMsg),
                     Notify(gvErrMsg, NotificationType.Warning);
