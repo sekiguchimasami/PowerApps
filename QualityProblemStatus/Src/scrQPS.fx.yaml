@@ -3299,28 +3299,60 @@
                 Height: =50
                 MaxLength: =DataSourceInfo([@'Quality Problem Status'], DataSourceInfo.MaxLength, "zzCloseMailFlag")
                 Required: =false
-                Update: =DataCardValue4.Text
-                Width: =592
+                Update: |-
+                    =rdbCloseMail.Selected.Value
+                    //  DataCardValue4.Text
+                Visible: |
+                    =With(
+                        {P1:false, 
+                         P2:false, 
+                         P3:false
+                        },
+                    
+                        //  Process1の Implementation Date が （CA）internal、（CA）customer の両方に入力あり
+                        If(!IsBlank(ddlP1RCProcess.Selected.Process) && !IsBlank(datP1CAIImplementationDate.SelectedDate) && !IsBlank(datP1CACImplementationDate.SelectedDate), 
+                            true, 
+                            false
+                        ) && 
+                        If(IsBlank(ddlP2RCProcess.Selected.Process), 
+                            true, 
+                            If(!IsBlank(datP2CAIImplementationDate.SelectedDate) && !IsBlank(datP2CACImplementationDate.SelectedDate), 
+                                true, 
+                                false
+                            )
+                        ) && 
+                        If(IsBlank(ddlP3RCProcess.Selected.Process), 
+                            true, 
+                            If(!IsBlank(datP3CAIImplementationDate.SelectedDate) && IsBlank(datP3CACImplementationDate.SelectedDate), 
+                                true, 
+                                false
+                            )
+                        )
+                    )
+                Width: =Parent.Width
                 X: =0
                 Y: =11
                 ZIndex: =1
 
                 DataCardKey4 As label:
+                    Align: =Align.Center
                     AutoHeight: =true
                     BorderColor: =RGBA(0, 0, 0, 0)
                     BorderStyle: =BorderStyle.None
                     BorderThickness: =1
-                    Color: =RGBA(51, 51, 51, 1)
+                    Color: =RGBA(246, 88, 16, 1)
                     DisabledBorderColor: =RGBA(0, 0, 0, 0)
                     DisabledColor: =RGBA(166, 166, 166, 1)
+                    Fill: =RGBA(253, 222, 207, 1)
                     FocusedBorderThickness: =1
                     Font: =Font.'Segoe UI'
                     FontWeight: =FontWeight.Semibold
                     Height: =34
                     PaddingLeft: =0
-                    Size: =10.5
-                    Text: =Parent.DisplayName
-                    Width: =(Parent.Width - 60) * 0.4
+                    Text: |-
+                        ="To send a close e-mail ?"
+                        //  Parent.DisplayName
+                    Width: =(Parent.Width - 60) * 0.3
                     Wrap: =false
                     X: =32
                     Y: =10 + (DataCardValue4.Height / 2) - (Self.Height / 2)
@@ -3352,8 +3384,9 @@
                     RadiusTopRight: =0
                     Size: =10.5
                     Tooltip: =Parent.DisplayName
-                    Width: =(Parent.Width - 60) * 0.6
-                    X: =DataCardKey4.X + DataCardKey4.Width
+                    Visible: =false
+                    Width: =(Parent.Width - 60) * 0.1
+                    X: =rdbCloseMail.X + rdbCloseMail.Width
                     Y: =10
                     ZIndex: =2
 
@@ -3403,6 +3436,33 @@
                     X: =2
                     Y: =DataCardKey4.Y
                     ZIndex: =4
+
+                rdbCloseMail As radio:
+                    BorderColor: =RGBA(51, 51, 51, 1)
+                    BorderStyle: =BorderStyle.None
+                    BorderThickness: =1
+                    Color: =RGBA(39, 113, 194, 1)
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    DisabledColor: =RGBA(166, 166, 166, 1)
+                    FocusedBorderThickness: =1
+                    Font: =Font.'Segoe UI'
+                    FontWeight: =FontWeight.Semibold
+                    Height: =33
+                    HoverColor: =RGBA(51, 51, 51, 1)
+                    HoverFill: =RGBA(0, 0, 0, 0)
+                    Items: =["Yes","No"]
+                    Layout: =Layout.Horizontal
+                    PaddingBottom: =5
+                    PaddingTop: =5
+                    PressedColor: =RGBA(51, 51, 51, 1)
+                    PressedFill: =RGBA(0, 0, 0, 0)
+                    RadioBorderColor: =RGBA(51, 51, 51, 1)
+                    RadioSelectionFill: =RGBA(0, 120, 212, 1)
+                    Size: =12
+                    Width: =(Parent.Width - 60) *0.2
+                    X: =DataCardKey4.X + DataCardKey4.Width
+                    Y: =10
+                    ZIndex: =5
 
             RHDI_DataCard As typedDataCard.blankCard:
                 BorderColor: =RGBA(0, 84, 148, 1)
