@@ -3314,6 +3314,7 @@
                             true, 
                             false
                         ) && 
+                        //  Process1の Implementation Date が （CA）internal、（CA）customer の両方に入力あり
                         If(IsBlank(ddlP2RCProcess.Selected.Process), true, 
                             If(!IsBlank(datP2CAIImplementationDate.SelectedDate) && !IsBlank(datP2CACImplementationDate.SelectedDate), 
                                 true, 
