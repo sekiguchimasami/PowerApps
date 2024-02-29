@@ -83,8 +83,70 @@
     ],
     "dependencies": {},
     "dependents": [
-      "2f8d6fbe-ce99-4c40-a1ed-b9c4ffbf6bbb"
+      "2f8d6fbe-ce99-4c40-a1ed-b9c4ffbf6bbb",
+      "e9ec4e77-5bdd-40f7-b5ab-796393824890"
     ],
     "id": "75ed78bd-b964-4a77-8192-3937b748a1ba"
+  },
+  "cce3fe72-615e-4936-a5b0-3d358d354ec9": {
+    "connectionRef": {
+      "displayName": "Office 365 Outlook",
+      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1676/1.0.1676.3617/office365/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_office365"
+    },
+    "datasets": {},
+    "dataSources": [],
+    "dependencies": {},
+    "dependents": [
+      "e9ec4e77-5bdd-40f7-b5ab-796393824890"
+    ],
+    "id": "cce3fe72-615e-4936-a5b0-3d358d354ec9"
+  },
+  "e9ec4e77-5bdd-40f7-b5ab-796393824890": {
+    "connectionRef": {
+      "displayName": "Logic flows",
+      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1664/1.0.1664.3477/logicflows/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_logicflows",
+      "parameterHints": {
+        "75ed78bd-b964-4a77-8192-3937b748a1ba": {
+          "value": "shared_sharepointonline"
+        },
+        "cce3fe72-615e-4936-a5b0-3d358d354ec9": {
+          "value": "shared_office365"
+        },
+        "workflowDisplayName": {
+          "value": "S_H0410_CloseMailSend"
+        },
+        "workflowEntityId": {},
+        "workflowName": {
+          "value": "017da3b6-836f-4981-a451-af4502f965ec"
+        }
+      },
+      "parameterHintsV2": {
+        "shared_office365": {
+          "value": "cce3fe72-615e-4936-a5b0-3d358d354ec9"
+        },
+        "shared_sharepointonline": {
+          "value": "75ed78bd-b964-4a77-8192-3937b748a1ba"
+        },
+        "workflowDisplayName": {
+          "value": "S_H0410_CloseMailSend"
+        },
+        "workflowEntityId": {},
+        "workflowName": {
+          "value": "017da3b6-836f-4981-a451-af4502f965ec"
+        }
+      }
+    },
+    "datasets": {},
+    "dataSources": [
+      "S_H0410_CloseMailSend"
+    ],
+    "dependencies": {
+      "shared_office365": "cce3fe72-615e-4936-a5b0-3d358d354ec9",
+      "shared_sharepointonline": "75ed78bd-b964-4a77-8192-3937b748a1ba"
+    },
+    "dependents": [],
+    "id": "e9ec4e77-5bdd-40f7-b5ab-796393824890"
   }
 }
