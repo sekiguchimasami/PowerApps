@@ -6,6 +6,13 @@
       <object name="ManualTriggerInput">
         <property name="number" type="number" />
       </object>
+      <boolean name="ResponseActionOutput_booresult_def" />
+      <string name="ResponseActionOutput_txterrmsg_def" />
+      <object name="ResponseActionOutput">
+        <property name="booresult" type="boolean" />
+        <property name="txterrmsg" type="string" />
+      </object>
+      <object name="Run_responses_default_def" />
     </jsonTypes>
   </grammars>
   <resources siena:authenticationProviderHref="#PowerAppAuth" base="https://japan-001.azure-apim.net/apim/logicflows">
@@ -23,6 +30,9 @@
             </param>
           </representation>
         </request>
+        <response>
+          <representation mediaType="application/json" element="service:ResponseActionOutput" />
+        </response>
       </method>
     </resource>
   </resources>

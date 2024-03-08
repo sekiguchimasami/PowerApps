@@ -327,7 +327,7 @@
         HoverFill: =ColorFade(RGBA(0, 120, 212, 1), -10%)
         OnSelect: |
             =UpdateContext({iNumber:0});
-            Set(iNo, S_H0410_QPS_採番.Run("RHDI",1));
+            Set(iNo, S_H0410_QPS採番.Run("RHDI",1));
             UpdateContext({iNumber:1});
             UpdateContext({striNo:iNo});
         PressedBorderColor: =ColorFade(RGBA(0, 120, 212, 1), -50%)
