@@ -94,6 +94,12 @@
       "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1680/1.0.1680.3652/logicflows/icon.png",
       "id": "/providers/microsoft.powerapps/apis/shared_logicflows",
       "parameterHints": {
+        "75ed78bd-b964-4a77-8192-3937b748a1ba": {
+          "value": "shared_sharepointonline"
+        },
+        "ef9a5f65-ec0a-4209-b156-862da1920a76": {
+          "value": "shared_office365"
+        },
         "workflowDisplayName": {
           "value": "S_H0410_CloseMailSend"
         },
@@ -103,6 +109,12 @@
         }
       },
       "parameterHintsV2": {
+        "shared_office365": {
+          "value": "ef9a5f65-ec0a-4209-b156-862da1920a76"
+        },
+        "shared_sharepointonline": {
+          "value": "75ed78bd-b964-4a77-8192-3937b748a1ba"
+        },
         "workflowDisplayName": {
           "value": "S_H0410_CloseMailSend"
         },
