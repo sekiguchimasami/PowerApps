@@ -281,7 +281,7 @@
                     BorderStyle: =BorderStyle.None
                     BorderThickness: =1
                     Color: =RGBA(0, 84, 148, 1)
-                    Default: =ThisItem.'Claim description type'
+                    Default: =If(frmQPS.Mode=FormMode.New, "", ThisItem.'Claim description type')
                     DisabledBorderColor: =RGBA(0, 0, 0, 0)
                     DisabledColor: =RGBA(166, 166, 166, 1)
                     FocusedBorderThickness: =1
