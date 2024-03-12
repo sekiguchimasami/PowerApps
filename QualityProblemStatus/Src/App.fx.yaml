@@ -18,16 +18,17 @@ App As appinfo:
             NewForm(frmQPS)
         OnSave: |-
             =// フラグ初期化
-            Set(gvErrorFlag, false);            //  エラーフラグ
-            Set(gvErrMsg, Blank());             //  エラーメッセージ
-            Set(gvConfirmFlag, false);          //  確認PopUpの表示・非表示フラグ
-            Set(gvErrCount, 0);                 //  エラーカウンター
-            Set(gvCloseMail, false);            //  Closeメール送信フラグ
+            Set(gvErrorFlag, false);                //  エラーフラグ
+            Set(gvErrMsg, Blank());                 //  エラーメッセージ
+            Set(gvConfirmFlag, false);              //  確認PopUpの表示・非表示フラグ
+            Set(gvErrCount, 0);                     //  エラーカウンター
+            Set(gvCloseMail, false);                //  Closeメール送信フラグ
+            Set(strSite, ddlSite.Selected.Value);   //  Site
             
             //  入力チェック
             With(
                 // 入力データ取得 
-                {strSite:ddlSite.Selected.Value,                                //  Site
+                {//strSite:ddlSite.Selected.Value,                                //  Site
                  strClaimDescription:rdbClaimDescriptionType.Selected.Value,    //  Claim Description Type
                  strCustomer:ddlCustomer.Selected.Customer,                     //  Customer
                  strMediaProgram:cmbMediaProgram.Selected.Value,                //  Media Program

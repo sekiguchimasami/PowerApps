@@ -43,8 +43,8 @@
     ],
     "dependencies": {},
     "dependents": [
-      "be5c1749-0ba8-4759-a22e-5bc306d59841",
-      "e9ec4e77-5bdd-40f7-b5ab-796393824890"
+      "e9ec4e77-5bdd-40f7-b5ab-796393824890",
+      "e228c23f-5e1e-4e46-8bea-fff925e44769"
     ],
     "id": "75ed78bd-b964-4a77-8192-3937b748a1ba"
   },
@@ -62,7 +62,7 @@
     ],
     "id": "85eb0e9e-1db3-4825-9cbd-c5341157674a"
   },
-  "be5c1749-0ba8-4759-a22e-5bc306d59841": {
+  "e228c23f-5e1e-4e46-8bea-fff925e44769": {
     "connectionRef": {
       "displayName": "Logic flows",
       "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1680/1.0.1680.3652/logicflows/icon.png",
@@ -100,7 +100,7 @@
       "shared_sharepointonline": "75ed78bd-b964-4a77-8192-3937b748a1ba"
     },
     "dependents": [],
-    "id": "be5c1749-0ba8-4759-a22e-5bc306d59841"
+    "id": "e228c23f-5e1e-4e46-8bea-fff925e44769"
   },
   "e9ec4e77-5bdd-40f7-b5ab-796393824890": {
     "connectionRef": {
