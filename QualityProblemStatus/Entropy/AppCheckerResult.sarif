@@ -4633,36 +4633,6 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "scrQPS.sret"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "scrQPS.sret",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "sret",
-                "module": "scrQPS",
-                "type": "scrQPS"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "app-UnusedVariables",
-          "ruleIndex": 2
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
                   "fullyQualifiedName": "scrTest.Process1Tab"
                 }
               ],

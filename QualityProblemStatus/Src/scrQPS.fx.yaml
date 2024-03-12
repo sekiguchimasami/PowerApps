@@ -29,7 +29,7 @@
                         S_H0410_QPS採番.Run(ddlSite.Selected.Value, frmQPS.LastSubmit.ID);
                         //  New Entry mail送信
                         UpdateContext({sRet: S_H0410_QPS_SendMail.Run(frmQPS.LastSubmit.ID, "NewItemMail")}),
-                        
+                
                     FormMode.Edit,
                         //  Close状態チェック
                         With(
@@ -42,7 +42,7 @@
                                 )
                             },
                             //  Closeメール送信
-                            If(P1 && P2 && P3, UpdateContext({sret: S_H0410_QPS_SendMail.Run(frmQPS.LastSubmit.ID, "CloseMail")}))
+                            If(P1 && P2 && P3, UpdateContext({sRet: S_H0410_QPS_SendMail.Run(frmQPS.LastSubmit.ID, "CloseMail")}))
                         )
                 );
                 
