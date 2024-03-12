@@ -27,12 +27,12 @@ App As appinfo:
             //  入力チェック
             With(
                 // 入力データ取得 
-                {strSite:ddlSite.Selected.Value,
-                 strClaimDescription:rdbClaimDescriptionType.Selected.Value,
-                 strCustomer:ddlCustomer.Selected.Customer,
-                 strMediaProgram:cmbMediaProgram.Selected.Value,
-                 strP1Process:ddlP1RCProcess.Selected.Process,
-                 strP1ActualCause:cmbP1RCActualCause.Selected.Value},
+                {strSite:ddlSite.Selected.Value,                                //  Site
+                 strClaimDescription:rdbClaimDescriptionType.Selected.Value,    //  Claim Description Type
+                 strCustomer:ddlCustomer.Selected.Customer,                     //  Customer
+                 strMediaProgram:cmbMediaProgram.Selected.Value,                //  Media Program
+                 strP1Process:ddlP1RCProcess.Selected.Process,                  //  Process 1 の Process
+                 strP1ActualCause:cmbP1RCActualCause.Selected.Value},           //  Process 1 の Actual Cause
                 
                 If(
                     IsBlank(strSite),
@@ -48,14 +48,15 @@ App As appinfo:
                     IsBlank(strP1ActualCause),
                         Set(gvErrMsg, If(!IsBlank(gvErrMsg), Concatenate(gvErrMsg, Char(10))) & "Please select a Process1 Actual cause！")
                 );
+                //  エラーメッセージがあれば表示してエラーフラグ=ON
                 If(!IsBlank(gvErrMsg),
                     Notify(gvErrMsg, NotificationType.Warning);
                     Set(gvErrorFlag, true)
                 )
             );
             
+            //  エラーがなければ保存処理
             If(!gvErrorFlag,
-                //  保存処理
                 SubmitForm(frmQPS)
             )
         OnView: =ViewForm(frmQPS)

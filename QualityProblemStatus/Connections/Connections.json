@@ -97,11 +97,11 @@
         "75ed78bd-b964-4a77-8192-3937b748a1ba": {
           "value": "shared_sharepointonline"
         },
-        "ef9a5f65-ec0a-4209-b156-862da1920a76": {
+        "fc2ab399-2dc4-4795-be4c-a61f19d5345c": {
           "value": "shared_office365"
         },
         "workflowDisplayName": {
-          "value": "S_H0410_CloseMailSend"
+          "value": "S_H0410_QPS_SendMail"
         },
         "workflowEntityId": {},
         "workflowName": {
@@ -110,13 +110,13 @@
       },
       "parameterHintsV2": {
         "shared_office365": {
-          "value": "ef9a5f65-ec0a-4209-b156-862da1920a76"
+          "value": "fc2ab399-2dc4-4795-be4c-a61f19d5345c"
         },
         "shared_sharepointonline": {
           "value": "75ed78bd-b964-4a77-8192-3937b748a1ba"
         },
         "workflowDisplayName": {
-          "value": "S_H0410_CloseMailSend"
+          "value": "S_H0410_QPS_SendMail"
         },
         "workflowEntityId": {},
         "workflowName": {
@@ -126,16 +126,16 @@
     },
     "datasets": {},
     "dataSources": [
-      "S_H0410_CloseMailSend"
+      "S_H0410_QPS_SendMail"
     ],
     "dependencies": {
-      "shared_office365": "ef9a5f65-ec0a-4209-b156-862da1920a76",
+      "shared_office365": "fc2ab399-2dc4-4795-be4c-a61f19d5345c",
       "shared_sharepointonline": "75ed78bd-b964-4a77-8192-3937b748a1ba"
     },
     "dependents": [],
     "id": "e9ec4e77-5bdd-40f7-b5ab-796393824890"
   },
-  "ef9a5f65-ec0a-4209-b156-862da1920a76": {
+  "fc2ab399-2dc4-4795-be4c-a61f19d5345c": {
     "connectionRef": {
       "displayName": "Office 365 Outlook",
       "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1676/1.0.1676.3617/office365/icon.png",
@@ -147,6 +147,6 @@
     "dependents": [
       "e9ec4e77-5bdd-40f7-b5ab-796393824890"
     ],
-    "id": "ef9a5f65-ec0a-4209-b156-862da1920a76"
+    "id": "fc2ab399-2dc4-4795-be4c-a61f19d5345c"
   }
 }

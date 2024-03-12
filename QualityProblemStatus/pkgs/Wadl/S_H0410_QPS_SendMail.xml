@@ -1,16 +1,18 @@
-<application xmlns:xml="http://www.w3.org/XML/1998/namespace" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:service="https://japan-001.azure-apim.net/apim/logicflows" xmlns:siena="http://schemas.microsoft.com/MicrosoftProjectSiena/WADL/2014/11" siena:serviceId="S_H0410_CloseMailSend" xmlns="http://wadl.dev.java.net/2009/02">
-  <doc title="S_H0410_CloseMailSend" />
+<application xmlns:xml="http://www.w3.org/XML/1998/namespace" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:service="https://japan-001.azure-apim.net/apim/logicflows" xmlns:siena="http://schemas.microsoft.com/MicrosoftProjectSiena/WADL/2014/11" siena:serviceId="S_H0410_QPS_SendMail" xmlns="http://wadl.dev.java.net/2009/02">
+  <doc title="S_H0410_QPS_SendMail" />
   <grammars>
     <jsonTypes targetNamespace="https://japan-001.azure-apim.net/apim/logicflows" xmlns="http://schemas.microsoft.com/MicrosoftProjectSiena/WADL/2014/11">
       <number name="ManualTriggerInput_number_def" />
+      <string name="ManualTriggerInput_text_def" />
       <object name="ManualTriggerInput">
         <property name="number" type="number" />
+        <property name="text" type="string" />
       </object>
       <boolean name="ResponseActionOutput_booresult_def" />
-      <string name="ResponseActionOutput_txterrmsg_def" />
+      <string name="ResponseActionOutput_txtmsg_def" />
       <object name="ResponseActionOutput">
         <property name="booresult" type="boolean" />
-        <property name="txterrmsg" type="string" />
+        <property name="txtmsg" type="string" />
       </object>
       <object name="Run_responses_default_def" />
     </jsonTypes>
@@ -27,6 +29,9 @@
           <representation mediaType="application/json">
             <param style="plain" name="number" path="/number" type="xs:double" required="true">
               <doc title="QPSID" />
+            </param>
+            <param style="plain" name="text" path="/text" type="xs:string" required="true">
+              <doc title="strメール分類" />
             </param>
           </representation>
         </request>

@@ -2,7 +2,7 @@
   {
     "ApiId": "/providers/microsoft.powerapps/apis/shared_logicflows",
     "FlowNameId": "017da3b6-836f-4981-a451-af4502f965ec",
-    "Name": "S_H0410_CloseMailSend",
+    "Name": "S_H0410_QPS_SendMail",
     "ServiceKind": "ConnectedWadl",
     "Type": "ServiceInfo",
     "WorkflowEntityId": null
