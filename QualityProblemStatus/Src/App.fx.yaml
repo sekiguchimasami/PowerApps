@@ -52,6 +52,21 @@ App As appinfo:
                 If(!IsBlank(gvErrMsg),
                     Notify(gvErrMsg, NotificationType.Warning);
                     Set(gvErrorFlag, true)
+                );
+            
+                //  Close状態チェック（入力のあるProcess（1～3）の Implementation Date が （CA）internal、（CA）customer の両方に入力がある）
+                With(
+                    {P1:If(!IsBlank(strP1Process) && !IsBlank(datP1CAIImplementationDate.SelectedDate) && !IsBlank(datP1CACImplementationDate.SelectedDate), true, false),
+                     P2:If(IsBlank(ddlP2RCProcess.Selected.Process), true, 
+                            If(!IsBlank(datP2CAIImplementationDate.SelectedDate) && !IsBlank(datP2CACImplementationDate.SelectedDate), true, false)
+                     ),
+                     P3:If(IsBlank(ddlP3RCProcess.Selected.Process), true, 
+                            If(!IsBlank(datP3CAIImplementationDate.SelectedDate) && !IsBlank(datP3CACImplementationDate.SelectedDate), true, false)
+                     )
+                    },
+            
+                    //  Status 設定
+                    Set(strStatus, If(P1 && P2 && P3, "Close", "Open"));
                 )
             );
             

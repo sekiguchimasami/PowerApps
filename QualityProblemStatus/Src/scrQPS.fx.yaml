@@ -31,7 +31,7 @@
                         UpdateContext({sRet: S_H0410_QPS_SendMail.Run(frmQPS.LastSubmit.ID, "NewItemMail")}),
                 
                     FormMode.Edit,
-                        //  Close状態チェック
+                        //  Close状態チェック（入力のあるProcess（1～3）の Implementation Date が （CA）internal、（CA）customer の両方に入力がある）
                         With(
                             {P1:If(!IsBlank(ddlP1RCProcess.Selected.Process) && !IsBlank(datP1CAIImplementationDate.SelectedDate) && !IsBlank(datP1CACImplementationDate.SelectedDate), true, false),
                              P2:If(IsBlank(ddlP2RCProcess.Selected.Process), true, 
@@ -41,7 +41,7 @@
                                     If(!IsBlank(datP3CAIImplementationDate.SelectedDate) && !IsBlank(datP3CACImplementationDate.SelectedDate), true, false)
                                 )
                             },
-                            //  Closeメール送信
+                            //  Close mail送信
                             If(P1 && P2 && P3, UpdateContext({sRet: S_H0410_QPS_SendMail.Run(frmQPS.LastSubmit.ID, "CloseMail")}))
                         )
                 );
