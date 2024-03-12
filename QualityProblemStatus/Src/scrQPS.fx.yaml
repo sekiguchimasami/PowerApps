@@ -1007,7 +1007,7 @@
                     Default: =ThisItem.'Process1 RC Comment'
                     Height: |-
                         =//DataCard4.Height * 0.5
-                        200
+                        300
                     Width: =Parent.Width * 0.94
                     X: =lblP1Rootcause.X + lblP1Rootcause.Width
                     Y: =lblP1RCProcess.Y + lblP1RCProcess.Height + 10
