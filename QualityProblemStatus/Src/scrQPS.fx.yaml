@@ -26,13 +26,13 @@
                     //  新規の場合
                     FormMode.New,
                         //  QPS番号採番
-                        S_H0410_QPS採番.Run(strSite, frmQPS.LastSubmit.ID));
+                        S_H0410_QPS採番.Run(strSite, frmQPS.LastSubmit.ID);
                         //  New Entry mail送信
                         UpdateContext({sRet: S_H0410_QPS_SendMail.Run(frmQPS.LastSubmit.ID, "Open")}),
                     
                     FormMode.Edit,
                         //  Statusが"Close"なら、Closeメール送信
-                        If(strStatus="Close", UpdateContext({sRet: S_H0410_QPS_SendMail.Run(frmQPS.LastSubmit.ID, "Close")}));
+                        If(strStatus="Close", UpdateContext({sRet: S_H0410_QPS_SendMail.Run(frmQPS.LastSubmit.ID, "Close")}))
                 );
                 
                 
