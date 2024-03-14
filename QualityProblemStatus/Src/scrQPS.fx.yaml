@@ -861,37 +861,6 @@
                     Y: =10
                     ZIndex: =2
 
-            P2TitleDataCard1 As typedDataCard.blankCard:
-                BorderColor: =RGBA(166, 166, 166, 1)
-                BorderStyle: =BorderStyle.Solid
-                DisplayMode: =DisplayMode.Edit
-                Fill: =RGBA(0, 0, 0, 0)
-                Height: =P1TitleDataCard1.Height
-                Width: =P1TitleDataCard1.Width
-                X: =0
-                Y: =7
-                ZIndex: =1
-
-                HtmlTextProcess2 As htmlViewer:
-                    Height: =33
-                    HtmlText: |
-                        =//  縮小拡大
-                        With(
-                            {strProcess:ddlP2RCProcess.Selected.Process,
-                             strActualCause:Concat(cmbP2RCActualCause.SelectedItems, Value, ", ")
-                            },
-                        
-                            Concatenate("<b><span style='cursor:pointer; color:blue'>　　", If(Process2DisplayFlag, "－", "＋"), " Process2 : ", 
-                                If(IsBlank(strProcess), 
-                                    "No Data", 
-                                    strProcess & If(!IsBlank(strActualCause), " (" & strActualCause & ")")
-                                ), "</span></b>")
-                        )
-                    OnSelect: =Set(Process2DisplayFlag, !Process2DisplayFlag);
-                    Width: =Parent.Width - 10
-                    Y: =12
-                    ZIndex: =1
-
             Process1_DataCard As typedDataCard.blankCard:
                 BorderColor: =RGBA(246, 88, 16, 1)
                 BorderStyle: =BorderStyle.Solid
@@ -1637,7 +1606,7 @@
                     Y: =lblP1RCActualCause.Y
                     ZIndex: =34
 
-            P3TitleDataCard1 As typedDataCard.blankCard:
+            P2TitleDataCard1 As typedDataCard.blankCard:
                 BorderColor: =RGBA(166, 166, 166, 1)
                 BorderStyle: =BorderStyle.Solid
                 DisplayMode: =DisplayMode.Edit
@@ -1645,25 +1614,25 @@
                 Height: =P1TitleDataCard1.Height
                 Width: =P1TitleDataCard1.Width
                 X: =0
-                Y: =9
+                Y: =7
                 ZIndex: =1
 
-                HtmlTextProcess3 As htmlViewer:
+                HtmlTextProcess2 As htmlViewer:
                     Height: =33
                     HtmlText: |
                         =//  縮小拡大
                         With(
-                            {strProcess:ddlP3RCProcess.Selected.Process,
-                             strActualCause:Concat(cmbP3RCActualCause.SelectedItems, Value, ", ")
+                            {strProcess:ddlP2RCProcess.Selected.Process,
+                             strActualCause:Concat(cmbP2RCActualCause.SelectedItems, Value, ", ")
                             },
                         
-                            Concatenate("<b><span style='cursor:pointer; color:blue'>　　", If(Process3DisplayFlag, "－", "＋"), " Process3 : ", 
+                            Concatenate("<b><span style='cursor:pointer; color:blue'>　　", If(Process2DisplayFlag, "－", "＋"), " Process2 : ", 
                                 If(IsBlank(strProcess), 
                                     "No Data", 
                                     strProcess & If(!IsBlank(strActualCause), " (" & strActualCause & ")")
                                 ), "</span></b>")
                         )
-                    OnSelect: =Set(Process3DisplayFlag, !Process3DisplayFlag);
+                    OnSelect: =Set(Process2DisplayFlag, !Process2DisplayFlag);
                     Width: =Parent.Width - 10
                     Y: =12
                     ZIndex: =1
@@ -2366,99 +2335,36 @@
                     Y: =lblP2CACSpec.Y + lblP2CACSpec.Height + WarningMessageP25.Height + 10
                     ZIndex: =32
 
-            AppliedProgram_DataCard As typedDataCard.blankCard:
+            P3TitleDataCard1 As typedDataCard.blankCard:
                 BorderColor: =RGBA(166, 166, 166, 1)
                 BorderStyle: =BorderStyle.Solid
                 DisplayMode: =DisplayMode.Edit
                 Fill: =RGBA(0, 0, 0, 0)
-                Height: =cmbAppliedProgram.Y + cmbAppliedProgram.Height + rtxAppliedProgramComment.Height + 20
-                Width: =1184
+                Height: =P1TitleDataCard1.Height
+                Width: =P1TitleDataCard1.Width
                 X: =0
-                Y: =11
+                Y: =9
                 ZIndex: =1
 
-                lblAppliedProgram As label:
-                    BorderColor: =RGBA(0, 0, 0, 0)
-                    BorderStyle: =BorderStyle.None
-                    BorderThickness: =1
-                    Color: =RGBA(51, 51, 51, 1)
-                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
-                    DisabledColor: =RGBA(166, 166, 166, 1)
-                    FocusedBorderThickness: =1
-                    Font: =Font.'Segoe UI'
-                    FontWeight: =FontWeight.Semibold
-                    Height: =32
-                    PaddingLeft: =0
-                    Size: =11
-                    Text: ="Applied Program"
-                    Width: =(Parent.Width - 60) * 0.12
-                    X: =32
-                    Y: =10
+                HtmlTextProcess3 As htmlViewer:
+                    Height: =33
+                    HtmlText: |
+                        =//  縮小拡大
+                        With(
+                            {strProcess:ddlP3RCProcess.Selected.Process,
+                             strActualCause:Concat(cmbP3RCActualCause.SelectedItems, Value, ", ")
+                            },
+                        
+                            Concatenate("<b><span style='cursor:pointer; color:blue'>　　", If(Process3DisplayFlag, "－", "＋"), " Process3 : ", 
+                                If(IsBlank(strProcess), 
+                                    "No Data", 
+                                    strProcess & If(!IsBlank(strActualCause), " (" & strActualCause & ")")
+                                ), "</span></b>")
+                        )
+                    OnSelect: =Set(Process3DisplayFlag, !Process3DisplayFlag);
+                    Width: =Parent.Width - 10
+                    Y: =12
                     ZIndex: =1
-
-                lblAppliedProgramComment As label:
-                    BorderColor: =RGBA(0, 0, 0, 0)
-                    BorderStyle: =BorderStyle.None
-                    BorderThickness: =1
-                    Color: =RGBA(51, 51, 51, 1)
-                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
-                    DisabledColor: =RGBA(166, 166, 166, 1)
-                    FocusedBorderThickness: =1
-                    Font: =Font.'Segoe UI'
-                    FontWeight: =FontWeight.Semibold
-                    Height: =32
-                    PaddingLeft: =0
-                    Size: =11
-                    Text: ="Comment"
-                    Width: =(Parent.Width - 60) * 0.12
-                    X: =lblAppliedProgram.X
-                    Y: =lblAppliedProgram.Y + lblAppliedProgram.Height + 10
-                    ZIndex: =3
-
-                rtxAppliedProgramComment As richTextEditor:
-                    BorderColor: =RGBA(166, 166, 166, 1)
-                    Default: =ThisItem.'Applied Program Comment'
-                    Height: =rtxP1RCComment.Height
-                    Width: =cmbAppliedProgram.Width
-                    X: =lblAppliedProgramComment.X + lblAppliedProgramComment.Width
-                    Y: =lblAppliedProgramComment.Y
-                    ZIndex: =4
-
-                cmbAppliedProgram As combobox:
-                    BorderColor: =RGBA(166, 166, 166, 1)
-                    BorderThickness: =1
-                    ChevronBackground: =RGBA(255, 255, 255, 1)
-                    ChevronDisabledBackground: =RGBA(244, 244, 244, 1)
-                    ChevronDisabledFill: =RGBA(166, 166, 166, 1)
-                    ChevronFill: =RGBA(33, 33, 33, 1)
-                    ChevronHoverBackground: =RGBA(212, 212, 212, 1)
-                    ChevronHoverFill: =RGBA(33, 33, 33, 1)
-                    Color: =RGBA(51, 51, 51, 1)
-                    DefaultSelectedItems: =Split(ThisItem.'Applied Program', " ")
-                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
-                    DisabledColor: =RGBA(166, 166, 166, 1)
-                    DisabledFill: =RGBA(244, 244, 244, 1)
-                    DisplayFields: =["Value"]
-                    FocusedBorderThickness: =1
-                    Font: =Font.'Segoe UI'
-                    Height: =32
-                    HoverBorderColor: =ColorFade(RGBA(0, 120, 212, 1), -30%)
-                    HoverColor: =RGBA(51, 51, 51, 1)
-                    HoverFill: =RGBA(212, 212, 212, 1)
-                    IsSearchable: =false
-                    Items: |
-                        =Split(Concat(Filter('Program Master', 区分.Value=rdbClaimDescriptionType.Selected.Value),Program, Char(10)), Char(10))
-                    PressedBorderColor: =ColorFade(RGBA(0, 120, 212, 1), -30%)
-                    PressedColor: =RGBA(255, 255, 255, 1)
-                    PressedFill: =RGBA(0, 120, 212, 1)
-                    SearchFields: =["Value"]
-                    SearchItems: =[]
-                    SelectionFill: =RGBA(0, 120, 212, 1)
-                    Size: =10.5
-                    Width: =(Parent.Width - 60) * 0.88
-                    X: =lblAppliedProgram.X + lblAppliedProgram.Width
-                    Y: =lblAppliedProgram.Y
-                    ZIndex: =5
 
             Process3_DataCard As typedDataCard.blankCard:
                 BorderColor: =RGBA(187, 221, 140, 1)
@@ -3158,6 +3064,100 @@
                     Y: =lblP3CACSpec.Y + lblP3CACSpec.Height + WarningMessageP35.Height + 10
                     ZIndex: =32
 
+            AppliedProgram_DataCard As typedDataCard.blankCard:
+                BorderColor: =RGBA(166, 166, 166, 1)
+                BorderStyle: =BorderStyle.Solid
+                DisplayMode: =DisplayMode.Edit
+                Fill: =RGBA(0, 0, 0, 0)
+                Height: =cmbAppliedProgram.Y + cmbAppliedProgram.Height + rtxAppliedProgramComment.Height + 20
+                Width: =1184
+                X: =0
+                Y: =11
+                ZIndex: =1
+
+                lblAppliedProgram As label:
+                    BorderColor: =RGBA(0, 0, 0, 0)
+                    BorderStyle: =BorderStyle.None
+                    BorderThickness: =1
+                    Color: =RGBA(51, 51, 51, 1)
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    DisabledColor: =RGBA(166, 166, 166, 1)
+                    FocusedBorderThickness: =1
+                    Font: =Font.'Segoe UI'
+                    FontWeight: =FontWeight.Semibold
+                    Height: =32
+                    PaddingLeft: =0
+                    Size: =11
+                    Text: ="Applied Program"
+                    Width: =(Parent.Width - 60) * 0.12
+                    X: =32
+                    Y: =10
+                    ZIndex: =1
+
+                lblAppliedProgramComment As label:
+                    BorderColor: =RGBA(0, 0, 0, 0)
+                    BorderStyle: =BorderStyle.None
+                    BorderThickness: =1
+                    Color: =RGBA(51, 51, 51, 1)
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    DisabledColor: =RGBA(166, 166, 166, 1)
+                    FocusedBorderThickness: =1
+                    Font: =Font.'Segoe UI'
+                    FontWeight: =FontWeight.Semibold
+                    Height: =32
+                    PaddingLeft: =0
+                    Size: =11
+                    Text: ="Comment"
+                    Width: =(Parent.Width - 60) * 0.12
+                    X: =lblAppliedProgram.X
+                    Y: =lblAppliedProgram.Y + lblAppliedProgram.Height + 10
+                    ZIndex: =3
+
+                rtxAppliedProgramComment As richTextEditor:
+                    BorderColor: =RGBA(166, 166, 166, 1)
+                    Default: =ThisItem.'Applied Program Comment'
+                    Height: =rtxP1RCComment.Height
+                    Width: =cmbAppliedProgram.Width
+                    X: =lblAppliedProgramComment.X + lblAppliedProgramComment.Width
+                    Y: =lblAppliedProgramComment.Y
+                    ZIndex: =4
+
+                cmbAppliedProgram As combobox:
+                    BorderColor: =RGBA(166, 166, 166, 1)
+                    BorderThickness: =1
+                    ChevronBackground: =RGBA(255, 255, 255, 1)
+                    ChevronDisabledBackground: =RGBA(244, 244, 244, 1)
+                    ChevronDisabledFill: =RGBA(166, 166, 166, 1)
+                    ChevronFill: =RGBA(33, 33, 33, 1)
+                    ChevronHoverBackground: =RGBA(212, 212, 212, 1)
+                    ChevronHoverFill: =RGBA(33, 33, 33, 1)
+                    Color: =RGBA(51, 51, 51, 1)
+                    DefaultSelectedItems: =Split(ThisItem.'Applied Program', " ")
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    DisabledColor: =RGBA(166, 166, 166, 1)
+                    DisabledFill: =RGBA(244, 244, 244, 1)
+                    DisplayFields: =["Value"]
+                    FocusedBorderThickness: =1
+                    Font: =Font.'Segoe UI'
+                    Height: =32
+                    HoverBorderColor: =ColorFade(RGBA(0, 120, 212, 1), -30%)
+                    HoverColor: =RGBA(51, 51, 51, 1)
+                    HoverFill: =RGBA(212, 212, 212, 1)
+                    IsSearchable: =false
+                    Items: |
+                        =Split(Concat(Filter('Program Master', 区分.Value=rdbClaimDescriptionType.Selected.Value),Program, Char(10)), Char(10))
+                    PressedBorderColor: =ColorFade(RGBA(0, 120, 212, 1), -30%)
+                    PressedColor: =RGBA(255, 255, 255, 1)
+                    PressedFill: =RGBA(0, 120, 212, 1)
+                    SearchFields: =["Value"]
+                    SearchItems: =[]
+                    SelectionFill: =RGBA(0, 120, 212, 1)
+                    Size: =10.5
+                    Width: =(Parent.Width - 60) * 0.88
+                    X: =lblAppliedProgram.X + lblAppliedProgram.Width
+                    Y: =lblAppliedProgram.Y
+                    ZIndex: =5
+
             "'CloseMail Flag_DataCard1' As typedDataCard.textualEditCard":
                 BorderColor: =RGBA(166, 166, 166, 1)
                 BorderStyle: =BorderStyle.Solid
@@ -3746,398 +3746,6 @@
                     Y: =lblRHDSAppliedProgram.Y + lblRHDSAppliedProgram.Height + 10
                     ZIndex: =8
 
-            RHDM_DataCard As typedDataCard.blankCard:
-                BorderColor: =RGBA(0, 84, 148, 1)
-                BorderStyle: =BorderStyle.Solid
-                BorderThickness: =1
-                DisplayMode: =DisplayMode.Edit
-                Fill: =RGBA(204, 228, 246, 1)
-                Height: =100
-                Visible: =rdbClaimDescriptionType.Selected.Value="Substrate" && ddlSite.Selected.Value<>"RHDM"
-                Width: =Parent.Width
-                X: =0
-                Y: =14
-                ZIndex: =1
-
-                lblRHDM As label:
-                    Align: =Align.Center
-                    BorderColor: =RGBA(0, 84, 148, 1)
-                    BorderThickness: =1
-                    Color: =RGBA(51, 51, 51, 1)
-                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
-                    DisabledColor: =RGBA(166, 166, 166, 1)
-                    Fill: =RGBA(153, 207, 236, 1)
-                    FocusedBorderThickness: =1
-                    Font: =Font.'Segoe UI'
-                    FontWeight: =FontWeight.Semibold
-                    Height: =lblRHDI.Height
-                    PaddingLeft: =0
-                    Size: =10.5
-                    Text: ="RHDM"
-                    Width: =lblRHDI.Width
-                    ZIndex: =1
-
-                rdbRHDMApply As radio:
-                    BorderColor: =RGBA(51, 51, 51, 1)
-                    BorderStyle: =BorderStyle.None
-                    BorderThickness: =1
-                    Color: =RGBA(51, 51, 51, 1)
-                    Default: =If(frmQPS.Mode=FormMode.New, "", ThisItem.'RHDM Apply Status')
-                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
-                    DisabledColor: =RGBA(166, 166, 166, 1)
-                    FocusedBorderThickness: =1
-                    Font: =Font.'Segoe UI'
-                    FontWeight: =FontWeight.Semibold
-                    Height: =36
-                    HoverColor: =RGBA(51, 51, 51, 1)
-                    HoverFill: =RGBA(0, 0, 0, 0)
-                    Items: =Split(LookUp(選択肢マスター, 項目="Apply").選択肢, Char(10))
-                    Layout: =Layout.Horizontal
-                    LineHeight: =1
-                    PaddingBottom: =5
-                    PaddingLeft: =5
-                    PaddingRight: =5
-                    PaddingTop: =8
-                    PressedColor: =RGBA(51, 51, 51, 1)
-                    PressedFill: =RGBA(0, 0, 0, 0)
-                    RadioBorderColor: =RGBA(51, 51, 51, 1)
-                    RadioSelectionFill: =RGBA(0, 120, 212, 1)
-                    RadioSize: =18
-                    Size: =11
-                    Width: =(Parent.Width - 60) * 0.4
-                    X: =lblRHDM.X + lblRHDM.Width
-                    Y: =10
-                    ZIndex: =2
-
-                datRHDMImpleDate As datepicker:
-                    BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
-                    BorderThickness: =1
-                    CalendarHeaderFill: =ColorFade(RGBA(0, 120, 212, 1), -30%)
-                    Color: =RGBA(51, 51, 51, 1)
-                    DefaultDate: =ThisItem.'RHDM Implementation Date'
-                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
-                    DisabledColor: =RGBA(166, 166, 166, 1)
-                    DisabledFill: =RGBA(244, 244, 244, 1)
-                    DisplayMode: =Parent.DisplayMode
-                    EndYear: =Year(Today())+100
-                    FocusedBorderThickness: =1
-                    Font: =Font.'Segoe UI'
-                    Height: =32
-                    HoverDateFill: =RGBA(200, 200, 200, 1)
-                    IconBackground: =RGBA(0, 120, 212, 1)
-                    InputTextPlaceholder: =//  If(IsBlank(Self.SelectedDate), Text(Date(2001,12,31), Self.Format, Self.Language))
-                    IsEditable: =true
-                    PaddingBottom: =0
-                    PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
-                    SelectedDateFill: =RGBA(0, 120, 212, 1)
-                    Size: =11
-                    StartYear: =1899
-                    Tooltip: =Parent.DisplayName
-                    Width: =(Parent.Width - 60) * 0.2
-                    X: =lblRHDMImpleDate.X + lblRHDMImpleDate.Width
-                    Y: =rdbRHDMApply.Y
-                    ZIndex: =3
-
-                lblRHDMImpleDate As label:
-                    Align: =Align.Center
-                    BorderColor: =RGBA(0, 0, 0, 0)
-                    BorderStyle: =BorderStyle.None
-                    BorderThickness: =1
-                    Color: =RGBA(51, 51, 51, 1)
-                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
-                    DisabledColor: =RGBA(166, 166, 166, 1)
-                    FocusedBorderThickness: =1
-                    Font: =Font.'Segoe UI'
-                    Height: =32
-                    PaddingLeft: =0
-                    Size: =11
-                    Text: |-
-                        =Switch(rdbRHDMApply.Selected.Value,
-                            "N/A", "N/A",
-                            "Apply(plan)", "Planed Date",
-                            "Implementation Date"
-                        )
-                    Width: =Parent.Width * 0.2
-                    X: =rdbRHDMApply.X + rdbRHDMApply.Width
-                    Y: =rdbRHDMApply.Y
-                    ZIndex: =4
-
-                lblRHDMCheckInformation As label:
-                    BorderColor: =RGBA(0, 0, 0, 0)
-                    BorderStyle: =BorderStyle.None
-                    BorderThickness: =1
-                    Color: =RGBA(51, 51, 51, 1)
-                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
-                    DisabledColor: =RGBA(166, 166, 166, 1)
-                    FocusedBorderThickness: =1
-                    Font: =Font.'Segoe UI'
-                    Height: =32
-                    PaddingLeft: =0
-                    Size: =11
-                    Text: ="　" & ThisItem.'RHDM Check Information'
-                    Width: =Parent.Width * 0.93
-                    X: =rdbRHDMApply.X
-                    Y: =rdbRHDMApply.Y + rdbRHDMApply.Height
-                    ZIndex: =5
-
-                lblRHDMAppliedProgram As label:
-                    BorderColor: =RGBA(0, 0, 0, 0)
-                    BorderStyle: =BorderStyle.None
-                    BorderThickness: =1
-                    Color: =RGBA(51, 51, 51, 1)
-                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
-                    DisabledColor: =RGBA(166, 166, 166, 1)
-                    FocusedBorderThickness: =1
-                    Font: =Font.'Segoe UI'
-                    Height: =30
-                    PaddingLeft: =0
-                    Size: =11
-                    Text: ="　Applied Program"
-                    Width: =Parent.Width * 0.14
-                    X: =rdbRHDMApply.X
-                    Y: =lblRHDMCheckInformation.Y + lblRHDMCheckInformation.Height
-                    ZIndex: =6
-
-                cmbRHDMAppliedProgram As combobox:
-                    BorderColor: =RGBA(166, 166, 166, 1)
-                    BorderThickness: =1
-                    ChevronBackground: =RGBA(255, 255, 255, 1)
-                    ChevronDisabledBackground: =RGBA(244, 244, 244, 1)
-                    ChevronDisabledFill: =RGBA(166, 166, 166, 1)
-                    ChevronFill: =RGBA(33, 33, 33, 1)
-                    ChevronHoverBackground: =RGBA(212, 212, 212, 1)
-                    ChevronHoverFill: =RGBA(33, 33, 33, 1)
-                    Color: =RGBA(51, 51, 51, 1)
-                    DefaultSelectedItems: =Split(ThisItem.'RHDM Applied Program', " ")
-                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
-                    DisabledColor: =RGBA(166, 166, 166, 1)
-                    DisabledFill: =RGBA(244, 244, 244, 1)
-                    DisplayFields: =["Value"]
-                    FocusedBorderThickness: =1
-                    Font: =Font.'Segoe UI'
-                    Height: =32
-                    HoverBorderColor: =ColorFade(RGBA(0, 120, 212, 1), -30%)
-                    HoverColor: =RGBA(51, 51, 51, 1)
-                    HoverFill: =RGBA(212, 212, 212, 1)
-                    IsSearchable: =false
-                    Items: =Split(Concat(Filter('Program Master', 区分.Value=rdbClaimDescriptionType.Selected.Value),Program, Char(10)), Char(10))
-                    PressedBorderColor: =ColorFade(RGBA(0, 120, 212, 1), -30%)
-                    PressedColor: =RGBA(255, 255, 255, 1)
-                    PressedFill: =RGBA(0, 120, 212, 1)
-                    SearchFields: =["Value"]
-                    SearchItems: =[]
-                    SelectionFill: =RGBA(0, 120, 212, 1)
-                    Size: =10.5
-                    Width: =(Parent.Width - 60) * 0.83
-                    X: =lblRHDMAppliedProgram.X + lblRHDMAppliedProgram.Width
-                    Y: =lblRHDMAppliedProgram.Y
-                    ZIndex: =7
-
-                rtxSHDMRemark As richTextEditor:
-                    BorderColor: =RGBA(166, 166, 166, 1)
-                    Default: =ThisItem.'RHDM Remark'
-                    Height: =rtxSHDIRemark.Height
-                    Width: =rtxSHDIRemark.Width
-                    X: =rdbRHDMApply.X
-                    Y: =lblRHDMAppliedProgram.Y + lblRHDMAppliedProgram.Height + 10
-                    ZIndex: =8
-
-            RHDO_DataCard As typedDataCard.blankCard:
-                BorderColor: =RGBA(255, 255, 0, 1)
-                BorderStyle: =BorderStyle.Solid
-                BorderThickness: =1
-                DisplayMode: =DisplayMode.Edit
-                Fill: =RGBA(255, 255, 0, 0.2)
-                Height: =100
-                Visible: =rdbClaimDescriptionType.Selected.Value="Substrate" && ddlSite.Selected.Value<>"RHDO"
-                Width: =Parent.Width
-                X: =0
-                Y: =15
-                ZIndex: =1
-
-                lblRHDO As label:
-                    Align: =Align.Center
-                    BorderColor: =RGBA(255, 255, 0, 1)
-                    BorderThickness: =1
-                    Color: =RGBA(51, 51, 51, 1)
-                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
-                    DisabledColor: =RGBA(166, 166, 166, 1)
-                    Fill: =RGBA(255, 255, 0, 0.4)
-                    FocusedBorderThickness: =1
-                    Font: =Font.'Segoe UI'
-                    FontWeight: =FontWeight.Semibold
-                    Height: =lblRHDI.Height
-                    PaddingLeft: =0
-                    Size: =10.5
-                    Text: ="RHDO"
-                    Width: =lblRHDI.Width
-                    ZIndex: =1
-
-                rdbRHDOApply As radio:
-                    BorderColor: =RGBA(51, 51, 51, 1)
-                    BorderStyle: =BorderStyle.None
-                    BorderThickness: =1
-                    Color: =RGBA(51, 51, 51, 1)
-                    Default: =If(frmQPS.Mode=FormMode.New, "", ThisItem.'RHDO Apply Status')
-                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
-                    DisabledColor: =RGBA(166, 166, 166, 1)
-                    FocusedBorderThickness: =1
-                    Font: =Font.'Segoe UI'
-                    FontWeight: =FontWeight.Semibold
-                    Height: =36
-                    HoverColor: =RGBA(51, 51, 51, 1)
-                    HoverFill: =RGBA(0, 0, 0, 0)
-                    Items: =Split(LookUp(選択肢マスター, 項目="Apply").選択肢, Char(10))
-                    Layout: =Layout.Horizontal
-                    LineHeight: =1
-                    PaddingBottom: =5
-                    PaddingLeft: =5
-                    PaddingRight: =5
-                    PaddingTop: =8
-                    PressedColor: =RGBA(51, 51, 51, 1)
-                    PressedFill: =RGBA(0, 0, 0, 0)
-                    RadioBorderColor: =RGBA(51, 51, 51, 1)
-                    RadioSelectionFill: =RGBA(0, 120, 212, 1)
-                    RadioSize: =18
-                    Size: =11
-                    Width: =(Parent.Width - 60) * 0.4
-                    X: =lblRHDO.X + lblRHDO.Width
-                    Y: =10
-                    ZIndex: =2
-
-                datRHDOImpleDate As datepicker:
-                    BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
-                    BorderThickness: =1
-                    CalendarHeaderFill: =ColorFade(RGBA(0, 120, 212, 1), -30%)
-                    Color: =RGBA(51, 51, 51, 1)
-                    DefaultDate: =ThisItem.'RHDO Implementation Date'
-                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
-                    DisabledColor: =RGBA(166, 166, 166, 1)
-                    DisabledFill: =RGBA(244, 244, 244, 1)
-                    DisplayMode: =Parent.DisplayMode
-                    EndYear: =Year(Today())+100
-                    FocusedBorderThickness: =1
-                    Font: =Font.'Segoe UI'
-                    Height: =32
-                    HoverDateFill: =RGBA(200, 200, 200, 1)
-                    IconBackground: =RGBA(0, 120, 212, 1)
-                    InputTextPlaceholder: =//  If(IsBlank(Self.SelectedDate), Text(Date(2001,12,31), Self.Format, Self.Language))
-                    IsEditable: =true
-                    PaddingBottom: =0
-                    PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
-                    SelectedDateFill: =RGBA(0, 120, 212, 1)
-                    Size: =11
-                    StartYear: =1899
-                    Tooltip: =Parent.DisplayName
-                    Width: =(Parent.Width - 60) * 0.2
-                    X: =lblRHDOImpleDate.X + lblRHDOImpleDate.Width
-                    Y: =rdbRHDOApply.Y
-                    ZIndex: =3
-
-                lblRHDOImpleDate As label:
-                    Align: =Align.Center
-                    BorderColor: =RGBA(0, 0, 0, 0)
-                    BorderStyle: =BorderStyle.None
-                    BorderThickness: =1
-                    Color: =RGBA(51, 51, 51, 1)
-                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
-                    DisabledColor: =RGBA(166, 166, 166, 1)
-                    FocusedBorderThickness: =1
-                    Font: =Font.'Segoe UI'
-                    Height: =32
-                    PaddingLeft: =0
-                    Size: =11
-                    Text: |-
-                        =Switch(rdbRHDOApply.Selected.Value,
-                            "N/A", "N/A",
-                            "Apply(plan)", "Planed Date",
-                            "Implementation Date"
-                        )
-                    Width: =Parent.Width * 0.2
-                    X: =rdbRHDOApply.X + rdbRHDOApply.Width
-                    Y: =rdbRHDOApply.Y
-                    ZIndex: =4
-
-                lblRHDOCheckInformation As label:
-                    BorderColor: =RGBA(0, 0, 0, 0)
-                    BorderStyle: =BorderStyle.None
-                    BorderThickness: =1
-                    Color: =RGBA(51, 51, 51, 1)
-                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
-                    DisabledColor: =RGBA(166, 166, 166, 1)
-                    FocusedBorderThickness: =1
-                    Font: =Font.'Segoe UI'
-                    Height: =32
-                    PaddingLeft: =0
-                    Size: =11
-                    Text: ="　" & ThisItem.'RHDO Check Information'
-                    Width: =Parent.Width * 0.93
-                    X: =rdbRHDOApply.X
-                    Y: =rdbRHDOApply.Y + rdbRHDOApply.Height
-                    ZIndex: =5
-
-                lblRHDOAppliedProgram As label:
-                    BorderColor: =RGBA(0, 0, 0, 0)
-                    BorderStyle: =BorderStyle.None
-                    BorderThickness: =1
-                    Color: =RGBA(51, 51, 51, 1)
-                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
-                    DisabledColor: =RGBA(166, 166, 166, 1)
-                    FocusedBorderThickness: =1
-                    Font: =Font.'Segoe UI'
-                    Height: =30
-                    PaddingLeft: =0
-                    Size: =11
-                    Text: ="　Applied Program"
-                    Width: =Parent.Width * 0.14
-                    X: =rdbRHDOApply.X
-                    Y: =lblRHDOCheckInformation.Y + lblRHDOCheckInformation.Height
-                    ZIndex: =6
-
-                cmbRHDOAppliedProgram As combobox:
-                    BorderColor: =RGBA(166, 166, 166, 1)
-                    BorderThickness: =1
-                    ChevronBackground: =RGBA(255, 255, 255, 1)
-                    ChevronDisabledBackground: =RGBA(244, 244, 244, 1)
-                    ChevronDisabledFill: =RGBA(166, 166, 166, 1)
-                    ChevronFill: =RGBA(33, 33, 33, 1)
-                    ChevronHoverBackground: =RGBA(212, 212, 212, 1)
-                    ChevronHoverFill: =RGBA(33, 33, 33, 1)
-                    Color: =RGBA(51, 51, 51, 1)
-                    DefaultSelectedItems: =Split(ThisItem.'RHDO Applied Program', " ")
-                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
-                    DisabledColor: =RGBA(166, 166, 166, 1)
-                    DisabledFill: =RGBA(244, 244, 244, 1)
-                    DisplayFields: =["Value"]
-                    FocusedBorderThickness: =1
-                    Font: =Font.'Segoe UI'
-                    Height: =32
-                    HoverBorderColor: =ColorFade(RGBA(0, 120, 212, 1), -30%)
-                    HoverColor: =RGBA(51, 51, 51, 1)
-                    HoverFill: =RGBA(212, 212, 212, 1)
-                    IsSearchable: =false
-                    Items: =Split(Concat(Filter('Program Master', 区分.Value=rdbClaimDescriptionType.Selected.Value),Program, Char(10)), Char(10))
-                    PressedBorderColor: =ColorFade(RGBA(0, 120, 212, 1), -30%)
-                    PressedColor: =RGBA(255, 255, 255, 1)
-                    PressedFill: =RGBA(0, 120, 212, 1)
-                    SearchFields: =["Value"]
-                    SearchItems: =[]
-                    SelectionFill: =RGBA(0, 120, 212, 1)
-                    Size: =10.5
-                    Width: =(Parent.Width - 60) * 0.83
-                    X: =lblRHDOAppliedProgram.X + lblRHDOAppliedProgram.Width
-                    Y: =lblRHDOAppliedProgram.Y
-                    ZIndex: =7
-
-                rtxSHDORemark As richTextEditor:
-                    BorderColor: =RGBA(166, 166, 166, 1)
-                    Default: ="ここに<strong>リッチ テキスト</strong>を入力してください。"
-                    Height: =rtxSHDIRemark.Height
-                    Width: =rtxSHDIRemark.Width
-                    X: =rdbRHDOApply.X
-                    Y: =lblRHDOAppliedProgram.Y + lblRHDOAppliedProgram.Height + 10
-                    ZIndex: =8
-
             "'Process1 CA Internal Implementation Date_DataCard1' As typedDataCard.dateEditCard":
                 BorderColor: =RGBA(166, 166, 166, 1)
                 BorderStyle: =BorderStyle.Solid
@@ -4252,202 +3860,6 @@
                     X: =2
                     Y: =DataCardKey21.Y
                     ZIndex: =4
-
-            RHDY_DataCard As typedDataCard.blankCard:
-                BorderColor: =RGBA(54, 176, 75, 1)
-                BorderStyle: =BorderStyle.Solid
-                BorderThickness: =1
-                DisplayMode: =DisplayMode.Edit
-                Fill: =RGBA(232, 244, 217, 1)
-                Height: =100
-                Visible: =rdbClaimDescriptionType.Selected.Value="Substrate" && ddlSite.Selected.Value<>"RHDY"
-                Width: =Parent.Width
-                X: =0
-                Y: =16
-                ZIndex: =1
-
-                lblRHDY As label:
-                    Align: =Align.Center
-                    BorderColor: =RGBA(187, 221, 140, 1)
-                    BorderThickness: =1
-                    Color: =RGBA(51, 51, 51, 1)
-                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
-                    DisabledColor: =RGBA(166, 166, 166, 1)
-                    Fill: =RGBA(187, 221, 140, 1)
-                    FocusedBorderThickness: =1
-                    Font: =Font.'Segoe UI'
-                    FontWeight: =FontWeight.Semibold
-                    Height: =lblRHDI.Height
-                    PaddingLeft: =0
-                    Size: =10.5
-                    Text: ="RHDY"
-                    Width: =lblRHDI.Width
-                    ZIndex: =1
-
-                rdbRHDYApply As radio:
-                    BorderColor: =RGBA(51, 51, 51, 1)
-                    BorderStyle: =BorderStyle.None
-                    BorderThickness: =1
-                    Color: =RGBA(51, 51, 51, 1)
-                    Default: =If(frmQPS.Mode=FormMode.New, "", ThisItem.'RHDY Apply Status')
-                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
-                    DisabledColor: =RGBA(166, 166, 166, 1)
-                    FocusedBorderThickness: =1
-                    Font: =Font.'Segoe UI'
-                    FontWeight: =FontWeight.Semibold
-                    Height: =36
-                    HoverColor: =RGBA(51, 51, 51, 1)
-                    HoverFill: =RGBA(0, 0, 0, 0)
-                    Items: =Split(LookUp(選択肢マスター, 項目="Apply").選択肢, Char(10))
-                    Layout: =Layout.Horizontal
-                    LineHeight: =1
-                    PaddingBottom: =5
-                    PaddingLeft: =5
-                    PaddingRight: =5
-                    PaddingTop: =8
-                    PressedColor: =RGBA(51, 51, 51, 1)
-                    PressedFill: =RGBA(0, 0, 0, 0)
-                    RadioBorderColor: =RGBA(51, 51, 51, 1)
-                    RadioSelectionFill: =RGBA(0, 120, 212, 1)
-                    RadioSize: =18
-                    Size: =11
-                    Width: =(Parent.Width - 60) * 0.4
-                    X: =lblRHDO.X + lblRHDO.Width
-                    Y: =10
-                    ZIndex: =2
-
-                datRHDYImpleDate As datepicker:
-                    BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
-                    BorderThickness: =1
-                    CalendarHeaderFill: =ColorFade(RGBA(0, 120, 212, 1), -30%)
-                    Color: =RGBA(51, 51, 51, 1)
-                    DefaultDate: =ThisItem.'RHDY Implementation Date'
-                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
-                    DisabledColor: =RGBA(166, 166, 166, 1)
-                    DisabledFill: =RGBA(244, 244, 244, 1)
-                    DisplayMode: =Parent.DisplayMode
-                    EndYear: =Year(Today())+100
-                    FocusedBorderThickness: =1
-                    Font: =Font.'Segoe UI'
-                    Height: =32
-                    HoverDateFill: =RGBA(200, 200, 200, 1)
-                    IconBackground: =RGBA(0, 120, 212, 1)
-                    InputTextPlaceholder: =//  If(IsBlank(Self.SelectedDate), Text(Date(2001,12,31), Self.Format, Self.Language))
-                    IsEditable: =true
-                    PaddingBottom: =0
-                    PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
-                    SelectedDateFill: =RGBA(0, 120, 212, 1)
-                    Size: =11
-                    StartYear: =1899
-                    Tooltip: =Parent.DisplayName
-                    Width: =(Parent.Width - 60) * 0.2
-                    X: =lblRHDYImpleDate.X + lblRHDYImpleDate.Width
-                    Y: =rdbRHDYApply.Y
-                    ZIndex: =3
-
-                lblRHDYImpleDate As label:
-                    Align: =Align.Center
-                    BorderColor: =RGBA(0, 0, 0, 0)
-                    BorderStyle: =BorderStyle.None
-                    BorderThickness: =1
-                    Color: =RGBA(51, 51, 51, 1)
-                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
-                    DisabledColor: =RGBA(166, 166, 166, 1)
-                    FocusedBorderThickness: =1
-                    Font: =Font.'Segoe UI'
-                    Height: =32
-                    PaddingLeft: =0
-                    Size: =11
-                    Text: |-
-                        =Switch(rdbRHDYApply.Selected.Value,
-                            "N/A", "N/A",
-                            "Apply(plan)", "Planed Date",
-                            "Implementation Date"
-                        )
-                    Width: =Parent.Width * 0.2
-                    X: =rdbRHDYApply.X + rdbRHDYApply.Width
-                    Y: =rdbRHDYApply.Y
-                    ZIndex: =4
-
-                lblRHDYCheckInformation As label:
-                    BorderColor: =RGBA(0, 0, 0, 0)
-                    BorderStyle: =BorderStyle.None
-                    BorderThickness: =1
-                    Color: =RGBA(51, 51, 51, 1)
-                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
-                    DisabledColor: =RGBA(166, 166, 166, 1)
-                    FocusedBorderThickness: =1
-                    Font: =Font.'Segoe UI'
-                    Height: =32
-                    PaddingLeft: =0
-                    Size: =11
-                    Text: ="　" & ThisItem.'RHDY Check Information'
-                    Width: =Parent.Width * 0.93
-                    X: =rdbRHDYApply.X
-                    Y: =rdbRHDYApply.Y + rdbRHDYApply.Height
-                    ZIndex: =5
-
-                lblRHDYAppliedProgram As label:
-                    BorderColor: =RGBA(0, 0, 0, 0)
-                    BorderStyle: =BorderStyle.None
-                    BorderThickness: =1
-                    Color: =RGBA(51, 51, 51, 1)
-                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
-                    DisabledColor: =RGBA(166, 166, 166, 1)
-                    FocusedBorderThickness: =1
-                    Font: =Font.'Segoe UI'
-                    Height: =30
-                    PaddingLeft: =0
-                    Size: =11
-                    Text: ="　Applied Program"
-                    Width: =Parent.Width * 0.14
-                    X: =rdbRHDYApply.X
-                    Y: =lblRHDYCheckInformation.Y + lblRHDYCheckInformation.Height
-                    ZIndex: =6
-
-                cmbRHDYAppliedProgram As combobox:
-                    BorderColor: =RGBA(166, 166, 166, 1)
-                    BorderThickness: =1
-                    ChevronBackground: =RGBA(255, 255, 255, 1)
-                    ChevronDisabledBackground: =RGBA(244, 244, 244, 1)
-                    ChevronDisabledFill: =RGBA(166, 166, 166, 1)
-                    ChevronFill: =RGBA(33, 33, 33, 1)
-                    ChevronHoverBackground: =RGBA(212, 212, 212, 1)
-                    ChevronHoverFill: =RGBA(33, 33, 33, 1)
-                    Color: =RGBA(51, 51, 51, 1)
-                    DefaultSelectedItems: =Split(ThisItem.'RHDY Applied Program', " ")
-                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
-                    DisabledColor: =RGBA(166, 166, 166, 1)
-                    DisabledFill: =RGBA(244, 244, 244, 1)
-                    DisplayFields: =["Value"]
-                    FocusedBorderThickness: =1
-                    Font: =Font.'Segoe UI'
-                    Height: =32
-                    HoverBorderColor: =ColorFade(RGBA(0, 120, 212, 1), -30%)
-                    HoverColor: =RGBA(51, 51, 51, 1)
-                    HoverFill: =RGBA(212, 212, 212, 1)
-                    IsSearchable: =false
-                    Items: =Split(Concat(Filter('Program Master', 区分.Value=rdbClaimDescriptionType.Selected.Value),Program, Char(10)), Char(10))
-                    PressedBorderColor: =ColorFade(RGBA(0, 120, 212, 1), -30%)
-                    PressedColor: =RGBA(255, 255, 255, 1)
-                    PressedFill: =RGBA(0, 120, 212, 1)
-                    SearchFields: =["Value"]
-                    SearchItems: =[]
-                    SelectionFill: =RGBA(0, 120, 212, 1)
-                    Size: =10.5
-                    Width: =(Parent.Width - 60) * 0.83
-                    X: =lblRHDYAppliedProgram.X + lblRHDYAppliedProgram.Width
-                    Y: =lblRHDYAppliedProgram.Y
-                    ZIndex: =7
-
-                rtxSHDYRemark As richTextEditor:
-                    BorderColor: =RGBA(166, 166, 166, 1)
-                    Default: =ThisItem.'RHDY Remark'
-                    Height: =rtxSHDIRemark.Height
-                    Width: =rtxSHDIRemark.Width
-                    X: =rdbRHDYApply.X
-                    Y: =lblRHDYAppliedProgram.Y + lblRHDYAppliedProgram.Height + 10
-                    ZIndex: =8
 
             "'Edit History_DataCard2' As typedDataCard.textualMultiLineEditCard":
                 BorderColor: =RGBA(166, 166, 166, 1)
@@ -4869,6 +4281,594 @@
                     Y: =DataCardValue78.Y
                     ZIndex: =5
 
+            RHDM_DataCard As typedDataCard.blankCard:
+                BorderColor: =RGBA(0, 84, 148, 1)
+                BorderStyle: =BorderStyle.Solid
+                BorderThickness: =1
+                DisplayMode: =DisplayMode.Edit
+                Fill: =RGBA(204, 228, 246, 1)
+                Height: =100
+                Visible: =rdbClaimDescriptionType.Selected.Value="Substrate" && ddlSite.Selected.Value<>"RHDM"
+                Width: =Parent.Width
+                X: =0
+                Y: =14
+                ZIndex: =1
+
+                lblRHDM As label:
+                    Align: =Align.Center
+                    BorderColor: =RGBA(0, 84, 148, 1)
+                    BorderThickness: =1
+                    Color: =RGBA(51, 51, 51, 1)
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    DisabledColor: =RGBA(166, 166, 166, 1)
+                    Fill: =RGBA(153, 207, 236, 1)
+                    FocusedBorderThickness: =1
+                    Font: =Font.'Segoe UI'
+                    FontWeight: =FontWeight.Semibold
+                    Height: =lblRHDI.Height
+                    PaddingLeft: =0
+                    Size: =10.5
+                    Text: ="RHDM"
+                    Width: =lblRHDI.Width
+                    ZIndex: =1
+
+                rdbRHDMApply As radio:
+                    BorderColor: =RGBA(51, 51, 51, 1)
+                    BorderStyle: =BorderStyle.None
+                    BorderThickness: =1
+                    Color: =RGBA(51, 51, 51, 1)
+                    Default: =If(frmQPS.Mode=FormMode.New, "", ThisItem.'RHDM Apply Status')
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    DisabledColor: =RGBA(166, 166, 166, 1)
+                    FocusedBorderThickness: =1
+                    Font: =Font.'Segoe UI'
+                    FontWeight: =FontWeight.Semibold
+                    Height: =36
+                    HoverColor: =RGBA(51, 51, 51, 1)
+                    HoverFill: =RGBA(0, 0, 0, 0)
+                    Items: =Split(LookUp(選択肢マスター, 項目="Apply").選択肢, Char(10))
+                    Layout: =Layout.Horizontal
+                    LineHeight: =1
+                    PaddingBottom: =5
+                    PaddingLeft: =5
+                    PaddingRight: =5
+                    PaddingTop: =8
+                    PressedColor: =RGBA(51, 51, 51, 1)
+                    PressedFill: =RGBA(0, 0, 0, 0)
+                    RadioBorderColor: =RGBA(51, 51, 51, 1)
+                    RadioSelectionFill: =RGBA(0, 120, 212, 1)
+                    RadioSize: =18
+                    Size: =11
+                    Width: =(Parent.Width - 60) * 0.4
+                    X: =lblRHDM.X + lblRHDM.Width
+                    Y: =10
+                    ZIndex: =2
+
+                datRHDMImpleDate As datepicker:
+                    BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                    BorderThickness: =1
+                    CalendarHeaderFill: =ColorFade(RGBA(0, 120, 212, 1), -30%)
+                    Color: =RGBA(51, 51, 51, 1)
+                    DefaultDate: =ThisItem.'RHDM Implementation Date'
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    DisabledColor: =RGBA(166, 166, 166, 1)
+                    DisabledFill: =RGBA(244, 244, 244, 1)
+                    DisplayMode: =Parent.DisplayMode
+                    EndYear: =Year(Today())+100
+                    FocusedBorderThickness: =1
+                    Font: =Font.'Segoe UI'
+                    Height: =32
+                    HoverDateFill: =RGBA(200, 200, 200, 1)
+                    IconBackground: =RGBA(0, 120, 212, 1)
+                    InputTextPlaceholder: =//  If(IsBlank(Self.SelectedDate), Text(Date(2001,12,31), Self.Format, Self.Language))
+                    IsEditable: =true
+                    PaddingBottom: =0
+                    PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
+                    SelectedDateFill: =RGBA(0, 120, 212, 1)
+                    Size: =11
+                    StartYear: =1899
+                    Tooltip: =Parent.DisplayName
+                    Width: =(Parent.Width - 60) * 0.2
+                    X: =lblRHDMImpleDate.X + lblRHDMImpleDate.Width
+                    Y: =rdbRHDMApply.Y
+                    ZIndex: =3
+
+                lblRHDMImpleDate As label:
+                    Align: =Align.Center
+                    BorderColor: =RGBA(0, 0, 0, 0)
+                    BorderStyle: =BorderStyle.None
+                    BorderThickness: =1
+                    Color: =RGBA(51, 51, 51, 1)
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    DisabledColor: =RGBA(166, 166, 166, 1)
+                    FocusedBorderThickness: =1
+                    Font: =Font.'Segoe UI'
+                    Height: =32
+                    PaddingLeft: =0
+                    Size: =11
+                    Text: |-
+                        =Switch(rdbRHDMApply.Selected.Value,
+                            "N/A", "N/A",
+                            "Apply(plan)", "Planed Date",
+                            "Implementation Date"
+                        )
+                    Width: =Parent.Width * 0.2
+                    X: =rdbRHDMApply.X + rdbRHDMApply.Width
+                    Y: =rdbRHDMApply.Y
+                    ZIndex: =4
+
+                lblRHDMCheckInformation As label:
+                    BorderColor: =RGBA(0, 0, 0, 0)
+                    BorderStyle: =BorderStyle.None
+                    BorderThickness: =1
+                    Color: =RGBA(51, 51, 51, 1)
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    DisabledColor: =RGBA(166, 166, 166, 1)
+                    FocusedBorderThickness: =1
+                    Font: =Font.'Segoe UI'
+                    Height: =32
+                    PaddingLeft: =0
+                    Size: =11
+                    Text: ="　" & ThisItem.'RHDM Check Information'
+                    Width: =Parent.Width * 0.93
+                    X: =rdbRHDMApply.X
+                    Y: =rdbRHDMApply.Y + rdbRHDMApply.Height
+                    ZIndex: =5
+
+                lblRHDMAppliedProgram As label:
+                    BorderColor: =RGBA(0, 0, 0, 0)
+                    BorderStyle: =BorderStyle.None
+                    BorderThickness: =1
+                    Color: =RGBA(51, 51, 51, 1)
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    DisabledColor: =RGBA(166, 166, 166, 1)
+                    FocusedBorderThickness: =1
+                    Font: =Font.'Segoe UI'
+                    Height: =30
+                    PaddingLeft: =0
+                    Size: =11
+                    Text: ="　Applied Program"
+                    Width: =Parent.Width * 0.14
+                    X: =rdbRHDMApply.X
+                    Y: =lblRHDMCheckInformation.Y + lblRHDMCheckInformation.Height
+                    ZIndex: =6
+
+                cmbRHDMAppliedProgram As combobox:
+                    BorderColor: =RGBA(166, 166, 166, 1)
+                    BorderThickness: =1
+                    ChevronBackground: =RGBA(255, 255, 255, 1)
+                    ChevronDisabledBackground: =RGBA(244, 244, 244, 1)
+                    ChevronDisabledFill: =RGBA(166, 166, 166, 1)
+                    ChevronFill: =RGBA(33, 33, 33, 1)
+                    ChevronHoverBackground: =RGBA(212, 212, 212, 1)
+                    ChevronHoverFill: =RGBA(33, 33, 33, 1)
+                    Color: =RGBA(51, 51, 51, 1)
+                    DefaultSelectedItems: =Split(ThisItem.'RHDM Applied Program', " ")
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    DisabledColor: =RGBA(166, 166, 166, 1)
+                    DisabledFill: =RGBA(244, 244, 244, 1)
+                    DisplayFields: =["Value"]
+                    FocusedBorderThickness: =1
+                    Font: =Font.'Segoe UI'
+                    Height: =32
+                    HoverBorderColor: =ColorFade(RGBA(0, 120, 212, 1), -30%)
+                    HoverColor: =RGBA(51, 51, 51, 1)
+                    HoverFill: =RGBA(212, 212, 212, 1)
+                    IsSearchable: =false
+                    Items: =Split(Concat(Filter('Program Master', 区分.Value=rdbClaimDescriptionType.Selected.Value),Program, Char(10)), Char(10))
+                    PressedBorderColor: =ColorFade(RGBA(0, 120, 212, 1), -30%)
+                    PressedColor: =RGBA(255, 255, 255, 1)
+                    PressedFill: =RGBA(0, 120, 212, 1)
+                    SearchFields: =["Value"]
+                    SearchItems: =[]
+                    SelectionFill: =RGBA(0, 120, 212, 1)
+                    Size: =10.5
+                    Width: =(Parent.Width - 60) * 0.83
+                    X: =lblRHDMAppliedProgram.X + lblRHDMAppliedProgram.Width
+                    Y: =lblRHDMAppliedProgram.Y
+                    ZIndex: =7
+
+                rtxSHDMRemark As richTextEditor:
+                    BorderColor: =RGBA(166, 166, 166, 1)
+                    Default: =ThisItem.'RHDM Remark'
+                    Height: =rtxSHDIRemark.Height
+                    Width: =rtxSHDIRemark.Width
+                    X: =rdbRHDMApply.X
+                    Y: =lblRHDMAppliedProgram.Y + lblRHDMAppliedProgram.Height + 10
+                    ZIndex: =8
+
+            RHDO_DataCard As typedDataCard.blankCard:
+                BorderColor: =RGBA(255, 255, 0, 1)
+                BorderStyle: =BorderStyle.Solid
+                BorderThickness: =1
+                DisplayMode: =DisplayMode.Edit
+                Fill: =RGBA(255, 255, 0, 0.2)
+                Height: =100
+                Visible: =rdbClaimDescriptionType.Selected.Value="Substrate" && ddlSite.Selected.Value<>"RHDO"
+                Width: =Parent.Width
+                X: =0
+                Y: =15
+                ZIndex: =1
+
+                lblRHDO As label:
+                    Align: =Align.Center
+                    BorderColor: =RGBA(255, 255, 0, 1)
+                    BorderThickness: =1
+                    Color: =RGBA(51, 51, 51, 1)
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    DisabledColor: =RGBA(166, 166, 166, 1)
+                    Fill: =RGBA(255, 255, 0, 0.4)
+                    FocusedBorderThickness: =1
+                    Font: =Font.'Segoe UI'
+                    FontWeight: =FontWeight.Semibold
+                    Height: =lblRHDI.Height
+                    PaddingLeft: =0
+                    Size: =10.5
+                    Text: ="RHDO"
+                    Width: =lblRHDI.Width
+                    ZIndex: =1
+
+                rdbRHDOApply As radio:
+                    BorderColor: =RGBA(51, 51, 51, 1)
+                    BorderStyle: =BorderStyle.None
+                    BorderThickness: =1
+                    Color: =RGBA(51, 51, 51, 1)
+                    Default: =If(frmQPS.Mode=FormMode.New, "", ThisItem.'RHDO Apply Status')
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    DisabledColor: =RGBA(166, 166, 166, 1)
+                    FocusedBorderThickness: =1
+                    Font: =Font.'Segoe UI'
+                    FontWeight: =FontWeight.Semibold
+                    Height: =36
+                    HoverColor: =RGBA(51, 51, 51, 1)
+                    HoverFill: =RGBA(0, 0, 0, 0)
+                    Items: =Split(LookUp(選択肢マスター, 項目="Apply").選択肢, Char(10))
+                    Layout: =Layout.Horizontal
+                    LineHeight: =1
+                    PaddingBottom: =5
+                    PaddingLeft: =5
+                    PaddingRight: =5
+                    PaddingTop: =8
+                    PressedColor: =RGBA(51, 51, 51, 1)
+                    PressedFill: =RGBA(0, 0, 0, 0)
+                    RadioBorderColor: =RGBA(51, 51, 51, 1)
+                    RadioSelectionFill: =RGBA(0, 120, 212, 1)
+                    RadioSize: =18
+                    Size: =11
+                    Width: =(Parent.Width - 60) * 0.4
+                    X: =lblRHDO.X + lblRHDO.Width
+                    Y: =10
+                    ZIndex: =2
+
+                datRHDOImpleDate As datepicker:
+                    BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                    BorderThickness: =1
+                    CalendarHeaderFill: =ColorFade(RGBA(0, 120, 212, 1), -30%)
+                    Color: =RGBA(51, 51, 51, 1)
+                    DefaultDate: =ThisItem.'RHDO Implementation Date'
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    DisabledColor: =RGBA(166, 166, 166, 1)
+                    DisabledFill: =RGBA(244, 244, 244, 1)
+                    DisplayMode: =Parent.DisplayMode
+                    EndYear: =Year(Today())+100
+                    FocusedBorderThickness: =1
+                    Font: =Font.'Segoe UI'
+                    Height: =32
+                    HoverDateFill: =RGBA(200, 200, 200, 1)
+                    IconBackground: =RGBA(0, 120, 212, 1)
+                    InputTextPlaceholder: =//  If(IsBlank(Self.SelectedDate), Text(Date(2001,12,31), Self.Format, Self.Language))
+                    IsEditable: =true
+                    PaddingBottom: =0
+                    PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
+                    SelectedDateFill: =RGBA(0, 120, 212, 1)
+                    Size: =11
+                    StartYear: =1899
+                    Tooltip: =Parent.DisplayName
+                    Width: =(Parent.Width - 60) * 0.2
+                    X: =lblRHDOImpleDate.X + lblRHDOImpleDate.Width
+                    Y: =rdbRHDOApply.Y
+                    ZIndex: =3
+
+                lblRHDOImpleDate As label:
+                    Align: =Align.Center
+                    BorderColor: =RGBA(0, 0, 0, 0)
+                    BorderStyle: =BorderStyle.None
+                    BorderThickness: =1
+                    Color: =RGBA(51, 51, 51, 1)
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    DisabledColor: =RGBA(166, 166, 166, 1)
+                    FocusedBorderThickness: =1
+                    Font: =Font.'Segoe UI'
+                    Height: =32
+                    PaddingLeft: =0
+                    Size: =11
+                    Text: |-
+                        =Switch(rdbRHDOApply.Selected.Value,
+                            "N/A", "N/A",
+                            "Apply(plan)", "Planed Date",
+                            "Implementation Date"
+                        )
+                    Width: =Parent.Width * 0.2
+                    X: =rdbRHDOApply.X + rdbRHDOApply.Width
+                    Y: =rdbRHDOApply.Y
+                    ZIndex: =4
+
+                lblRHDOCheckInformation As label:
+                    BorderColor: =RGBA(0, 0, 0, 0)
+                    BorderStyle: =BorderStyle.None
+                    BorderThickness: =1
+                    Color: =RGBA(51, 51, 51, 1)
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    DisabledColor: =RGBA(166, 166, 166, 1)
+                    FocusedBorderThickness: =1
+                    Font: =Font.'Segoe UI'
+                    Height: =32
+                    PaddingLeft: =0
+                    Size: =11
+                    Text: ="　" & ThisItem.'RHDO Check Information'
+                    Width: =Parent.Width * 0.93
+                    X: =rdbRHDOApply.X
+                    Y: =rdbRHDOApply.Y + rdbRHDOApply.Height
+                    ZIndex: =5
+
+                lblRHDOAppliedProgram As label:
+                    BorderColor: =RGBA(0, 0, 0, 0)
+                    BorderStyle: =BorderStyle.None
+                    BorderThickness: =1
+                    Color: =RGBA(51, 51, 51, 1)
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    DisabledColor: =RGBA(166, 166, 166, 1)
+                    FocusedBorderThickness: =1
+                    Font: =Font.'Segoe UI'
+                    Height: =30
+                    PaddingLeft: =0
+                    Size: =11
+                    Text: ="　Applied Program"
+                    Width: =Parent.Width * 0.14
+                    X: =rdbRHDOApply.X
+                    Y: =lblRHDOCheckInformation.Y + lblRHDOCheckInformation.Height
+                    ZIndex: =6
+
+                cmbRHDOAppliedProgram As combobox:
+                    BorderColor: =RGBA(166, 166, 166, 1)
+                    BorderThickness: =1
+                    ChevronBackground: =RGBA(255, 255, 255, 1)
+                    ChevronDisabledBackground: =RGBA(244, 244, 244, 1)
+                    ChevronDisabledFill: =RGBA(166, 166, 166, 1)
+                    ChevronFill: =RGBA(33, 33, 33, 1)
+                    ChevronHoverBackground: =RGBA(212, 212, 212, 1)
+                    ChevronHoverFill: =RGBA(33, 33, 33, 1)
+                    Color: =RGBA(51, 51, 51, 1)
+                    DefaultSelectedItems: =Split(ThisItem.'RHDO Applied Program', " ")
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    DisabledColor: =RGBA(166, 166, 166, 1)
+                    DisabledFill: =RGBA(244, 244, 244, 1)
+                    DisplayFields: =["Value"]
+                    FocusedBorderThickness: =1
+                    Font: =Font.'Segoe UI'
+                    Height: =32
+                    HoverBorderColor: =ColorFade(RGBA(0, 120, 212, 1), -30%)
+                    HoverColor: =RGBA(51, 51, 51, 1)
+                    HoverFill: =RGBA(212, 212, 212, 1)
+                    IsSearchable: =false
+                    Items: =Split(Concat(Filter('Program Master', 区分.Value=rdbClaimDescriptionType.Selected.Value),Program, Char(10)), Char(10))
+                    PressedBorderColor: =ColorFade(RGBA(0, 120, 212, 1), -30%)
+                    PressedColor: =RGBA(255, 255, 255, 1)
+                    PressedFill: =RGBA(0, 120, 212, 1)
+                    SearchFields: =["Value"]
+                    SearchItems: =[]
+                    SelectionFill: =RGBA(0, 120, 212, 1)
+                    Size: =10.5
+                    Width: =(Parent.Width - 60) * 0.83
+                    X: =lblRHDOAppliedProgram.X + lblRHDOAppliedProgram.Width
+                    Y: =lblRHDOAppliedProgram.Y
+                    ZIndex: =7
+
+                rtxSHDORemark As richTextEditor:
+                    BorderColor: =RGBA(166, 166, 166, 1)
+                    Default: ="ここに<strong>リッチ テキスト</strong>を入力してください。"
+                    Height: =rtxSHDIRemark.Height
+                    Width: =rtxSHDIRemark.Width
+                    X: =rdbRHDOApply.X
+                    Y: =lblRHDOAppliedProgram.Y + lblRHDOAppliedProgram.Height + 10
+                    ZIndex: =8
+
+            RHDY_DataCard As typedDataCard.blankCard:
+                BorderColor: =RGBA(54, 176, 75, 1)
+                BorderStyle: =BorderStyle.Solid
+                BorderThickness: =1
+                DisplayMode: =DisplayMode.Edit
+                Fill: =RGBA(232, 244, 217, 1)
+                Height: =100
+                Visible: =rdbClaimDescriptionType.Selected.Value="Substrate" && ddlSite.Selected.Value<>"RHDY"
+                Width: =Parent.Width
+                X: =0
+                Y: =16
+                ZIndex: =1
+
+                lblRHDY As label:
+                    Align: =Align.Center
+                    BorderColor: =RGBA(187, 221, 140, 1)
+                    BorderThickness: =1
+                    Color: =RGBA(51, 51, 51, 1)
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    DisabledColor: =RGBA(166, 166, 166, 1)
+                    Fill: =RGBA(187, 221, 140, 1)
+                    FocusedBorderThickness: =1
+                    Font: =Font.'Segoe UI'
+                    FontWeight: =FontWeight.Semibold
+                    Height: =lblRHDI.Height
+                    PaddingLeft: =0
+                    Size: =10.5
+                    Text: ="RHDY"
+                    Width: =lblRHDI.Width
+                    ZIndex: =1
+
+                rdbRHDYApply As radio:
+                    BorderColor: =RGBA(51, 51, 51, 1)
+                    BorderStyle: =BorderStyle.None
+                    BorderThickness: =1
+                    Color: =RGBA(51, 51, 51, 1)
+                    Default: =If(frmQPS.Mode=FormMode.New, "", ThisItem.'RHDY Apply Status')
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    DisabledColor: =RGBA(166, 166, 166, 1)
+                    FocusedBorderThickness: =1
+                    Font: =Font.'Segoe UI'
+                    FontWeight: =FontWeight.Semibold
+                    Height: =36
+                    HoverColor: =RGBA(51, 51, 51, 1)
+                    HoverFill: =RGBA(0, 0, 0, 0)
+                    Items: =Split(LookUp(選択肢マスター, 項目="Apply").選択肢, Char(10))
+                    Layout: =Layout.Horizontal
+                    LineHeight: =1
+                    PaddingBottom: =5
+                    PaddingLeft: =5
+                    PaddingRight: =5
+                    PaddingTop: =8
+                    PressedColor: =RGBA(51, 51, 51, 1)
+                    PressedFill: =RGBA(0, 0, 0, 0)
+                    RadioBorderColor: =RGBA(51, 51, 51, 1)
+                    RadioSelectionFill: =RGBA(0, 120, 212, 1)
+                    RadioSize: =18
+                    Size: =11
+                    Width: =(Parent.Width - 60) * 0.4
+                    X: =lblRHDO.X + lblRHDO.Width
+                    Y: =10
+                    ZIndex: =2
+
+                datRHDYImpleDate As datepicker:
+                    BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                    BorderThickness: =1
+                    CalendarHeaderFill: =ColorFade(RGBA(0, 120, 212, 1), -30%)
+                    Color: =RGBA(51, 51, 51, 1)
+                    DefaultDate: =ThisItem.'RHDY Implementation Date'
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    DisabledColor: =RGBA(166, 166, 166, 1)
+                    DisabledFill: =RGBA(244, 244, 244, 1)
+                    DisplayMode: =Parent.DisplayMode
+                    EndYear: =Year(Today())+100
+                    FocusedBorderThickness: =1
+                    Font: =Font.'Segoe UI'
+                    Height: =32
+                    HoverDateFill: =RGBA(200, 200, 200, 1)
+                    IconBackground: =RGBA(0, 120, 212, 1)
+                    InputTextPlaceholder: =//  If(IsBlank(Self.SelectedDate), Text(Date(2001,12,31), Self.Format, Self.Language))
+                    IsEditable: =true
+                    PaddingBottom: =0
+                    PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
+                    SelectedDateFill: =RGBA(0, 120, 212, 1)
+                    Size: =11
+                    StartYear: =1899
+                    Tooltip: =Parent.DisplayName
+                    Width: =(Parent.Width - 60) * 0.2
+                    X: =lblRHDYImpleDate.X + lblRHDYImpleDate.Width
+                    Y: =rdbRHDYApply.Y
+                    ZIndex: =3
+
+                lblRHDYImpleDate As label:
+                    Align: =Align.Center
+                    BorderColor: =RGBA(0, 0, 0, 0)
+                    BorderStyle: =BorderStyle.None
+                    BorderThickness: =1
+                    Color: =RGBA(51, 51, 51, 1)
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    DisabledColor: =RGBA(166, 166, 166, 1)
+                    FocusedBorderThickness: =1
+                    Font: =Font.'Segoe UI'
+                    Height: =32
+                    PaddingLeft: =0
+                    Size: =11
+                    Text: |-
+                        =Switch(rdbRHDYApply.Selected.Value,
+                            "N/A", "N/A",
+                            "Apply(plan)", "Planed Date",
+                            "Implementation Date"
+                        )
+                    Width: =Parent.Width * 0.2
+                    X: =rdbRHDYApply.X + rdbRHDYApply.Width
+                    Y: =rdbRHDYApply.Y
+                    ZIndex: =4
+
+                lblRHDYCheckInformation As label:
+                    BorderColor: =RGBA(0, 0, 0, 0)
+                    BorderStyle: =BorderStyle.None
+                    BorderThickness: =1
+                    Color: =RGBA(51, 51, 51, 1)
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    DisabledColor: =RGBA(166, 166, 166, 1)
+                    FocusedBorderThickness: =1
+                    Font: =Font.'Segoe UI'
+                    Height: =32
+                    PaddingLeft: =0
+                    Size: =11
+                    Text: ="　" & ThisItem.'RHDY Check Information'
+                    Width: =Parent.Width * 0.93
+                    X: =rdbRHDYApply.X
+                    Y: =rdbRHDYApply.Y + rdbRHDYApply.Height
+                    ZIndex: =5
+
+                lblRHDYAppliedProgram As label:
+                    BorderColor: =RGBA(0, 0, 0, 0)
+                    BorderStyle: =BorderStyle.None
+                    BorderThickness: =1
+                    Color: =RGBA(51, 51, 51, 1)
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    DisabledColor: =RGBA(166, 166, 166, 1)
+                    FocusedBorderThickness: =1
+                    Font: =Font.'Segoe UI'
+                    Height: =30
+                    PaddingLeft: =0
+                    Size: =11
+                    Text: ="　Applied Program"
+                    Width: =Parent.Width * 0.14
+                    X: =rdbRHDYApply.X
+                    Y: =lblRHDYCheckInformation.Y + lblRHDYCheckInformation.Height
+                    ZIndex: =6
+
+                cmbRHDYAppliedProgram As combobox:
+                    BorderColor: =RGBA(166, 166, 166, 1)
+                    BorderThickness: =1
+                    ChevronBackground: =RGBA(255, 255, 255, 1)
+                    ChevronDisabledBackground: =RGBA(244, 244, 244, 1)
+                    ChevronDisabledFill: =RGBA(166, 166, 166, 1)
+                    ChevronFill: =RGBA(33, 33, 33, 1)
+                    ChevronHoverBackground: =RGBA(212, 212, 212, 1)
+                    ChevronHoverFill: =RGBA(33, 33, 33, 1)
+                    Color: =RGBA(51, 51, 51, 1)
+                    DefaultSelectedItems: =Split(ThisItem.'RHDY Applied Program', " ")
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    DisabledColor: =RGBA(166, 166, 166, 1)
+                    DisabledFill: =RGBA(244, 244, 244, 1)
+                    DisplayFields: =["Value"]
+                    FocusedBorderThickness: =1
+                    Font: =Font.'Segoe UI'
+                    Height: =32
+                    HoverBorderColor: =ColorFade(RGBA(0, 120, 212, 1), -30%)
+                    HoverColor: =RGBA(51, 51, 51, 1)
+                    HoverFill: =RGBA(212, 212, 212, 1)
+                    IsSearchable: =false
+                    Items: =Split(Concat(Filter('Program Master', 区分.Value=rdbClaimDescriptionType.Selected.Value),Program, Char(10)), Char(10))
+                    PressedBorderColor: =ColorFade(RGBA(0, 120, 212, 1), -30%)
+                    PressedColor: =RGBA(255, 255, 255, 1)
+                    PressedFill: =RGBA(0, 120, 212, 1)
+                    SearchFields: =["Value"]
+                    SearchItems: =[]
+                    SelectionFill: =RGBA(0, 120, 212, 1)
+                    Size: =10.5
+                    Width: =(Parent.Width - 60) * 0.83
+                    X: =lblRHDYAppliedProgram.X + lblRHDYAppliedProgram.Width
+                    Y: =lblRHDYAppliedProgram.Y
+                    ZIndex: =7
+
+                rtxSHDYRemark As richTextEditor:
+                    BorderColor: =RGBA(166, 166, 166, 1)
+                    Default: =ThisItem.'RHDY Remark'
+                    Height: =rtxSHDIRemark.Height
+                    Width: =rtxSHDIRemark.Width
+                    X: =rdbRHDYApply.X
+                    Y: =lblRHDYAppliedProgram.Y + lblRHDYAppliedProgram.Height + 10
+                    ZIndex: =8
+
             "'Process1 CA Customer Implementation Date_DataCard1' As typedDataCard.dateEditCard":
                 BorderColor: =RGBA(166, 166, 166, 1)
                 BorderStyle: =BorderStyle.Solid
@@ -5135,125 +5135,6 @@
                     Wrap: =false
                     X: =2
                     Y: =DataCardKey2.Y
-                    ZIndex: =4
-
-            "'Process1 RC Process_DataCard1' As typedDataCard.textualEditCard":
-                BorderColor: =RGBA(166, 166, 166, 1)
-                BorderStyle: =BorderStyle.Solid
-                DataField: ="zzP1RCProcess"
-                Default: =ThisItem.'Process1 RC Process'
-                DisplayMode: =Parent.DisplayMode
-                DisplayName: =DataSourceInfo([@'Quality Problem Status'],DataSourceInfo.DisplayName,"zzP1RCProcess")
-                Fill: =RGBA(0, 0, 0, 0)
-                Height: =50
-                MaxLength: =DataSourceInfo([@'Quality Problem Status'], DataSourceInfo.MaxLength, "zzP1RCProcess")
-                Required: =false
-                Update: |-
-                    =//DataCardValue14.Text
-                    ddlP1RCProcess.Selected.Process
-                Visible: =false
-                Width: =592
-                X: =1
-                Y: =27
-                ZIndex: =1
-
-                DataCardKey14 As label:
-                    AutoHeight: =true
-                    BorderColor: =RGBA(0, 0, 0, 0)
-                    BorderStyle: =BorderStyle.None
-                    BorderThickness: =1
-                    Color: =RGBA(51, 51, 51, 1)
-                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
-                    DisabledColor: =RGBA(166, 166, 166, 1)
-                    FocusedBorderThickness: =1
-                    Font: =Font.'Segoe UI'
-                    FontWeight: =FontWeight.Semibold
-                    Height: =34
-                    PaddingLeft: =0
-                    Size: =10.5
-                    Text: =Parent.DisplayName
-                    Width: =(Parent.Width - 60) * 0.4
-                    Wrap: =false
-                    X: =32
-                    Y: =10 + (DataCardValue14.Height / 2) - (Self.Height / 2)
-                    ZIndex: =1
-
-                DataCardValue14 As text:
-                    BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
-                    Color: =RGBA(51, 51, 51, 1)
-                    Default: =Parent.Default
-                    DelayOutput: =true
-                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
-                    DisabledColor: =RGBA(166, 166, 166, 1)
-                    DisabledFill: =RGBA(244, 244, 244, 1)
-                    DisplayMode: =Parent.DisplayMode
-                    FocusedBorderThickness: =1
-                    Font: =Font.'Segoe UI'
-                    Height: =32
-                    HoverBorderColor: =ColorFade(RGBA(0, 120, 212, 1), -30%)
-                    HoverColor: =RGBA(51, 51, 51, 1)
-                    HoverFill: =RGBA(255, 255, 255, 1)
-                    MaxLength: =Parent.MaxLength
-                    PaddingLeft: =5
-                    PressedBorderColor: =RGBA(0, 120, 212, 1)
-                    PressedColor: =RGBA(51, 51, 51, 1)
-                    PressedFill: =RGBA(255, 255, 255, 1)
-                    RadiusBottomLeft: =0
-                    RadiusBottomRight: =0
-                    RadiusTopLeft: =0
-                    RadiusTopRight: =0
-                    Size: =10.5
-                    Tooltip: =Parent.DisplayName
-                    Width: =(Parent.Width - 60) * 0.6
-                    X: =DataCardKey14.X + DataCardKey14.Width
-                    Y: =10
-                    ZIndex: =2
-
-                ErrorMessage14 As label:
-                    AutoHeight: =true
-                    BorderColor: =RGBA(0, 0, 0, 0)
-                    BorderStyle: =BorderStyle.None
-                    BorderThickness: =1
-                    Color: =RGBA(168, 0, 0, 1)
-                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
-                    DisabledColor: =RGBA(168, 0, 0, 1)
-                    FocusedBorderThickness: =1
-                    Font: =Font.'Segoe UI'
-                    FontWeight: =FontWeight.Semibold
-                    Height: =10
-                    Live: =Live.Assertive
-                    PaddingBottom: =0
-                    PaddingLeft: =0
-                    PaddingRight: =0
-                    PaddingTop: =0
-                    Size: =10.5
-                    Text: =Parent.Error
-                    Visible: =Parent.DisplayMode=DisplayMode.Edit
-                    Width: =Parent.Width - 60
-                    X: =32
-                    Y: =DataCardValue14.Y + DataCardValue14.Height
-                    ZIndex: =3
-
-                StarVisible14 As label:
-                    Align: =Align.Center
-                    BorderColor: =RGBA(0, 0, 0, 0)
-                    BorderStyle: =BorderStyle.None
-                    BorderThickness: =1
-                    Color: =RGBA(51, 51, 51, 1)
-                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
-                    DisabledColor: =RGBA(166, 166, 166, 1)
-                    FocusedBorderThickness: =1
-                    Font: =Font.'Segoe UI'
-                    FontWeight: =FontWeight.Semibold
-                    Height: =DataCardKey14.Height
-                    PaddingLeft: =0
-                    Size: =10.5
-                    Text: ="*"
-                    Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
-                    Width: =30
-                    Wrap: =false
-                    X: =2
-                    Y: =DataCardKey14.Y
                     ZIndex: =4
 
             "'Process1 CA Internal Control Item_DataCard1' As typedDataCard.textualEditCard":
@@ -7266,6 +7147,244 @@
                     Y: =DataCardKey30.Y
                     ZIndex: =4
 
+            "'Process2 CA Customer Spec/Control_DataCard1' As typedDataCard.textualEditCard":
+                BorderColor: =RGBA(166, 166, 166, 1)
+                BorderStyle: =BorderStyle.Solid
+                DataField: ="zzP2CACSpec"
+                Default: =ThisItem.'Process2 CA Customer Spec/Control'
+                DisplayMode: =Parent.DisplayMode
+                DisplayName: =DataSourceInfo([@'Quality Problem Status'],DataSourceInfo.DisplayName,"zzP2CACSpec")
+                Fill: =RGBA(0, 0, 0, 0)
+                Height: =50
+                MaxLength: =DataSourceInfo([@'Quality Problem Status'], DataSourceInfo.MaxLength, "zzP2CACSpec")
+                Required: =false
+                Update: |-
+                    =txtP2CACSpec.Text
+                    //  DataCardValue35.Text
+                Visible: =false
+                Width: =592
+                X: =1
+                Y: =25
+                ZIndex: =1
+
+                DataCardKey35 As label:
+                    AutoHeight: =true
+                    BorderColor: =RGBA(0, 0, 0, 0)
+                    BorderStyle: =BorderStyle.None
+                    BorderThickness: =1
+                    Color: =RGBA(51, 51, 51, 1)
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    DisabledColor: =RGBA(166, 166, 166, 1)
+                    FocusedBorderThickness: =1
+                    Font: =Font.'Segoe UI'
+                    FontWeight: =FontWeight.Semibold
+                    Height: =34
+                    PaddingLeft: =0
+                    Size: =10.5
+                    Text: =Parent.DisplayName
+                    Width: =(Parent.Width - 60) * 0.4
+                    Wrap: =false
+                    X: =32
+                    Y: =10 + (DataCardValue35.Height / 2) - (Self.Height / 2)
+                    ZIndex: =1
+
+                DataCardValue35 As text:
+                    BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                    Color: =RGBA(51, 51, 51, 1)
+                    Default: =Parent.Default
+                    DelayOutput: =true
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    DisabledColor: =RGBA(166, 166, 166, 1)
+                    DisabledFill: =RGBA(244, 244, 244, 1)
+                    DisplayMode: =Parent.DisplayMode
+                    FocusedBorderThickness: =1
+                    Font: =Font.'Segoe UI'
+                    Height: =32
+                    HoverBorderColor: =ColorFade(RGBA(0, 120, 212, 1), -30%)
+                    HoverColor: =RGBA(51, 51, 51, 1)
+                    HoverFill: =RGBA(255, 255, 255, 1)
+                    MaxLength: =Parent.MaxLength
+                    PaddingLeft: =5
+                    PressedBorderColor: =RGBA(0, 120, 212, 1)
+                    PressedColor: =RGBA(51, 51, 51, 1)
+                    PressedFill: =RGBA(255, 255, 255, 1)
+                    RadiusBottomLeft: =0
+                    RadiusBottomRight: =0
+                    RadiusTopLeft: =0
+                    RadiusTopRight: =0
+                    Size: =10.5
+                    Tooltip: =Parent.DisplayName
+                    Width: =(Parent.Width - 60) * 0.6
+                    X: =DataCardKey35.X + DataCardKey35.Width
+                    Y: =10
+                    ZIndex: =2
+
+                ErrorMessage35 As label:
+                    AutoHeight: =true
+                    BorderColor: =RGBA(0, 0, 0, 0)
+                    BorderStyle: =BorderStyle.None
+                    BorderThickness: =1
+                    Color: =RGBA(168, 0, 0, 1)
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    DisabledColor: =RGBA(168, 0, 0, 1)
+                    FocusedBorderThickness: =1
+                    Font: =Font.'Segoe UI'
+                    FontWeight: =FontWeight.Semibold
+                    Height: =10
+                    Live: =Live.Assertive
+                    PaddingBottom: =0
+                    PaddingLeft: =0
+                    PaddingRight: =0
+                    PaddingTop: =0
+                    Size: =10.5
+                    Text: =Parent.Error
+                    Visible: =Parent.DisplayMode=DisplayMode.Edit
+                    Width: =Parent.Width - 60
+                    X: =32
+                    Y: =DataCardValue35.Y + DataCardValue35.Height
+                    ZIndex: =3
+
+                StarVisible35 As label:
+                    Align: =Align.Center
+                    BorderColor: =RGBA(0, 0, 0, 0)
+                    BorderStyle: =BorderStyle.None
+                    BorderThickness: =1
+                    Color: =RGBA(51, 51, 51, 1)
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    DisabledColor: =RGBA(166, 166, 166, 1)
+                    FocusedBorderThickness: =1
+                    Font: =Font.'Segoe UI'
+                    FontWeight: =FontWeight.Semibold
+                    Height: =DataCardKey35.Height
+                    PaddingLeft: =0
+                    Size: =10.5
+                    Text: ="*"
+                    Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                    Width: =30
+                    Wrap: =false
+                    X: =2
+                    Y: =DataCardKey35.Y
+                    ZIndex: =4
+
+            "'Process1 RC Process_DataCard1' As typedDataCard.textualEditCard":
+                BorderColor: =RGBA(166, 166, 166, 1)
+                BorderStyle: =BorderStyle.Solid
+                DataField: ="zzP1RCProcess"
+                Default: =ThisItem.'Process1 RC Process'
+                DisplayMode: =Parent.DisplayMode
+                DisplayName: =DataSourceInfo([@'Quality Problem Status'],DataSourceInfo.DisplayName,"zzP1RCProcess")
+                Fill: =RGBA(0, 0, 0, 0)
+                Height: =50
+                MaxLength: =DataSourceInfo([@'Quality Problem Status'], DataSourceInfo.MaxLength, "zzP1RCProcess")
+                Required: =false
+                Update: |-
+                    =//DataCardValue14.Text
+                    ddlP1RCProcess.Selected.Process
+                Visible: =false
+                Width: =592
+                X: =1
+                Y: =27
+                ZIndex: =1
+
+                DataCardKey14 As label:
+                    AutoHeight: =true
+                    BorderColor: =RGBA(0, 0, 0, 0)
+                    BorderStyle: =BorderStyle.None
+                    BorderThickness: =1
+                    Color: =RGBA(51, 51, 51, 1)
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    DisabledColor: =RGBA(166, 166, 166, 1)
+                    FocusedBorderThickness: =1
+                    Font: =Font.'Segoe UI'
+                    FontWeight: =FontWeight.Semibold
+                    Height: =34
+                    PaddingLeft: =0
+                    Size: =10.5
+                    Text: =Parent.DisplayName
+                    Width: =(Parent.Width - 60) * 0.4
+                    Wrap: =false
+                    X: =32
+                    Y: =10 + (DataCardValue14.Height / 2) - (Self.Height / 2)
+                    ZIndex: =1
+
+                DataCardValue14 As text:
+                    BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                    Color: =RGBA(51, 51, 51, 1)
+                    Default: =Parent.Default
+                    DelayOutput: =true
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    DisabledColor: =RGBA(166, 166, 166, 1)
+                    DisabledFill: =RGBA(244, 244, 244, 1)
+                    DisplayMode: =Parent.DisplayMode
+                    FocusedBorderThickness: =1
+                    Font: =Font.'Segoe UI'
+                    Height: =32
+                    HoverBorderColor: =ColorFade(RGBA(0, 120, 212, 1), -30%)
+                    HoverColor: =RGBA(51, 51, 51, 1)
+                    HoverFill: =RGBA(255, 255, 255, 1)
+                    MaxLength: =Parent.MaxLength
+                    PaddingLeft: =5
+                    PressedBorderColor: =RGBA(0, 120, 212, 1)
+                    PressedColor: =RGBA(51, 51, 51, 1)
+                    PressedFill: =RGBA(255, 255, 255, 1)
+                    RadiusBottomLeft: =0
+                    RadiusBottomRight: =0
+                    RadiusTopLeft: =0
+                    RadiusTopRight: =0
+                    Size: =10.5
+                    Tooltip: =Parent.DisplayName
+                    Width: =(Parent.Width - 60) * 0.6
+                    X: =DataCardKey14.X + DataCardKey14.Width
+                    Y: =10
+                    ZIndex: =2
+
+                ErrorMessage14 As label:
+                    AutoHeight: =true
+                    BorderColor: =RGBA(0, 0, 0, 0)
+                    BorderStyle: =BorderStyle.None
+                    BorderThickness: =1
+                    Color: =RGBA(168, 0, 0, 1)
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    DisabledColor: =RGBA(168, 0, 0, 1)
+                    FocusedBorderThickness: =1
+                    Font: =Font.'Segoe UI'
+                    FontWeight: =FontWeight.Semibold
+                    Height: =10
+                    Live: =Live.Assertive
+                    PaddingBottom: =0
+                    PaddingLeft: =0
+                    PaddingRight: =0
+                    PaddingTop: =0
+                    Size: =10.5
+                    Text: =Parent.Error
+                    Visible: =Parent.DisplayMode=DisplayMode.Edit
+                    Width: =Parent.Width - 60
+                    X: =32
+                    Y: =DataCardValue14.Y + DataCardValue14.Height
+                    ZIndex: =3
+
+                StarVisible14 As label:
+                    Align: =Align.Center
+                    BorderColor: =RGBA(0, 0, 0, 0)
+                    BorderStyle: =BorderStyle.None
+                    BorderThickness: =1
+                    Color: =RGBA(51, 51, 51, 1)
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    DisabledColor: =RGBA(166, 166, 166, 1)
+                    FocusedBorderThickness: =1
+                    Font: =Font.'Segoe UI'
+                    FontWeight: =FontWeight.Semibold
+                    Height: =DataCardKey14.Height
+                    PaddingLeft: =0
+                    Size: =10.5
+                    Text: ="*"
+                    Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                    Width: =30
+                    Wrap: =false
+                    X: =2
+                    Y: =DataCardKey14.Y
+                    ZIndex: =4
+
             "'Process3 CA Internal Control Item_DataCard1' As typedDataCard.textualEditCard":
                 BorderColor: =RGBA(166, 166, 166, 1)
                 BorderStyle: =BorderStyle.Solid
@@ -7502,125 +7621,6 @@
                     Wrap: =false
                     X: =2
                     Y: =DataCardKey29.Y
-                    ZIndex: =4
-
-            "'Process2 CA Customer Spec/Control_DataCard1' As typedDataCard.textualEditCard":
-                BorderColor: =RGBA(166, 166, 166, 1)
-                BorderStyle: =BorderStyle.Solid
-                DataField: ="zzP2CACSpec"
-                Default: =ThisItem.'Process2 CA Customer Spec/Control'
-                DisplayMode: =Parent.DisplayMode
-                DisplayName: =DataSourceInfo([@'Quality Problem Status'],DataSourceInfo.DisplayName,"zzP2CACSpec")
-                Fill: =RGBA(0, 0, 0, 0)
-                Height: =50
-                MaxLength: =DataSourceInfo([@'Quality Problem Status'], DataSourceInfo.MaxLength, "zzP2CACSpec")
-                Required: =false
-                Update: |-
-                    =txtP2CACSpec.Text
-                    //  DataCardValue35.Text
-                Visible: =false
-                Width: =592
-                X: =1
-                Y: =25
-                ZIndex: =1
-
-                DataCardKey35 As label:
-                    AutoHeight: =true
-                    BorderColor: =RGBA(0, 0, 0, 0)
-                    BorderStyle: =BorderStyle.None
-                    BorderThickness: =1
-                    Color: =RGBA(51, 51, 51, 1)
-                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
-                    DisabledColor: =RGBA(166, 166, 166, 1)
-                    FocusedBorderThickness: =1
-                    Font: =Font.'Segoe UI'
-                    FontWeight: =FontWeight.Semibold
-                    Height: =34
-                    PaddingLeft: =0
-                    Size: =10.5
-                    Text: =Parent.DisplayName
-                    Width: =(Parent.Width - 60) * 0.4
-                    Wrap: =false
-                    X: =32
-                    Y: =10 + (DataCardValue35.Height / 2) - (Self.Height / 2)
-                    ZIndex: =1
-
-                DataCardValue35 As text:
-                    BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
-                    Color: =RGBA(51, 51, 51, 1)
-                    Default: =Parent.Default
-                    DelayOutput: =true
-                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
-                    DisabledColor: =RGBA(166, 166, 166, 1)
-                    DisabledFill: =RGBA(244, 244, 244, 1)
-                    DisplayMode: =Parent.DisplayMode
-                    FocusedBorderThickness: =1
-                    Font: =Font.'Segoe UI'
-                    Height: =32
-                    HoverBorderColor: =ColorFade(RGBA(0, 120, 212, 1), -30%)
-                    HoverColor: =RGBA(51, 51, 51, 1)
-                    HoverFill: =RGBA(255, 255, 255, 1)
-                    MaxLength: =Parent.MaxLength
-                    PaddingLeft: =5
-                    PressedBorderColor: =RGBA(0, 120, 212, 1)
-                    PressedColor: =RGBA(51, 51, 51, 1)
-                    PressedFill: =RGBA(255, 255, 255, 1)
-                    RadiusBottomLeft: =0
-                    RadiusBottomRight: =0
-                    RadiusTopLeft: =0
-                    RadiusTopRight: =0
-                    Size: =10.5
-                    Tooltip: =Parent.DisplayName
-                    Width: =(Parent.Width - 60) * 0.6
-                    X: =DataCardKey35.X + DataCardKey35.Width
-                    Y: =10
-                    ZIndex: =2
-
-                ErrorMessage35 As label:
-                    AutoHeight: =true
-                    BorderColor: =RGBA(0, 0, 0, 0)
-                    BorderStyle: =BorderStyle.None
-                    BorderThickness: =1
-                    Color: =RGBA(168, 0, 0, 1)
-                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
-                    DisabledColor: =RGBA(168, 0, 0, 1)
-                    FocusedBorderThickness: =1
-                    Font: =Font.'Segoe UI'
-                    FontWeight: =FontWeight.Semibold
-                    Height: =10
-                    Live: =Live.Assertive
-                    PaddingBottom: =0
-                    PaddingLeft: =0
-                    PaddingRight: =0
-                    PaddingTop: =0
-                    Size: =10.5
-                    Text: =Parent.Error
-                    Visible: =Parent.DisplayMode=DisplayMode.Edit
-                    Width: =Parent.Width - 60
-                    X: =32
-                    Y: =DataCardValue35.Y + DataCardValue35.Height
-                    ZIndex: =3
-
-                StarVisible35 As label:
-                    Align: =Align.Center
-                    BorderColor: =RGBA(0, 0, 0, 0)
-                    BorderStyle: =BorderStyle.None
-                    BorderThickness: =1
-                    Color: =RGBA(51, 51, 51, 1)
-                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
-                    DisabledColor: =RGBA(166, 166, 166, 1)
-                    FocusedBorderThickness: =1
-                    Font: =Font.'Segoe UI'
-                    FontWeight: =FontWeight.Semibold
-                    Height: =DataCardKey35.Height
-                    PaddingLeft: =0
-                    Size: =10.5
-                    Text: ="*"
-                    Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
-                    Width: =30
-                    Wrap: =false
-                    X: =2
-                    Y: =DataCardKey35.Y
                     ZIndex: =4
 
             "'Process3 CA Customer Spec/Control_DataCard1' As typedDataCard.textualEditCard":
