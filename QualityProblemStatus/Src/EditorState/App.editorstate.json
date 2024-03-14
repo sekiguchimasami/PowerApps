@@ -122,8 +122,22 @@
           "IsLockable": false,
           "NameMapSourceSchema": "?"
         },
-        "OnEdit",
-        "OnView",
+        {
+          "AFDDataSourceName": "",
+          "AutoRuleBindingEnabled": false,
+          "AutoRuleBindingString": "EditForm(frmQPS)",
+          "InvariantPropertyName": "OnEdit",
+          "IsLockable": false,
+          "NameMapSourceSchema": "?"
+        },
+        {
+          "AFDDataSourceName": "",
+          "AutoRuleBindingEnabled": false,
+          "AutoRuleBindingString": "ViewForm(frmQPS)",
+          "InvariantPropertyName": "OnView",
+          "IsLockable": false,
+          "NameMapSourceSchema": "?"
+        },
         {
           "AFDDataSourceName": "",
           "AutoRuleBindingEnabled": false,
@@ -171,12 +185,12 @@
         {
           "Category": "Behavior",
           "PropertyName": "OnView",
-          "RuleProviderType": "Unknown"
+          "RuleProviderType": "User"
         },
         {
           "Category": "Behavior",
           "PropertyName": "OnEdit",
-          "RuleProviderType": "Unknown"
+          "RuleProviderType": "User"
         },
         {
           "Category": "Behavior",

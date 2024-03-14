@@ -12,10 +12,14 @@ App As appinfo:
     SharePointIntegration As hostControl.SharePointHostControlVariant:
         DataSource: =[@'Quality Problem Status']
         OnCancel: =ResetForm(frmQPS)
-        OnEdit: =EditForm(frmQPS)
-        OnNew: |-
+        OnEdit: |-
+            =EditForm(frmQPS);
+            Set(IntMode ,FormMode.Edit);
+        OnNew: |+
             =//  新規作成
-            NewForm(frmQPS)
+            NewForm(frmQPS);
+            Set(IntMode ,FormMode.New);
+            
         OnSave: |-
             =// フラグ初期化
             Set(gvErrorFlag, false);                //  エラーフラグ
@@ -75,6 +79,8 @@ App As appinfo:
             If(!gvErrorFlag,
                 SubmitForm(frmQPS)
             )
-        OnView: =ViewForm(frmQPS)
+        OnView: |-
+            =ViewForm(frmQPS);
+            Set(IntMode ,FormMode.View);
         SelectedHidden: =LookUp([@'Quality Problem Status'], ID = Self.SelectedListItemID)
 

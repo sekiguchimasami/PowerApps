@@ -1,13 +1,14 @@
 "scrQPS As screen.'webHostedFormLayout_ver3.0'":
     LoadingSpinnerColor: =RGBA(0, 120, 212, 1)
     OnVisible: |
-        =//  確認PopUpを非表示
-        Set(gvConfirmFlag, false);
+        =//  Global変数
+        Set(gvConfirmFlag, false);              //  確認PopUpを非表示
         
+        Set(Process1DisplayFlag, true);         //  Process1の表示フラグ
+        Set(Process2DisplayFlag, true);         //  Process2の表示フラグ
+        Set(Process3DisplayFlag, true);         //  Process3の表示フラグ
         
-        Set(Process1DisplayFlag, true);
-        Set(Process2DisplayFlag, true);
-        Set(Process3DisplayFlag, true);
+        Set(strSite, Blank());                  //  Site
 
     ConQPS As groupContainer.manualLayoutContainer:
         Height: =790
@@ -22,7 +23,7 @@
             NumberOfColumns: =2
             OnSuccess: |-
                 =//  
-                Switch(frmQPS.Mode,
+                Switch(IntMode,     //  frmQPS.Mode,
                     //  新規の場合
                     FormMode.New,
                         //  QPS番号採番
