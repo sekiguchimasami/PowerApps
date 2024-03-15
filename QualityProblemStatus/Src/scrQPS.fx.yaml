@@ -3997,7 +3997,8 @@
                                 //  Process2 CA Internal Control Item
                                 If(ThisItem.'Process2 CA Internal Control Item'<>txtP2CAIControlItem.Text,
                                     Char(10) & Char(9) & Char(9) & 
-                                    "Process2 CA Internal Control Item：" & Char(9) & "「" & ThisItem.'Process2 CA Internal Control Item' & "」⇒「" & txtP2CAIControlItem.Text & "」"
+                                    "Process2 CA Internal Control Item：" & Char(9) & "「" & ThisItem.'Process2 CA Internal Control Item' & "」⇒「" & txtP2CAIControlItem.Text & "」" &
+                                    "This=" & Len(ThisItem.'Process2 CA Internal Control Item') & Char(9) & "txt=" & Len(txtP2CAIControlItem.Text)
                                 ) & 
                                 //  Process2 CA Internal Spec/Control
                                 If(ThisItem.'Process2 CA Internal Spec/Control'<>txtP2CAISpec.Text,
