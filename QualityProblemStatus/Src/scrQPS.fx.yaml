@@ -7874,7 +7874,7 @@
                 MaxLength: =DataSourceInfo([@'Quality Problem Status'], DataSourceInfo.MaxLength, "zzP1RCActualCause")
                 Required: =false
                 Update: |-
-                    =Concat(cmbP3RCActualCause.SelectedItems, Value, Char(10))
+                    =Concat(cmbP1RCActualCause.SelectedItems, Value, Char(10))
                     //DataCardValue15.Text
                 Visible: =false
                 Width: =592
