@@ -3891,7 +3891,7 @@
                             frmQPS.Mode=FormMode.New, 
                                 "が「" & strCustomer & ":" & strMediaProgram & 
                                 If(Lower(str区分)=Lower("SubStrate"), 
-                                    Char(10) & strSubstrateSupplier & Char(9) & strSubstrateProgram
+                                    Char(9) & Char(9) & strSubstrateSupplier & Char(9) & strSubstrateProgram
                                 ) & "」を新規作成",
                     
                             frmQPS.Mode=FormMode.Edit, 
@@ -3944,7 +3944,7 @@
                                     "Process1 RC Process：" & Char(9) & "「" & ThisItem.'Process1 RC Process' & "」⇒「" & ddlP1RCProcess.Selected.Process & "」"
                                 ) & 
                                 //  Process1 RC Actual Cause
-                                If(ThisItem.'Process1 RC Actual Cause'<>cmbP1RCActualCause.Selected.Value,
+                                If(ThisItem.'Process1 RC Actual Cause'<>Concat(cmbP1RCActualCause.SelectedItems, Value, Char(10)),
                                     Char(10) & Char(9) & Char(9) & 
                                     "Process1 RC Actual Cause：" & Char(9) & "「" & ThisItem.'Process1 RC Actual Cause' & "」⇒「" & cmbP1RCActualCause.Selected.Value & "」"
                                 ) & 
@@ -3990,7 +3990,7 @@
                                     "Process2 RC Process：" & Char(9) & "「" & ThisItem.'Process2 RC Process' & "」⇒「" & ddlP2RCProcess.Selected.Process & "」"
                                 ) & 
                                 //  Process2 RC Actual Cause
-                                If(ThisItem.'Process2 RC Actual Cause'<>cmbP2RCActualCause.Selected.Value,
+                                If(ThisItem.'Process2 RC Actual Cause'<>Concat(cmbP2RCActualCause.SelectedItems, Value, Char(10)),
                                     Char(10) & Char(9) & Char(9) & 
                                     "Process2 RC Actual Cause：" & Char(9) & "「" & ThisItem.'Process2 RC Actual Cause' & "」⇒「" & cmbP2RCActualCause.Selected.Value & "」"
                                 ) & 
@@ -4036,7 +4036,7 @@
                                     "Process3 RC Process：" & Char(9) & "「" & ThisItem.'Process3 RC Process' & "」⇒「" & ddlP3RCProcess.Selected.Process & "」"
                                 ) & 
                                 //  Process3 RC Actual Cause
-                                If(ThisItem.'Process3 RC Actual Cause'<>cmbP3RCActualCause.Selected.Value,
+                                If(ThisItem.'Process3 RC Actual Cause'<>Concat(cmbP3RCActualCause.SelectedItems, Value, Char(10)),
                                     Char(10) & Char(9) & Char(9) & 
                                     "Process3 RC Actual Cause：" & Char(9) & "「" & ThisItem.'Process3 RC Actual Cause' & "」⇒「" & cmbP3RCActualCause.Selected.Value & "」"
                                 ) & 
@@ -4077,7 +4077,7 @@
                                 ) & 
                     
                                 //  Applied Program
-                                If(ThisItem.'Applied Program'<>cmbAppliedProgram.Selected.Value,
+                                If(ThisItem.'Applied Program'<>Concat(cmbAppliedProgram.SelectedItems, Value, Char(10)),
                                     Char(10) & Char(9) & Char(9) & 
                                     "Applied Program：" & Char(9) & "「" & ThisItem.'Applied Program' & "」⇒「" & cmbAppliedProgram.Selected.Value & "」"
                                 ) & 
@@ -4094,7 +4094,7 @@
                                     "RHDI Implementation Date：" & Char(9) & "「" & ThisItem.'RHDI Implementation Date' & "」⇒「" & datRHDIImpleDate.SelectedDate & "」"
                                 ) & 
                                 //  RHDI Applied Program
-                                If(ThisItem.'RHDI Applied Program'<>cmbRHDIAppliedProgram.Selected.Value,
+                                If(ThisItem.'RHDI Applied Program'<>Concat(cmbRHDIAppliedProgram.SelectedItems ,Value, Char(10)),
                                     Char(10) & Char(9) & Char(9) & 
                                     "RHDI Applied Program：" & Char(9) & "「" & ThisItem.'RHDI Applied Program' & "」⇒「" & cmbRHDIAppliedProgram.Selected.Value & "」"
                                 ) & 
@@ -4109,7 +4109,7 @@
                                     "RHDS Implementation Date：" & Char(9) & "「" & ThisItem.'RHDS Implementation Date' & "」⇒「" & datRHDSImpleDate.SelectedDate & "」"
                                 ) & 
                                 //  RHDS Applied Program
-                                If(ThisItem.'RHDS Applied Program'<>cmbRHDSAppliedProgram.Selected.Value,
+                                If(ThisItem.'RHDS Applied Program'<>Concat(cmbRHDSAppliedProgram.SelectedItems, Value, Char(10)),
                                     Char(10) & Char(9) & Char(9) & 
                                     "RHDS Applied Program：" & Char(9) & "「" & ThisItem.'RHDS Applied Program' & "」⇒「" & cmbRHDSAppliedProgram.Selected.Value & "」"
                                 ) & 
@@ -4124,7 +4124,7 @@
                                     "RHDM Implementation Date：" & Char(9) & "「" & ThisItem.'RHDM Implementation Date' & "」⇒「" & datRHDMImpleDate.SelectedDate & "」"
                                 ) & 
                                 //  RHDM Applied Program
-                                If(ThisItem.'RHDM Applied Program'<>cmbRHDMAppliedProgram.Selected.Value,
+                                If(ThisItem.'RHDM Applied Program'<>Concat(cmbRHDMAppliedProgram.SelectedItems, Value, Char(10)),
                                     Char(10) & Char(9) & Char(9) & 
                                     "RHDM Applied Program：" & Char(9) & "「" & ThisItem.'RHDM Applied Program' & "」⇒「" & cmbRHDMAppliedProgram.Selected.Value & "」"
                                 ) & 
@@ -4139,7 +4139,7 @@
                                     "RHDO Implementation Date：" & Char(9) & "「" & ThisItem.'RHDO Implementation Date' & "」⇒「" & datRHDOImpleDate.SelectedDate & "」"
                                 ) & 
                                 //  RHDO Applied Program
-                                If(ThisItem.'RHDO Applied Program'<>cmbRHDOAppliedProgram.Selected.Value,
+                                If(ThisItem.'RHDO Applied Program'<>Concat(cmbRHDOAppliedProgram.SelectedItems, Value, Char(10)),
                                     Char(10) & Char(9) & Char(9) & 
                                     "RHDO Applied Program：" & Char(9) & "「" & ThisItem.'RHDO Applied Program' & "」⇒「" & cmbRHDOAppliedProgram.Selected.Value & "」"
                                 ) & 
@@ -4154,7 +4154,7 @@
                                     "RHDY Implementation Date：" & Char(9) & "「" & ThisItem.'RHDY Implementation Date' & "」⇒「" & datRHDYImpleDate.SelectedDate & "」"
                                 ) & 
                                 //  RHDY Applied Program
-                                If(ThisItem.'RHDY Applied Program'<>cmbRHDYAppliedProgram.Selected.Value,
+                                If(ThisItem.'RHDY Applied Program'<>Concat(cmbRHDYAppliedProgram.SelectedItems, Value, Char(10)),
                                     Char(10) & Char(9) & Char(9) & 
                                     "RHDY Applied Program：" & Char(9) & "「" & ThisItem.'RHDY Applied Program' & "」⇒「" & cmbRHDYAppliedProgram.Selected.Value & "」"
                                 )
