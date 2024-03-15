@@ -81,7 +81,6 @@
                     ZIndex: =1
 
                 DataCardValue1 As text:
-                    Align: =Align.Center
                     BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
                     Color: =RGBA(246, 88, 16, 1)
                     Default: =Parent.Default
@@ -981,7 +980,8 @@
                     ChevronHoverFill: =RGBA(33, 33, 33, 1)
                     Color: =RGBA(51, 51, 51, 1)
                     DefaultSelectedItems: |-
-                        ={Value:ThisItem.'Process1 RC Actual Cause'}
+                        =Split(ThisItem.'Process1 RC Actual Cause', Char(10))
+                        //  {Value:ThisItem.'Process1 RC Actual Cause'}
                     DisabledBorderColor: =RGBA(0, 0, 0, 0)
                     DisabledColor: =RGBA(166, 166, 166, 1)
                     DisabledFill: =RGBA(244, 244, 244, 1)
@@ -1756,7 +1756,8 @@
                     ChevronHoverFill: =RGBA(33, 33, 33, 1)
                     Color: =RGBA(51, 51, 51, 1)
                     DefaultSelectedItems: |-
-                        ={Value:ThisItem.'Process2 RC Actual Cause'}
+                        =Split(ThisItem.'Process2 RC Actual Cause', Char(10))
+                        //  {Value:ThisItem.'Process2 RC Actual Cause'}
                     DisabledBorderColor: =RGBA(0, 0, 0, 0)
                     DisabledColor: =RGBA(166, 166, 166, 1)
                     DisabledFill: =RGBA(244, 244, 244, 1)
@@ -2485,7 +2486,8 @@
                     ChevronHoverFill: =RGBA(33, 33, 33, 1)
                     Color: =RGBA(51, 51, 51, 1)
                     DefaultSelectedItems: |-
-                        ={Value:ThisItem.'Process3 RC Actual Cause'}
+                        =Split(ThisItem.'Process3 RC Actual Cause', Char(10))
+                        //  {Value:ThisItem.'Process3 RC Actual Cause'}
                     DisabledBorderColor: =RGBA(0, 0, 0, 0)
                     DisabledColor: =RGBA(166, 166, 166, 1)
                     DisabledFill: =RGBA(244, 244, 244, 1)
@@ -3133,7 +3135,7 @@
                     ChevronHoverBackground: =RGBA(212, 212, 212, 1)
                     ChevronHoverFill: =RGBA(33, 33, 33, 1)
                     Color: =RGBA(51, 51, 51, 1)
-                    DefaultSelectedItems: =Split(ThisItem.'Applied Program', " ")
+                    DefaultSelectedItems: =Split(ThisItem.'Applied Program', Char(10))
                     DisabledBorderColor: =RGBA(0, 0, 0, 0)
                     DisabledColor: =RGBA(166, 166, 166, 1)
                     DisabledFill: =RGBA(244, 244, 244, 1)
@@ -3145,8 +3147,7 @@
                     HoverColor: =RGBA(51, 51, 51, 1)
                     HoverFill: =RGBA(212, 212, 212, 1)
                     IsSearchable: =false
-                    Items: |
-                        =Split(Concat(Filter('Program Master', 区分.Value=rdbClaimDescriptionType.Selected.Value),Program, Char(10)), Char(10))
+                    Items: =Split(Concat(Filter('Program Master', 区分.Value=rdbClaimDescriptionType.Selected.Value),Program, Char(10)), Char(10))
                     PressedBorderColor: =ColorFade(RGBA(0, 120, 212, 1), -30%)
                     PressedColor: =RGBA(255, 255, 255, 1)
                     PressedFill: =RGBA(0, 120, 212, 1)
@@ -3525,7 +3526,7 @@
                     ChevronHoverBackground: =RGBA(212, 212, 212, 1)
                     ChevronHoverFill: =RGBA(33, 33, 33, 1)
                     Color: =RGBA(51, 51, 51, 1)
-                    DefaultSelectedItems: =Split(ThisItem.'RHDI Applied Program', " ")
+                    DefaultSelectedItems: =Split(ThisItem.'RHDI Applied Program', Char(10))
                     DisabledBorderColor: =RGBA(0, 0, 0, 0)
                     DisabledColor: =RGBA(166, 166, 166, 1)
                     DisabledFill: =RGBA(244, 244, 244, 1)
@@ -3537,8 +3538,7 @@
                     HoverColor: =RGBA(51, 51, 51, 1)
                     HoverFill: =RGBA(212, 212, 212, 1)
                     IsSearchable: =false
-                    Items: |
-                        =Split(Concat(Filter('Program Master', 区分.Value=rdbClaimDescriptionType.Selected.Value),Program, Char(10)), Char(10))
+                    Items: =Split(Concat(Filter('Program Master', 区分.Value=rdbClaimDescriptionType.Selected.Value),Program, Char(10)), Char(10))
                     PressedBorderColor: =ColorFade(RGBA(0, 120, 212, 1), -30%)
                     PressedColor: =RGBA(255, 255, 255, 1)
                     PressedFill: =RGBA(0, 120, 212, 1)
@@ -3713,7 +3713,7 @@
                     ChevronHoverBackground: =RGBA(212, 212, 212, 1)
                     ChevronHoverFill: =RGBA(33, 33, 33, 1)
                     Color: =RGBA(51, 51, 51, 1)
-                    DefaultSelectedItems: =Split(ThisItem.'RHDS Applied Program', " ")
+                    DefaultSelectedItems: =Split(ThisItem.'RHDS Applied Program', Char(10))
                     DisabledBorderColor: =RGBA(0, 0, 0, 0)
                     DisabledColor: =RGBA(166, 166, 166, 1)
                     DisabledFill: =RGBA(244, 244, 244, 1)
@@ -4444,7 +4444,7 @@
                     ChevronHoverBackground: =RGBA(212, 212, 212, 1)
                     ChevronHoverFill: =RGBA(33, 33, 33, 1)
                     Color: =RGBA(51, 51, 51, 1)
-                    DefaultSelectedItems: =Split(ThisItem.'RHDM Applied Program', " ")
+                    DefaultSelectedItems: =Split(ThisItem.'RHDM Applied Program', Char(10))
                     DisabledBorderColor: =RGBA(0, 0, 0, 0)
                     DisabledColor: =RGBA(166, 166, 166, 1)
                     DisabledFill: =RGBA(244, 244, 244, 1)
@@ -4640,7 +4640,7 @@
                     ChevronHoverBackground: =RGBA(212, 212, 212, 1)
                     ChevronHoverFill: =RGBA(33, 33, 33, 1)
                     Color: =RGBA(51, 51, 51, 1)
-                    DefaultSelectedItems: =Split(ThisItem.'RHDO Applied Program', " ")
+                    DefaultSelectedItems: =Split(ThisItem.'RHDO Applied Program', Char(10))
                     DisabledBorderColor: =RGBA(0, 0, 0, 0)
                     DisabledColor: =RGBA(166, 166, 166, 1)
                     DisabledFill: =RGBA(244, 244, 244, 1)
@@ -4836,7 +4836,7 @@
                     ChevronHoverBackground: =RGBA(212, 212, 212, 1)
                     ChevronHoverFill: =RGBA(33, 33, 33, 1)
                     Color: =RGBA(51, 51, 51, 1)
-                    DefaultSelectedItems: =Split(ThisItem.'RHDY Applied Program', " ")
+                    DefaultSelectedItems: =Split(ThisItem.'RHDY Applied Program', Char(10))
                     DisabledBorderColor: =RGBA(0, 0, 0, 0)
                     DisabledColor: =RGBA(166, 166, 166, 1)
                     DisabledFill: =RGBA(244, 244, 244, 1)
@@ -5627,7 +5627,7 @@
                 MaxLength: =DataSourceInfo([@'Quality Problem Status'], DataSourceInfo.MaxLength, "zzP2RCActualCause")
                 Required: =false
                 Update: |-
-                    =Concat(cmbP2RCActualCause.SelectedItems, Value, "")
+                    =Concat(cmbP2RCActualCause.SelectedItems, Value, Char(10))
                     //  DataCardValue27.Text
                 Visible: =false
                 Width: =592
