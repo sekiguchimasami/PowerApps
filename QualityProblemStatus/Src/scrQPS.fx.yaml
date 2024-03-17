@@ -4986,13 +4986,13 @@
                     Y: =DataCardKey23.Y
                     ZIndex: =4
 
-            DataCard1 As typedDataCard.blankCard:
+            Confirm_DataCard1 As typedDataCard.blankCard:
                 BorderColor: =RGBA(166, 166, 166, 1)
                 BorderStyle: =BorderStyle.Solid
                 DisplayMode: =DisplayMode.Edit
                 Fill: =RGBA(0, 0, 0, 0)
                 Height: =100
-                Width: =1184
+                Width: =Parent.Width
                 X: =0
                 Y: =18
                 ZIndex: =1
@@ -5015,9 +5015,9 @@
                             !IsBlank(ddlP3RCProcess.Selected.Process) && rdbP3CAIEquipmentImprovement.Selected.Value="Yes", "○", 
                             "違うよ"
                         )
-                    Width: =260
-                    X: =40
-                    Y: =40
+                    Width: =Parent.Width * 0.9
+                    X: =32
+                    Y: =10
                     ZIndex: =1
 
             Status_DataCard1 As typedDataCard.textualEditCard:
