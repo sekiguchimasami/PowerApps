@@ -3,15 +3,14 @@
     OnVisible: |
         =//  Global変数
         Set(gvConfirmFlag, false);              //  確認PopUpを非表示
-        Set(Process1DisplayFlag, true);         //  Process1の表示フラグ
-        Set(Process2DisplayFlag, true);         //  Process2の表示フラグ
-        Set(Process3DisplayFlag, true);         //  Process3の表示フラグ
         
-        With({MyQPS:SharePointIntegration.Selected},
-            //  Processの表示設定
-            Set(Process2DisplayFlag, !IsBlank(MyQPS.'Process2 RC Process'));
-            Set(Process3DisplayFlag, !IsBlank(MyQPS.'Process3 RC Process'))
-        );
+        //  Processの表示判定
+        Set(Process1DisplayFlag, IsBlank(SharePointIntegration.Selected.'Process1 RC Process'));
+        Set(Process2DisplayFlag, IsBlank(SharePointIntegration.Selected.'Process2 RC Process'));
+        Set(Process3DisplayFlag, IsBlank(SharePointIntegration.Selected.'Process3 RC Process'));
+        //Set(Process1DisplayFlag, true);         //  Process1の表示フラグ
+        //Set(Process2DisplayFlag, true);         //  Process2の表示フラグ
+        //Set(Process3DisplayFlag, true);         //  Process3の表示フラグ
         
         Set(strSite, Blank());                  //  Site
 
@@ -1643,37 +1642,6 @@
                     Y: =12
                     ZIndex: =1
 
-            P3TitleDataCard1 As typedDataCard.blankCard:
-                BorderColor: =RGBA(166, 166, 166, 1)
-                BorderStyle: =BorderStyle.Solid
-                DisplayMode: =DisplayMode.Edit
-                Fill: =RGBA(0, 0, 0, 0)
-                Height: =P1TitleDataCard1.Height
-                Width: =P1TitleDataCard1.Width
-                X: =0
-                Y: =9
-                ZIndex: =1
-
-                HtmlTextProcess3 As htmlViewer:
-                    Height: =33
-                    HtmlText: |
-                        =//  縮小拡大
-                        With(
-                            {strProcess:ddlP3RCProcess.Selected.Process,
-                             strActualCause:Concat(cmbP3RCActualCause.SelectedItems, Value, ", ")
-                            },
-                        
-                            Concatenate("<b><span style='cursor:pointer; color:blue'>　　", If(Process3DisplayFlag, "－", "＋"), " Process3 : ", 
-                                If(IsBlank(strProcess), 
-                                    "No Data", 
-                                    strProcess & If(!IsBlank(strActualCause), " (" & strActualCause & ")")
-                                ), "</span></b>")
-                        )
-                    OnSelect: =Set(Process3DisplayFlag, !Process3DisplayFlag);
-                    Width: =Parent.Width - 10
-                    Y: =12
-                    ZIndex: =1
-
             Process2_DataCard As typedDataCard.blankCard:
                 BorderColor: =RGBA(102, 152, 191, 1)
                 BorderStyle: =BorderStyle.Solid
@@ -2372,6 +2340,37 @@
                     X: =50
                     Y: =lblP2CACSpec.Y + lblP2CACSpec.Height + WarningMessageP25.Height + 10
                     ZIndex: =32
+
+            P3TitleDataCard1 As typedDataCard.blankCard:
+                BorderColor: =RGBA(166, 166, 166, 1)
+                BorderStyle: =BorderStyle.Solid
+                DisplayMode: =DisplayMode.Edit
+                Fill: =RGBA(0, 0, 0, 0)
+                Height: =P1TitleDataCard1.Height
+                Width: =P1TitleDataCard1.Width
+                X: =0
+                Y: =9
+                ZIndex: =1
+
+                HtmlTextProcess3 As htmlViewer:
+                    Height: =33
+                    HtmlText: |
+                        =//  縮小拡大
+                        With(
+                            {strProcess:ddlP3RCProcess.Selected.Process,
+                             strActualCause:Concat(cmbP3RCActualCause.SelectedItems, Value, ", ")
+                            },
+                        
+                            Concatenate("<b><span style='cursor:pointer; color:blue'>　　", If(Process3DisplayFlag, "－", "＋"), " Process3 : ", 
+                                If(IsBlank(strProcess), 
+                                    "No Data", 
+                                    strProcess & If(!IsBlank(strActualCause), " (" & strActualCause & ")")
+                                ), "</span></b>")
+                        )
+                    OnSelect: =Set(Process3DisplayFlag, !Process3DisplayFlag);
+                    Width: =Parent.Width - 10
+                    Y: =12
+                    ZIndex: =1
 
             AppliedProgram_DataCard As typedDataCard.blankCard:
                 BorderColor: =RGBA(166, 166, 166, 1)
@@ -5022,14 +5021,14 @@
                     Height: =72
                     PaddingLeft: =0
                     Size: =10.5
-                    Text: |-
-                        ="Equip 判定=" & 
+                    Text: |
+                        =
+                        "Equip 判定=" & 
                         If( !IsBlank(ddlP1RCProcess.Selected.Process) && rdbP1CAIEquipmentImprovement.Selected.Value="Yes", "○", 
                             !IsBlank(ddlP2RCProcess.Selected.Process) && rdbP2CAIEquipmentImprovement.Selected.Value="Yes", "○", 
                             !IsBlank(ddlP3RCProcess.Selected.Process) && rdbP3CAIEquipmentImprovement.Selected.Value="Yes", "○", 
                             "違うよ"
-                        ) & Char(10) & 
-                        "Process2=" & !IsBlank(ThisItem.'Process2 RC Process')
+                        )
                     Width: =Parent.Width * 0.9
                     X: =32
                     Y: =10
