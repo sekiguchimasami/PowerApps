@@ -5018,7 +5018,7 @@
                     DisabledColor: =RGBA(166, 166, 166, 1)
                     FocusedBorderThickness: =1
                     Font: =Font.'Segoe UI'
-                    Height: =72
+                    Height: =80
                     PaddingLeft: =0
                     Size: =10.5
                     Text: |
