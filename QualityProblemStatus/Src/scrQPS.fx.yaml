@@ -865,6 +865,37 @@
                     Y: =10
                     ZIndex: =2
 
+            P2TitleDataCard1 As typedDataCard.blankCard:
+                BorderColor: =RGBA(166, 166, 166, 1)
+                BorderStyle: =BorderStyle.Solid
+                DisplayMode: =DisplayMode.Edit
+                Fill: =RGBA(0, 0, 0, 0)
+                Height: =P1TitleDataCard1.Height
+                Width: =P1TitleDataCard1.Width
+                X: =0
+                Y: =7
+                ZIndex: =1
+
+                HtmlTextProcess2 As htmlViewer:
+                    Height: =33
+                    HtmlText: |
+                        =//  縮小拡大
+                        With(
+                            {strProcess:ddlP2RCProcess.Selected.Process,
+                             strActualCause:Concat(cmbP2RCActualCause.SelectedItems, Value, ", ")
+                            },
+                        
+                            Concatenate("<b><span style='cursor:pointer; color:blue'>　　", If(Process2DisplayFlag, "－", "＋"), " Process2 : ", 
+                                If(IsBlank(strProcess), 
+                                    "No Data", 
+                                    strProcess & If(!IsBlank(strActualCause), " (" & strActualCause & ")")
+                                ), "</span></b>")
+                        )
+                    OnSelect: =Set(Process2DisplayFlag, !Process2DisplayFlag);
+                    Width: =Parent.Width - 10
+                    Y: =12
+                    ZIndex: =1
+
             Process1_DataCard As typedDataCard.blankCard:
                 BorderColor: =RGBA(246, 88, 16, 1)
                 BorderStyle: =BorderStyle.Solid
@@ -1611,7 +1642,7 @@
                     Y: =lblP1RCActualCause.Y
                     ZIndex: =34
 
-            P2TitleDataCard1 As typedDataCard.blankCard:
+            P3TitleDataCard1 As typedDataCard.blankCard:
                 BorderColor: =RGBA(166, 166, 166, 1)
                 BorderStyle: =BorderStyle.Solid
                 DisplayMode: =DisplayMode.Edit
@@ -1619,25 +1650,25 @@
                 Height: =P1TitleDataCard1.Height
                 Width: =P1TitleDataCard1.Width
                 X: =0
-                Y: =7
+                Y: =9
                 ZIndex: =1
 
-                HtmlTextProcess2 As htmlViewer:
+                HtmlTextProcess3 As htmlViewer:
                     Height: =33
                     HtmlText: |
                         =//  縮小拡大
                         With(
-                            {strProcess:ddlP2RCProcess.Selected.Process,
-                             strActualCause:Concat(cmbP2RCActualCause.SelectedItems, Value, ", ")
+                            {strProcess:ddlP3RCProcess.Selected.Process,
+                             strActualCause:Concat(cmbP3RCActualCause.SelectedItems, Value, ", ")
                             },
                         
-                            Concatenate("<b><span style='cursor:pointer; color:blue'>　　", If(Process2DisplayFlag, "－", "＋"), " Process2 : ", 
+                            Concatenate("<b><span style='cursor:pointer; color:blue'>　　", If(Process3DisplayFlag, "－", "＋"), " Process3 : ", 
                                 If(IsBlank(strProcess), 
                                     "No Data", 
                                     strProcess & If(!IsBlank(strActualCause), " (" & strActualCause & ")")
                                 ), "</span></b>")
                         )
-                    OnSelect: =Set(Process2DisplayFlag, !Process2DisplayFlag);
+                    OnSelect: =Set(Process3DisplayFlag, !Process3DisplayFlag);
                     Width: =Parent.Width - 10
                     Y: =12
                     ZIndex: =1
@@ -2340,37 +2371,6 @@
                     X: =50
                     Y: =lblP2CACSpec.Y + lblP2CACSpec.Height + WarningMessageP25.Height + 10
                     ZIndex: =32
-
-            P3TitleDataCard1 As typedDataCard.blankCard:
-                BorderColor: =RGBA(166, 166, 166, 1)
-                BorderStyle: =BorderStyle.Solid
-                DisplayMode: =DisplayMode.Edit
-                Fill: =RGBA(0, 0, 0, 0)
-                Height: =P1TitleDataCard1.Height
-                Width: =P1TitleDataCard1.Width
-                X: =0
-                Y: =9
-                ZIndex: =1
-
-                HtmlTextProcess3 As htmlViewer:
-                    Height: =33
-                    HtmlText: |
-                        =//  縮小拡大
-                        With(
-                            {strProcess:ddlP3RCProcess.Selected.Process,
-                             strActualCause:Concat(cmbP3RCActualCause.SelectedItems, Value, ", ")
-                            },
-                        
-                            Concatenate("<b><span style='cursor:pointer; color:blue'>　　", If(Process3DisplayFlag, "－", "＋"), " Process3 : ", 
-                                If(IsBlank(strProcess), 
-                                    "No Data", 
-                                    strProcess & If(!IsBlank(strActualCause), " (" & strActualCause & ")")
-                                ), "</span></b>")
-                        )
-                    OnSelect: =Set(Process3DisplayFlag, !Process3DisplayFlag);
-                    Width: =Parent.Width - 10
-                    Y: =12
-                    ZIndex: =1
 
             AppliedProgram_DataCard As typedDataCard.blankCard:
                 BorderColor: =RGBA(166, 166, 166, 1)
