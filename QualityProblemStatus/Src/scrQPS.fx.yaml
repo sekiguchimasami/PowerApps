@@ -5,12 +5,15 @@
         Set(gvConfirmFlag, false);              //  確認PopUpを非表示
         
         //  Processの表示判定
-        Set(Process1DisplayFlag, !IsBlank(SharePointIntegration.Selected.'Process1 RC Process'));
-        Set(Process2DisplayFlag, !IsBlank(SharePointIntegration.Selected.'Process2 RC Process'));
-        Set(Process3DisplayFlag, !IsBlank(SharePointIntegration.Selected.'Process3 RC Process'));
-        //Set(Process1DisplayFlag, true);         //  Process1の表示フラグ
-        //Set(Process2DisplayFlag, true);         //  Process2の表示フラグ
-        //Set(Process3DisplayFlag, true);         //  Process3の表示フラグ
+        If(frmQPS.Mode=FormMode.New, 
+            Set(Process1DisplayFlag, true);         //  Process1の表示フラグ
+            Set(Process2DisplayFlag, true);         //  Process2の表示フラグ
+            Set(Process3DisplayFlag, true);         //  Process3の表示フラグ
+            ,
+            Set(Process1DisplayFlag, !IsBlank(SharePointIntegration.Selected.'Process1 RC Process'));
+            Set(Process2DisplayFlag, !IsBlank(SharePointIntegration.Selected.'Process2 RC Process'));
+            Set(Process3DisplayFlag, !IsBlank(SharePointIntegration.Selected.'Process3 RC Process'));
+        );
         
         Set(strSite, Blank());                  //  Site
 
