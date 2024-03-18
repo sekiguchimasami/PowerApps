@@ -3969,7 +3969,7 @@
                                     "Process1 CA Internal Implementation Date：" & Char(9) & "「" & ThisItem.'Process1 CA Internal Implementation Date' & "」⇒「" & datP1CAIImplementationDate.SelectedDate & "」"
                                 ) & 
                                 //  Process1 CA Customer Control Item
-                                If(ThisItem.'Process1 CA Customer Control Item'<>txtP1CACControlItem.Text && Len(IThisItem.'Process1 CA Customer Control Item' & txtP1CACControlItem.Text)>0,
+                                If(ThisItem.'Process1 CA Customer Control Item'<>txtP1CACControlItem.Text && Len(ThisItem.'Process1 CA Customer Control Item' & txtP1CACControlItem.Text)>0,
                                     Char(10) & Char(9) & Char(9) & 
                                     "Process1 CA Customer Control Item：" & Char(9) & "「" & ThisItem.'Process1 CA Customer Control Item' & "」⇒「" & txtP1CACControlItem.Text & "」"
                                 ) & 
@@ -3997,16 +3997,15 @@
                                 //  Process2 CA Internal Control Item
                                 If(ThisItem.'Process2 CA Internal Control Item'<>txtP2CAIControlItem.Text && Len(ThisItem.'Process2 CA Internal Control Item' & txtP2CAIControlItem.Text)>0,
                                     Char(10) & Char(9) & Char(9) & 
-                                    "Process2 CA Internal Control Item：" & Char(9) & "「" & ThisItem.'Process2 CA Internal Control Item' & "」⇒「" & txtP2CAIControlItem.Text & "」" &
-                                    "This=" & Len(ThisItem.'Process2 CA Internal Control Item') & Char(9) & "txt=" & Len(txtP2CAIControlItem.Text)
+                                    "Process2 CA Internal Control Item：" & Char(9) & "「" & ThisItem.'Process2 CA Internal Control Item' & "」⇒「" & txtP2CAIControlItem.Text & "」"
                                 ) & 
                                 //  Process2 CA Internal Spec/Control
-                                If(ThisItem.'Process2 CA Internal Spec/Control'<>txtP2CAISpec.Text,
+                                If(ThisItem.'Process2 CA Internal Spec/Control'<>txtP2CAISpec.Text && Len(ThisItem.'Process2 CA Internal Spec/Control' & txtP2CAISpec.Text)>0,
                                     Char(10) & Char(9) & Char(9) & 
                                     "Process2 CA Internal Spec/Control：" & Char(9) & "「" & ThisItem.'Process2 CA Internal Spec/Control' & "」⇒「" & txtP2CAISpec.Text & "」"
                                 ) & 
                                 //  Process2 CA Internal Equipment Improvement
-                                If(ThisItem.'Process2 CA Internal Equipment Improvement'<>rdbP2CAIEquipmentImprovement.Selected.Value,
+                                If(ThisItem.'Process2 CA Internal Equipment Improvement'<>rdbP2CAIEquipmentImprovement.Selected.Value && Len(ThisItem.'Process2 CA Internal Equipment Improvement' & rdbP2CAIEquipmentImprovement.Selected.Value)>0,
                                     Char(10) & Char(9) & Char(9) & 
                                     "Process2 CA Internal Equipment Improvement：" & Char(9) & "「" & ThisItem.'Process2 CA Internal Equipment Improvement' & "」⇒「" & rdbP2CAIEquipmentImprovement.Selected.Value & "」"
                                 ) & 
@@ -4016,12 +4015,12 @@
                                     "Process2 CA Internal Implementation Date：" & Char(9) & "「" & ThisItem.'Process2 CA Internal Implementation Date' & "」⇒「" & datP2CAIImplementationDate.SelectedDate & "」"
                                 ) & 
                                 //  Process2 CA Customer Control Item
-                                If(ThisItem.'Process2 CA Customer Control Item'<>txtP2CACControlItem.Text,
+                                If(ThisItem.'Process2 CA Customer Control Item'<>txtP2CACControlItem.Text && Len(ThisItem.'Process2 CA Customer Control Item' & txtP2CACControlItem.Text)>0,
                                     Char(10) & Char(9) & Char(9) & 
                                     "Process2 CA Customer Control Item：" & Char(9) & "「" & ThisItem.'Process2 CA Customer Control Item' & "」⇒「" & txtP2CACControlItem.Text & "」"
                                 ) & 
                                 //  Process2 CA Customer Spec/Control
-                                If(ThisItem.'Process2 CA Customer Spec/Control'<>txtP2CACSpec.Text,
+                                If(ThisItem.'Process2 CA Customer Spec/Control'<>txtP2CACSpec.Text && Len(ThisItem.'Process2 CA Customer Spec/Control' & txtP2CACSpec.Text)>0,
                                     Char(10) & Char(9) & Char(9) & 
                                     "Process2 CA Customer Spec/Control：" & Char(9) & "「" & ThisItem.'Process2 CA Customer Spec/Control' & "」⇒「" & txtP2CACSpec.Text & "」"
                                 ) & 
@@ -4037,22 +4036,22 @@
                                     "Process3 RC Process：" & Char(9) & "「" & ThisItem.'Process3 RC Process' & "」⇒「" & ddlP3RCProcess.Selected.Process & "」"
                                 ) & 
                                 //  Process3 RC Actual Cause
-                                If(ThisItem.'Process3 RC Actual Cause'<>Concat(cmbP3RCActualCause.SelectedItems, Value, Char(10)),
+                                If(ThisItem.'Process3 RC Actual Cause'<>Concat(cmbP3RCActualCause.SelectedItems, Value, Char(10)) && Len(ThisItem.'Process3 RC Actual Cause' & cmbP3RCActualCause.Selected.Value)>0,
                                     Char(10) & Char(9) & Char(9) & 
                                     "Process3 RC Actual Cause：" & Char(9) & "「" & ThisItem.'Process3 RC Actual Cause' & "」⇒「" & cmbP3RCActualCause.Selected.Value & "」"
                                 ) & 
                                 //  Process3 CA Internal Control Item
-                                If(ThisItem.'Process3 CA Internal Control Item'<>txtP3CAIControlItem.Text,
+                                If(ThisItem.'Process3 CA Internal Control Item'<>txtP3CAIControlItem.Text && Len(ThisItem.'Process3 CA Internal Control Item' & txtP3CAIControlItem.Text)>0,
                                     Char(10) & Char(9) & Char(9) & 
                                     "Process3 CA Internal Control Item：" & Char(9) & "「" & ThisItem.'Process3 CA Internal Control Item' & "」⇒「" & txtP3CAIControlItem.Text & "」"
                                 ) & 
                                 //  Process3 CA Internal Spec/Control
-                                If(ThisItem.'Process3 CA Internal Spec/Control'<>txtP3CAISpec.Text,
+                                If(ThisItem.'Process3 CA Internal Spec/Control'<>txtP3CAISpec.Text && Len(ThisItem.'Process3 CA Internal Spec/Control' & txtP3CAISpec.Text)>0,
                                     Char(10) & Char(9) & Char(9) & 
                                     "Process3 CA Internal Spec/Control：" & Char(9) & "「" & ThisItem.'Process3 CA Internal Spec/Control' & "」⇒「" & txtP3CAISpec.Text & "」"
                                 ) & 
                                 //  Process3 CA Internal Equipment Improvement
-                                If(ThisItem.'Process3 CA Internal Equipment Improvement'<>rdbP3CAIEquipmentImprovement.Selected.Value,
+                                If(ThisItem.'Process3 CA Internal Equipment Improvement'<>rdbP3CAIEquipmentImprovement.Selected.Value && Len(ThisItem.'Process3 CA Internal Equipment Improvement' & rdbP3CAIEquipmentImprovement.Selected.Value)>0,
                                     Char(10) & Char(9) & Char(9) & 
                                     "Process3 CA Internal Equipment Improvement：" & Char(9) & "「" & ThisItem.'Process3 CA Internal Equipment Improvement' & "」⇒「" & rdbP3CAIEquipmentImprovement.Selected.Value & "」"
                                 ) & 
@@ -4062,12 +4061,12 @@
                                     "Process3 CA Internal Implementation Date：" & Char(9) & "「" & ThisItem.'Process3 CA Internal Implementation Date' & "」⇒「" & datP3CAIImplementationDate.SelectedDate & "」"
                                 ) & 
                                 //  Process3 CA Customer Control Item
-                                If(ThisItem.'Process3 CA Customer Control Item'<>txtP3CACControlItem.Text,
+                                If(ThisItem.'Process3 CA Customer Control Item'<>txtP3CACControlItem.Text && Len(ThisItem.'Process3 CA Customer Control Item' & txtP3CACControlItem.Text)>0,
                                     Char(10) & Char(9) & Char(9) & 
                                     "Process3 CA Customer Control Item：" & Char(9) & "「" & ThisItem.'Process3 CA Customer Control Item' & "」⇒「" & txtP3CACControlItem.Text & "」"
                                 ) & 
                                 //  Process3 CA Customer Spec/Control
-                                If(ThisItem.'Process3 CA Customer Spec/Control'<>txtP3CACSpec.Text,
+                                If(ThisItem.'Process3 CA Customer Spec/Control'<>txtP3CACSpec.Text && Len(ThisItem.'Process3 CA Customer Spec/Control' & txtP3CACSpec.Text)>0,
                                     Char(10) & Char(9) & Char(9) & 
                                     "Process3 CA Customer Spec/Control：" & Char(9) & "「" & ThisItem.'Process3 CA Customer Spec/Control' & "」⇒「" & txtP3CACSpec.Text & "」"
                                 ) & 
@@ -4078,7 +4077,7 @@
                                 ) & 
                     
                                 //  Applied Program
-                                If(ThisItem.'Applied Program'<>Concat(cmbAppliedProgram.SelectedItems, Value, Char(10)),
+                                If(ThisItem.'Applied Program'<>Concat(cmbAppliedProgram.SelectedItems, Value, Char(10)) && Len(ThisItem.'Applied Program' & cmbAppliedProgram.Selected.Value)>0,
                                     Char(10) & Char(9) & Char(9) & 
                                     "Applied Program：" & Char(9) & "「" & ThisItem.'Applied Program' & "」⇒「" & cmbAppliedProgram.Selected.Value & "」"
                                 ) & 
@@ -4095,7 +4094,7 @@
                                     "RHDI Implementation Date：" & Char(9) & "「" & ThisItem.'RHDI Implementation Date' & "」⇒「" & datRHDIImpleDate.SelectedDate & "」"
                                 ) & 
                                 //  RHDI Applied Program
-                                If(ThisItem.'RHDI Applied Program'<>Concat(cmbRHDIAppliedProgram.SelectedItems ,Value, Char(10)),
+                                If(ThisItem.'RHDI Applied Program'<>Concat(cmbRHDIAppliedProgram.SelectedItems ,Value, Char(10)) && Len(ThisItem.'RHDI Applied Program' & cmbRHDIAppliedProgram.Selected.Value)>0,
                                     Char(10) & Char(9) & Char(9) & 
                                     "RHDI Applied Program：" & Char(9) & "「" & ThisItem.'RHDI Applied Program' & "」⇒「" & cmbRHDIAppliedProgram.Selected.Value & "」"
                                 ) & 
@@ -4110,7 +4109,7 @@
                                     "RHDS Implementation Date：" & Char(9) & "「" & ThisItem.'RHDS Implementation Date' & "」⇒「" & datRHDSImpleDate.SelectedDate & "」"
                                 ) & 
                                 //  RHDS Applied Program
-                                If(ThisItem.'RHDS Applied Program'<>Concat(cmbRHDSAppliedProgram.SelectedItems, Value, Char(10)),
+                                If(ThisItem.'RHDS Applied Program'<>Concat(cmbRHDSAppliedProgram.SelectedItems, Value, Char(10)) && Len(ThisItem.'RHDS Applied Program' & cmbRHDSAppliedProgram.Selected.Value)>0,
                                     Char(10) & Char(9) & Char(9) & 
                                     "RHDS Applied Program：" & Char(9) & "「" & ThisItem.'RHDS Applied Program' & "」⇒「" & cmbRHDSAppliedProgram.Selected.Value & "」"
                                 ) & 
@@ -4125,7 +4124,7 @@
                                     "RHDM Implementation Date：" & Char(9) & "「" & ThisItem.'RHDM Implementation Date' & "」⇒「" & datRHDMImpleDate.SelectedDate & "」"
                                 ) & 
                                 //  RHDM Applied Program
-                                If(ThisItem.'RHDM Applied Program'<>Concat(cmbRHDMAppliedProgram.SelectedItems, Value, Char(10)),
+                                If(ThisItem.'RHDM Applied Program'<>Concat(cmbRHDMAppliedProgram.SelectedItems, Value, Char(10)) && Len(ThisItem.'RHDM Applied Program' & cmbRHDMAppliedProgram.Selected.Value)>0,
                                     Char(10) & Char(9) & Char(9) & 
                                     "RHDM Applied Program：" & Char(9) & "「" & ThisItem.'RHDM Applied Program' & "」⇒「" & cmbRHDMAppliedProgram.Selected.Value & "」"
                                 ) & 
@@ -4140,7 +4139,7 @@
                                     "RHDO Implementation Date：" & Char(9) & "「" & ThisItem.'RHDO Implementation Date' & "」⇒「" & datRHDOImpleDate.SelectedDate & "」"
                                 ) & 
                                 //  RHDO Applied Program
-                                If(ThisItem.'RHDO Applied Program'<>Concat(cmbRHDOAppliedProgram.SelectedItems, Value, Char(10)),
+                                If(ThisItem.'RHDO Applied Program'<>Concat(cmbRHDOAppliedProgram.SelectedItems, Value, Char(10)) && Len(ThisItem.'RHDO Applied Program' & cmbRHDOAppliedProgram.Selected.Value)>0,
                                     Char(10) & Char(9) & Char(9) & 
                                     "RHDO Applied Program：" & Char(9) & "「" & ThisItem.'RHDO Applied Program' & "」⇒「" & cmbRHDOAppliedProgram.Selected.Value & "」"
                                 ) & 
@@ -4155,7 +4154,7 @@
                                     "RHDY Implementation Date：" & Char(9) & "「" & ThisItem.'RHDY Implementation Date' & "」⇒「" & datRHDYImpleDate.SelectedDate & "」"
                                 ) & 
                                 //  RHDY Applied Program
-                                If(ThisItem.'RHDY Applied Program'<>Concat(cmbRHDYAppliedProgram.SelectedItems, Value, Char(10)),
+                                If(ThisItem.'RHDY Applied Program'<>Concat(cmbRHDYAppliedProgram.SelectedItems, Value, Char(10)) && Len(ThisItem.'RHDY Applied Program' & cmbRHDYAppliedProgram.Selected.Value)>0,
                                     Char(10) & Char(9) & Char(9) & 
                                     "RHDY Applied Program：" & Char(9) & "「" & ThisItem.'RHDY Applied Program' & "」⇒「" & cmbRHDYAppliedProgram.Selected.Value & "」"
                                 )
