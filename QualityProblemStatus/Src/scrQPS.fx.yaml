@@ -1,6 +1,6 @@
 "scrQPS As screen.'webHostedFormLayout_ver3.0'":
     LoadingSpinnerColor: =RGBA(0, 120, 212, 1)
-    OnVisible: |
+    OnVisible: |+
         =//  Global変数
         Set(gvConfirmFlag, false);              //  確認PopUpを非表示
         
@@ -9,13 +9,14 @@
             Set(Process1DisplayFlag, true);         //  Process1の表示フラグ
             Set(Process2DisplayFlag, true);         //  Process2の表示フラグ
             Set(Process3DisplayFlag, true);         //  Process3の表示フラグ
+            Set(strSite, Blank());                  //  Site
             ,
             Set(Process1DisplayFlag, !IsBlank(SharePointIntegration.Selected.'Process1 RC Process'));
             Set(Process2DisplayFlag, !IsBlank(SharePointIntegration.Selected.'Process2 RC Process'));
             Set(Process3DisplayFlag, !IsBlank(SharePointIntegration.Selected.'Process3 RC Process'));
+            Set(strSite, SharePointIntegration.Selected.Site);
         );
         
-        Set(strSite, Blank());                  //  Site
 
     ConQPS As groupContainer.manualLayoutContainer:
         Height: =790
