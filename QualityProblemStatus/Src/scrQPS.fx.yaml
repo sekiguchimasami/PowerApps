@@ -4168,6 +4168,7 @@
                                 )
                         )
                     ) & Char(10) & ThisItem.'Edit History'
+                Visible: =frmQPS.Mode<>FormMode.New
                 Width: =Parent.Width
                 X: =0
                 Y: =17
