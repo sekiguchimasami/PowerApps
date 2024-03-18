@@ -645,7 +645,7 @@
                     HoverBorderColor: =ColorFade(RGBA(0, 120, 212, 1), -30%)
                     HoverColor: =RGBA(51, 51, 51, 1)
                     HoverFill: =RGBA(212, 212, 212, 1)
-                    InputTextPlaceholder: =
+                    InputTextPlaceholder: =""
                     Items: =Split(LookUp('Program Master', 区分.Value="Media" && Customer=ddlCustomer.Selected.Customer).Program, Char(10))
                     PressedBorderColor: =ColorFade(RGBA(0, 120, 212, 1), -30%)
                     PressedColor: =RGBA(255, 255, 255, 1)
@@ -816,7 +816,7 @@
                     HoverBorderColor: =ColorFade(RGBA(0, 120, 212, 1), -30%)
                     HoverColor: =RGBA(51, 51, 51, 1)
                     HoverFill: =RGBA(212, 212, 212, 1)
-                    InputTextPlaceholder: =
+                    InputTextPlaceholder: =""
                     Items: =Split(LookUp('Program Master', 区分.Value="Substrate" && Customer=ddlSubstrateSupplier.Selected.Customer).Program, Char(10))
                     PressedBorderColor: =ColorFade(RGBA(0, 120, 212, 1), -30%)
                     PressedColor: =RGBA(255, 255, 255, 1)
@@ -992,7 +992,7 @@
                     HoverBorderColor: =ColorFade(RGBA(0, 120, 212, 1), -30%)
                     HoverColor: =RGBA(51, 51, 51, 1)
                     HoverFill: =RGBA(212, 212, 212, 1)
-                    InputTextPlaceholder: =
+                    InputTextPlaceholder: =""
                     Items: =Split(LookUp('Actual Cause Master', 区分.Value=rdbClaimDescriptionType.Selected.Value && Process=ddlP1RCProcess.Selected.Process).'Actual Cause', Char(10))
                     PressedBorderColor: =ColorFade(RGBA(0, 120, 212, 1), -30%)
                     PressedColor: =RGBA(255, 255, 255, 1)
@@ -1768,7 +1768,7 @@
                     HoverBorderColor: =ColorFade(RGBA(0, 120, 212, 1), -30%)
                     HoverColor: =RGBA(51, 51, 51, 1)
                     HoverFill: =RGBA(212, 212, 212, 1)
-                    InputTextPlaceholder: =
+                    InputTextPlaceholder: =""
                     Items: =Split(LookUp('Actual Cause Master', 区分.Value=rdbClaimDescriptionType.Selected.Value && Process=ddlP2RCProcess.Selected.Process).'Actual Cause', Char(10))
                     PressedBorderColor: =ColorFade(RGBA(0, 120, 212, 1), -30%)
                     PressedColor: =RGBA(255, 255, 255, 1)
@@ -2498,7 +2498,7 @@
                     HoverBorderColor: =ColorFade(RGBA(0, 120, 212, 1), -30%)
                     HoverColor: =RGBA(51, 51, 51, 1)
                     HoverFill: =RGBA(212, 212, 212, 1)
-                    InputTextPlaceholder: =
+                    InputTextPlaceholder: =""
                     Items: =Split(LookUp('Actual Cause Master', 区分.Value=rdbClaimDescriptionType.Selected.Value && Process=ddlP3RCProcess.Selected.Process).'Actual Cause', Char(10))
                     PressedBorderColor: =ColorFade(RGBA(0, 120, 212, 1), -30%)
                     PressedColor: =RGBA(255, 255, 255, 1)
@@ -3146,6 +3146,7 @@
                     HoverBorderColor: =ColorFade(RGBA(0, 120, 212, 1), -30%)
                     HoverColor: =RGBA(51, 51, 51, 1)
                     HoverFill: =RGBA(212, 212, 212, 1)
+                    InputTextPlaceholder: =""
                     IsSearchable: =false
                     Items: =Split(Concat(Filter('Program Master', 区分.Value=rdbClaimDescriptionType.Selected.Value),Program, Char(10)), Char(10))
                     PressedBorderColor: =ColorFade(RGBA(0, 120, 212, 1), -30%)
@@ -3537,6 +3538,7 @@
                     HoverBorderColor: =ColorFade(RGBA(0, 120, 212, 1), -30%)
                     HoverColor: =RGBA(51, 51, 51, 1)
                     HoverFill: =RGBA(212, 212, 212, 1)
+                    InputTextPlaceholder: =""
                     IsSearchable: =false
                     Items: =Split(Concat(Filter('Program Master', 区分.Value=rdbClaimDescriptionType.Selected.Value),Program, Char(10)), Char(10))
                     PressedBorderColor: =ColorFade(RGBA(0, 120, 212, 1), -30%)
@@ -3724,6 +3726,7 @@
                     HoverBorderColor: =ColorFade(RGBA(0, 120, 212, 1), -30%)
                     HoverColor: =RGBA(51, 51, 51, 1)
                     HoverFill: =RGBA(212, 212, 212, 1)
+                    InputTextPlaceholder: =""
                     IsSearchable: =false
                     Items: =Split(Concat(Filter('Program Master', 区分.Value=rdbClaimDescriptionType.Selected.Value),Program, Char(10)), Char(10))
                     PressedBorderColor: =ColorFade(RGBA(0, 120, 212, 1), -30%)
@@ -4455,6 +4458,7 @@
                     HoverBorderColor: =ColorFade(RGBA(0, 120, 212, 1), -30%)
                     HoverColor: =RGBA(51, 51, 51, 1)
                     HoverFill: =RGBA(212, 212, 212, 1)
+                    InputTextPlaceholder: =""
                     IsSearchable: =false
                     Items: =Split(Concat(Filter('Program Master', 区分.Value=rdbClaimDescriptionType.Selected.Value),Program, Char(10)), Char(10))
                     PressedBorderColor: =ColorFade(RGBA(0, 120, 212, 1), -30%)
@@ -4651,6 +4655,7 @@
                     HoverBorderColor: =ColorFade(RGBA(0, 120, 212, 1), -30%)
                     HoverColor: =RGBA(51, 51, 51, 1)
                     HoverFill: =RGBA(212, 212, 212, 1)
+                    InputTextPlaceholder: =""
                     IsSearchable: =false
                     Items: =Split(Concat(Filter('Program Master', 区分.Value=rdbClaimDescriptionType.Selected.Value),Program, Char(10)), Char(10))
                     PressedBorderColor: =ColorFade(RGBA(0, 120, 212, 1), -30%)
@@ -4847,6 +4852,7 @@
                     HoverBorderColor: =ColorFade(RGBA(0, 120, 212, 1), -30%)
                     HoverColor: =RGBA(51, 51, 51, 1)
                     HoverFill: =RGBA(212, 212, 212, 1)
+                    InputTextPlaceholder: =""
                     IsSearchable: =false
                     Items: =Split(Concat(Filter('Program Master', 区分.Value=rdbClaimDescriptionType.Selected.Value),Program, Char(10)), Char(10))
                     PressedBorderColor: =ColorFade(RGBA(0, 120, 212, 1), -30%)
