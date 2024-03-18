@@ -4,19 +4,6 @@
         =//  Global変数
         Set(gvConfirmFlag, false);              //  確認PopUpを非表示
         
-        //  Processの表示判定
-        If(frmQPS.Mode=FormMode.New, 
-            Set(Process1DisplayFlag, true);         //  Process1の表示フラグ
-            Set(Process2DisplayFlag, true);         //  Process2の表示フラグ
-            Set(Process3DisplayFlag, true);         //  Process3の表示フラグ
-            Set(strSite, Blank());                  //  Site
-            ,
-            Set(Process1DisplayFlag, !IsBlank(SharePointIntegration.Selected.'Process1 RC Process'));
-            Set(Process2DisplayFlag, !IsBlank(SharePointIntegration.Selected.'Process2 RC Process'));
-            Set(Process3DisplayFlag, !IsBlank(SharePointIntegration.Selected.'Process3 RC Process'));
-            Set(strSite, SharePointIntegration.Selected.Site);
-        );
-        
 
     ConQPS As groupContainer.manualLayoutContainer:
         Height: =790
@@ -869,37 +856,6 @@
                     Y: =10
                     ZIndex: =2
 
-            P2TitleDataCard1 As typedDataCard.blankCard:
-                BorderColor: =RGBA(166, 166, 166, 1)
-                BorderStyle: =BorderStyle.Solid
-                DisplayMode: =DisplayMode.Edit
-                Fill: =RGBA(0, 0, 0, 0)
-                Height: =P1TitleDataCard1.Height
-                Width: =P1TitleDataCard1.Width
-                X: =0
-                Y: =7
-                ZIndex: =1
-
-                HtmlTextProcess2 As htmlViewer:
-                    Height: =33
-                    HtmlText: |
-                        =//  縮小拡大
-                        With(
-                            {strProcess:ddlP2RCProcess.Selected.Process,
-                             strActualCause:Concat(cmbP2RCActualCause.SelectedItems, Value, ", ")
-                            },
-                        
-                            Concatenate("<b><span style='cursor:pointer; color:blue'>　　", If(Process2DisplayFlag, "－", "＋"), " Process2 : ", 
-                                If(IsBlank(strProcess), 
-                                    "No Data", 
-                                    strProcess & If(!IsBlank(strActualCause), " (" & strActualCause & ")")
-                                ), "</span></b>")
-                        )
-                    OnSelect: =Set(Process2DisplayFlag, !Process2DisplayFlag);
-                    Width: =Parent.Width - 10
-                    Y: =12
-                    ZIndex: =1
-
             Process1_DataCard As typedDataCard.blankCard:
                 BorderColor: =RGBA(246, 88, 16, 1)
                 BorderStyle: =BorderStyle.Solid
@@ -1646,7 +1602,7 @@
                     Y: =lblP1RCActualCause.Y
                     ZIndex: =34
 
-            P3TitleDataCard1 As typedDataCard.blankCard:
+            P2TitleDataCard1 As typedDataCard.blankCard:
                 BorderColor: =RGBA(166, 166, 166, 1)
                 BorderStyle: =BorderStyle.Solid
                 DisplayMode: =DisplayMode.Edit
@@ -1654,25 +1610,25 @@
                 Height: =P1TitleDataCard1.Height
                 Width: =P1TitleDataCard1.Width
                 X: =0
-                Y: =9
+                Y: =7
                 ZIndex: =1
 
-                HtmlTextProcess3 As htmlViewer:
+                HtmlTextProcess2 As htmlViewer:
                     Height: =33
                     HtmlText: |
                         =//  縮小拡大
                         With(
-                            {strProcess:ddlP3RCProcess.Selected.Process,
-                             strActualCause:Concat(cmbP3RCActualCause.SelectedItems, Value, ", ")
+                            {strProcess:ddlP2RCProcess.Selected.Process,
+                             strActualCause:Concat(cmbP2RCActualCause.SelectedItems, Value, ", ")
                             },
                         
-                            Concatenate("<b><span style='cursor:pointer; color:blue'>　　", If(Process3DisplayFlag, "－", "＋"), " Process3 : ", 
+                            Concatenate("<b><span style='cursor:pointer; color:blue'>　　", If(Process2DisplayFlag, "－", "＋"), " Process2 : ", 
                                 If(IsBlank(strProcess), 
                                     "No Data", 
                                     strProcess & If(!IsBlank(strActualCause), " (" & strActualCause & ")")
                                 ), "</span></b>")
                         )
-                    OnSelect: =Set(Process3DisplayFlag, !Process3DisplayFlag);
+                    OnSelect: =Set(Process2DisplayFlag, !Process2DisplayFlag);
                     Width: =Parent.Width - 10
                     Y: =12
                     ZIndex: =1
@@ -2376,99 +2332,36 @@
                     Y: =lblP2CACSpec.Y + lblP2CACSpec.Height + WarningMessageP25.Height + 10
                     ZIndex: =32
 
-            AppliedProgram_DataCard As typedDataCard.blankCard:
+            P3TitleDataCard1 As typedDataCard.blankCard:
                 BorderColor: =RGBA(166, 166, 166, 1)
                 BorderStyle: =BorderStyle.Solid
                 DisplayMode: =DisplayMode.Edit
                 Fill: =RGBA(0, 0, 0, 0)
-                Height: =cmbAppliedProgram.Y + cmbAppliedProgram.Height + rtxAppliedProgramComment.Height + 20
-                Width: =1184
+                Height: =P1TitleDataCard1.Height
+                Width: =P1TitleDataCard1.Width
                 X: =0
-                Y: =11
+                Y: =9
                 ZIndex: =1
 
-                lblAppliedProgram As label:
-                    BorderColor: =RGBA(0, 0, 0, 0)
-                    BorderStyle: =BorderStyle.None
-                    BorderThickness: =1
-                    Color: =RGBA(51, 51, 51, 1)
-                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
-                    DisabledColor: =RGBA(166, 166, 166, 1)
-                    FocusedBorderThickness: =1
-                    Font: =Font.'Segoe UI'
-                    FontWeight: =FontWeight.Semibold
-                    Height: =32
-                    PaddingLeft: =0
-                    Size: =11
-                    Text: ="Applied Program"
-                    Width: =(Parent.Width - 60) * 0.12
-                    X: =32
-                    Y: =10
+                HtmlTextProcess3 As htmlViewer:
+                    Height: =33
+                    HtmlText: |
+                        =//  縮小拡大
+                        With(
+                            {strProcess:ddlP3RCProcess.Selected.Process,
+                             strActualCause:Concat(cmbP3RCActualCause.SelectedItems, Value, ", ")
+                            },
+                        
+                            Concatenate("<b><span style='cursor:pointer; color:blue'>　　", If(Process3DisplayFlag, "－", "＋"), " Process3 : ", 
+                                If(IsBlank(strProcess), 
+                                    "No Data", 
+                                    strProcess & If(!IsBlank(strActualCause), " (" & strActualCause & ")")
+                                ), "</span></b>")
+                        )
+                    OnSelect: =Set(Process3DisplayFlag, !Process3DisplayFlag);
+                    Width: =Parent.Width - 10
+                    Y: =12
                     ZIndex: =1
-
-                lblAppliedProgramComment As label:
-                    BorderColor: =RGBA(0, 0, 0, 0)
-                    BorderStyle: =BorderStyle.None
-                    BorderThickness: =1
-                    Color: =RGBA(51, 51, 51, 1)
-                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
-                    DisabledColor: =RGBA(166, 166, 166, 1)
-                    FocusedBorderThickness: =1
-                    Font: =Font.'Segoe UI'
-                    FontWeight: =FontWeight.Semibold
-                    Height: =32
-                    PaddingLeft: =0
-                    Size: =11
-                    Text: ="Comment"
-                    Width: =(Parent.Width - 60) * 0.12
-                    X: =lblAppliedProgram.X
-                    Y: =lblAppliedProgram.Y + lblAppliedProgram.Height + 10
-                    ZIndex: =3
-
-                rtxAppliedProgramComment As richTextEditor:
-                    BorderColor: =RGBA(166, 166, 166, 1)
-                    Default: =ThisItem.'Applied Program Comment'
-                    Height: =rtxP1RCComment.Height
-                    Width: =cmbAppliedProgram.Width
-                    X: =lblAppliedProgramComment.X + lblAppliedProgramComment.Width
-                    Y: =lblAppliedProgramComment.Y
-                    ZIndex: =4
-
-                cmbAppliedProgram As combobox:
-                    BorderColor: =RGBA(166, 166, 166, 1)
-                    BorderThickness: =1
-                    ChevronBackground: =RGBA(255, 255, 255, 1)
-                    ChevronDisabledBackground: =RGBA(244, 244, 244, 1)
-                    ChevronDisabledFill: =RGBA(166, 166, 166, 1)
-                    ChevronFill: =RGBA(33, 33, 33, 1)
-                    ChevronHoverBackground: =RGBA(212, 212, 212, 1)
-                    ChevronHoverFill: =RGBA(33, 33, 33, 1)
-                    Color: =RGBA(51, 51, 51, 1)
-                    DefaultSelectedItems: =Split(ThisItem.'Applied Program', Char(10))
-                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
-                    DisabledColor: =RGBA(166, 166, 166, 1)
-                    DisabledFill: =RGBA(244, 244, 244, 1)
-                    DisplayFields: =["Value"]
-                    FocusedBorderThickness: =1
-                    Font: =Font.'Segoe UI'
-                    Height: =32
-                    HoverBorderColor: =ColorFade(RGBA(0, 120, 212, 1), -30%)
-                    HoverColor: =RGBA(51, 51, 51, 1)
-                    HoverFill: =RGBA(212, 212, 212, 1)
-                    InputTextPlaceholder: =""
-                    IsSearchable: =false
-                    Items: =Split(Concat(Filter('Program Master', 区分.Value=rdbClaimDescriptionType.Selected.Value),Program, Char(10)), Char(10))
-                    PressedBorderColor: =ColorFade(RGBA(0, 120, 212, 1), -30%)
-                    PressedColor: =RGBA(255, 255, 255, 1)
-                    PressedFill: =RGBA(0, 120, 212, 1)
-                    SearchFields: =["Value"]
-                    SearchItems: =[]
-                    SelectionFill: =RGBA(0, 120, 212, 1)
-                    Size: =10.5
-                    Width: =(Parent.Width - 60) * 0.88
-                    X: =lblAppliedProgram.X + lblAppliedProgram.Width
-                    Y: =lblAppliedProgram.Y
-                    ZIndex: =5
 
             Process3_DataCard As typedDataCard.blankCard:
                 BorderColor: =RGBA(187, 221, 140, 1)
@@ -3168,6 +3061,100 @@
                     X: =lblP3CACControlItem.X
                     Y: =lblP3CACSpec.Y + lblP3CACSpec.Height + WarningMessageP35.Height + 10
                     ZIndex: =32
+
+            AppliedProgram_DataCard As typedDataCard.blankCard:
+                BorderColor: =RGBA(166, 166, 166, 1)
+                BorderStyle: =BorderStyle.Solid
+                DisplayMode: =DisplayMode.Edit
+                Fill: =RGBA(0, 0, 0, 0)
+                Height: =cmbAppliedProgram.Y + cmbAppliedProgram.Height + rtxAppliedProgramComment.Height + 20
+                Width: =1184
+                X: =0
+                Y: =11
+                ZIndex: =1
+
+                lblAppliedProgram As label:
+                    BorderColor: =RGBA(0, 0, 0, 0)
+                    BorderStyle: =BorderStyle.None
+                    BorderThickness: =1
+                    Color: =RGBA(51, 51, 51, 1)
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    DisabledColor: =RGBA(166, 166, 166, 1)
+                    FocusedBorderThickness: =1
+                    Font: =Font.'Segoe UI'
+                    FontWeight: =FontWeight.Semibold
+                    Height: =32
+                    PaddingLeft: =0
+                    Size: =11
+                    Text: ="Applied Program"
+                    Width: =(Parent.Width - 60) * 0.12
+                    X: =32
+                    Y: =10
+                    ZIndex: =1
+
+                lblAppliedProgramComment As label:
+                    BorderColor: =RGBA(0, 0, 0, 0)
+                    BorderStyle: =BorderStyle.None
+                    BorderThickness: =1
+                    Color: =RGBA(51, 51, 51, 1)
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    DisabledColor: =RGBA(166, 166, 166, 1)
+                    FocusedBorderThickness: =1
+                    Font: =Font.'Segoe UI'
+                    FontWeight: =FontWeight.Semibold
+                    Height: =32
+                    PaddingLeft: =0
+                    Size: =11
+                    Text: ="Comment"
+                    Width: =(Parent.Width - 60) * 0.12
+                    X: =lblAppliedProgram.X
+                    Y: =lblAppliedProgram.Y + lblAppliedProgram.Height + 10
+                    ZIndex: =3
+
+                rtxAppliedProgramComment As richTextEditor:
+                    BorderColor: =RGBA(166, 166, 166, 1)
+                    Default: =ThisItem.'Applied Program Comment'
+                    Height: =rtxP1RCComment.Height
+                    Width: =cmbAppliedProgram.Width
+                    X: =lblAppliedProgramComment.X + lblAppliedProgramComment.Width
+                    Y: =lblAppliedProgramComment.Y
+                    ZIndex: =4
+
+                cmbAppliedProgram As combobox:
+                    BorderColor: =RGBA(166, 166, 166, 1)
+                    BorderThickness: =1
+                    ChevronBackground: =RGBA(255, 255, 255, 1)
+                    ChevronDisabledBackground: =RGBA(244, 244, 244, 1)
+                    ChevronDisabledFill: =RGBA(166, 166, 166, 1)
+                    ChevronFill: =RGBA(33, 33, 33, 1)
+                    ChevronHoverBackground: =RGBA(212, 212, 212, 1)
+                    ChevronHoverFill: =RGBA(33, 33, 33, 1)
+                    Color: =RGBA(51, 51, 51, 1)
+                    DefaultSelectedItems: =Split(ThisItem.'Applied Program', Char(10))
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    DisabledColor: =RGBA(166, 166, 166, 1)
+                    DisabledFill: =RGBA(244, 244, 244, 1)
+                    DisplayFields: =["Value"]
+                    FocusedBorderThickness: =1
+                    Font: =Font.'Segoe UI'
+                    Height: =32
+                    HoverBorderColor: =ColorFade(RGBA(0, 120, 212, 1), -30%)
+                    HoverColor: =RGBA(51, 51, 51, 1)
+                    HoverFill: =RGBA(212, 212, 212, 1)
+                    InputTextPlaceholder: =""
+                    IsSearchable: =false
+                    Items: =Split(Concat(Filter('Program Master', 区分.Value=rdbClaimDescriptionType.Selected.Value),Program, Char(10)), Char(10))
+                    PressedBorderColor: =ColorFade(RGBA(0, 120, 212, 1), -30%)
+                    PressedColor: =RGBA(255, 255, 255, 1)
+                    PressedFill: =RGBA(0, 120, 212, 1)
+                    SearchFields: =["Value"]
+                    SearchItems: =[]
+                    SelectionFill: =RGBA(0, 120, 212, 1)
+                    Size: =10.5
+                    Width: =(Parent.Width - 60) * 0.88
+                    X: =lblAppliedProgram.X + lblAppliedProgram.Width
+                    Y: =lblAppliedProgram.Y
+                    ZIndex: =5
 
             "'CloseMail Flag_DataCard1' As typedDataCard.textualEditCard":
                 BorderColor: =RGBA(166, 166, 166, 1)
