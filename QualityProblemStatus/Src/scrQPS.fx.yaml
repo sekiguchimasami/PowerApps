@@ -9,8 +9,8 @@
         
         With({MyQPS:SharePointIntegration.Selected},
             //  Processの表示設定
-            Set(Process2DisplayFlag, !IsBlank(MyQPS.'Process2 RC Process') && MyQPS.'Process2 CA Internal Equipment Improvement'="Yes");
-            Set(Process3DisplayFlag, !IsBlank(MyQPS.'Process3 RC Process') && MyQPS.'Process3 CA Internal Equipment Improvement'="Yes")
+            Set(Process2DisplayFlag, !IsBlank(MyQPS.'Process2 RC Process'));
+            Set(Process3DisplayFlag, !IsBlank(MyQPS.'Process3 RC Process'))
         );
         
         Set(strSite, Blank());                  //  Site
