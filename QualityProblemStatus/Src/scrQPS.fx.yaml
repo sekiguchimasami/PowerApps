@@ -5014,7 +5014,7 @@
                     PaddingLeft: =0
                     Size: =10.5
                     Text: |-
-                        ="Close判定=" & 
+                        ="Equip 判定=" & 
                         If( !IsBlank(ddlP1RCProcess.Selected.Process) && rdbP1CAIEquipmentImprovement.Selected.Value="Yes", "○", 
                             !IsBlank(ddlP2RCProcess.Selected.Process) && rdbP2CAIEquipmentImprovement.Selected.Value="Yes", "○", 
                             !IsBlank(ddlP3RCProcess.Selected.Process) && rdbP3CAIEquipmentImprovement.Selected.Value="Yes", "○", 
