@@ -180,7 +180,7 @@
         {
           "Category": "Behavior",
           "PropertyName": "OnSave",
-          "RuleProviderType": "Unknown"
+          "RuleProviderType": "User"
         },
         {
           "Category": "Behavior",

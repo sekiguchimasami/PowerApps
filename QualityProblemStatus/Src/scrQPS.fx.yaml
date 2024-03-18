@@ -3908,12 +3908,12 @@
                                     "Claim description type：" & Char(9) & "「" & ThisItem.'Claim description type' & "」⇒「" & rdbClaimDescriptionType.Selected.Value & "」"
                                 ) & 
                                 //  Claim description
-                                If(ThisItem.'Claim description'<>ddlClaimDescription.Selected.Value,
+                                If(ThisItem.'Claim description'<>ddlClaimDescription.Selected.Value && Len(ThisItem.'Claim description' & ddlClaimDescription.Selected.Value)>0,
                                     Char(10) & Char(9) & Char(9) & 
                                     "Claim description：" & Char(9) & "「" & ThisItem.'Claim description' & "」⇒「" & ddlClaimDescription.Selected.Value & "」"
                                 ) & 
                                 //  Comment
-                                If(ThisItem.Comment<>DataCardValue9.Text,
+                                If(ThisItem.Comment<>DataCardValue9.Text && Len(ThisItem.Comment & DataCardValue9.Text)>0,
                                     Char(10) & Char(9) & Char(9) & 
                                     "Comment：" & Char(9) & "「" & ThisItem.Comment & "」⇒「" & DataCardValue9.Text & "」"
                                 ) & 
@@ -3944,22 +3944,22 @@
                                     "Process1 RC Process：" & Char(9) & "「" & ThisItem.'Process1 RC Process' & "」⇒「" & ddlP1RCProcess.Selected.Process & "」"
                                 ) & 
                                 //  Process1 RC Actual Cause
-                                If(ThisItem.'Process1 RC Actual Cause'<>Concat(cmbP1RCActualCause.SelectedItems, Value, Char(10)),
+                                If(ThisItem.'Process1 RC Actual Cause'<>Concat(cmbP1RCActualCause.SelectedItems, Value, Char(10)) && Len(ThisItem.'Process1 RC Actual Cause' & cmbP1RCActualCause.Selected.Value)>0,
                                     Char(10) & Char(9) & Char(9) & 
                                     "Process1 RC Actual Cause：" & Char(9) & "「" & ThisItem.'Process1 RC Actual Cause' & "」⇒「" & cmbP1RCActualCause.Selected.Value & "」"
                                 ) & 
                                 //  Process1 CA Internal Control Item
-                                If(ThisItem.'Process1 CA Internal Control Item'<>txtP1CAIControlItem.Text,
+                                If(ThisItem.'Process1 CA Internal Control Item'<>txtP1CAIControlItem.Text && Len(ThisItem.'Process1 CA Internal Control Item' & txtP1CAIControlItem.Text)>0,
                                     Char(10) & Char(9) & Char(9) & 
                                     "Process1 CA Internal Control Item：" & Char(9) & "「" & ThisItem.'Process1 CA Internal Control Item' & "」⇒「" & txtP1CAIControlItem.Text & "」"
                                 ) & 
                                 //  Process1 CA Internal Spec/Control
-                                If(ThisItem.'Process1 CA Internal Spec/Control'<>txtP1CAISpec.Text,
+                                If(ThisItem.'Process1 CA Internal Spec/Control'<>txtP1CAISpec.Text && Len(ThisItem.'Process1 CA Internal Spec/Control' & txtP1CAISpec.Text)>0,
                                     Char(10) & Char(9) & Char(9) & 
                                     "Process1 CA Internal Spec/Control：" & Char(9) & "「" & ThisItem.'Process1 CA Internal Spec/Control' & "」⇒「" & txtP1CAISpec.Text & "」"
                                 ) & 
                                 //  Process1 CA Internal Equipment Improvement
-                                If(ThisItem.'Process1 CA Internal Equipment Improvement'<>rdbP1CAIEquipmentImprovement.Selected.Value,
+                                If(ThisItem.'Process1 CA Internal Equipment Improvement'<>rdbP1CAIEquipmentImprovement.Selected.Value && Len(ThisItem.'Process1 CA Internal Equipment Improvement' & rdbP1CAIEquipmentImprovement.Selected.Value)>0,
                                     Char(10) & Char(9) & Char(9) & 
                                     "Process1 CA Internal Equipment Improvement：" & Char(9) & "「" & ThisItem.'Process1 CA Internal Equipment Improvement' & "」⇒「" & rdbP1CAIEquipmentImprovement.Selected.Value & "」"
                                 ) & 
@@ -3969,12 +3969,12 @@
                                     "Process1 CA Internal Implementation Date：" & Char(9) & "「" & ThisItem.'Process1 CA Internal Implementation Date' & "」⇒「" & datP1CAIImplementationDate.SelectedDate & "」"
                                 ) & 
                                 //  Process1 CA Customer Control Item
-                                If(ThisItem.'Process1 CA Customer Control Item'<>txtP1CACControlItem.Text,
+                                If(ThisItem.'Process1 CA Customer Control Item'<>txtP1CACControlItem.Text && Len(IThisItem.'Process1 CA Customer Control Item' & txtP1CACControlItem.Text)>0,
                                     Char(10) & Char(9) & Char(9) & 
                                     "Process1 CA Customer Control Item：" & Char(9) & "「" & ThisItem.'Process1 CA Customer Control Item' & "」⇒「" & txtP1CACControlItem.Text & "」"
                                 ) & 
                                 //  Process1 CA Customer Spec/Control
-                                If(ThisItem.'Process1 CA Customer Spec/Control'<>txtP1CACSpec.Text,
+                                If(ThisItem.'Process1 CA Customer Spec/Control'<>txtP1CACSpec.Text && Len(ThisItem.'Process1 CA Customer Spec/Control' & txtP1CACSpec.Text)>0,
                                     Char(10) & Char(9) & Char(9) & 
                                     "Process1 CA Customer Spec/Control：" & Char(9) & "「" & ThisItem.'Process1 CA Customer Spec/Control' & "」⇒「" & txtP1CACSpec.Text & "」"
                                 ) & 
@@ -3990,12 +3990,12 @@
                                     "Process2 RC Process：" & Char(9) & "「" & ThisItem.'Process2 RC Process' & "」⇒「" & ddlP2RCProcess.Selected.Process & "」"
                                 ) & 
                                 //  Process2 RC Actual Cause
-                                If(ThisItem.'Process2 RC Actual Cause'<>Concat(cmbP2RCActualCause.SelectedItems, Value, Char(10)),
+                                If(ThisItem.'Process2 RC Actual Cause'<>Concat(cmbP2RCActualCause.SelectedItems, Value, Char(10)) && Len(ThisItem.'Process2 RC Actual Cause' & cmbP2RCActualCause.Selected.Value)>0,
                                     Char(10) & Char(9) & Char(9) & 
                                     "Process2 RC Actual Cause：" & Char(9) & "「" & ThisItem.'Process2 RC Actual Cause' & "」⇒「" & cmbP2RCActualCause.Selected.Value & "」"
                                 ) & 
                                 //  Process2 CA Internal Control Item
-                                If(ThisItem.'Process2 CA Internal Control Item'<>txtP2CAIControlItem.Text,
+                                If(ThisItem.'Process2 CA Internal Control Item'<>txtP2CAIControlItem.Text && Len(ThisItem.'Process2 CA Internal Control Item' & txtP2CAIControlItem.Text)>0,
                                     Char(10) & Char(9) & Char(9) & 
                                     "Process2 CA Internal Control Item：" & Char(9) & "「" & ThisItem.'Process2 CA Internal Control Item' & "」⇒「" & txtP2CAIControlItem.Text & "」" &
                                     "This=" & Len(ThisItem.'Process2 CA Internal Control Item') & Char(9) & "txt=" & Len(txtP2CAIControlItem.Text)
@@ -5034,7 +5034,7 @@
                 Update: |-
                     =strStatus
                     //  DataCardValue2.Text
-                Visible: =true
+                Visible: =false
                 Width: =592
                 X: =1
                 Y: =19
@@ -5512,6 +5512,7 @@
                 MaxLength: =DataSourceInfo([@'Quality Problem Status'], DataSourceInfo.MaxLength, "zzRHDICheckInformation")
                 Required: =false
                 Update: =DataCardValue55.Text
+                Visible: =false
                 Width: =592
                 X: =0
                 Y: =21
@@ -5868,6 +5869,7 @@
                 Update: |-
                     =lblRHDSCheckInformation.Text
                     //  DataCardValue70.Text
+                Visible: =false
                 Width: =592
                 X: =0
                 Y: =22
@@ -6218,6 +6220,7 @@
                 MaxLength: =DataSourceInfo([@'Quality Problem Status'], DataSourceInfo.MaxLength, "zzRHDMCheckInformation")
                 Required: =false
                 Update: =DataCardValue60.Text
+                Visible: =false
                 Width: =592
                 X: =0
                 Y: =23
@@ -6691,6 +6694,7 @@
                 MaxLength: =DataSourceInfo([@'Quality Problem Status'], DataSourceInfo.MaxLength, "zzRHDOCheckInformation")
                 Required: =false
                 Update: =DataCardValue65.Text
+                Visible: =false
                 Width: =592
                 X: =0
                 Y: =24
@@ -6926,6 +6930,7 @@
                 MaxLength: =DataSourceInfo([@'Quality Problem Status'], DataSourceInfo.MaxLength, "zzRHDYCheckInformation")
                 Required: =false
                 Update: =DataCardValue75.Text
+                Visible: =false
                 Width: =592
                 X: =0
                 Y: =25

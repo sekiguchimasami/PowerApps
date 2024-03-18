@@ -32,8 +32,7 @@ App As appinfo:
             //  入力チェック
             With(
                 // 入力データ取得 
-                {//strSite:ddlSite.Selected.Value,                                //  Site
-                 strClaimDescription:rdbClaimDescriptionType.Selected.Value,    //  Claim Description Type
+                {strClaimDescription:rdbClaimDescriptionType.Selected.Value,    //  Claim Description Type
                  strCustomer:ddlCustomer.Selected.Customer,                     //  Customer
                  strMediaProgram:cmbMediaProgram.Selected.Value,                //  Media Program
                  strP1Process:ddlP1RCProcess.Selected.Process,                  //  Process 1 の Process
