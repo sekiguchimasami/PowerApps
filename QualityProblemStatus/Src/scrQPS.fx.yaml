@@ -5004,7 +5004,7 @@
                 DisplayMode: =DisplayMode.Edit
                 Fill: =RGBA(0, 0, 0, 0)
                 Height: =100
-                Visible: =false
+                Visible: =true
                 Width: =Parent.Width
                 X: =0
                 Y: =18
@@ -5019,6 +5019,7 @@
                     DisabledColor: =RGBA(166, 166, 166, 1)
                     FocusedBorderThickness: =1
                     Font: =Font.'Segoe UI'
+                    Height: =72
                     PaddingLeft: =0
                     Size: =10.5
                     Text: |-
@@ -5027,7 +5028,8 @@
                             !IsBlank(ddlP2RCProcess.Selected.Process) && rdbP2CAIEquipmentImprovement.Selected.Value="Yes", "○", 
                             !IsBlank(ddlP3RCProcess.Selected.Process) && rdbP3CAIEquipmentImprovement.Selected.Value="Yes", "○", 
                             "違うよ"
-                        )
+                        ) & Char(10) & 
+                        "Process2=" & !IsBlank(ThisItem.'Process2 RC Process')
                     Width: =Parent.Width * 0.9
                     X: =32
                     Y: =10
