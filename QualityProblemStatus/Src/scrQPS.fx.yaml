@@ -1182,7 +1182,7 @@
                     BorderStyle: =BorderStyle.None
                     BorderThickness: =1
                     Color: =RGBA(0, 84, 148, 1)
-                    Default: =ThisItem.'Process1 CA Internal Equipment Improvement'
+                    Default: =If(frmQPS.Mode=FormMode.New, "", ThisItem.'Process1 CA Internal Equipment Improvement')
                     DisabledBorderColor: =RGBA(0, 0, 0, 0)
                     DisabledColor: =RGBA(166, 166, 166, 1)
                     FocusedBorderThickness: =1
@@ -1938,7 +1938,7 @@
                     BorderStyle: =BorderStyle.None
                     BorderThickness: =1
                     Color: =RGBA(0, 84, 148, 1)
-                    Default: =ThisItem.'Process2 CA Internal Equipment Improvement'
+                    Default: =If(frmQPS.Mode=FormMode.New, "", ThisItem.'Process2 CA Internal Equipment Improvement')
                     DisabledBorderColor: =RGBA(0, 0, 0, 0)
                     DisabledColor: =RGBA(166, 166, 166, 1)
                     FocusedBorderThickness: =1
@@ -2668,7 +2668,7 @@
                     BorderStyle: =BorderStyle.None
                     BorderThickness: =1
                     Color: =RGBA(0, 84, 148, 1)
-                    Default: =ThisItem.'Process3 CA Internal Equipment Improvement'
+                    Default: =If(frmQPS.Mode=FormMode.New, "", ThisItem.'Process3 CA Internal Equipment Improvement')
                     DisabledBorderColor: =RGBA(0, 0, 0, 0)
                     DisabledColor: =RGBA(166, 166, 166, 1)
                     FocusedBorderThickness: =1
