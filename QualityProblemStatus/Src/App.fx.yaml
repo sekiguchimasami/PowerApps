@@ -14,7 +14,7 @@ App As appinfo:
         DataSource: =[@'Quality Problem Status']
         OnCancel: =ResetForm(frmQPS)
         OnEdit: |-
-            =
+            =//  EditMode
             Set(Process1DisplayFlag, !IsBlank(SharePointIntegration.Selected.'Process1 RC Process'));
             Set(Process2DisplayFlag, !IsBlank(SharePointIntegration.Selected.'Process2 RC Process'));
             Set(Process3DisplayFlag, !IsBlank(SharePointIntegration.Selected.'Process3 RC Process'));
@@ -23,7 +23,7 @@ App As appinfo:
             EditForm(frmQPS);
             Set(IntMode ,FormMode.Edit);
         OnNew: |+
-            =
+            =//  NewMode
             Set(Process1DisplayFlag, true);         //  Process1の表示フラグ
             Set(Process2DisplayFlag, true);         //  Process2の表示フラグ
             Set(Process3DisplayFlag, true);         //  Process3の表示フラグ
@@ -91,14 +91,14 @@ App As appinfo:
             If(!gvErrorFlag,
                 SubmitForm(frmQPS)
             )
-        OnView: |-
-            =
+        OnView: |
+            =//  VierMode
+            ViewForm(frmQPS);
+            Set(IntMode ,FormMode.View);
+            
             Set(Process1DisplayFlag, !IsBlank(SharePointIntegration.Selected.'Process1 RC Process'));
             Set(Process2DisplayFlag, !IsBlank(SharePointIntegration.Selected.'Process2 RC Process'));
             Set(Process3DisplayFlag, !IsBlank(SharePointIntegration.Selected.'Process3 RC Process'));
             Set(strSite, SharePointIntegration.Selected.Site);
-            
-            ViewForm(frmQPS);
-            Set(IntMode ,FormMode.View);
         SelectedHidden: =LookUp([@'Quality Problem Status'], ID = Self.SelectedListItemID)
 
