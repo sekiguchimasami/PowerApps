@@ -1004,66 +1004,6 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "scrQPS.ConQPS.frmQPS.AppliedProgram_DataCard.cmbAppliedProgram.AccessibleLabel"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "scrQPS.ConQPS.frmQPS.AppliedProgram_DataCard.cmbAppliedProgram.AccessibleLabel",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "AccessibleLabel",
-                "module": "scrQPS",
-                "type": "scrQPS.ConQPS.frmQPS.AppliedProgram_DataCard.cmbAppliedProgram"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-AccessibleLabelNeeded",
-          "ruleIndex": 0
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "scrQPS.ConQPS.frmQPS.AppliedProgram_DataCard.rtxAppliedProgramComment.AccessibleLabel"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "scrQPS.ConQPS.frmQPS.AppliedProgram_DataCard.rtxAppliedProgramComment.AccessibleLabel",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "AccessibleLabel",
-                "module": "scrQPS",
-                "type": "scrQPS.ConQPS.frmQPS.AppliedProgram_DataCard.rtxAppliedProgramComment"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-AccessibleLabelNeeded",
-          "ruleIndex": 0
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
                   "fullyQualifiedName": "scrQPS.ConQPS.frmQPS.Process3_DataCard.ddlP3RCProcess.AccessibleLabel"
                 }
               ],
@@ -1407,6 +1347,66 @@
                 "member": "AccessibleLabel",
                 "module": "scrQPS",
                 "type": "scrQPS.ConQPS.frmQPS.Process3_DataCard.datP3CACImplementationDate"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 0
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "scrQPS.ConQPS.frmQPS.AppliedProgram_DataCard.cmbAppliedProgram.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "scrQPS.ConQPS.frmQPS.AppliedProgram_DataCard.cmbAppliedProgram.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "scrQPS",
+                "type": "scrQPS.ConQPS.frmQPS.AppliedProgram_DataCard.cmbAppliedProgram"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 0
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "scrQPS.ConQPS.frmQPS.AppliedProgram_DataCard.rtxAppliedProgramComment.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "scrQPS.ConQPS.frmQPS.AppliedProgram_DataCard.rtxAppliedProgramComment.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "scrQPS",
+                "type": "scrQPS.ConQPS.frmQPS.AppliedProgram_DataCard.rtxAppliedProgramComment"
               }
             }
           ],
@@ -4857,7 +4857,7 @@
               }
             }
           ],
-          "version": "1.337"
+          "version": "1.338"
         }
       }
     }

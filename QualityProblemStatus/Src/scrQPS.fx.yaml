@@ -13105,7 +13105,7 @@
             Height: =RectangleHeader.Height
             PaddingLeft: =0
             Text: =Char(9) & Char(9) & Char(9) & "Quality Problem Status"
-            Width: =RectangleHeader.Width
+            Width: =RectangleHeader.Width * 0.7
             X: =RectangleHeader.X
             Y: =RectangleHeader.Y
             ZIndex: =3
@@ -13121,9 +13121,10 @@
             Font: =Font.'Segoe UI'
             FontWeight: =FontWeight.Semibold
             PaddingLeft: =0
-            Size: =12
+            Size: =13
             Text: ="【 " & DataCardValue2.Text & " 】"
-            X: =Parent.Width - 385
+            Width: =Parent.Width * 0.2
+            X: =lblHeader.Width
             ZIndex: =4
 
         btnUtillity As button:
