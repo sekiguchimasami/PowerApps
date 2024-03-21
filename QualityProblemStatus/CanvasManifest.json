@@ -135,8 +135,6 @@
     "UserLocale": "ja-JP"
   },
   "ScreenOrder": [
-    "scrQPS",
-    "scrTest",
-    "scrSuccess"
+    "scrQPS"
   ]
 }
