@@ -1,0 +1,52 @@
+[
+  {
+    "ApiId": "/providers/microsoft.powerapps/apis/shared_sharepointonline",
+    "CdpRevision": {
+      "BaseUrl": "/",
+      "LastChangedTimeString": "2024-03-07T20:18:40.0860000Z",
+      "RevisionNumber": 1
+    },
+    "ConnectedDataSourceInfoNameMapping": {
+      "{Attachments}": "添付ファイル",
+      "{Attachments}@odata.type": "{Attachments} ({Attachments}@odata.type)",
+      "{FilenameWithExtension}": "拡張子付きのファイル名",
+      "{FullPath}": "完全パス ",
+      "{HasAttachments}": "添付ファイルあり",
+      "{Identifier}": "識別子",
+      "{IsFolder}": "フォルダーである",
+      "{Link}": "アイテムへのリンク",
+      "{ModerationComment}": "このリスト アイテムのコンテンツの承認に関連付けられているコメント",
+      "{ModerationStatus}": "コンテンツの承認状態",
+      "{Name}": "名前",
+      "{Path}": "フォルダーのパス",
+      "{Thumbnail}": "サムネイル",
+      "{TriggerWindowEndToken}": "ウィンドウ終了のトークンのトリガー",
+      "{TriggerWindowStartToken}": "ウィンドウ開始のトークンのトリガー",
+      "{VersionNumber}": "バージョン番号",
+      "Author": "登録者",
+      "Author#Claims": "登録者 Claims",
+      "ComplianceAssetId": "コンプライアンス資産 ID",
+      "Created": "登録日時",
+      "Editor": "更新者",
+      "Editor#Claims": "更新者 Claims",
+      "ID": "ID",
+      "Modified": "更新日時",
+      "OData__ColorTag": "色タグ",
+      "Title": "タイトル",
+      "zzEditHistory": "編集履歴",
+      "zzEquipment": "Equipment",
+      "zzEquipment#Claims": "Equipment Claims",
+      "zzEquipment@odata.type": "zzEquipment (zzEquipment@odata.type)",
+      "zzMailSendTo": "メール宛先",
+      "zzMailSendTo#Claims": "メール宛先 Claims",
+      "zzMailSendTo@odata.type": "zzMailSendTo (zzMailSendTo@odata.type)",
+      "zzMemo": "備考"
+    },
+    "DatasetName": "https://showadenko.sharepoint.com/sites/S_H0410",
+    "EncodeDataset": true,
+    "IsSampleData": false,
+    "IsWritable": true,
+    "Name": "Charge Of Person Master",
+    "Type": "ConnectedDataSourceInfo"
+  }
+]

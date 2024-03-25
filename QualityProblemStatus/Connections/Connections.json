@@ -11,23 +11,23 @@
           "Actual Cause Master": {
             "tableName": "815b3604-51ae-4e82-8e65-8f3bd5b2b0a0"
           },
+          "Charge Of Person Master": {
+            "tableName": "c1401fda-b950-4cd5-8d65-c22e34f28aad"
+          },
           "Mail Master": {
             "tableName": "d556fa44-1d12-47c7-974c-cba3648312cc"
           },
-          "NumberList": {
-            "tableName": "ef6d3b70-f601-4184-ac1b-1afb78424ebd"
+          "Number Master": {
+            "tableName": "2eb804d5-ffce-47bd-be76-52f52bf8cc04"
+          },
+          "Options Master": {
+            "tableName": "88492cdc-3bc7-4787-a574-6126b4c52506"
           },
           "Program Master": {
             "tableName": "ad89a7c8-c2a3-44ea-9b37-8f8c8898da88"
           },
           "Quality Problem Status": {
             "tableName": "79278aa9-763d-459d-a7df-9f35eb702010"
-          },
-          "選択肢マスター": {
-            "tableName": "88492cdc-3bc7-4787-a574-6126b4c52506"
-          },
-          "担当者マスター": {
-            "tableName": "c1401fda-b950-4cd5-8d65-c22e34f28aad"
           }
         }
       }
@@ -36,10 +36,10 @@
       "Quality Problem Status",
       "Actual Cause Master",
       "Mail Master",
-      "NumberList",
       "Program Master",
-      "担当者マスター",
-      "選択肢マスター"
+      "Number Master",
+      "Options Master",
+      "Charge Of Person Master"
     ],
     "dependencies": {},
     "dependents": [

@@ -235,7 +235,7 @@
                     HoverBorderColor: =ColorFade(RGBA(0, 120, 212, 1), -30%)
                     HoverColor: =RGBA(51, 51, 51, 1)
                     HoverFill: =RGBA(212, 212, 212, 1)
-                    Items: =Split(LookUp(選択肢マスター, 項目="Site").選択肢, Char(10))
+                    Items: =Split(LookUp('Options Master', 項目="Site").選択肢, Char(10))
                     PaddingBottom: =5
                     PaddingLeft: =12
                     PaddingRight: =5
@@ -287,7 +287,7 @@
                     Height: =ddlSite.Height
                     HoverColor: =RGBA(51, 51, 51, 1)
                     HoverFill: =RGBA(0, 0, 0, 0)
-                    Items: =Split(LookUp(選択肢マスター, 項目="Claim Discription Type").選択肢, Char(10))
+                    Items: =Split(LookUp('Options Master', 項目="Claim Discription Type").選択肢, Char(10))
                     Layout: =Layout.Horizontal
                     PaddingBottom: =5
                     PaddingTop: =5
@@ -324,7 +324,7 @@
                     HoverBorderColor: =ColorFade(RGBA(0, 120, 212, 1), -30%)
                     HoverColor: =RGBA(51, 51, 51, 1)
                     HoverFill: =RGBA(212, 212, 212, 1)
-                    Items: =Split(LookUp(選択肢マスター, 項目="Claim Discription").選択肢, Char(10))
+                    Items: =Split(LookUp('Options Master', 項目="Claim Discription").選択肢, Char(10))
                     PaddingBottom: =5
                     PaddingLeft: =12
                     PaddingRight: =5
@@ -1186,7 +1186,7 @@
                     Height: =ddlSite.Height
                     HoverColor: =RGBA(51, 51, 51, 1)
                     HoverFill: =RGBA(0, 0, 0, 0)
-                    Items: =Split(LookUp(選択肢マスター, 項目="Equipment improvement").選択肢, Char(10))
+                    Items: =Split(LookUp('Options Master', 項目="Equipment improvement").選択肢, Char(10))
                     Layout: =Layout.Horizontal
                     PaddingBottom: =5
                     PaddingTop: =5
@@ -1942,7 +1942,7 @@
                     Height: =ddlSite.Height
                     HoverColor: =RGBA(51, 51, 51, 1)
                     HoverFill: =RGBA(0, 0, 0, 0)
-                    Items: =Split(LookUp(選択肢マスター, 項目="Equipment improvement").選択肢, Char(10))
+                    Items: =Split(LookUp('Options Master', 項目="Equipment improvement").選択肢, Char(10))
                     Layout: =Layout.Horizontal
                     PaddingBottom: =5
                     PaddingTop: =5
@@ -2672,7 +2672,7 @@
                     Height: =ddlSite.Height
                     HoverColor: =RGBA(51, 51, 51, 1)
                     HoverFill: =RGBA(0, 0, 0, 0)
-                    Items: =Split(LookUp(選択肢マスター, 項目="Equipment improvement").選択肢, Char(10))
+                    Items: =Split(LookUp('Options Master', 項目="Equipment improvement").選択肢, Char(10))
                     Layout: =Layout.Horizontal
                     PaddingBottom: =5
                     PaddingTop: =5
@@ -3405,7 +3405,7 @@
                     Height: =36
                     HoverColor: =RGBA(51, 51, 51, 1)
                     HoverFill: =RGBA(0, 0, 0, 0)
-                    Items: =Split(LookUp(選択肢マスター, 項目="Apply").選択肢, Char(10))
+                    Items: =Split(LookUp('Options Master', 項目="Apply").選択肢, Char(10))
                     Layout: =Layout.Horizontal
                     LineHeight: =1
                     PaddingBottom: =5
@@ -3593,7 +3593,7 @@
                     Height: =36
                     HoverColor: =RGBA(51, 51, 51, 1)
                     HoverFill: =RGBA(0, 0, 0, 0)
-                    Items: =Split(LookUp(選択肢マスター, 項目="Apply").選択肢, Char(10))
+                    Items: =Split(LookUp('Options Master', 項目="Apply").選択肢, Char(10))
                     Layout: =Layout.Horizontal
                     LineHeight: =1
                     PaddingBottom: =5
@@ -4327,7 +4327,7 @@
                     Height: =36
                     HoverColor: =RGBA(51, 51, 51, 1)
                     HoverFill: =RGBA(0, 0, 0, 0)
-                    Items: =Split(LookUp(選択肢マスター, 項目="Apply").選択肢, Char(10))
+                    Items: =Split(LookUp('Options Master', 項目="Apply").選択肢, Char(10))
                     Layout: =Layout.Horizontal
                     LineHeight: =1
                     PaddingBottom: =5
@@ -4524,7 +4524,7 @@
                     Height: =36
                     HoverColor: =RGBA(51, 51, 51, 1)
                     HoverFill: =RGBA(0, 0, 0, 0)
-                    Items: =Split(LookUp(選択肢マスター, 項目="Apply").選択肢, Char(10))
+                    Items: =Split(LookUp('Options Master', 項目="Apply").選択肢, Char(10))
                     Layout: =Layout.Horizontal
                     LineHeight: =1
                     PaddingBottom: =5
@@ -4721,7 +4721,7 @@
                     Height: =36
                     HoverColor: =RGBA(51, 51, 51, 1)
                     HoverFill: =RGBA(0, 0, 0, 0)
-                    Items: =Split(LookUp(選択肢マスター, 項目="Apply").選択肢, Char(10))
+                    Items: =Split(LookUp('Options Master', 項目="Apply").選択肢, Char(10))
                     Layout: =Layout.Horizontal
                     LineHeight: =1
                     PaddingBottom: =5

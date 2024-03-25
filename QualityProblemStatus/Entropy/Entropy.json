@@ -581,7 +581,7 @@
   },
   "FunctionParamsInvariantScripts": {},
   "FunctionParamsInvariantScriptsOnInstances": {},
-  "HeaderLastSavedDateTimeUTC": "03/25/2024 09:32:59",
+  "HeaderLastSavedDateTimeUTC": "03/25/2024 09:41:14",
   "IsLegacyComponentAllowGlobalScopeCase": false,
   "LocalConnectionIDReferences": {
     "75ed78bd-b964-4a77-8192-3937b748a1ba": "\"/providers/microsoft.powerapps/apis/shared_sharepointonline/connections/2d50d16266ff4965a740480cabf8de75\"",
@@ -596,18 +596,18 @@
   "OrderComponentTemplate": {},
   "OrderDataSource": {
     "Actual Cause Master": 6,
+    "Charge Of Person Master": 12,
     "ComboBoxSample": 3,
     "CustomGallerySample": 4,
     "DropDownSample": 5,
     "Mail Master": 7,
-    "NumberList": 8,
+    "Number Master": 8,
+    "Options Master": 11,
     "Program Master": 9,
     "Quality Problem Status": 2,
-    "RadioSample": 12,
+    "RadioSample": 10,
     "S_H0410_QPS_SendMail": 1,
-    "S_H0410_QPS採番": 0,
-    "選択肢マスター": 10,
-    "担当者マスター": 11
+    "S_H0410_QPS採番": 0
   },
   "OrderGroupControls": {},
   "OrderPcfTemplate": {},
