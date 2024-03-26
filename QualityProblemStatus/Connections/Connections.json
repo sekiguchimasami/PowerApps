@@ -1,4 +1,44 @@
 {
+  "466faac1-c125-4704-a0e6-9e4b65882cbf": {
+    "connectionRef": {
+      "displayName": "Logic flows",
+      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1680/1.0.1680.3652/logicflows/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_logicflows",
+      "parameterHints": {
+        "75ed78bd-b964-4a77-8192-3937b748a1ba": {
+          "value": "shared_sharepointonline"
+        },
+        "workflowDisplayName": {
+          "value": "S_H0410_QPS採番"
+        },
+        "workflowEntityId": {},
+        "workflowName": {
+          "value": "27592a09-ad70-4f6d-9c46-4856f8db6c5f"
+        }
+      },
+      "parameterHintsV2": {
+        "shared_sharepointonline": {
+          "value": "75ed78bd-b964-4a77-8192-3937b748a1ba"
+        },
+        "workflowDisplayName": {
+          "value": "S_H0410_QPS採番"
+        },
+        "workflowEntityId": {},
+        "workflowName": {
+          "value": "27592a09-ad70-4f6d-9c46-4856f8db6c5f"
+        }
+      }
+    },
+    "datasets": {},
+    "dataSources": [
+      "S_H0410_QPS採番"
+    ],
+    "dependencies": {
+      "shared_sharepointonline": "75ed78bd-b964-4a77-8192-3937b748a1ba"
+    },
+    "dependents": [],
+    "id": "466faac1-c125-4704-a0e6-9e4b65882cbf"
+  },
   "75ed78bd-b964-4a77-8192-3937b748a1ba": {
     "connectionRef": {
       "displayName": "SharePoint",
@@ -43,12 +83,59 @@
     ],
     "dependencies": {},
     "dependents": [
-      "e9ec4e77-5bdd-40f7-b5ab-796393824890",
-      "e228c23f-5e1e-4e46-8bea-fff925e44769"
+      "466faac1-c125-4704-a0e6-9e4b65882cbf",
+      "809558f5-72b4-4e35-8144-ff313ac2838d"
     ],
     "id": "75ed78bd-b964-4a77-8192-3937b748a1ba"
   },
-  "85eb0e9e-1db3-4825-9cbd-c5341157674a": {
+  "809558f5-72b4-4e35-8144-ff313ac2838d": {
+    "connectionRef": {
+      "displayName": "Logic flows",
+      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1680/1.0.1680.3652/logicflows/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_logicflows",
+      "parameterHints": {
+        "75ed78bd-b964-4a77-8192-3937b748a1ba": {
+          "value": "shared_sharepointonline"
+        },
+        "d5962238-6bc6-470d-8415-4976b2b1f5d4": {
+          "value": "shared_office365"
+        },
+        "workflowDisplayName": {
+          "value": "S_H0410_QPS_SendMail"
+        },
+        "workflowEntityId": {},
+        "workflowName": {
+          "value": "8e7450c1-21d6-4735-b3f2-29d553db790e"
+        }
+      },
+      "parameterHintsV2": {
+        "shared_office365": {
+          "value": "d5962238-6bc6-470d-8415-4976b2b1f5d4"
+        },
+        "shared_sharepointonline": {
+          "value": "75ed78bd-b964-4a77-8192-3937b748a1ba"
+        },
+        "workflowDisplayName": {
+          "value": "S_H0410_QPS_SendMail"
+        },
+        "workflowEntityId": {},
+        "workflowName": {
+          "value": "8e7450c1-21d6-4735-b3f2-29d553db790e"
+        }
+      }
+    },
+    "datasets": {},
+    "dataSources": [
+      "S_H0410_QPS_SendMail"
+    ],
+    "dependencies": {
+      "shared_office365": "d5962238-6bc6-470d-8415-4976b2b1f5d4",
+      "shared_sharepointonline": "75ed78bd-b964-4a77-8192-3937b748a1ba"
+    },
+    "dependents": [],
+    "id": "809558f5-72b4-4e35-8144-ff313ac2838d"
+  },
+  "d5962238-6bc6-470d-8415-4976b2b1f5d4": {
     "connectionRef": {
       "displayName": "Office 365 Outlook",
       "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1676/1.0.1676.3617/office365/icon.png",
@@ -58,95 +145,8 @@
     "dataSources": [],
     "dependencies": {},
     "dependents": [
-      "e9ec4e77-5bdd-40f7-b5ab-796393824890"
+      "809558f5-72b4-4e35-8144-ff313ac2838d"
     ],
-    "id": "85eb0e9e-1db3-4825-9cbd-c5341157674a"
-  },
-  "e228c23f-5e1e-4e46-8bea-fff925e44769": {
-    "connectionRef": {
-      "displayName": "Logic flows",
-      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1680/1.0.1680.3652/logicflows/icon.png",
-      "id": "/providers/microsoft.powerapps/apis/shared_logicflows",
-      "parameterHints": {
-        "75ed78bd-b964-4a77-8192-3937b748a1ba": {
-          "value": "shared_sharepointonline"
-        },
-        "workflowDisplayName": {
-          "value": "S_H0410_QPS採番"
-        },
-        "workflowEntityId": {},
-        "workflowName": {
-          "value": "27592a09-ad70-4f6d-9c46-4856f8db6c5f"
-        }
-      },
-      "parameterHintsV2": {
-        "shared_sharepointonline": {
-          "value": "75ed78bd-b964-4a77-8192-3937b748a1ba"
-        },
-        "workflowDisplayName": {
-          "value": "S_H0410_QPS採番"
-        },
-        "workflowEntityId": {},
-        "workflowName": {
-          "value": "27592a09-ad70-4f6d-9c46-4856f8db6c5f"
-        }
-      }
-    },
-    "datasets": {},
-    "dataSources": [
-      "S_H0410_QPS採番"
-    ],
-    "dependencies": {
-      "shared_sharepointonline": "75ed78bd-b964-4a77-8192-3937b748a1ba"
-    },
-    "dependents": [],
-    "id": "e228c23f-5e1e-4e46-8bea-fff925e44769"
-  },
-  "e9ec4e77-5bdd-40f7-b5ab-796393824890": {
-    "connectionRef": {
-      "displayName": "Logic flows",
-      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1680/1.0.1680.3652/logicflows/icon.png",
-      "id": "/providers/microsoft.powerapps/apis/shared_logicflows",
-      "parameterHints": {
-        "75ed78bd-b964-4a77-8192-3937b748a1ba": {
-          "value": "shared_sharepointonline"
-        },
-        "85eb0e9e-1db3-4825-9cbd-c5341157674a": {
-          "value": "shared_office365"
-        },
-        "workflowDisplayName": {
-          "value": "S_H0410_QPS_SendMail"
-        },
-        "workflowEntityId": {},
-        "workflowName": {
-          "value": "017da3b6-836f-4981-a451-af4502f965ec"
-        }
-      },
-      "parameterHintsV2": {
-        "shared_office365": {
-          "value": "85eb0e9e-1db3-4825-9cbd-c5341157674a"
-        },
-        "shared_sharepointonline": {
-          "value": "75ed78bd-b964-4a77-8192-3937b748a1ba"
-        },
-        "workflowDisplayName": {
-          "value": "S_H0410_QPS_SendMail"
-        },
-        "workflowEntityId": {},
-        "workflowName": {
-          "value": "017da3b6-836f-4981-a451-af4502f965ec"
-        }
-      }
-    },
-    "datasets": {},
-    "dataSources": [
-      "S_H0410_QPS_SendMail"
-    ],
-    "dependencies": {
-      "shared_office365": "85eb0e9e-1db3-4825-9cbd-c5341157674a",
-      "shared_sharepointonline": "75ed78bd-b964-4a77-8192-3937b748a1ba"
-    },
-    "dependents": [],
-    "id": "e9ec4e77-5bdd-40f7-b5ab-796393824890"
+    "id": "d5962238-6bc6-470d-8415-4976b2b1f5d4"
   }
 }
