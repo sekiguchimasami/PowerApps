@@ -4994,7 +4994,7 @@
                 DisplayMode: =DisplayMode.Edit
                 Fill: =RGBA(0, 0, 0, 0)
                 Height: =100
-                Visible: =true
+                Visible: =false
                 Width: =Parent.Width
                 X: =0
                 Y: =18

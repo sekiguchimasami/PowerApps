@@ -14,24 +14,28 @@ App As appinfo:
         DataSource: =[@'Quality Problem Status']
         OnCancel: =ResetForm(frmQPS)
         OnEdit: |-
-            =//  EditMode
+            =//  Reset
+            Set(Process1DisplayFlag, true);         //  Process1の表示フラグ
+            Set(Process2DisplayFlag, false);        //  Process2の表示フラグ
+            Set(Process3DisplayFlag, false);        //  Process3の表示フラグ
+            
+            //  EditMode
+            EditForm(frmQPS);
+            Set(IntMode ,FormMode.Edit);
+            
             Set(Process1DisplayFlag, !IsBlank(SharePointIntegration.Selected.'Process1 RC Process'));
             Set(Process2DisplayFlag, !IsBlank(SharePointIntegration.Selected.'Process2 RC Process'));
             Set(Process3DisplayFlag, !IsBlank(SharePointIntegration.Selected.'Process3 RC Process'));
             Set(strSite, SharePointIntegration.Selected.Site);
-            
-            EditForm(frmQPS);
-            Set(IntMode ,FormMode.Edit);
         OnNew: |+
             =//  NewMode
+            NewForm(frmQPS);
+            Set(IntMode ,FormMode.New);
+            
             Set(Process1DisplayFlag, true);         //  Process1の表示フラグ
             Set(Process2DisplayFlag, true);         //  Process2の表示フラグ
             Set(Process3DisplayFlag, true);         //  Process3の表示フラグ
             Set(strSite, Blank());                  //  Site
-            
-            //  新規作成
-            NewForm(frmQPS);
-            Set(IntMode ,FormMode.New);
             
         OnSave: |-
             =// フラグ初期化
@@ -92,7 +96,12 @@ App As appinfo:
                 SubmitForm(frmQPS)
             )
         OnView: |
-            =//  VierMode
+            =//  Reset
+            Set(Process1DisplayFlag, true);         //  Process1の表示フラグ
+            Set(Process2DisplayFlag, false);        //  Process2の表示フラグ
+            Set(Process3DisplayFlag, false);        //  Process3の表示フラグ
+            
+            //  VierMode
             ViewForm(frmQPS);
             Set(IntMode ,FormMode.View);
             
